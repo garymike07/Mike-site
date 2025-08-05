@@ -7,13 +7,13 @@
 <meta name="keywords" content="web developer, web designer, portfolio, JavaScript, React, Node.js, full-stack developer, Kenya, Nairobi, freelance developer, custom systems, digital lab, innovation, experiments">
 <meta name="author" content="Mike Lab">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#00d9ff">
+<meta name="theme-color" content="#6366f1">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Mike Lab - Where Ideas Meet Innovation">
 <meta property="og:description" content="A digital laboratory experimenting with cutting-edge web technologies to solve tomorrow's problems today.">
-<meta property="og:image" content="https://garymike07.github.io/Mike-sites/myk_logo.webp">
-<meta property="og:url" content="https://garymike07.github.io/Mike-sites/">
+<meta property="og:image" content="https://garymike07.github.io/Mike-site/myk_logo.webp">
+<meta property="og:url" content="https://garymike07.github.io/Mike-site/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mike Lab">
 <meta property="og:locale" content="en_US">
@@ -22,93 +22,95 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mike Lab - Where Ideas Meet Innovation">
 <meta name="twitter:description" content="A digital laboratory experimenting with cutting-edge web technologies to solve tomorrow's problems today.">
-<meta name="twitter:image" content="https://garymike07.github.io/Mike-sites/myk_logo.webp">
+<meta name="twitter:image" content="https://garymike07.github.io/Mike-site/myk_logo.webp">
 
 <title>Mike Lab – Where Ideas Meet Innovation | Digital Laboratory</title>
 
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="icon" type="image/webp" href="myk_logo.webp">
 
 <style>
+/* Modern CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
-  font-size: 18px; /* Base font size */
+  font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 @media (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
+  html { font-size: 15px; }
 }
 
 @media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
+  html { font-size: 14px; }
 }
 
+/* Enhanced Color Palette */
 :root {
-  --bg-primary: #0A192F; /* Deep Blue */
-  --bg-secondary: rgba(10, 25, 47, 0.8);
-  --bg-tertiary: rgba(10, 25, 47, 0.6);
-  --text-primary: #00ffff; /* Cyan */
-  --text-secondary: #8892B0; /* Slate */
-  --accent-primary: #64FFDA; /* Electric Green */
-  --accent-secondary: #33FFC4;
-  --accent-tertiary: #00A8B5;
-  --accent-quaternary: #f59e0b; /* Phasing out */
-  --accent-custom: #ff6b35; /* Phasing out */
-  --gradient-primary: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
-  --gradient-secondary: linear-gradient(135deg, var(--accent-tertiary), var(--accent-primary));
-  --gradient-custom: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
-  --gradient-glass: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(100, 255, 218, 0.05));
-  --border-color: rgba(100, 255, 218, 0.2);
-  --shadow-color: rgba(100, 255, 218, 0.3);
-  --shadow-glow: 0 0 40px rgba(100, 255, 218, 0.4);
-  --shadow-custom: 0 0 40px rgba(100, 255, 218, 0.4);
-  --success-color: #64FFDA; /* Electric Green */
-  --warning-color: #f59e0b;
-  --error-color: #ef4444;
-  --live-color: #64FFDA;
-  --ongoing-color: #f59e0b;
-  --concept-color: #8892B0;
-  --construction-color: #ff6b35;
+  /* Primary Colors - Deep Space Theme */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #16213e;
+  --bg-glass: rgba(26, 26, 46, 0.4);
+  --bg-glass-light: rgba(255, 255, 255, 0.05);
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a8b2d1;
+  --text-muted: #64748b;
+  
+  /* Accent Colors - Vibrant Gradients */
+  --accent-primary: #6366f1;
+  --accent-secondary: #8b5cf6;
+  --accent-tertiary: #06b6d4;
+  --accent-quaternary: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-error: #ef4444;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+  --gradient-secondary: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #10b981 100%);
+  --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  
+  /* Shadows & Effects */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+  --shadow-glow-lg: 0 0 40px rgba(99, 102, 241, 0.4);
+  
+  /* Borders */
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-secondary: rgba(99, 102, 241, 0.2);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease-out;
+  --transition-normal: 0.3s ease-out;
+  --transition-slow: 0.5s ease-out;
+  --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-[data-theme="light"] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #e9ecef;
-  --text-primary: #212529;
-  --text-secondary: #6c757d;
-  --border-color: #dee2e6;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Base Styles */
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  padding-top: 80px;
   position: relative;
-  animation: typing 1s steps(20, end);
-  font-weight: bold;
+  min-height: 100vh;
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
+/* Animated Background */
 body::before {
   content: '';
   position: fixed;
@@ -117,62 +119,117 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(157, 78, 221, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(0, 217, 255, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(247, 37, 133, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 60% 70%, rgba(255, 107, 53, 0.2) 0%, transparent 50%);
-  z-index: -1;
-  animation: backgroundShift 25s ease-in-out infinite;
+    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 60% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+  z-index: -2;
+  animation: backgroundFloat 20s ease-in-out infinite;
 }
 
-@keyframes backgroundShift {
+@keyframes backgroundFloat {
   0%, 100% { 
-    transform: translateX(0) translateY(0) rotate(0deg); 
+    transform: translate(0, 0) rotate(0deg);
     filter: hue-rotate(0deg);
   }
   25% { 
-    transform: translateX(-30px) translateY(-15px) rotate(2deg); 
+    transform: translate(-20px, -10px) rotate(1deg);
     filter: hue-rotate(90deg);
   }
   50% { 
-    transform: translateX(30px) translateY(15px) rotate(-2deg); 
+    transform: translate(20px, 10px) rotate(-1deg);
     filter: hue-rotate(180deg);
   }
   75% { 
-    transform: translateX(-15px) translateY(30px) rotate(1deg); 
+    transform: translate(-10px, 20px) rotate(0.5deg);
     filter: hue-rotate(270deg);
   }
 }
 
-/* Header */
+/* Floating Particles */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.particle:nth-child(2n) {
+  background: var(--accent-secondary);
+  animation-delay: -2s;
+  animation-duration: 8s;
+}
+
+.particle:nth-child(3n) {
+  background: var(--accent-tertiary);
+  animation-delay: -4s;
+  animation-duration: 10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-100px) translateX(50px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Header with Glassmorphism */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(10, 10, 10, 0.7);
+  background: rgba(10, 10, 15, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-color);
-  padding: 1rem;
+  border-bottom: 1px solid var(--border-primary);
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   height: 80px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-normal);
+}
+
+.header.scrolled {
+  background: rgba(10, 10, 15, 0.95);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: var(--border-secondary);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.2rem;
+  gap: 0.75rem;
+  font-size: 1.25rem;
   font-weight: 700;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  white-space: nowrap;
+  background-clip: text;
+  transition: all var(--transition-normal);
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .logo img {
@@ -180,19 +237,25 @@ body::before {
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid var(--border-secondary);
+  transition: all var(--transition-normal);
+}
+
+.logo:hover img {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
 }
 
 .theme-toggle {
-  background: var(--gradient-glass);
+  background: var(--bg-glass);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid var(--border-color);
-  border-radius: 50px;
-  padding: 0.75rem;
+  border: 1px solid var(--border-primary);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  min-width: 44px;
-  min-height: 44px;
+  transition: all var(--transition-bounce);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -209,7 +272,8 @@ body::before {
   bottom: 0;
   background: var(--gradient-primary);
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity var(--transition-normal);
+  border-radius: 50%;
 }
 
 .theme-toggle:hover::before {
@@ -217,58 +281,59 @@ body::before {
 }
 
 .theme-toggle:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(10deg);
   box-shadow: var(--shadow-glow);
   border-color: var(--accent-primary);
 }
 
+.theme-toggle i {
+  position: relative;
+  z-index: 2;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  transition: all var(--transition-normal);
+}
+
 /* Hero Section */
 .hero {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2rem;
   position: relative;
-  background: radial-gradient(ellipse at center, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
 }
 
 .hero-nav {
-  position: static;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   z-index: 100;
-  width: 100%;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  background: var(--gradient-glass);
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-glass);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 2px solid var(--border-color);
+  border: 1px solid var(--border-primary);
   border-radius: 50px;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 0.8rem;
+  transition: all var(--transition-bounce);
+  font-size: 0.9rem;
   font-weight: 500;
-  min-height: 44px;
-  white-space: nowrap;
   position: relative;
   overflow: hidden;
-  box-shadow: 
-    0 4px 16px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .nav-item::before {
@@ -279,89 +344,138 @@ body::before {
   width: 100%;
   height: 100%;
   background: var(--gradient-primary);
-  transition: left 0.5s ease;
+  transition: left var(--transition-slow);
   z-index: -1;
-  border-radius: 48px;
+  border-radius: 50px;
 }
 
-.nav-item:hover::before, .nav-item.active::before {
+.nav-item:hover::before,
+.nav-item.active::before {
   left: 0;
 }
 
-.nav-item:hover, .nav-item.active {
-  color: var(--bg-primary);
+.nav-item:hover,
+.nav-item.active {
+  color: var(--text-primary);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 
-    var(--shadow-glow),
-    0 8px 24px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-glow-lg);
   border-color: var(--accent-primary);
 }
 
+.nav-item i {
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+}
+
+.nav-item:hover i {
+  transform: scale(1.2);
+}
+
 .hero-content {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2rem 0;
-  width: 100%;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 1.2;
+  background-clip: text;
+  line-height: 1.1;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% { filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3)); }
+  100% { filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.6)); }
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: var(--text-secondary);
   margin-bottom: 2rem;
   line-height: 1.6;
+  font-weight: 400;
 }
 
-/* Hero Contact Information */
+/* Enhanced Contact Card */
 .hero-contact {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: var(--gradient-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  animation: contactGlow 3s ease-in-out infinite alternate;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--bg-glass);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--border-primary);
+  border-radius: 24px;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-primary);
+  opacity: 0.6;
 }
 
 .hero-contact p {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
   color: var(--text-primary);
   font-weight: 500;
   font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 12px;
+  transition: all var(--transition-normal);
+}
+
+.hero-contact p:hover {
+  background: var(--bg-glass-light);
+  transform: translateX(5px);
 }
 
 .hero-contact i {
   color: var(--accent-primary);
-  font-size: 1.1rem;
-  width: 20px;
+  font-size: 1.2rem;
+  width: 24px;
   text-align: center;
+  transition: all var(--transition-normal);
 }
 
-@keyframes contactGlow {
-  0% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); }
-  100% { box-shadow: 0 8px 32px rgba(0, 245, 255, 0.2), 0 0 20px rgba(255, 107, 53, 0.1); }
+.hero-contact p:hover i {
+  transform: scale(1.2);
+  color: var(--accent-secondary);
 }
 
+/* Enhanced Buttons */
 .hero-cta {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -369,25 +483,26 @@ body::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   padding: 1rem 2rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all var(--transition-bounce);
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  min-height: 44px;
+  min-height: 56px;
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary {
   background: var(--gradient-primary);
-  color: var(--bg-primary);
-  position: relative;
-  overflow: hidden;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
 }
 
 .btn-primary::before {
@@ -407,35 +522,33 @@ body::before {
 
 .btn-primary:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 15px 40px var(--shadow-color);
+  box-shadow: var(--shadow-glow-lg);
 }
 
-/* Custom Request Button - Extra Prominent */
 .btn-custom-request {
-  background: var(--gradient-custom) !important;
+  background: var(--gradient-accent) !important;
   font-size: 1.1rem !important;
   padding: 1.25rem 2.5rem !important;
   font-weight: 700 !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  animation: customButtonPulse 2s ease-in-out infinite;
-  box-shadow: var(--shadow-custom);
-  border: 2px solid var(--accent-custom);
+  animation: customPulse 2s ease-in-out infinite;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
 }
 
 .btn-custom-request:hover {
   transform: translateY(-5px) scale(1.08) !important;
-  box-shadow: var(--shadow-custom), 0 20px 50px rgba(255, 107, 53, 0.3) !important;
+  box-shadow: 0 0 40px rgba(245, 158, 11, 0.6) !important;
   animation: none;
 }
 
-@keyframes customButtonPulse {
+@keyframes customPulse {
   0%, 100% { 
-    box-shadow: var(--shadow-custom);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
     transform: scale(1);
   }
   50% { 
-    box-shadow: var(--shadow-custom), 0 0 30px rgba(255, 107, 53, 0.5);
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.6);
     transform: scale(1.02);
   }
 }
@@ -443,39 +556,38 @@ body::before {
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--border-primary);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-secondary:hover {
-  background: var(--bg-secondary);
+  background: var(--bg-glass);
   border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
 }
 
-/* Stats */
+/* Enhanced Stats Grid */
 .stats {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-top: 3rem;
-  max-width: 1000px;
+  gap: 1.5rem;
+  margin-top: 4rem;
+  max-width: 1200px;
   width: 100%;
 }
 
 .stat-card {
-  background: var(--gradient-glass);
+  background: var(--bg-glass);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 24px;
   text-align: center;
-  border: 2px solid var(--border-color);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-primary);
+  transition: all var(--transition-slow);
   position: relative;
   overflow: hidden;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(255, 255, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-xl);
   transform: translateZ(0);
 }
 
@@ -488,21 +600,17 @@ body::before {
   bottom: 0;
   background: var(--gradient-primary);
   opacity: 0;
-  transition: opacity 0.5s ease;
-  border-radius: 22px;
+  transition: opacity var(--transition-slow);
+  border-radius: 24px;
 }
 
 .stat-card:hover::before {
-  opacity: 0.12;
+  opacity: 0.1;
 }
 
 .stat-card:hover {
-  transform: translateY(-12px) scale(1.05) rotateY(5deg);
-  box-shadow: 
-    var(--shadow-glow), 
-    0 24px 80px rgba(0, 0, 0, 0.5),
-    0 0 0 2px var(--accent-primary),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: var(--shadow-glow-lg);
   border-color: var(--accent-primary);
 }
 
@@ -512,54 +620,64 @@ body::before {
 }
 
 .stat-number {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--accent-primary);
+  font-size: 3rem;
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
 }
 
 .stat-label {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .stat-trend {
-  font-size: 0.8rem;
-  color: var(--success-color);
-  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--accent-quaternary);
+  margin-top: 0.75rem;
+  font-weight: 500;
 }
 
 /* Projects Section */
 .projects-section {
-  padding: 4rem 1rem;
+  padding: 6rem 2rem;
   background: var(--bg-primary);
+  position: relative;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
 }
 
 .section-subtitle {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1.1rem;
   max-width: 600px;
-  margin: 1rem auto 0;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* Filters */
+/* Enhanced Filters */
 .filters-container {
   max-width: 1200px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 4rem;
 }
 
 .search-container {
@@ -574,19 +692,26 @@ body::before {
 
 .search-input {
   width: 100%;
-  padding: 1rem 3rem 1rem 3rem;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  padding: 1rem 3rem;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-primary);
   border-radius: 50px;
   color: var(--text-primary);
   font-size: 1rem;
   outline: none;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
 }
 
 .search-input:focus {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+  box-shadow: var(--shadow-glow);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
 }
 
 .search-icon {
@@ -595,6 +720,7 @@ body::before {
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-secondary);
+  font-size: 1.1rem;
 }
 
 .search-clear {
@@ -607,60 +733,92 @@ body::before {
   color: var(--text-secondary);
   cursor: pointer;
   opacity: 0;
-  transition: all 0.3s ease;
-  min-width: 44px;
-  min-height: 44px;
+  transition: all var(--transition-normal);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-clear.visible {
   opacity: 1;
 }
 
+.search-clear:hover {
+  background: var(--bg-glass);
+  color: var(--text-primary);
+}
+
 .project-filters {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
   margin-bottom: 2rem;
 }
 
 .filter-btn {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-primary);
   color: var(--text-secondary);
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-bounce);
   font-size: 0.9rem;
   font-weight: 500;
-  min-height: 44px;
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
 }
 
-.filter-btn:hover, .filter-btn.active {
-  background: var(--accent-primary);
-  color: var(--bg-primary);
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: left var(--transition-slow);
+  z-index: -1;
+  border-radius: 50px;
+}
+
+.filter-btn:hover::before,
+.filter-btn.active::before {
+  left: 0;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: var(--text-primary);
   border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
 }
 
 .filter-count {
-  background: var(--bg-tertiary);
+  background: var(--bg-glass-light);
   color: var(--text-primary);
   padding: 0.25rem 0.5rem;
   border-radius: 12px;
   font-size: 0.75rem;
-  margin-left: 0.5rem;
+  font-weight: 600;
 }
 
 .filter-btn.active .filter-count {
   background: rgba(255, 255, 255, 0.2);
-  color: var(--bg-primary);
 }
 
-/* Projects Container */
+/* Enhanced Project Cards */
 .projects-container {
   position: relative;
   overflow: hidden;
@@ -668,27 +826,23 @@ body::before {
 }
 
 .projects-scroll {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
-  padding: 1rem 0 2rem;
+  padding: 1rem 0;
 }
 
 .project-card {
-  background: var(--gradient-glass);
+  background: var(--bg-glass);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border-radius: 24px;
   overflow: hidden;
-  border: 2px solid var(--border-color);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-primary);
+  transition: all var(--transition-slow);
   cursor: pointer;
-  width: 100%;
   position: relative;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(255, 255, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-xl);
   transform: translateZ(0);
 }
 
@@ -701,22 +855,18 @@ body::before {
   bottom: 0;
   background: var(--gradient-primary);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity var(--transition-slow);
   z-index: 1;
-  border-radius: 22px;
+  border-radius: 24px;
 }
 
 .project-card:hover::before {
-  opacity: 0.15;
+  opacity: 0.05;
 }
 
 .project-card:hover {
-  transform: translateY(-16px) scale(1.03) rotateX(5deg);
-  box-shadow: 
-    var(--shadow-glow), 
-    0 32px 100px rgba(0, 0, 0, 0.5),
-    0 0 0 2px var(--accent-primary),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-glow-lg);
   border-color: var(--accent-primary);
 }
 
@@ -726,72 +876,66 @@ body::before {
 }
 
 .project-image {
-  height: 200px;
-  background: var(--gradient-primary);
-  position: relative;
-  overflow: hidden;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: all var(--transition-slow);
 }
 
-.project-thumbnail {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 2rem;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
 }
 
 .project-status {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .status-live {
-  background: var(--live-color);
-  color: #fff;
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--accent-quaternary);
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .status-ongoing {
-  background: var(--ongoing-color);
-  color: #000;
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--accent-warning);
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .status-concept {
-  background: var(--concept-color);
-  color: #fff;
-}
-
-.status-construction {
-  background: var(--construction-color);
-  color: #fff;
-}
-
-.project-content {
-  padding: 1.5rem;
-}
-
-.project-title {
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.project-date {
-  font-size: 0.85rem; /* Slightly larger */
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
+  background: rgba(100, 116, 139, 0.2);
+  color: var(--text-muted);
+  border: 1px solid rgba(100, 116, 139, 0.3);
 }
 
 .project-description {
   color: var(--text-secondary);
-  font-size: 1rem; /* Increased for readability */
-  line-height: 1.65;
+  line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
@@ -799,674 +943,82 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.tag {
-  background: var(--bg-tertiary);
+.project-tag {
+  background: var(--bg-glass-light);
   color: var(--text-secondary);
   padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
   font-weight: 500;
+  border: 1px solid var(--border-primary);
+  transition: all var(--transition-normal);
 }
 
-.project-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
+.project-tag:hover {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
 }
 
 .project-actions {
-    display: flex;
-    gap: 0.5rem;
+  display: flex;
+  gap: 1rem;
 }
 
-.project-price {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--accent-primary);
-}
-
-.add-to-cart {
-  background: var(--gradient-primary);
-  color: var(--bg-primary);
-  border: none;
+.project-btn {
+  flex: 1;
   padding: 0.75rem 1rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-height: 44px;
-}
-
-.add-to-cart:hover {
-  transform: translateY(-1px);
-}
-
-.add-to-cart:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* Progress Bar for Ongoing Projects */
-.progress-container {
-  margin: 1rem 0;
-}
-
-.progress-label {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-}
-
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background: var(--bg-tertiary);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background: var(--gradient-primary);
-  transition: width 0.3s ease;
-}
-
-/* Shopping Cart */
-.cart-container {
-  position: fixed;
-  bottom: 2rem;
-  right: 1rem;
-  z-index: 1000;
-}
-
-.cart-button {
-  background: var(--gradient-primary);
-  color: var(--bg-primary);
-  border: none;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cart-button:hover {
-  transform: scale(1.1);
-}
-
-.cart-count {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background: var(--accent-secondary);
-  color: white;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.cart-sidebar {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100vh;
-  background: var(--bg-primary);
-  border-left: 1px solid var(--border-color);
-  transition: right 0.3s ease;
-  z-index: 1001;
-  overflow-y: auto;
-}
-
-.cart-sidebar.open {
-  right: 0;
-}
-
-.cart-header {
-  padding: 2rem 1rem 1rem;
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cart-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.cart-close {
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cart-items {
-  padding: 1rem;
-}
-
-.cart-item {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.cart-item-image {
-  width: 60px;
-  height: 60px;
-  background: var(--gradient-primary);
-  border-radius: 8px;
-  flex-shrink: 0;
-  object-fit: cover;
-}
-
-.cart-item-details {
-  flex: 1;
-  min-width: 0;
-}
-
-.cart-item-title {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.cart-item-price {
-  color: var(--accent-primary);
-  font-weight: 600;
-}
-
-.cart-item-remove {
-  background: var(--error-color);
-  color: white;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-  min-width: 44px;
-  min-height: 44px;
-}
-
-.cart-footer {
-  padding: 1rem;
-  border-top: 1px solid var(--border-color);
-  background: var(--bg-secondary);
-}
-
-.cart-total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.cart-checkout {
-  background: var(--gradient-primary);
-  color: var(--bg-primary);
-  border: none;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  width: 100%;
-  transition: all 0.3s ease;
-  min-height: 44px;
-}
-
-.cart-checkout:hover {
-  transform: translateY(-1px);
-}
-
-.cart-empty {
-  text-align: center;
-  padding: 3rem 1rem;
-  color: var(--text-secondary);
-}
-
-.cart-empty i {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  opacity: 0.5;
-}
-
-/* Project Modal - Enhanced Layout */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 25, 47, 0.85); /* Darker backdrop */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease; /* Smoother transition */
-  padding: 1rem;
-}
-
-.modal.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal.active .modal-content {
-    transform: scale(1);
-}
-
-.modal-content {
-  background: var(--bg-primary);
-  border-radius: 24px;
-  width: 90%;
-  max-width: 1100px;
-  height: 90vh; /* Use height instead of max-height */
-  overflow: hidden;
-  position: relative;
-  border: 1px solid var(--border-color);
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  transform: scale(0.95);
-  transition: transform 0.4s ease;
-}
-
-.modal-header {
-  padding: 1rem 2rem;
-  border-bottom: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--bg-secondary);
-  flex-shrink: 0;
-}
-
-.modal-title {
-  font-size: 1.5rem; /* Larger title */
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: calc(100% - 60px);
-}
-
-.modal-close {
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  cursor: pointer;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.modal-close:hover {
-  background: var(--bg-tertiary);
-  transform: rotate(90deg);
-}
-
-.modal-body {
-  display: grid;
-  grid-template-columns: 2fr 1fr; /* 2/3 for gallery, 1/3 for details */
-  gap: 2rem;
-  padding: 2rem;
-  height: 100%;
-  overflow: hidden;
-}
-
-@media (max-width: 992px) {
-  .modal-body {
-    grid-template-columns: 1fr;
-    overflow-y: auto;
-  }
-}
-
-.modal-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  overflow: hidden;
-  min-height: 400px;
-  max-height: 550px; /* Constrain the gallery's max height */
-}
-
-.modal-main-image {
-  width: 100%;
-  flex-grow: 1;
-  height: 1px; /* Allow flex to control the height properly within the new max-height */
-  object-fit: cover;
-  border-radius: 16px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-secondary);
-}
-
-.modal-thumbnails {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 0.75rem;
-  max-height: 100px; /* Set a max-height */
-  overflow-y: auto;
-  padding: 5px;
-}
-
-.modal-thumbnail {
-  width: 100%;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  opacity: 0.7;
-}
-
-.modal-thumbnail:hover {
-  opacity: 1;
-  transform: scale(1.05);
-  border-color: var(--accent-secondary);
-}
-
-.modal-thumbnail.active {
-  opacity: 1;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 15px var(--shadow-color);
-}
-
-.modal-details {
-  overflow-y: auto;
-  padding-right: 15px; /* For scrollbar */
-}
-
-.modal-description {
-  font-size: 1rem;
-  color: var(--text-primary); /* Brighter color for readability */
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.modal-section-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 2rem 0 1rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.modal-price-tag {
-    background: var(--gradient-glass);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.price-label {
-    font-weight: 500;
-    color: var(--text-primary);
-}
-
-.price-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent-primary);
-}
-
-.modal-features-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    color: var(--text-primary);
-}
-
-.modal-features-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.5rem;
-}
-
-.modal-features-list i {
-    color: var(--accent-primary);
-}
-
-.progress-date {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    text-align: right;
-    margin-top: 0.5rem;
-}
-
-.modal-footer {
-  padding: 1rem;
-  border-top: 1px solid var(--border-color);
-  background: var(--bg-secondary);
-}
-
-.modal-links {
-  display: flex;
-  gap: 0.75rem;
-}
-
-.modal-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.6rem 1rem;
-  background: var(--bg-tertiary);
-  color: var(--text-primary);
+  border-radius: 12px;
   text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  font-size: 0.85rem;
-  font-weight: 500;
-  flex: 1;
-  min-height: 40px;
-}
-
-.modal-link:hover {
-  background: var(--accent-primary);
-  color: var(--bg-primary);
-}
-
-.modal-link.disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.modal-link.disabled:hover {
-  background: var(--bg-tertiary);
-  color: var(--text-primary);
-}
-
-/* About Me Modal Styles */
-#about-modal .modal-content {
-  max-width: 500px;
-  max-height: 90vh;
-}
-
-.about-modal-content {
+  font-weight: 600;
   text-align: center;
+  transition: all var(--transition-normal);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.about-modal-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 1.5rem;
-  border: 4px solid var(--accent-primary);
-  box-shadow: 0 0 20px var(--shadow-color);
-}
-
-.about-modal-text {
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.about-modal-name {
-  font-size: 1.5rem;
-  font-weight: 700;
+.btn-view {
+  background: var(--gradient-primary);
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  border: none;
 }
 
-.about-modal-bio {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 400px;
-  margin: 0 auto 1.5rem;
-}
-
-.about-modal-footer {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-color);
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-/* Contact Modal Styles */
-#contact-modal .modal-content {
-  max-width: 800px;
-  max-height: 90vh;
-}
-
-/* Request Modal Form Styles */
-.request-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-weight: 500;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 1rem;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    color: var(--text-primary);
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
-}
-
-#contact-modal .contact-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-#contact-modal .contact-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-}
-
-#contact-modal .contact-card {
-  background: var(--gradient-glass);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  padding: 2rem;
-  border-radius: 24px;
-  text-align: center;
-  border: 2px solid var(--border-color);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#contact-modal .contact-card:hover {
-  transform: translateY(-10px);
+.btn-view:hover {
+  transform: translateY(-2px);
   box-shadow: var(--shadow-glow);
 }
 
-#contact-modal .contact-icon {
-  width: 50px;
-  height: 50px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1rem;
-  font-size: 1.2rem;
-  color: var(--bg-primary);
+.btn-code {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-primary);
 }
 
-/* Responsive breakpoints */
-@media (min-width: 480px) {
+.btn-code:hover {
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .hero-nav {
+    flex-direction: row;
+  }
+  
+  .hero-contact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .hero-cta {
     flex-direction: row;
     justify-content: center;
-  }
-  
-  .btn {
-    width: auto;
   }
   
   .stats {
@@ -1474,225 +1026,126 @@ body::before {
   }
   
   .project-filters {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .filter-btn {
-    width: auto;
-  }
-  
-  .modal-footer {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .modal-links {
-    flex-direction: row;
-  }
-  
-  .cart-sidebar {
-    width: 400px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.2rem;
-  }
-  .hero-subtitle {
-    font-size: 1rem;
+    justify-content: flex-start;
   }
 }
 
 @media (min-width: 768px) {
-  .hero-title {
-    font-size: 3rem;
+  .header {
+    padding: 1rem 3rem;
   }
   
-  .hero-subtitle {
-    font-size: 1.25rem;
+  .hero {
+    padding: 2rem 3rem;
   }
   
-  .section-title {
-    font-size: 2.5rem;
+  .projects-section {
+    padding: 6rem 3rem;
   }
   
+  .projects-scroll {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
   .stats {
     grid-template-columns: repeat(4, 1fr);
   }
   
   .projects-scroll {
-    flex-direction: row;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  
-  .projects-scroll::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .project-card {
-    min-width: 350px;
-    flex-shrink: 0;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .hero {
-    padding: 2rem;
-  }
-  
-  .hero-title {
-    font-size: 3.5rem;
+    padding: 2rem 4rem;
   }
   
   .projects-section {
-    padding: 6rem 2rem;
+    padding: 6rem 4rem;
   }
 }
 
-/* Scroll Animations */
-.fade-in-element {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-element.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Accessibility improvements */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
 
+/* Focus styles for accessibility */
 .nav-item:focus,
 .btn:focus,
 .filter-btn:focus,
-.add-to-cart:focus,
-.cart-button:focus,
 .theme-toggle:focus {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
-@media (prefers-contrast: high) {
-  :root {
-    --border-color: #ffffff;
-    --bg-secondary: #000000;
-    --text-secondary: #ffffff;
-  }
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
-/* Clock Widget */
-.clock-widget {
-  position: fixed;
-  top: 100px;
-  left: 1rem;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 1rem;
-  z-index: 999;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px var(--shadow-color);
-  min-width: 200px;
-  text-align: center;
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--border-primary);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-.clock-time {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent-primary);
-  margin-bottom: 0.5rem;
-  font-family: 'Courier New', monospace;
-}
-
-.clock-date {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-}
-
-.clock-seconds {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  opacity: 0.7;
-}
-
-@media (max-width: 768px) {
-  .clock-widget {
-    position: relative;
-    top: 0;
-    left: 0;
-    margin: 1rem auto;
-    width: fit-content;
-  }
-}
-
-@media print {
-  .header,
-  .cart-container {
-    display: none;
-  }
-  
-  body {
-    padding-top: 0;
-  }
-  
-  .hero {
-    min-height: auto;
-    page-break-after: always;
-  }
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 </style>
 </head>
 
 <body>
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+
   <!-- Header -->
-  <header class="header">
+  <header class="header" id="header">
     <div class="logo">
       <img src="myk_logo.webp" alt="Mike Lab Logo">
-      Mike Lab
+      <span>Mike Lab</span>
     </div>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
       <i class="fas fa-moon"></i>
     </button>
   </header>
 
-  <!-- Clock Widget -->
-  <div class="clock-widget" id="clock-widget">
-    <div class="clock-time" id="clock-time">00:00:00</div>
-    <div class="clock-date" id="clock-date">Loading...</div>
-    <div class="clock-seconds" id="clock-seconds">00</div>
-  </div>
-
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <!-- Mobile-responsive navigation -->
+    <!-- Navigation -->
     <nav class="hero-nav">
-      <a href="#home" class="nav-item active">
+      <a href="#home" class="nav-item active" data-section="home">
         <i class="fas fa-home"></i>
         <span>Home</span>
       </a>
-      <a href="#projects" class="nav-item">
-        <i class="fas fa-briefcase"></i>
+      <a href="#projects" class="nav-item" data-section="projects">
+        <i class="fas fa-code"></i>
         <span>Projects</span>
       </a>
-      <a href="#" class="nav-item" onclick="openAboutModal()">
+      <a href="#about" class="nav-item" data-section="about">
         <i class="fas fa-user"></i>
         <span>About</span>
       </a>
-      <a href="#" class="nav-item" onclick="openContactModal()">
+      <a href="#contact" class="nav-item" data-section="contact">
         <i class="fas fa-envelope"></i>
         <span>Contact</span>
       </a>
@@ -1700,64 +1153,84 @@ body::before {
 
     <!-- Hero Content -->
     <div class="hero-content">
-      <h1 class="hero-title">Welcome to Mike Lab</h1>
+      <h1 class="hero-title">Where Ideas Meet Innovation</h1>
       <p class="hero-subtitle">
-        A Digital Innovation Laboratory. Experimenting with cutting-edge web technologies to solve tomorrow's problems today.
+        Welcome to Mike Lab - a digital laboratory where cutting-edge web technologies 
+        come to life. I craft exceptional digital experiences that solve tomorrow's problems today.
       </p>
-      
+
       <!-- Contact Information -->
       <div class="hero-contact">
-        <p><i class="fas fa-envelope"></i> wrootmike@gmail.com</p>
-        <p><i class="fas fa-phone"></i> 0792618156</p>
+        <p>
+          <i class="fas fa-envelope"></i>
+          <span>garymike07@gmail.com</span>
+        </p>
+        <p>
+          <i class="fas fa-phone"></i>
+          <span>+254 700 000 000</span>
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Nairobi, Kenya</span>
+        </p>
+        <p>
+          <i class="fas fa-globe"></i>
+          <span>Available Worldwide</span>
+        </p>
       </div>
-      
-      <!-- Custom Request Button - Prominent -->
+
+      <!-- Call to Action -->
       <div class="hero-cta">
-        <a href="#" onclick="openRequestModal(event)" class="btn btn-primary btn-custom-request">
+        <a href="#projects" class="btn btn-primary">
           <i class="fas fa-rocket"></i>
-          Request Custom System or App
+          <span>Explore My Work</span>
         </a>
-        <a href="#projects" class="btn btn-secondary">
-          <i class="fas fa-eye"></i>
-          View My Collection
+        <a href="#contact" class="btn btn-custom-request">
+          <i class="fas fa-lightning-bolt"></i>
+          <span>Request Custom Project</span>
+        </a>
+        <a href="#about" class="btn btn-secondary">
+          <i class="fas fa-user-circle"></i>
+          <span>Learn More About Me</span>
         </a>
       </div>
     </div>
 
     <!-- Stats -->
     <div class="stats">
-      <div class="stat-card fade-in-element">
-        <div class="stat-number" data-target="30">0</div>
+      <div class="stat-card">
+        <div class="stat-number">50+</div>
         <div class="stat-label">Projects Completed</div>
-        <div class="stat-trend">+5 this month</div>
+        <div class="stat-trend">↗ Growing Portfolio</div>
       </div>
-      <div class="stat-card fade-in-element">
-        <div class="stat-number" data-target="50">0</div>
-        <div class="stat-label">Happy Clients</div>
-        <div class="stat-trend">98% satisfaction</div>
-      </div>
-      <div class="stat-card fade-in-element">
-        <div class="stat-number" data-target="3">0</div>
+      <div class="stat-card">
+        <div class="stat-number">3+</div>
         <div class="stat-label">Years Experience</div>
-        <div class="stat-trend">Always learning</div>
+        <div class="stat-trend">↗ Continuous Learning</div>
       </div>
-      <div class="stat-card fade-in-element">
-        <div class="stat-number" data-target="24">0</div>
-        <div class="stat-label">Support Hours</div>
-        <div class="stat-trend">7 days a week</div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Client Satisfaction</div>
+        <div class="stat-trend">↗ Quality Focused</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Support Available</div>
+        <div class="stat-trend">↗ Always Here</div>
       </div>
     </div>
   </section>
 
-  <!-- Lab Experiments Section -->
+  <!-- Projects Section -->
   <section class="projects-section" id="projects">
     <div class="section-header">
-      <h2 class="section-title">Lab Experiments</h2>
+      <h2 class="section-title">Featured Projects</h2>
       <p class="section-subtitle">
-        A showcase of active experiments, completed research, and open-source contributions.
+        Explore my latest work showcasing innovative solutions across various domains
       </p>
     </div>
 
+    <!-- Filters -->
     <div class="filters-container">
       <!-- Search -->
       <div class="search-container">
@@ -1766,1677 +1239,412 @@ body::before {
           <input 
             type="text" 
             class="search-input" 
-            placeholder="Search projects..." 
-            id="project-search"
-            autocomplete="off"
+            placeholder="Search projects..."
+            id="searchInput"
           >
-          <button class="search-clear" id="search-clear" aria-label="Clear search">
+          <button class="search-clear" id="searchClear">
             <i class="fas fa-times"></i>
           </button>
         </div>
       </div>
 
-      <!-- Filters -->
+      <!-- Filter Buttons -->
       <div class="project-filters">
         <button class="filter-btn active" data-filter="all">
-          <span>All Experiments</span>
-          <span class="filter-count">30</span>
+          <span>All Projects</span>
+          <span class="filter-count">12</span>
         </button>
-        <button class="filter-btn" data-filter="active">
-          <span>🔬 Active Experiments</span>
-          <span class="filter-count">19</span>
+        <button class="filter-btn" data-filter="live">
+          <span>Live</span>
+          <span class="filter-count">8</span>
         </button>
-        <button class="filter-btn" data-filter="completed">
-          <span>✅ Completed Research</span>
-          <span class="filter-count">1</span>
+        <button class="filter-btn" data-filter="ongoing">
+          <span>In Progress</span>
+          <span class="filter-count">3</span>
         </button>
         <button class="filter-btn" data-filter="concept">
-          <span>💡 Concepts</span>
-          <span class="filter-count">10</span>
-        </button>
-        <button class="filter-btn" data-filter="open-source">
-          <span>📦 Open Source</span>
+          <span>Concepts</span>
           <span class="filter-count">1</span>
         </button>
       </div>
     </div>
 
-    <!-- Projects Container -->
+    <!-- Projects Grid -->
     <div class="projects-container">
-      <div class="projects-scroll" id="projects-scroll">
-        <!-- Project cards will be dynamically inserted here -->
+      <div class="projects-scroll" id="projectsGrid">
+        <!-- Project cards will be dynamically generated -->
       </div>
     </div>
   </section>
 
-  <!-- Shopping Cart -->
-  <div class="cart-container">
-    <button class="cart-button" onclick="toggleCart()" aria-label="Shopping cart">
-      <i class="fas fa-shopping-cart"></i>
-      <span class="cart-count" id="cart-count">0</span>
-    </button>
-
-    <div class="cart-sidebar" id="cart-sidebar">
-      <div class="cart-header">
-        <h3 class="cart-title">Shopping Cart</h3>
-        <button class="cart-close" onclick="toggleCart()" aria-label="Close cart">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      
-      <div class="cart-items" id="cart-items">
-        <div class="cart-empty">
-          <i class="fas fa-shopping-cart"></i>
-          <p>Your cart is empty</p>
-          <p>Add some projects to get started!</p>
-        </div>
-      </div>
-      
-      <div class="cart-footer" id="cart-footer" style="display: none;">
-        <div class="cart-total">
-          <span>Total: </span>
-          <span id="cart-total">KES 0</span>
-        </div>
-        <button class="cart-checkout" onclick="checkout()">
-          <i class="fas fa-credit-card"></i>
-          Proceed to Checkout
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project Modal -->
-  <div class="modal" id="project-modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="modal-title">Project Title</h3>
-        <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-gallery">
-          <img id="modal-main-image" src="" alt="Main project image" class="modal-main-image">
-          <div id="modal-thumbnails" class="modal-thumbnails">
-            <!-- Thumbnails will be dynamically inserted here -->
-          </div>
-        </div>
-        <div id="modal-details" class="modal-details">
-          <!-- Project details will be dynamically inserted here -->
-        </div>
-      </div>
-      <div class="modal-footer">
-        <div class="modal-links">
-          <a href="#" class="modal-link" id="modal-demo" target="_blank" rel="noopener">
-            <i class="fas fa-external-link-alt"></i>
-            <span id="modal-demo-text">Live Demo</span>
-          </a>
-          <a href="#" class="modal-link" id="modal-github" target="_blank" rel="noopener">
-            <i class="fab fa-github"></i>
-            View Code
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- About Me Modal -->
-  <div class="modal" id="about-modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">About Me</h3>
-        <button class="modal-close" onclick="closeAboutModal()" aria-label="Close modal">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="about-modal-content">
-          <img src="myk_logo.webp" alt="Mike - Photo" class="about-modal-image" loading="lazy">
-          <h4 class="about-modal-name">Mike</h4>
-          <p class="about-modal-bio">
-            A passionate and results-driven Full-Stack Developer from Nairobi, Kenya. With 3 years of hands-on experience, I turn innovative ideas into robust, user-friendly web applications. My digital workshop, Mike Lab, is where I experiment with cutting-edge tech to solve tomorrow's problems today.
-          </p>
-          <div class="about-modal-footer">
-            <p>Let's connect and build something amazing together!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact Modal -->
-  <div class="modal" id="contact-modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Get In Touch</h3>
-        <button class="modal-close" onclick="closeContactModal()" aria-label="Close modal">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
-          Ready to bring your vision to life? Let's discuss your project requirements and create something amazing together.
-        </p>
-        <div class="contact-container">
-          <div class="contact-info">
-            <div class="contact-card">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <h3>Email</h3>
-              <p>wrootmike@gmail.com</p>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <h3>Phone</h3>
-              <p>0792618156</p>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <h3>Location</h3>
-              <p>Nairobi, Kenya</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Download Modal -->
-  <div class="modal" id="download-modal">
-    <div class="modal-content" style="max-width: 500px; height: auto;">
-      <div class="modal-header">
-        <h3 class="modal-title">Download Source Code</h3>
-        <button class="modal-close" onclick="closeDownloadModal()" aria-label="Close modal">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="modal-body" style="grid-template-columns: 1fr; overflow-y: auto;">
-          <p>Please enter the secret key to download the source code.</p>
-          <input type="password" id="secret-key-input" placeholder="Secret Key" class="search-input" style="margin-top: 1rem; margin-bottom: 1rem;">
-          <button class="btn btn-primary" onclick="handleDownload()">Submit</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Request Modal -->
-  <div class="modal" id="request-modal">
-    <div class="modal-content" style="max-width: 800px; height: auto;">
-        <div class="modal-header">
-            <h3 class="modal-title">Request a Custom System or App</h3>
-            <button class="modal-close" onclick="closeRequestModal()" aria-label="Close modal">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="modal-body" style="grid-template-columns: 1fr; overflow-y: auto;">
-            <p class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
-                Have a specific idea in mind? Fill out the form below to get a quote.
-            </p>
-            <form id="request-form" class="request-form">
-                <div class="form-group">
-                    <label for="requester-name">Full Name</label>
-                    <input type="text" id="requester-name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="requester-email">Email Address</label>
-                    <input type="email" id="requester-email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="project-type">Project Type</label>
-                    <select id="project-type" name="project-type" required>
-                        <option value="">Select a project type</option>
-                        <option value="web-app">Web Application</option>
-                        <option value="mobile-app">Mobile App</option>
-                        <option value="desktop-app">Desktop App</option>
-                        <option value="automation-script">Automation Script</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="project-description">Project Description</label>
-                    <textarea id="project-description" name="description" rows="4" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="project-budget">Estimated Budget (KES)</label>
-                    <input type="number" id="project-budget" name="budget" placeholder="e.g., 50000">
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
-            </form>
-        </div>
-    </div>
-  </div>
-
-<script>
-// Enhanced project data with 30 projects including MYK project
-const projects = [
-  // Project #1 - MYK Project (LIVE) - Real data extracted
-  {
-    id: 1,
-    title: "MYK Portfolio Platform",
-    description: "A comprehensive portfolio platform showcasing full-stack development expertise with modern design, interactive features, and professional presentation. Features real-time clock, project showcases, and responsive design.",
-    image: "myk_thumb_1.png",
-    thumbnails: [
-      "myk_thumb_1.png",
-      "myk_screenshot_1.webp", 
-      "myk_screenshot_2.webp",
-      "myk_screenshot_3.webp"
-    ],
-    category: "completed",
-    tags: ["JavaScript", "HTML5", "CSS3", "Responsive Design", "Portfolio"],
-    price: 75000,
-    status: "live",
-    date: "2024-01-20",
-    demo: "https://garymike07.github.io/myk",
-    github: "https://github.com/garymike07/myk",
-    features: [
-      "Real-time clock display",
-      "Interactive project showcase",
-      "Professional experience timeline",
-      "Responsive design",
-      "Modern UI/UX",
-      "Blog integration"
-    ]
-  },
-  
-  // Projects #2-10 (ONGOING - 9 projects)
-  {
-    id: 2,
-    title: "E-commerce Analytics Dashboard",
-    description: "Advanced analytics platform for e-commerce businesses with real-time sales tracking, customer insights, and inventory management.",
-    image: "ecommerce_analytics_thumb_1.png",
-    thumbnails: [
-      "ecommerce_analytics_thumb_1.png",
-      "generic_dashboard_1.png",
-      "generic_ecommerce_1.png",
-      "generic_mobile_1.png"
-    ],
-    category: "active",
-    tags: ["React", "Node.js", "MongoDB", "Chart.js", "Analytics"],
-    price: 180000,
-    status: "ongoing",
-    progress: 75,
-    date: "2024-02-01",
-    estimatedCompletion: "2024-03-15",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 3,
-    title: "AI-Powered Content Management",
-    description: "Next-generation CMS with AI content generation, automated SEO optimization, and intelligent content recommendations.",
-    image: "ai_cms_thumb_1.png",
-    thumbnails: [
-      "ai_cms_thumb_1.png",
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png"
-    ],
-    category: "active",
-    tags: ["Next.js", "OpenAI", "PostgreSQL", "TypeScript", "AI"],
-    price: 250000,
-    status: "ongoing",
-    progress: 60,
-    date: "2024-01-15",
-    estimatedCompletion: "2024-04-01",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 4,
-    title: "Blockchain Voting System",
-    description: "Secure, transparent voting platform using blockchain technology for elections and organizational decision-making.",
-    image: "blockchain_voting_thumb_1.png",
-    thumbnails: [
-      "blockchain_voting_thumb_1.png",
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "crypto_exchange_thumb_1.png"
-    ],
-    category: "active",
-    tags: ["Solidity", "Web3.js", "React", "Ethereum", "Blockchain"],
-    price: 320000,
-    status: "ongoing",
-    progress: 45,
-    date: "2024-01-10",
-    estimatedCompletion: "2024-05-01",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 5,
-    title: "Real Estate Management Platform",
-    description: "Comprehensive property management system with tenant portals, maintenance tracking, and financial reporting.",
-    image: "real_estate_thumb_1.png",
-    thumbnails: [
-      "real_estate_thumb_1.png",
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png"
-    ],
-    category: "active",
-    tags: ["Vue.js", "Laravel", "MySQL", "Payment Integration"],
-    price: 200000,
-    status: "ongoing",
-    progress: 80,
-    date: "2024-01-05",
-    estimatedCompletion: "2024-03-01",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 6,
-    title: "Healthcare Appointment System",
-    description: "Digital health platform connecting patients with healthcare providers, featuring appointment scheduling and telemedicine.",
-    image: "healthcare_thumb_1.png",
-    thumbnails: [
-      "healthcare_thumb_1.png",
-      "generic_mobile_1.png",
-      "generic_dashboard_1.png",
-      "generic_ecommerce_1.png"
-    ],
-    category: "active",
-    tags: ["React Native", "Node.js", "Socket.io", "Healthcare"],
-    price: 280000,
-    status: "ongoing",
-    progress: 55,
-    date: "2023-12-20",
-    estimatedCompletion: "2024-04-15",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 7,
-    title: "Educational Learning Platform",
-    description: "Interactive online learning platform with video courses, quizzes, progress tracking, and certification system.",
-    image: "education_thumb_1.png",
-    thumbnails: [
-      "education_thumb_1.png",
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png"
-    ],
-    category: "active",
-    tags: ["Angular", "Firebase", "Video Streaming", "Education"],
-    price: 220000,
-    status: "ongoing",
-    progress: 70,
-    date: "2023-12-15",
-    estimatedCompletion: "2024-03-30",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 8,
-    title: "Restaurant Chain Management",
-    description: "Multi-location restaurant management system with inventory, staff scheduling, and customer loyalty programs.",
-    image: "D7Hlrm6bvV8d.webp",
-    thumbnails: [
-      "D7Hlrm6bvV8d.webp",
-      "LSb4GWyQo1Bf.webp",
-      "2FIZr3eoL2cY.jpg",
-      "7dIikpIMpuNU.jpg"
-    ],
-    category: "active",
-    tags: ["React", "Express", "PostgreSQL", "POS Integration"],
-    price: 190000,
-    status: "ongoing",
-    progress: 65,
-    date: "2023-12-10",
-    estimatedCompletion: "2024-03-20",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 9,
-    title: "Fitness Tracking Mobile App",
-    description: "Comprehensive fitness application with workout plans, nutrition tracking, and social features for fitness enthusiasts.",
-    image: "yxCZ0CK0R3fi.png",
-    thumbnails: [
-      "yxCZ0CK0R3fi.png",
-      "E9e6Dq3wI1rk.jpeg",
-      "hhuDVVubuc5O.png",
-      "xN8fLw0iCNPy.png"
-    ],
-    category: "active",
-    tags: ["React Native", "Redux", "Health APIs", "Mobile"],
-    price: 160000,
-    status: "ongoing",
-    progress: 50,
-    date: "2023-12-05",
-    estimatedCompletion: "2024-04-10",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 10,
-    title: "Supply Chain Tracker",
-    description: "End-to-end supply chain visibility platform with real-time tracking, analytics, and automated reporting.",
-    image: "yAQ6XzL0FRKz.jpg",
-    thumbnails: [
-      "yAQ6XzL0FRKz.jpg",
-      "PjUB8IX0ppVd.png",
-      "TcPDzSh1hBRh.png",
-      "3RSDoFNHzWOt.webp"
-    ],
-    category: "active",
-    tags: ["Vue.js", "Python", "IoT Integration", "Analytics"],
-    price: 300000,
-    status: "ongoing",
-    progress: 40,
-    date: "2023-11-30",
-    estimatedCompletion: "2024-05-15",
-    demo: "#",
-    github: "#"
-  },
-
-  // Projects #11-20 (CONCEPT - 10 projects)
-  {
-    id: 11,
-    title: "Smart City Infrastructure",
-    description: "IoT-based smart city management platform for traffic optimization, energy management, and citizen services.",
-    image: "GwvAVymd4PCg.jpg",
-    thumbnails: [
-      "GwvAVymd4PCg.jpg",
-      "MWQxlmpeK1K0.png",
-      "5GXqvyJKSzNu.png",
-      "G2rcOfnglsnw.png"
-    ],
-    category: "concept",
-    tags: ["IoT", "Machine Learning", "Big Data", "Smart City"],
-    price: 500000,
-    status: "concept",
-    date: "2024-01-25",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 12,
-    title: "Virtual Reality Training Platform",
-    description: "Immersive VR training solutions for corporate education, safety training, and skill development programs.",
-    image: "eY6Imo3yL7NX.jpeg",
-    thumbnails: [
-      "eY6Imo3yL7NX.jpeg",
-      "Y8ppyL1DbZkb.png",
-      "0Q1ytC0BSixE.png",
-      "FhPVq7NCzuup.jpg"
-    ],
-    category: "concept",
-    tags: ["VR", "Unity", "3D Modeling", "Training"],
-    price: 450000,
-    status: "concept",
-    date: "2024-01-20",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 13,
-    title: "Cryptocurrency Exchange",
-    description: "Secure, high-performance cryptocurrency trading platform with advanced charting and portfolio management.",
-    image: "crypto_exchange_thumb_1.png",
-    thumbnails: [
-      "crypto_exchange_thumb_1.png",
-      "generic_dashboard_1.png",
-      "blockchain_voting_thumb_1.png",
-      "generic_mobile_1.png"
-    ],
-    category: "concept",
-    tags: ["Blockchain", "Trading", "Security", "Cryptocurrency"],
-    price: 600000,
-    status: "concept",
-    date: "2024-01-18",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 14,
-    title: "AI Legal Assistant",
-    description: "Artificial intelligence-powered legal research and document analysis platform for law firms and legal professionals.",
-    image: "zRhIsttWXoiu.png",
-    thumbnails: [
-      "zRhIsttWXoiu.png",
-      "W09ohnAI0sjK.png",
-      "9d3DZEsZ3VFb.png",
-      "jOmJXjFkXOkM.png"
-    ],
-    category: "concept",
-    tags: ["AI", "NLP", "Legal Tech", "Machine Learning"],
-    price: 400000,
-    status: "concept",
-    date: "2024-01-15",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 15,
-    title: "Sustainable Energy Monitor",
-    description: "Comprehensive renewable energy monitoring and optimization platform for solar and wind installations.",
-    image: "kpedrz06mAMS.png",
-    thumbnails: [
-      "kpedrz06mAMS.png",
-      "YUKtj2hRIyMp.jpg",
-      "dYsSNuXtPL5m.webp",
-      "hRJlMAu6Twke.png"
-    ],
-    category: "concept",
-    tags: ["Green Tech", "IoT", "Energy", "Sustainability"],
-    price: 350000,
-    status: "concept",
-    date: "2024-01-12",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 16,
-    title: "Mental Health Support Network",
-    description: "Digital mental health platform connecting users with therapists, support groups, and wellness resources.",
-    image: "IIPnrcZN9XHW.jpg",
-    thumbnails: [
-      "IIPnrcZN9XHW.jpg",
-      "xl5t9ydsYM7f.png",
-      "1VyoXA2GJTyE.png",
-      "1V9diCvVBh5B.png"
-    ],
-    category: "concept",
-    tags: ["Healthcare", "Mental Health", "Community", "Wellness"],
-    price: 280000,
-    status: "concept",
-    date: "2024-01-10",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 17,
-    title: "Autonomous Vehicle Fleet",
-    description: "Fleet management system for autonomous vehicles with route optimization and predictive maintenance.",
-    image: "4J2IMlqSpzdT.jpg",
-    thumbnails: [
-      "4J2IMlqSpzdT.jpg",
-      "E1kCZ0mn7qWo.png",
-      "cMkrWsdKwkj3.png",
-      "dclMlyjVy6XV.png"
-    ],
-    category: "concept",
-    tags: ["Autonomous", "Fleet Management", "AI", "Transportation"],
-    price: 750000,
-    status: "concept",
-    date: "2024-01-08",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 18,
-    title: "Agricultural Drone Network",
-    description: "Precision agriculture platform using drone technology for crop monitoring and automated farming operations.",
-    image: "MaP1OJu7hpaE.png",
-    thumbnails: [
-      "MaP1OJu7hpaE.png",
-      "PIQFKQpk59wR.png",
-      "KjK7xvUCoXwy.jpg",
-      "HbC95rW2FrZr.webp"
-    ],
-    category: "concept",
-    tags: ["Drones", "Agriculture", "IoT", "Automation"],
-    price: 420000,
-    status: "concept",
-    date: "2024-01-05",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 19,
-    title: "Space Tourism Booking",
-    description: "Futuristic space tourism booking platform with virtual space tours and astronaut training programs.",
-    image: "space_tourism_thumb_1.png",
-    thumbnails: [
-      "space_tourism_thumb_1.png",
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png"
-    ],
-    category: "concept",
-    tags: ["Space Tech", "Tourism", "VR", "Booking"],
-    price: 800000,
-    status: "concept",
-    date: "2024-01-03",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 20,
-    title: "Quantum Computing Interface",
-    description: "User-friendly interface for quantum computing applications in research and enterprise environments.",
-    image: "KUH4naD6aLeA.jpg",
-    thumbnails: [
-      "KUH4naD6aLeA.jpg",
-      "9HuxpE9kwiLB.png",
-      "U3zbDtHEGHy8.jpg",
-      "9XAvIxXVY7ZX.jpg"
-    ],
-    category: "concept",
-    tags: ["Quantum Computing", "Research", "Interface", "Enterprise"],
-    price: 900000,
-    status: "concept",
-    date: "2024-01-01",
-    demo: "#",
-    github: "#"
-  },
-
-  // Projects #21-30 (UNDER CONSTRUCTION - 10 projects)
-  {
-    id: 21,
-    title: "Social Media Analytics Suite",
-    description: "Comprehensive social media management and analytics platform for brands and marketing agencies.",
-    image: "RH6IvmWFx2q7.png",
-    thumbnails: [
-      "RH6IvmWFx2q7.png",
-      "mzwEUQdu5bUv.png",
-      "dvv9BsbAA5kS.png",
-      "xX93ZXlRd4mn.png"
-    ],
-    category: "active",
-    tags: ["Social Media", "Analytics", "Marketing", "Dashboard"],
-    price: 220000,
-    status: "construction",
-    date: "2024-02-15",
-    expectedLaunch: "Q2 2024",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 22,
-    title: "Cloud Storage Optimization",
-    description: "Intelligent cloud storage management with automated optimization and cost reduction algorithms.",
-    image: "YBwd96nLypnc.png",
-    thumbnails: [
-      "YBwd96nLypnc.png",
-      "1OLxdmj4EQZq.jpg",
-      "7TSfpn9g94Z6.jpg",
-      "SCRl8uk5KKTZ.webp"
-    ],
-    category: "active",
-    tags: ["Cloud", "Storage", "Optimization", "Cost Management"],
-    price: 180000,
-    status: "construction",
-    date: "2024-02-12",
-    expectedLaunch: "Q2 2024",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 23,
-    title: "Gaming Tournament Platform",
-    description: "Esports tournament organization platform with live streaming, bracket management, and prize distribution.",
-    image: "KL1xTz5V2ZPj.png",
-    thumbnails: [
-      "KL1xTz5V2ZPj.png",
-      "e2XUAVek9LeD.png",
-      "ewl4Cy0ekNcz.jpg",
-      "kcxdx7Vru5io.jpg"
-    ],
-    category: "active",
-    tags: ["Gaming", "Esports", "Streaming", "Tournament"],
-    price: 300000,
-    status: "construction",
-    date: "2024-02-10",
-    expectedLaunch: "Q3 2024",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 24,
-    title: "Personal Finance AI Advisor",
-    description: "AI-powered personal finance management with investment recommendations and budget optimization.",
-    image: "oJn2tpJRE9Ty.png",
-    thumbnails: [
-      "oJn2tpJRE9Ty.png",
-      "g0a5EO9TfCs2.png",
-      "jGLBdzBiqnya.webp",
-      "GToq3puoMYk0.jpg"
-    ],
-    category: "active",
-    tags: ["FinTech", "AI", "Personal Finance", "Investment"],
-    price: 250000,
-    status: "construction",
-    date: "2024-02-08",
-    expectedLaunch: "Q2 2024",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 25,
-    title: "Remote Work Collaboration Hub",
-    description: "All-in-one remote work platform with video conferencing, project management, and team collaboration tools.",
-    image: "https://via.placeholder.com/400x200/7c3aed/ffffff?text=Remote+Hub",
-        thumbnails: [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
-    ],
-    category: "active",
-    tags: ["Remote Work", "Collaboration", "Video Conferencing", "Productivity"],
-    price: 280000,
-    status: "construction",
-    date: "2024-02-05",
-    expectedLaunch: "Q3 2024",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 26,
-    title: "Smart Home Automation",
-    description: "Comprehensive smart home control system with AI-powered automation and energy efficiency optimization.",
-    image: "https://via.placeholder.com/400x200/f97316/ffffff?text=Smart+Home",
-        thumbnails: [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
-    ],
-    category: "active",
-    tags: ["IoT", "Smart Home", "Automation", "Energy"],
-    price: 200000,
-    status: "construction",
-    date: "2024-02-03",
-    expectedLaunch: "Q2 2024",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 27,
-    title: "Digital Art Marketplace",
-    description: "NFT marketplace for digital artists with creator tools, royalty management, and community features.",
-    image: "https://via.placeholder.com/400x200/ec4899/ffffff?text=Art+Marketplace",
-        thumbnails: [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
-    ],
-    category: "active",
-    tags: ["NFT", "Digital Art", "Blockchain", "Marketplace"],
-    price: 350000,
-    status: "construction",
-    date: "2024-02-01",
-    expectedLaunch: "Q3 2024",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 28,
-    title: "Weather Prediction AI",
-    description: "Advanced weather forecasting system using machine learning and satellite data for hyper-local predictions.",
-    image: "https://via.placeholder.com/400x200/0891b2/ffffff?text=Weather+AI",
-        thumbnails: [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
-    ],
-    category: "active",
-    tags: ["AI", "Weather", "Machine Learning", "Prediction"],
-    price: 400000,
-    status: "construction",
-    date: "2024-01-30",
-    expectedLaunch: "Q4 2024",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 29,
-    title: "Elderly Care Monitoring",
-    description: "IoT-based elderly care system with health monitoring, emergency alerts, and family connectivity.",
-    image: "https://via.placeholder.com/400x200/16a34a/ffffff?text=Elderly+Care",
-        thumbnails: [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
-    ],
-    category: "active",
-    tags: ["Healthcare", "IoT", "Monitoring", "Elderly Care"],
-    price: 180000,
-    status: "construction",
-    date: "2024-01-28",
-    expectedLaunch: "Q2 2024",
-    demo: "#",
-    github: "#"
-  },
-  {
-    id: 30,
-    title: "Waste Management Optimizer",
-    description: "Smart waste management system with route optimization, recycling tracking, and environmental impact analysis.",
-    image: "https://via.placeholder.com/400x200/84cc16/ffffff?text=Waste+Management",
-        thumbnails: [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
-    ],
-    category: "active",
-    tags: ["Environment", "Optimization", "Smart City", "Sustainability"],
-    price: 320000,
-    status: "construction",
-    date: "2024-01-25",
-    expectedLaunch: "Q3 2024",
-    demo: "#",
-    github: "#"
-  }
-];
-
-// Shopping cart functionality
-let cart = [];
-let currentFilter = 'all';
-let animationObserver;
-
-// Initialize the application
-document.addEventListener('DOMContentLoaded', function() {
-  initializeScrollAnimations();
-  renderProjects();
-  animateStats();
-  initializeEventListeners();
-});
-
-// Event listeners
-function initializeScrollAnimations() {
-  animationObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+  <script>
+    // Enhanced JavaScript with modern features
+    class MikeLab {
+      constructor() {
+        this.init();
+        this.createParticles();
+        this.setupEventListeners();
+        this.loadProjects();
+        this.setupScrollEffects();
       }
-    });
-  }, { threshold: 0.1 });
 
-  // Observe static elements that are present on load
-  const staticElements = document.querySelectorAll('.fade-in-element');
-  staticElements.forEach(el => animationObserver.observe(el));
-}
-
-// Event listeners
-function initializeEventListeners() {
-  // Search functionality
-  const searchInput = document.getElementById('project-search');
-  const searchClear = document.getElementById('search-clear');
-  
-  searchInput.addEventListener('input', handleSearch);
-  searchClear.addEventListener('click', clearSearch);
-  
-  // Filter functionality
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', handleFilter);
-  });
-  
-  // Navigation
-  const navItems = document.querySelectorAll('.nav-item');
-  navItems.forEach(item => {
-    item.addEventListener('click', handleNavigation);
-  });
-  
-  // Modal close on outside click
-  const modal = document.getElementById('project-modal');
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-  
-  // Keyboard navigation
-  document.addEventListener('keydown', handleKeyboard);
-
-  // Request form submission
-  const requestForm = document.getElementById('request-form');
-  if (requestForm) {
-      requestForm.addEventListener('submit', handleRequestSubmission);
-  }
-}
-
-// Stats animation
-function animateStats() {
-  const statNumbers = document.querySelectorAll('.stat-number');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const target = parseInt(entry.target.dataset.target);
-        animateNumber(entry.target, target);
-        observer.unobserve(entry.target);
+      init() {
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        this.updateThemeIcon(savedTheme);
       }
-    });
-  });
-  
-  statNumbers.forEach(stat => observer.observe(stat));
-}
 
-function animateNumber(element, target) {
-  let current = 0;
-  const increment = target / 50;
-  const timer = setInterval(() => {
-    current += increment;
-    if (current >= target) {
-      current = target;
-      clearInterval(timer);
-    }
-    element.textContent = Math.floor(current);
-  }, 30);
-}
+      createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 50;
 
-// Project rendering
-function renderProjects(projectsToRender = projects) {
-  const container = document.getElementById('projects-scroll');
-  
-  if (projectsToRender.length === 0) {
-    container.innerHTML = `
-      <div class="no-results" style="text-align: center; padding: 3rem; color: var(--text-secondary);">
-        <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
-        <h3>No projects found</h3>
-        <p>Try adjusting your search or filter criteria.</p>
-      </div>
-    `;
-    return;
-  }
-  
-  container.innerHTML = projectsToRender.map(project => {
-    const statusIcon = getStatusIcon(project.status);
-    const statusText = getStatusText(project.status);
-    const progressBar = project.status === 'ongoing' ? `
-      <div class="progress-container">
-        <div class="progress-label">
-          <span>Progress</span>
-          <span>${project.progress}%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: ${project.progress}%"></div>
-        </div>
-      </div>
-    ` : '';
-    
-    const actionButton = getActionButton(project);
-    
-    return `
-      <div class="project-card fade-in-element" data-category="${project.category}" onclick="openModal(${project.id})">
-        <div class="project-image">
-          <img class="project-thumbnail" src="${project.image}" alt="${project.title}" loading="lazy">
-          <div class="project-status status-${project.status}">
-            ${statusIcon} ${statusText}
-          </div>
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">${project.title}</h3>
-          <div class="project-date">${formatDate(project.date)}</div>
-          <p class="project-description">${project.description}</p>
-          ${progressBar}
-          <div class="project-tags">
-            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-          </div>
-          <div class="project-footer">
-            <div class="project-price">KES ${project.price.toLocaleString()}</div>
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          particle.style.left = Math.random() * 100 + '%';
+          particle.style.top = Math.random() * 100 + '%';
+          particle.style.animationDelay = Math.random() * 6 + 's';
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      setupEventListeners() {
+        // Theme toggle
+        document.getElementById('themeToggle').addEventListener('click', () => {
+          this.toggleTheme();
+        });
+
+        // Navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.handleNavigation(item);
+          });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchClear = document.getElementById('searchClear');
+
+        searchInput.addEventListener('input', (e) => {
+          this.handleSearch(e.target.value);
+          searchClear.classList.toggle('visible', e.target.value.length > 0);
+        });
+
+        searchClear.addEventListener('click', () => {
+          searchInput.value = '';
+          searchClear.classList.remove('visible');
+          this.handleSearch('');
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            this.handleFilter(btn);
+          });
+        });
+
+        // Smooth scrolling for CTA buttons
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+      }
+
+      setupScrollEffects() {
+        const header = document.getElementById('header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+          const currentScrollY = window.scrollY;
+          
+          // Header background effect
+          if (currentScrollY > 100) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+
+          lastScrollY = currentScrollY;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, observerOptions);
+
+        // Observe project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(30px)';
+          card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          observer.observe(card);
+        });
+      }
+
+      toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        this.updateThemeIcon(newTheme);
+      }
+
+      updateThemeIcon(theme) {
+        const icon = document.querySelector('#themeToggle i');
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      }
+
+      handleNavigation(clickedItem) {
+        // Update active state
+        document.querySelectorAll('.nav-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        clickedItem.classList.add('active');
+
+        // Scroll to section
+        const targetId = clickedItem.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+
+      handleSearch(query) {
+        const projects = document.querySelectorAll('.project-card');
+        const lowerQuery = query.toLowerCase();
+
+        projects.forEach(project => {
+          const title = project.querySelector('.project-title').textContent.toLowerCase();
+          const description = project.querySelector('.project-description').textContent.toLowerCase();
+          const tags = Array.from(project.querySelectorAll('.project-tag'))
+            .map(tag => tag.textContent.toLowerCase())
+            .join(' ');
+
+          const matches = title.includes(lowerQuery) || 
+                         description.includes(lowerQuery) || 
+                         tags.includes(lowerQuery);
+
+          project.style.display = matches ? 'block' : 'none';
+        });
+      }
+
+      handleFilter(clickedBtn) {
+        // Update active filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        clickedBtn.classList.add('active');
+
+        // Filter projects
+        const filter = clickedBtn.getAttribute('data-filter');
+        const projects = document.querySelectorAll('.project-card');
+
+        projects.forEach(project => {
+          const status = project.getAttribute('data-status');
+          const shouldShow = filter === 'all' || status === filter;
+          project.style.display = shouldShow ? 'block' : 'none';
+        });
+      }
+
+      loadProjects() {
+        const projects = [
+          {
+            title: "AI Content Management System",
+            description: "Advanced CMS with AI-powered content generation and smart categorization features.",
+            image: "ai_cms_thumb_1.png",
+            status: "live",
+            tags: ["AI", "CMS", "React", "Node.js"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "Blockchain Voting Platform",
+            description: "Secure and transparent voting system built on blockchain technology.",
+            image: "blockchain_voting_thumb_1.png",
+            status: "live",
+            tags: ["Blockchain", "Web3", "Security", "Democracy"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "Cryptocurrency Exchange",
+            description: "Full-featured crypto trading platform with real-time market data.",
+            image: "crypto_exchange_thumb_1.png",
+            status: "live",
+            tags: ["Crypto", "Trading", "Real-time", "Finance"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "E-commerce Analytics Dashboard",
+            description: "Comprehensive analytics platform for e-commerce businesses.",
+            image: "ecommerce_analytics_thumb_1.png",
+            status: "live",
+            tags: ["Analytics", "E-commerce", "Dashboard", "Data"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "Education Management Platform",
+            description: "Complete learning management system for educational institutions.",
+            image: "education_thumb_1.png",
+            status: "ongoing",
+            tags: ["Education", "LMS", "Learning", "Management"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "Healthcare Management System",
+            description: "Digital health platform for patient management and telemedicine.",
+            image: "healthcare_thumb_1.png",
+            status: "live",
+            tags: ["Healthcare", "Telemedicine", "Management", "Digital Health"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "Real Estate Platform",
+            description: "Modern real estate marketplace with virtual tours and AI recommendations.",
+            image: "real_estate_thumb_1.png",
+            status: "live",
+            tags: ["Real Estate", "Marketplace", "AI", "Virtual Tours"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "Space Tourism Website",
+            description: "Futuristic website for space tourism company with immersive experiences.",
+            image: "space_tourism_thumb_1.png",
+            status: "concept",
+            tags: ["Space", "Tourism", "Futuristic", "Immersive"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "Generic Dashboard Template",
+            description: "Versatile dashboard template for various business applications.",
+            image: "generic_dashboard_1.png",
+            status: "live",
+            tags: ["Dashboard", "Template", "Business", "Versatile"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "E-commerce Store Template",
+            description: "Modern e-commerce template with advanced features and customization.",
+            image: "generic_ecommerce_1.png",
+            status: "live",
+            tags: ["E-commerce", "Template", "Modern", "Customizable"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "Mobile App Interface",
+            description: "Sleek mobile application interface with intuitive user experience.",
+            image: "generic_mobile_1.png",
+            status: "ongoing",
+            tags: ["Mobile", "UI/UX", "Interface", "App"],
+            liveUrl: "#",
+            codeUrl: "#"
+          },
+          {
+            title: "Portfolio Showcase",
+            description: "Personal portfolio website showcasing creative work and projects.",
+            image: "myk_thumb_1.png",
+            status: "ongoing",
+            tags: ["Portfolio", "Showcase", "Creative", "Personal"],
+            liveUrl: "#",
+            codeUrl: "#"
+          }
+        ];
+
+        const projectsGrid = document.getElementById('projectsGrid');
+        projectsGrid.innerHTML = '';
+
+        projects.forEach(project => {
+          const projectCard = this.createProjectCard(project);
+          projectsGrid.appendChild(projectCard);
+        });
+      }
+
+      createProjectCard(project) {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.setAttribute('data-status', project.status);
+
+        const statusClass = `status-${project.status}`;
+        const statusText = project.status.charAt(0).toUpperCase() + project.status.slice(1);
+
+        card.innerHTML = `
+          <img src="${project.image}" alt="${project.title}" class="project-image" loading="lazy">
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">${project.title}</h3>
+              <span class="project-status ${statusClass}">${statusText}</span>
+            </div>
+            <p class="project-description">${project.description}</p>
+            <div class="project-tags">
+              ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+            </div>
             <div class="project-actions">
-                ${actionButton}
-                <button class="add-to-cart" onclick="openDownloadModal(event, ${project.id})" aria-label="Download source for ${project.title}">
-                    <i class="fas fa-code"></i>
-                    Source
-                </button>
+              <a href="${project.liveUrl}" class="project-btn btn-view" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i>
+                <span>View Live</span>
+              </a>
+              <a href="${project.codeUrl}" class="project-btn btn-code" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i>
+                <span>View Code</span>
+              </a>
             </div>
           </div>
-        </div>
-      </div>
-    `;
-  }).join('');
+        `;
 
-  // Observe the newly rendered project cards
-  const dynamicElements = container.querySelectorAll('.project-card.fade-in-element');
-  dynamicElements.forEach(el => {
-    if (animationObserver) {
-      animationObserver.observe(el);
-    }
-  });
-}
-
-function getStatusIcon(status) {
-  const icons = {
-    live: '🟢',
-    ongoing: '🟡',
-    concept: '🔵',
-    construction: '🟠'
-  };
-  return icons[status] || '⚪';
-}
-
-function getStatusText(status) {
-  const texts = {
-    live: 'LIVE',
-    ongoing: 'IN DEVELOPMENT',
-    concept: 'CONCEPT',
-    construction: 'UNDER CONSTRUCTION'
-  };
-  return texts[status] || 'UNKNOWN';
-}
-
-function getActionButton(project) {
-  switch (project.status) {
-    case 'live':
-      return `<button class="add-to-cart" onclick="addToCart(event, ${project.id})" aria-label="Purchase ${project.title}">
-        <i class="fas fa-download"></i>
-        Purchase
-      </button>`;
-    case 'ongoing':
-      return `<button class="add-to-cart" onclick="addToCart(event, ${project.id})" aria-label="Pre-order ${project.title}">
-        <i class="fas fa-clock"></i>
-        Pre-order
-      </button>`;
-    case 'concept':
-      return `<button class="add-to-cart" onclick="addToCart(event, ${project.id})" aria-label="Reserve ${project.title}">
-        <i class="fas fa-bookmark"></i>
-        Reserve
-      </button>`;
-    case 'construction':
-      return `<button class="add-to-cart" onclick="addToCart(event, ${project.id})" aria-label="Join waitlist for ${project.title}">
-        <i class="fas fa-bell"></i>
-        Join Waitlist
-      </button>`;
-    default:
-      return `<button class="add-to-cart" disabled>
-        <i class="fas fa-question"></i>
-        Unavailable
-      </button>`;
-  }
-}
-
-// Search functionality
-function handleSearch(e) {
-  const query = e.target.value.toLowerCase();
-  const searchClear = document.getElementById('search-clear');
-  
-  if (query) {
-    searchClear.classList.add('visible');
-  } else {
-    searchClear.classList.remove('visible');
-  }
-  
-  let filtered = projects;
-  
-  if (currentFilter !== 'all') {
-    filtered = projects.filter(project => project.category === currentFilter);
-  }
-  
-  if (query) {
-    filtered = filtered.filter(project => 
-      project.title.toLowerCase().includes(query) ||
-      project.description.toLowerCase().includes(query) ||
-      project.tags.some(tag => tag.toLowerCase().includes(query))
-    );
-  }
-  
-  renderProjects(filtered);
-}
-
-function clearSearch() {
-  const searchInput = document.getElementById('project-search');
-  const searchClear = document.getElementById('search-clear');
-  
-  searchInput.value = '';
-  searchClear.classList.remove('visible');
-  
-  let filtered = projects;
-  if (currentFilter !== 'all') {
-    filtered = projects.filter(project => project.category === currentFilter);
-  }
-  
-  renderProjects(filtered);
-}
-
-// Filter functionality
-function handleFilter(e) {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  filterBtns.forEach(btn => btn.classList.remove('active'));
-  e.target.closest('.filter-btn').classList.add('active');
-  
-  const filter = e.target.closest('.filter-btn').dataset.filter;
-  currentFilter = filter;
-  
-  if (filter === 'all') {
-    renderProjects();
-  } else if (filter === 'open-source') {
-    const filtered = projects.filter(project => project.github !== "#");
-    renderProjects(filtered);
-  } else {
-    const filtered = projects.filter(project => project.category === filter);
-    renderProjects(filtered);
-  }
-}
-
-// Navigation
-function handleNavigation(e) {
-  e.preventDefault();
-  const navItems = document.querySelectorAll('.nav-item');
-  navItems.forEach(item => item.classList.remove('active'));
-  e.target.closest('.nav-item').classList.add('active');
-  
-  const target = e.target.closest('.nav-item').getAttribute('href');
-  document.querySelector(target).scrollIntoView({ 
-    behavior: 'smooth',
-    block: 'start'
-  });
-}
-
-// Modal functionality
-function openModal(projectId) {
-  const project = projects.find(p => p.id === projectId);
-  if (!project) return;
-  
-  const modal = document.getElementById('project-modal');
-  document.getElementById('modal-title').textContent = project.title;
-  
-  // --- Gallery ---
-  const mainImage = document.getElementById('modal-main-image');
-  mainImage.loading = 'lazy';
-  const thumbnailsContainer = document.getElementById('modal-thumbnails');
-  thumbnailsContainer.innerHTML = ''; // Clear old thumbnails
-  
-  const thumbnails = project.thumbnails && project.thumbnails.length > 0 ? project.thumbnails : [project.image];
-  mainImage.src = thumbnails[0]; // Set initial main image
-  
-  thumbnails.forEach((thumbSrc, index) => {
-    const thumb = document.createElement('img');
-    thumb.src = thumbSrc;
-    thumb.alt = `${project.title} thumbnail ${index + 1}`;
-    thumb.className = 'modal-thumbnail';
-    thumb.loading = 'lazy';
-    if (index === 0) {
-      thumb.classList.add('active');
-    }
-    thumb.onclick = () => selectThumbnail(thumbSrc, index);
-    thumbnailsContainer.appendChild(thumb);
-  });
-
-  // --- Details ---
-  const detailsContainer = document.getElementById('modal-details');
-  const statusIcon = getStatusIcon(project.status);
-  const statusText = getStatusText(project.status);
-  
-  let featuresHTML = '';
-  if (project.features && project.features.length > 0) {
-    featuresHTML = `
-      <h4 class="modal-section-title">Key Features</h4>
-      <ul class="modal-features-list">
-        ${project.features.map(feature => `<li><i class="fas fa-check-circle"></i> ${feature}</li>`).join('')}
-      </ul>
-    `;
-  }
-  
-  let progressHTML = '';
-  if (project.status === 'ongoing' && project.progress) {
-    progressHTML = `
-      <div class="progress-container">
-        <div class="progress-label">
-          <span>Progress</span>
-          <span>${project.progress}%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: ${project.progress}%"></div>
-        </div>
-        ${project.estimatedCompletion ? `<div class="progress-date">Expected: ${formatDate(project.estimatedCompletion)}</div>` : ''}
-      </div>
-    `;
-  }
-
-  detailsContainer.innerHTML = `
-    <div class="modal-status status-${project.status}">
-      ${statusIcon} ${statusText}
-    </div>
-    <p class="modal-description">${project.description}</p>
-
-    <div class="modal-price-tag">
-        <span class="price-label">Price</span>
-        <span class="price-value">KES ${project.price.toLocaleString()}</span>
-    </div>
-
-    ${progressHTML}
-
-    <h4 class="modal-section-title">Skills & Technologies</h4>
-    <div class="project-tags">
-        ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-    </div>
-
-    ${featuresHTML}
-  `;
-  
-  // --- Footer Links ---
-  const demoLink = document.getElementById('modal-demo');
-  const demoText = document.getElementById('modal-demo-text');
-  demoLink.href = project.demo || '#';
-  document.getElementById('modal-github').href = project.github || '#';
-  
-  // Disable links if not available
-  document.getElementById('modal-github').classList.toggle('disabled', !project.github || project.github === '#');
-
-  switch (project.status) {
-    case 'live':
-      demoText.textContent = 'Live Demo';
-      demoLink.classList.remove('disabled');
-      break;
-    case 'ongoing':
-      demoText.textContent = 'Preview (Beta)';
-      demoLink.classList.add('disabled');
-      break;
-    default:
-      demoText.textContent = 'Not Available';
-      demoLink.classList.add('disabled');
-      break;
-  }
-
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function selectThumbnail(imageSrc, index) {
-  document.getElementById('modal-main-image').src = imageSrc;
-  
-  const thumbnails = document.querySelectorAll('.modal-thumbnail');
-  thumbnails.forEach((thumb, i) => {
-    thumb.classList.toggle('active', i === index);
-  });
-}
-
-function closeModal() {
-  document.getElementById('project-modal').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// About Me Modal functionality
-function openAboutModal() {
-  document.getElementById('about-modal').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeAboutModal() {
-  document.getElementById('about-modal').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Contact Modal functionality
-function openContactModal() {
-  document.getElementById('contact-modal').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeContactModal() {
-  document.getElementById('contact-modal').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Download Modal functionality
-let currentProjectIdForDownload = null;
-
-function openDownloadModal(event, projectId) {
-  event.preventDefault();
-  event.stopPropagation();
-
-  currentProjectIdForDownload = projectId;
-
-  const project = projects.find(p => p.id === currentProjectIdForDownload);
-  if (!project || !project.github || project.github === '#') {
-    showNotification('Source code is not available for this project.', 'warning');
-    return;
-  }
-
-  document.getElementById('download-modal').classList.add('active');
-  document.getElementById('secret-key-input').focus();
-}
-
-function closeDownloadModal() {
-  document.getElementById('download-modal').classList.remove('active');
-  document.getElementById('secret-key-input').value = '';
-}
-
-function handleDownload() {
-  const secretKey = document.getElementById('secret-key-input').value;
-  if (secretKey === 'secret') {
-    const project = projects.find(p => p.id === currentProjectIdForDownload);
-    if (project && project.github && project.github !== '#') {
-      const githubUrl = project.github;
-      const downloadUrl = `${githubUrl}/archive/refs/heads/main.zip`;
-      window.open(downloadUrl, '_blank');
-      closeDownloadModal();
-      showNotification('Download starting...', 'success');
-    } else {
-      showNotification('Source code not available for this project.', 'error');
-    }
-  } else {
-    showNotification('Incorrect secret key.', 'error');
-    document.getElementById('secret-key-input').value = '';
-  }
-}
-
-// Shopping cart functionality
-function addToCart(event, projectId) {
-  event.stopPropagation();
-  
-  const project = projects.find(p => p.id === projectId);
-  if (!project) return;
-  
-  const existingItem = cart.find(item => item.id === projectId);
-  
-  if (existingItem) {
-    showNotification('Project already in cart!', 'warning');
-    return;
-  }
-  
-  cart.push({
-    id: project.id,
-    title: project.title,
-    price: project.price,
-    image: project.image,
-    status: project.status
-  });
-  
-  updateCartUI();
-  
-  const actionText = {
-    live: 'Added to cart!',
-    ongoing: 'Pre-order added!',
-    concept: 'Reservation added!',
-    construction: 'Added to waitlist!'
-  };
-  
-  showNotification(actionText[project.status] || 'Added to cart!', 'success');
-}
-
-function removeFromCart(projectId) {
-  cart = cart.filter(item => item.id !== projectId);
-  updateCartUI();
-  showNotification('Removed from cart!', 'info');
-}
-
-function updateCartUI() {
-  const cartCount = document.getElementById('cart-count');
-  const cartItems = document.getElementById('cart-items');
-  const cartFooter = document.getElementById('cart-footer');
-  const cartTotal = document.getElementById('cart-total');
-  
-  cartCount.textContent = cart.length;
-  
-  if (cart.length === 0) {
-    cartItems.innerHTML = `
-      <div class="cart-empty">
-        <i class="fas fa-shopping-cart"></i>
-        <p>Your cart is empty</p>
-        <p>Add some projects to get started!</p>
-      </div>
-    `;
-    cartFooter.style.display = 'none';
-  } else {
-    cartItems.innerHTML = cart.map(item => `
-      <div class="cart-item">
-        <img class="cart-item-image" src="${item.image}" alt="${item.title}">
-        <div class="cart-item-details">
-          <div class="cart-item-title">${item.title}</div>
-          <div class="cart-item-price">KES ${item.price.toLocaleString()}</div>
-          <div style="font-size: 0.8rem; color: var(--text-secondary);">${getStatusText(item.status)}</div>
-        </div>
-        <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Remove ${item.title}">
-          <i class="fas fa-trash"></i>
-        </button>
-      </div>
-    `).join('');
-    
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
-    cartTotal.textContent = `KES ${total.toLocaleString()}`;
-    cartFooter.style.display = 'block';
-  }
-}
-
-function toggleCart() {
-  const cartSidebar = document.getElementById('cart-sidebar');
-  cartSidebar.classList.toggle('open');
-  
-  if (cartSidebar.classList.contains('open')) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
-}
-
-function checkout() {
-  if (cart.length === 0) {
-    showNotification('Your cart is empty!', 'warning');
-    return;
-  }
-  
-  const total = cart.reduce((sum, item) => sum + item.price, 0);
-  const items = cart.map(item => `${item.title} (${getStatusText(item.status)}) - KES ${item.price.toLocaleString()}`).join('\n');
-  
-  const subject = encodeURIComponent('Project Order - Mike Sites Portfolio');
-  const body = encodeURIComponent(`Hi Mike,
-
-I would like to order the following projects:
-
-${items}
-
-Total: KES ${total.toLocaleString()}
-
-Please let me know the next steps for payment and project delivery.
-
-Best regards`);
-  
-  window.open(`mailto:wrootmike@gmail.com?subject=${subject}&body=${body}`);
-  
-  showNotification('Redirecting to email client...', 'info');
-}
-
-// Theme toggle
-function toggleTheme() {
-  const html = document.documentElement;
-  const currentTheme = html.getAttribute('data-theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  
-  html.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-  
-  const themeIcon = document.querySelector('.theme-toggle i');
-  themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-}
-
-// Load saved theme
-function loadTheme() {
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  
-  const themeIcon = document.querySelector('.theme-toggle i');
-  themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-}
-
-// Notification system
-function showNotification(message, type = 'info') {
-  const notification = document.createElement('div');
-  notification.className = `notification notification-${type}`;
-  notification.innerHTML = `
-    <i class="fas fa-${getNotificationIcon(type)}"></i>
-    <span>${message}</span>
-  `;
-  
-  notification.style.cssText = `
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent-primary);
-    box-shadow: 0 10px 30px var(--shadow-color);
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-  `;
-  
-  if (type === 'success') notification.style.borderLeftColor = 'var(--success-color)';
-  if (type === 'warning') notification.style.borderLeftColor = 'var(--warning-color)';
-  if (type === 'error') notification.style.borderLeftColor = 'var(--error-color)';
-  
-  document.body.appendChild(notification);
-  
-  setTimeout(() => {
-    notification.style.transform = 'translateX(0)';
-  }, 100);
-  
-  setTimeout(() => {
-    notification.style.transform = 'translateX(100%)';
-    setTimeout(() => {
-      document.body.removeChild(notification);
-    }, 300);
-  }, 3000);
-}
-
-function getNotificationIcon(type) {
-  const icons = {
-    success: 'check-circle',
-    warning: 'exclamation-triangle',
-    error: 'times-circle',
-    info: 'info-circle'
-  };
-  return icons[type] || 'info-circle';
-}
-
-// Keyboard navigation
-function handleKeyboard(e) {
-  if (e.key === 'Escape') {
-    closeModal();
-    if (document.getElementById('cart-sidebar').classList.contains('open')) {
-      toggleCart();
-    }
-  }
-}
-
-// Request Modal functionality
-function openRequestModal(event) {
-    event.preventDefault();
-    document.getElementById('request-modal').classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeRequestModal() {
-    document.getElementById('request-modal').classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-function handleRequestSubmission(event) {
-    event.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const projectType = form['project-type'].value;
-    const description = form.description.value;
-    const budget = form.budget.value || 'Not specified';
-
-    if (!name || !email || !projectType || !description) {
-        showNotification('Please fill out all required fields.', 'error');
-        return;
+        return card;
+      }
     }
 
-    const subject = `Custom Project Request: ${projectType}`;
-    const body = `
-        New project request from: ${name} (${email})
-        Project Type: ${projectType}
-        Description: ${description}
-        Estimated Budget: KES ${budget}
-    `;
+    // Initialize the application
+    document.addEventListener('DOMContentLoaded', () => {
+      new MikeLab();
+    });
 
-    window.location.href = `mailto:wrootmike@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    showNotification('Thank you! Your request has been prepared for sending.', 'success');
-    closeRequestModal();
-    form.reset();
-}
-
-// Utility functions
-function formatDate(dateString) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { 
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-}
-
-// Clock widget functionality
-function updateClock() {
-  const now = new Date();
-  
-  // Format time with seconds
-  const timeOptions = {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true
-  };
-  
-  // Format date
-  const dateOptions = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  };
-  
-  const timeString = now.toLocaleTimeString('en-US', timeOptions);
-  const dateString = now.toLocaleDateString('en-US', dateOptions);
-  const seconds = now.getSeconds().toString().padStart(2, '0');
-  
-  document.getElementById('clock-time').textContent = timeString;
-  document.getElementById('clock-date').textContent = dateString;
-  document.getElementById('clock-seconds').textContent = `${seconds}s`;
-}
-
-// Initialize clock
-updateClock();
-setInterval(updateClock, 1000);
-
-
-// Initialize theme on load
-loadTheme();
-
-// Smooth scrolling for anchor links
-document.addEventListener('click', function(e) {
-  if (e.target.matches('a[href^="#"]')) {
-    e.preventDefault();
-    const target = document.querySelector(e.target.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+    // Performance optimization
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
       });
     }
-  }
-});
-
-// Touch support for project cards
-if ('ontouchstart' in window) {
-  document.addEventListener('touchstart', function(e) {
-    if (e.target.closest('.project-card')) {
-      e.target.closest('.project-card').style.transform = 'scale(0.98)';
-    }
-  });
-  
-  document.addEventListener('touchend', function(e) {
-    if (e.target.closest('.project-card')) {
-      e.target.closest('.project-card').style.transform = '';
-    }
-  });
-}
-</script>
-
+  </script>
 </body>
 </html>
 
