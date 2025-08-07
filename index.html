@@ -2670,10 +2670,10 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeScrollAnimations();
   renderProjects();
   animateStats();
-  initializeEventListeners();
   loadTheme();
   updateClock();
   setInterval(updateClock, 1000);
+  initializeEventListeners();
 });
 
 // =================================================================================
@@ -3347,19 +3347,6 @@ setInterval(updateClock, 1000);
 // Initialize theme on load
 loadTheme();
 
-// Smooth scrolling for anchor links
-document.addEventListener('click', function(e) {
-  if (e.target.matches('a[href^="#"]')) {
-    e.preventDefault();
-    const target = document.querySelector(e.target.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  }
-});
 
 // Touch support for project cards
 if ('ontouchstart' in window) {
