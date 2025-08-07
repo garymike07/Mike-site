@@ -259,7 +259,7 @@ body::before {
   width: 100%;
 }
 
-.nav-button {
+.nav-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -281,10 +281,9 @@ body::before {
   box-shadow: 
     0 4px 16px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  opacity: 0.7;
 }
 
-.nav-button::before {
+.nav-item::before {
   content: '';
   position: absolute;
   top: 0;
@@ -297,11 +296,11 @@ body::before {
   border-radius: 48px;
 }
 
-.nav-button:hover::before, .nav-button.active::before {
+.nav-item:hover::before, .nav-item.active::before {
   left: 0;
 }
 
-.nav-button:hover, .nav-button.active {
+.nav-item:hover, .nav-item.active {
   color: var(--bg-primary);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 
@@ -309,19 +308,6 @@ body::before {
     0 8px 24px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   border-color: var(--accent-primary);
-  opacity: 1;
-}
-
-.nav-button:hover {
-    transform: translateY(-2px);
-}
-
-.content-section {
-    display: none;
-}
-
-.content-section.active {
-    display: block;
 }
 
 .hero-content {
@@ -1621,6 +1607,52 @@ body::before {
   }
 }
 
+/* Clock Widget */
+.clock-widget {
+  position: fixed;
+  top: 100px;
+  left: 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1rem;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px var(--shadow-color);
+  min-width: 200px;
+  text-align: center;
+}
+
+.clock-time {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+.clock-date {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.clock-seconds {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .clock-widget {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 1rem auto;
+    width: fit-content;
+  }
+}
+
 @media print {
   .header,
   .cart-container {
@@ -1659,17 +1691,6 @@ body::before {
 /* Utility classes */
 .hidden {
   display: none !important;
-}
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
 }
 .text-center {
     text-align: center;
@@ -1710,6 +1731,36 @@ body::before {
   border-top: 1px solid var(--border-color);
 }
 </style>
+<style>
+.nav-item.active {
+    color: var(--bg-primary);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        var(--shadow-glow),
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-primary);
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+</style>
 </head>
 
 <body>
@@ -1721,43 +1772,43 @@ body::before {
       Mike Lab
     </div>
     <nav class="hero-nav">
-      <a href="#home" class="nav-button active" data-section="home" role="button" tabindex="0" aria-label="Navigate to Home section">
+      <a href="#home" class="nav-item active" data-section="home" role="button" tabindex="0" aria-label="Navigate to Home section">
         <i class="fas fa-home" aria-hidden="true"></i>
         <span>Home</span>
       </a>
-      <a href="#blog" class="nav-button" data-section="blog" role="button" tabindex="0" aria-label="Navigate to Blog section">
+      <a href="#blog" class="nav-item" data-section="blog" role="button" tabindex="0" aria-label="Navigate to Blog section">
         <i class="fas fa-blog" aria-hidden="true"></i> <span>Blog</span>
       </a>
-      <a href="#playground" class="nav-button" data-section="playground" role="button" tabindex="0" aria-label="Navigate to Playground section">
+      <a href="#playground" class="nav-item" data-section="playground" role="button" tabindex="0" aria-label="Navigate to Playground section">
         <i class="fas fa-code" aria-hidden="true"></i> <span>Playground</span>
       </a>
-      <a href="#projects" class="nav-button" data-section="projects" role="button" tabindex="0" aria-label="Navigate to Projects section">
+      <a href="#projects" class="nav-item" data-section="projects" role="button" tabindex="0" aria-label="Navigate to Projects section">
         <i class="fas fa-briefcase" aria-hidden="true"></i>
         <span>Projects</span>
       </a>
-      <a href="#tools" class="nav-button" data-section="tools" role="button" tabindex="0" aria-label="Navigate to Tools section">
+      <a href="#tools" class="nav-item" data-section="tools" role="button" tabindex="0" aria-label="Navigate to Tools section">
         <i class="fas fa-tools" aria-hidden="true"></i> <span>Tools</span>
       </a>
-      <a href="#changelog" class="nav-button" data-section="changelog" role="button" tabindex="0" aria-label="Navigate to Changelog section">
+      <a href="#changelog" class="nav-item" data-section="changelog" role="button" tabindex="0" aria-label="Navigate to Changelog section">
         <i class="fas fa-history" aria-hidden="true"></i> <span>Changelog</span>
       </a>
-      <a href="#specs" class="nav-button" data-section="specs" role="button" tabindex="0" aria-label="Navigate to Specs section">
+      <a href="#specs" class="nav-item" data-section="specs" role="button" tabindex="0" aria-label="Navigate to Specs section">
         <i class="fas fa-file-code" aria-hidden="true"></i> <span>Specs</span>
       </a>
-      <a href="#learning" class="nav-button" data-section="learning" role="button" tabindex="0" aria-label="Navigate to Learning section">
+      <a href="#learning" class="nav-item" data-section="learning" role="button" tabindex="0" aria-label="Navigate to Learning section">
         <i class="fas fa-book-open" aria-hidden="true"></i> <span>Learning</span>
       </a>
-      <a href="#github" class="nav-button" data-section="github" role="button" tabindex="0" aria-label="Navigate to GitHub section">
+      <a href="#github" class="nav-item" data-section="github" role="button" tabindex="0" aria-label="Navigate to GitHub section">
         <i class="fab fa-github" aria-hidden="true"></i> <span>GitHub</span>
       </a>
-      <a href="#discuss" class="nav-button" data-section="discuss" role="button" tabindex="0" aria-label="Navigate to Discuss section">
+      <a href="#discuss" class="nav-item" data-section="discuss" role="button" tabindex="0" aria-label="Navigate to Discuss section">
         <i class="fas fa-comments" aria-hidden="true"></i> <span>Discuss</span>
       </a>
-      <a href="#about" class="nav-button" data-section="about" role="button" tabindex="0" aria-label="Navigate to About section">
+      <a href="#about" class="nav-item" data-section="about" role="button" tabindex="0" aria-label="Navigate to About section">
         <i class="fas fa-user" aria-hidden="true"></i>
         <span>About</span>
       </a>
-      <a href="#contact" class="nav-button" data-section="contact" role="button" tabindex="0" aria-label="Navigate to Contact section">
+      <a href="#contact" class="nav-item" data-section="contact" role="button" tabindex="0" aria-label="Navigate to Contact section">
         <i class="fas fa-envelope" aria-hidden="true"></i>
         <span>Contact</span>
       </a>
@@ -1769,8 +1820,16 @@ body::before {
 
   <main id="main">
 
+  <!-- Clock Widget -->
+  <div class="clock-widget" id="clock-widget">
+    <div class="clock-time" id="clock-time">00:00:00</div>
+    <div class="clock-date" id="clock-date">Loading...</div>
+    <div class="clock-seconds" id="clock-seconds">00</div>
+  </div>
+
   <!-- Hero Section -->
   <section class="hero content-section active" id="home">
+
     <!-- Hero Content -->
     <div class="hero-content">
       <h1 class="hero-title">Welcome to Mike Lab</h1>
@@ -2299,15 +2358,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   animateStats();
   loadTheme();
+  updateClock();
+  setInterval(updateClock, 1000);
   initializeEventListeners();
-
-  const hash = window.location.hash.slice(1) || 'home';
-  showSection(hash);
-});
-
-window.addEventListener('hashchange', function() {
-    const hash = window.location.hash.slice(1) || 'home';
-    showSection(hash);
 });
 
 // =================================================================================
@@ -2338,6 +2391,7 @@ function initializeEventListeners() {
     btn.addEventListener('click', handleFilter);
   });
   
+
   // Keyboard navigation
   document.addEventListener('keydown', handleKeyboard);
 
@@ -2467,6 +2521,18 @@ function handleFilter(event) {
   renderProjects(projectsToRender);
 }
 
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hash = window.location.hash.slice(1) || 'home';
+  showSection(hash);
+});
+
+window.addEventListener('hashchange', function() {
+    const hash = window.location.hash.slice(1) || 'home';
+    showSection(hash);
+});
+
 function showSection(sectionId) {
     // Hide all sections
     document.querySelectorAll('.content-section').forEach(section => {
@@ -2480,7 +2546,7 @@ function showSection(sectionId) {
     }
 
     // Update active button state
-    document.querySelectorAll('.nav-button').forEach(btn => {
+    document.querySelectorAll('.nav-item').forEach(btn => {
         btn.classList.remove('active');
     });
 
@@ -2492,13 +2558,6 @@ function showSection(sectionId) {
     // Update page title
     updatePageTitle(sectionId);
     announceSection(sectionId);
-
-    if (sectionId === 'projects') {
-        renderProjects();
-    }
-    if (sectionId === 'github') {
-        fetchGithubActivity();
-    }
 }
 
 function announceSection(sectionName) {
@@ -2510,40 +2569,6 @@ function announceSection(sectionName) {
 
     document.body.appendChild(announcement);
     setTimeout(() => document.body.removeChild(announcement), 1000);
-}
-
-function fetchGithubActivity() {
-    const activityContainer = document.getElementById('github-activity');
-    activityContainer.innerHTML = '<p>Loading GitHub activity...</p>';
-    fetch('https://api.github.com/users/garymike07/events/public')
-        .then(response => response.json())
-        .then(events => {
-            activityContainer.innerHTML = '';
-            const recentEvents = events.slice(0, 5);
-            recentEvents.forEach(event => {
-                const eventElement = document.createElement('div');
-                eventElement.style.background = 'var(--bg-secondary)';
-                eventElement.style.padding = '1rem';
-                eventElement.style.borderRadius = '8px';
-                eventElement.style.marginBottom = '1rem';
-
-                let eventText = '';
-                if (event.type === 'PushEvent') {
-                    eventText = `Pushed to <a href="${event.repo.url.replace('api.','').replace('repos/','')}" target="_blank">${event.repo.name}</a>`;
-                } else if (event.type === 'CreateEvent') {
-                    eventText = `Created repository <a href="${event.repo.url.replace('api.','').replace('repos/','')}" target="_blank">${event.repo.name}</a>`;
-                } else {
-                    eventText = `${event.type} on ${event.repo.name}`;
-                }
-
-                eventElement.innerHTML = `<strong>${event.type.replace('Event','')}</strong>: ${eventText} <br><small>${new Date(event.created_at).toLocaleString()}</small>`;
-                activityContainer.appendChild(eventElement);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching GitHub activity:', error);
-            activityContainer.innerHTML = '<p>Could not load GitHub activity.</p>';
-        });
 }
 
 function updatePageTitle(section) {
@@ -3031,6 +3056,40 @@ function formatDate(dateString) {
     day: 'numeric'
   });
 }
+
+// Clock widget functionality
+function updateClock() {
+  const now = new Date();
+
+  // Format time with seconds
+  const timeOptions = {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  };
+
+  // Format date
+  const dateOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+
+  const timeString = now.toLocaleTimeString('en-US', timeOptions);
+  const dateString = now.toLocaleDateString('en-US', dateOptions);
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+
+  document.getElementById('clock-time').textContent = timeString;
+  document.getElementById('clock-date').textContent = dateString;
+  document.getElementById('clock-seconds').textContent = `${seconds}s`;
+}
+
+// Initialize clock
+updateClock();
+setInterval(updateClock, 1000);
+
 
 // Initialize theme on load
 loadTheme();
