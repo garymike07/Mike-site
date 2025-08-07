@@ -1876,7 +1876,7 @@ body::before {
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="modal-title">Project Title</h3>
-        <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
+        <button class="modal-close" onclick="closeModalById('project-modal')" aria-label="Close modal">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -1911,7 +1911,7 @@ body::before {
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title">About Me</h3>
-        <button class="modal-close" onclick="closeAboutModal()" aria-label="Close modal">
+        <button class="modal-close" onclick="closeModalById('about-modal')" aria-label="Close modal">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -1935,7 +1935,7 @@ body::before {
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title">Get In Touch</h3>
-        <button class="modal-close" onclick="closeContactModal()" aria-label="Close modal">
+        <button class="modal-close" onclick="closeModalById('contact-modal')" aria-label="Close modal">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -1979,7 +1979,7 @@ body::before {
     <div class="modal-content" style="max-width: 500px; height: auto;">
       <div class="modal-header">
         <h3 class="modal-title">Download Source Code</h3>
-        <button class="modal-close" onclick="closeDownloadModal()" aria-label="Close modal">
+        <button class="modal-close" onclick="closeModalById('download-modal')" aria-label="Close modal">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -2128,7 +2128,7 @@ const projects = [
       "blockchain_voting_results.png",
       "blockchain_voting_admin.png"
     ],
-    category: "active",
+    category: "open-source",
     tags: ["Solidity", "Web3.js", "React", "Ethereum", "Blockchain"],
     price: 320000,
     status: "ongoing",
@@ -2205,12 +2205,12 @@ const projects = [
     id: 8,
     title: "Restaurant Chain Management",
     description: "Multi-location restaurant management system with inventory, staff scheduling, and customer loyalty programs.",
-    image: "D7Hlrm6bvV8d.webp",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "D7Hlrm6bvV8d.webp",
-      "LSb4GWyQo1Bf.webp",
-      "2FIZr3eoL2cY.jpg",
-      "7dIikpIMpuNU.jpg"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "active",
     tags: ["React", "Express", "PostgreSQL", "POS Integration"],
@@ -2226,12 +2226,12 @@ const projects = [
     id: 9,
     title: "Fitness Tracking Mobile App",
     description: "Comprehensive fitness application with workout plans, nutrition tracking, and social features for fitness enthusiasts.",
-    image: "yxCZ0CK0R3fi.png",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "yxCZ0CK0R3fi.png",
-      "E9e6Dq3wI1rk.jpeg",
-      "hhuDVVubuc5O.png",
-      "xN8fLw0iCNPy.png"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "active",
     tags: ["React Native", "Redux", "Health APIs", "Mobile"],
@@ -2247,12 +2247,12 @@ const projects = [
     id: 10,
     title: "Supply Chain Tracker",
     description: "End-to-end supply chain visibility platform with real-time tracking, analytics, and automated reporting.",
-    image: "yAQ6XzL0FRKz.jpg",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "yAQ6XzL0FRKz.jpg",
-      "PjUB8IX0ppVd.png",
-      "TcPDzSh1hBRh.png",
-      "3RSDoFNHzWOt.webp"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "active",
     tags: ["Vue.js", "Python", "IoT Integration", "Analytics"],
@@ -2270,12 +2270,12 @@ const projects = [
     id: 11,
     title: "Smart City Infrastructure",
     description: "IoT-based smart city management platform for traffic optimization, energy management, and citizen services.",
-    image: "GwvAVymd4PCg.jpg",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "GwvAVymd4PCg.jpg",
-      "MWQxlmpeK1K0.png",
-      "5GXqvyJKSzNu.png",
-      "G2rcOfnglsnw.png"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "concept",
     tags: ["IoT", "Machine Learning", "Big Data", "Smart City"],
@@ -2289,12 +2289,12 @@ const projects = [
     id: 12,
     title: "Virtual Reality Training Platform",
     description: "Immersive VR training solutions for corporate education, safety training, and skill development programs.",
-    image: "eY6Imo3yL7NX.jpeg",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "eY6Imo3yL7NX.jpeg",
-      "Y8ppyL1DbZkb.png",
-      "0Q1ytC0BSixE.png",
-      "FhPVq7NCzuup.jpg"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "concept",
     tags: ["VR", "Unity", "3D Modeling", "Training"],
@@ -2327,12 +2327,12 @@ const projects = [
     id: 14,
     title: "AI Legal Assistant",
     description: "Artificial intelligence-powered legal research and document analysis platform for law firms and legal professionals.",
-    image: "zRhIsttWXoiu.png",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "zRhIsttWXoiu.png",
-      "W09ohnAI0sjK.png",
-      "9d3DZEsZ3VFb.png",
-      "jOmJXjFkXOkM.png"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "concept",
     tags: ["AI", "NLP", "Legal Tech", "Machine Learning"],
@@ -2346,12 +2346,12 @@ const projects = [
     id: 15,
     title: "Sustainable Energy Monitor",
     description: "Comprehensive renewable energy monitoring and optimization platform for solar and wind installations.",
-    image: "kpedrz06mAMS.png",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "kpedrz06mAMS.png",
-      "YUKtj2hRIyMp.jpg",
-      "dYsSNuXtPL5m.webp",
-      "hRJlMAu6Twke.png"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "concept",
     tags: ["Green Tech", "IoT", "Energy", "Sustainability"],
@@ -2365,12 +2365,12 @@ const projects = [
     id: 16,
     title: "Mental Health Support Network",
     description: "Digital mental health platform connecting users with therapists, support groups, and wellness resources.",
-    image: "IIPnrcZN9XHW.jpg",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "IIPnrcZN9XHW.jpg",
-      "xl5t9ydsYM7f.png",
-      "1VyoXA2GJTyE.png",
-      "1V9diCvVBh5B.png"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "concept",
     tags: ["Healthcare", "Mental Health", "Community", "Wellness"],
@@ -2384,12 +2384,12 @@ const projects = [
     id: 17,
     title: "Autonomous Vehicle Fleet",
     description: "Fleet management system for autonomous vehicles with route optimization and predictive maintenance.",
-    image: "4J2IMlqSpzdT.jpg",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "4J2IMlqSpzdT.jpg",
-      "E1kCZ0mn7qWo.png",
-      "cMkrWsdKwkj3.png",
-      "dclMlyjVy6XV.png"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "concept",
     tags: ["Autonomous", "Fleet Management", "AI", "Transportation"],
@@ -2403,12 +2403,12 @@ const projects = [
     id: 18,
     title: "Agricultural Drone Network",
     description: "Precision agriculture platform using drone technology for crop monitoring and automated farming operations.",
-    image: "MaP1OJu7hpaE.png",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "MaP1OJu7hpaE.png",
-      "PIQFKQpk59wR.png",
-      "KjK7xvUCoXwy.jpg",
-      "HbC95rW2FrZr.webp"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "concept",
     tags: ["Drones", "Agriculture", "IoT", "Automation"],
@@ -2441,12 +2441,12 @@ const projects = [
     id: 20,
     title: "Quantum Computing Interface",
     description: "User-friendly interface for quantum computing applications in research and enterprise environments.",
-    image: "KUH4naD6aLeA.jpg",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "KUH4naD6aLeA.jpg",
-      "9HuxpE9kwiLB.png",
-      "U3zbDtHEGHy8.jpg",
-      "9XAvIxXVY7ZX.jpg"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "concept",
     tags: ["Quantum Computing", "Research", "Interface", "Enterprise"],
@@ -2462,12 +2462,12 @@ const projects = [
     id: 21,
     title: "Social Media Analytics Suite",
     description: "Comprehensive social media management and analytics platform for brands and marketing agencies.",
-    image: "RH6IvmWFx2q7.png",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "RH6IvmWFx2q7.png",
-      "mzwEUQdu5bUv.png",
-      "dvv9BsbAA5kS.png",
-      "xX93ZXlRd4mn.png"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "active",
     tags: ["Social Media", "Analytics", "Marketing", "Dashboard"],
@@ -2482,12 +2482,12 @@ const projects = [
     id: 22,
     title: "Cloud Storage Optimization",
     description: "Intelligent cloud storage management with automated optimization and cost reduction algorithms.",
-    image: "YBwd96nLypnc.png",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "YBwd96nLypnc.png",
-      "1OLxdmj4EQZq.jpg",
-      "7TSfpn9g94Z6.jpg",
-      "SCRl8uk5KKTZ.webp"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "active",
     tags: ["Cloud", "Storage", "Optimization", "Cost Management"],
@@ -2502,12 +2502,12 @@ const projects = [
     id: 23,
     title: "Gaming Tournament Platform",
     description: "Esports tournament organization platform with live streaming, bracket management, and prize distribution.",
-    image: "KL1xTz5V2ZPj.png",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "KL1xTz5V2ZPj.png",
-      "e2XUAVek9LeD.png",
-      "ewl4Cy0ekNcz.jpg",
-      "kcxdx7Vru5io.jpg"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "active",
     tags: ["Gaming", "Esports", "Streaming", "Tournament"],
@@ -2522,12 +2522,12 @@ const projects = [
     id: 24,
     title: "Personal Finance AI Advisor",
     description: "AI-powered personal finance management with investment recommendations and budget optimization.",
-    image: "oJn2tpJRE9Ty.png",
+    image: "generic_dashboard_1.png",
     thumbnails: [
-      "oJn2tpJRE9Ty.png",
-      "g0a5EO9TfCs2.png",
-      "jGLBdzBiqnya.webp",
-      "GToq3puoMYk0.jpg"
+      "generic_dashboard_1.png",
+      "generic_mobile_1.png",
+      "generic_ecommerce_1.png",
+      "ai_cms_thumb_1.png"
     ],
     category: "active",
     tags: ["FinTech", "AI", "Personal Finance", "Investment"],
@@ -2772,6 +2772,84 @@ function animateNumber(element, target) {
     }
     element.textContent = Math.floor(current);
   }, 30);
+}
+
+function handleSearch(event) {
+  const searchTerm = event.target.value.toLowerCase();
+  const clearButton = document.getElementById('search-clear');
+
+  const projectsToRender = projects.filter(project =>
+    project.title.toLowerCase().includes(searchTerm) ||
+    project.description.toLowerCase().includes(searchTerm) ||
+    project.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+  );
+  renderProjects(projectsToRender);
+
+  if (searchTerm) {
+    clearButton.classList.add('visible');
+  } else {
+    clearButton.classList.remove('visible');
+  }
+}
+
+function clearSearch() {
+  const searchInput = document.getElementById('project-search');
+  searchInput.value = '';
+  renderProjects(projects);
+  document.getElementById('search-clear').classList.remove('visible');
+}
+
+function handleFilter(event) {
+  const filter = event.currentTarget.dataset.filter;
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.currentTarget.classList.add('active');
+
+  currentFilter = filter;
+
+  let projectsToRender;
+  if (filter === 'all') {
+    projectsToRender = projects;
+  } else if (filter === 'active') {
+    projectsToRender = projects.filter(p => p.status === 'ongoing' || p.status === 'construction');
+  } else if (filter === 'completed') {
+    projectsToRender = projects.filter(p => p.status === 'live');
+  } else {
+    projectsToRender = projects.filter(p => p.category === filter);
+  }
+
+  renderProjects(projectsToRender);
+}
+
+function handleNavigation(event) {
+  const targetId = event.currentTarget.getAttribute('href');
+  if (!targetId || targetId === '#') {
+    return;
+  }
+  event.preventDefault();
+
+  const targetElement = document.querySelector(targetId);
+  if (targetElement) {
+    targetElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    event.currentTarget.classList.add('active');
+  }
+}
+
+function openAboutModal() {
+  openModalById('about-modal');
+}
+
+function openContactModal() {
+  openModalById('contact-modal');
 }
 
 function renderProjects(projectsToRender = projects) {
@@ -3609,8 +3687,7 @@ document.querySelector("h1").addEventListener("click", () => {
       </head>
       <body>
         ${htmlCode}
-        <script>${jsCode}<
-/script>
+        <script>${jsCode}<` + `/script>
       </body>
       </html>
     `);
