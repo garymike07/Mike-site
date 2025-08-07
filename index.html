@@ -1996,7 +1996,7 @@ body::before {
     <div class="modal-content" style="max-width: 800px; height: auto;">
         <div class="modal-header">
             <h3 class="modal-title">Request a Custom System or App</h3>
-            <button class="modal-close" onclick="closeRequestModal()" aria-label="Close modal">
+        <button class="modal-close" onclick="closeModalById('request-modal')" aria-label="Close modal">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -2039,6 +2039,10 @@ body::before {
   </div>
 
 <script>
+// =================================================================================
+// MAIN APP LOGIC
+// =================================================================================
+
 // Enhanced project data with 30 projects including MYK project
 const projects = [
   // Project #1 - MYK Project (LIVE) - Real data extracted
@@ -2667,9 +2671,15 @@ document.addEventListener('DOMContentLoaded', function() {
   renderProjects();
   animateStats();
   initializeEventListeners();
+  loadTheme();
+  updateClock();
+  setInterval(updateClock, 1000);
 });
 
-// Event listeners
+// =================================================================================
+// INITIALIZATION AND EVENT LISTENERS
+// =================================================================================
+
 function initializeScrollAnimations() {
   animationObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -2680,38 +2690,23 @@ function initializeScrollAnimations() {
     });
   }, { threshold: 0.1 });
 
-  // Observe static elements that are present on load
   const staticElements = document.querySelectorAll('.fade-in-element');
   staticElements.forEach(el => animationObserver.observe(el));
 }
 
-// Event listeners
 function initializeEventListeners() {
-  // Search functionality
-  const searchInput = document.getElementById('project-search');
-  const searchClear = document.getElementById('search-clear');
+  // Search
+  document.getElementById('project-search').addEventListener('input', handleSearch);
+  document.getElementById('search-clear').addEventListener('click', clearSearch);
   
-  searchInput.addEventListener('input', handleSearch);
-  searchClear.addEventListener('click', clearSearch);
-  
-  // Filter functionality
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  filterBtns.forEach(btn => {
+  // Filters
+  document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', handleFilter);
   });
   
   // Navigation
-  const navItems = document.querySelectorAll('.nav-item');
-  navItems.forEach(item => {
+  document.querySelectorAll('.nav-item[href^="#"]').forEach(item => {
     item.addEventListener('click', handleNavigation);
-  });
-  
-  // Modal close on outside click
-  const modal = document.getElementById('project-modal');
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-      closeModal();
-    }
   });
   
   // Keyboard navigation
@@ -2722,9 +2717,34 @@ function initializeEventListeners() {
   if (requestForm) {
       requestForm.addEventListener('submit', handleRequestSubmission);
   }
+
+  // Touch support for project cards
+  if ('ontouchstart' in window) {
+    document.addEventListener('touchstart', function(e) {
+      if (e.target.closest('.project-card')) {
+        e.target.closest('.project-card').style.transform = 'scale(0.98)';
+      }
+    });
+
+    document.addEventListener('touchend', function(e) {
+      if (e.target.closest('.project-card')) {
+        e.target.closest('.project-card').style.transform = '';
+      }
+    });
+  }
+
+  // Unified modal close handler
+  document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('modal')) {
+        closeModalById(event.target.id);
+    }
+  });
 }
 
-// Stats animation
+// =================================================================================
+// UI AND ANIMATION
+// =================================================================================
+
 function animateStats() {
   const statNumbers = document.querySelectorAll('.stat-number');
   
@@ -2754,7 +2774,6 @@ function animateNumber(element, target) {
   }, 30);
 }
 
-// Project rendering
 function renderProjects(projectsToRender = projects) {
   const container = document.getElementById('projects-scroll');
   
@@ -2787,7 +2806,7 @@ function renderProjects(projectsToRender = projects) {
     const actionButton = getActionButton(project);
     
     return `
-      <div class="project-card fade-in-element" data-category="${project.category}" onclick="openModal(${project.id})">
+      <div class="project-card fade-in-element" data-category="${project.category}" onclick="openProjectModal(${project.id})">
         <div class="project-image">
           <img class="project-thumbnail" src="${project.image}" alt="${project.title}" loading="lazy">
           <div class="project-status status-${project.status}">
@@ -2806,7 +2825,7 @@ function renderProjects(projectsToRender = projects) {
             <div class="project-price">KES ${project.price.toLocaleString()}</div>
             <div class="project-actions">
                 ${actionButton}
-                <button class="add-to-cart" onclick="openDownloadModal(event, ${project.id})" aria-label="Download source for ${project.title}">
+                <button class="add-to-cart" onclick="openModalById('download-modal', event, ${project.id})" aria-label="Download source for ${project.title}">
                     <i class="fas fa-code"></i>
                     Source
                 </button>
@@ -2817,7 +2836,6 @@ function renderProjects(projectsToRender = projects) {
     `;
   }).join('');
 
-  // Observe the newly rendered project cards
   const dynamicElements = container.querySelectorAll('.project-card.fade-in-element');
   dynamicElements.forEach(el => {
     if (animationObserver) {
@@ -2827,148 +2845,90 @@ function renderProjects(projectsToRender = projects) {
 }
 
 function getStatusIcon(status) {
-  const icons = {
-    live: '🟢',
-    ongoing: '🟡',
-    concept: '🔵',
-    construction: '🟠'
-  };
+  const icons = { live: '🟢', ongoing: '🟡', concept: '🔵', construction: '🟠' };
   return icons[status] || '⚪';
 }
 
 function getStatusText(status) {
-  const texts = {
-    live: 'LIVE',
-    ongoing: 'IN DEVELOPMENT',
-    concept: 'CONCEPT',
-    construction: 'UNDER CONSTRUCTION'
-  };
+  const texts = { live: 'LIVE', ongoing: 'IN DEVELOPMENT', concept: 'CONCEPT', construction: 'UNDER CONSTRUCTION' };
   return texts[status] || 'UNKNOWN';
 }
 
 function getActionButton(project) {
-  switch (project.status) {
-    case 'live':
-      return `<button class="add-to-cart" onclick="addToCart(event, ${project.id})" aria-label="Purchase ${project.title}">
-        <i class="fas fa-download"></i>
-        Purchase
-      </button>`;
-    case 'ongoing':
-      return `<button class="add-to-cart" onclick="addToCart(event, ${project.id})" aria-label="Pre-order ${project.title}">
-        <i class="fas fa-clock"></i>
-        Pre-order
-      </button>`;
-    case 'concept':
-      return `<button class="add-to-cart" onclick="addToCart(event, ${project.id})" aria-label="Reserve ${project.title}">
-        <i class="fas fa-bookmark"></i>
-        Reserve
-      </button>`;
-    case 'construction':
-      return `<button class="add-to-cart" onclick="addToCart(event, ${project.id})" aria-label="Join waitlist for ${project.title}">
-        <i class="fas fa-bell"></i>
-        Join Waitlist
-      </button>`;
-    default:
-      return `<button class="add-to-cart" disabled>
-        <i class="fas fa-question"></i>
-        Unavailable
-      </button>`;
+  const actions = {
+    live: { label: 'Purchase', icon: 'fa-download' },
+    ongoing: { label: 'Pre-order', icon: 'fa-clock' },
+    concept: { label: 'Reserve', icon: 'fa-bookmark' },
+    construction: { label: 'Join Waitlist', icon: 'fa-bell' }
+  };
+  const action = actions[project.status];
+  
+  if (action) {
+    return `<button class="add-to-cart" onclick="addToCart(event, ${project.id})" aria-label="${action.label} ${project.title}">
+      <i class="fas ${action.icon}"></i>
+      ${action.label}
+    </button>`;
   }
+  return `<button class="add-to-cart" disabled><i class="fas fa-question"></i> Unavailable</button>`;
 }
 
-// Search functionality
-function handleSearch(e) {
-  const query = e.target.value.toLowerCase();
-  const searchClear = document.getElementById('search-clear');
-  
-  if (query) {
-    searchClear.classList.add('visible');
-  } else {
-    searchClear.classList.remove('visible');
-  }
-  
-  let filtered = projects;
-  
-  if (currentFilter !== 'all') {
-    filtered = projects.filter(project => project.category === currentFilter);
-  }
-  
-  if (query) {
-    filtered = filtered.filter(project => 
-      project.title.toLowerCase().includes(query) ||
-      project.description.toLowerCase().includes(query) ||
-      project.tags.some(tag => tag.toLowerCase().includes(query))
-    );
-  }
-  
-  renderProjects(filtered);
+// =================================================================================
+// MODAL HANDLING
+// =================================================================================
+
+function openModalById(modalId, event, downloadProjectId = null) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Special handling for certain modals
+    if (modalId === 'download-modal' && downloadProjectId) {
+        currentProjectIdForDownload = downloadProjectId;
+        const project = projects.find(p => p.id === currentProjectIdForDownload);
+        if (!project || !project.github || project.github === '#') {
+            closeModalById(modalId);
+            showNotification('Source code is not available for this project.', 'warning');
+            return;
+        }
+        document.getElementById('secret-key-input').focus();
+    } else if (modalId === 'codePlaygroundModal') {
+        runCode();
+    } else if (modalId === 'githubModal') {
+        fetchGithubActivity();
+    }
 }
 
-function clearSearch() {
-  const searchInput = document.getElementById('project-search');
-  const searchClear = document.getElementById('search-clear');
-  
-  searchInput.value = '';
-  searchClear.classList.remove('visible');
-  
-  let filtered = projects;
-  if (currentFilter !== 'all') {
-    filtered = projects.filter(project => project.category === currentFilter);
-  }
-  
-  renderProjects(filtered);
+function closeModalById(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('active');
+    }
+    // Only restore scroll if no other modals are active
+    if (document.querySelectorAll('.modal.active').length === 0) {
+        document.body.style.overflow = '';
+    }
 }
 
-// Filter functionality
-function handleFilter(e) {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  filterBtns.forEach(btn => btn.classList.remove('active'));
-  e.target.closest('.filter-btn').classList.add('active');
-  
-  const filter = e.target.closest('.filter-btn').dataset.filter;
-  currentFilter = filter;
-  
-  if (filter === 'all') {
-    renderProjects();
-  } else if (filter === 'open-source') {
-    const filtered = projects.filter(project => project.github !== "#");
-    renderProjects(filtered);
-  } else {
-    const filtered = projects.filter(project => project.category === filter);
-    renderProjects(filtered);
-  }
-}
-
-// Navigation
-function handleNavigation(e) {
-  e.preventDefault();
-  const navItems = document.querySelectorAll('.nav-item');
-  navItems.forEach(item => item.classList.remove('active'));
-  e.target.closest('.nav-item').classList.add('active');
-  
-  const target = e.target.closest('.nav-item').getAttribute('href');
-  document.querySelector(target).scrollIntoView({ 
-    behavior: 'smooth',
-    block: 'start'
-  });
-}
-
-// Modal functionality
-function openModal(projectId) {
+function openProjectModal(projectId) {
   const project = projects.find(p => p.id === projectId);
   if (!project) return;
   
-  const modal = document.getElementById('project-modal');
   document.getElementById('modal-title').textContent = project.title;
   
-  // --- Gallery ---
   const mainImage = document.getElementById('modal-main-image');
   mainImage.loading = 'lazy';
   const thumbnailsContainer = document.getElementById('modal-thumbnails');
-  thumbnailsContainer.innerHTML = ''; // Clear old thumbnails
+  thumbnailsContainer.innerHTML = '';
   
   const thumbnails = project.thumbnails && project.thumbnails.length > 0 ? project.thumbnails : [project.image];
-  mainImage.src = thumbnails[0]; // Set initial main image
+  mainImage.src = thumbnails[0];
   
   thumbnails.forEach((thumbSrc, index) => {
     const thumb = document.createElement('img');
@@ -2976,165 +2936,74 @@ function openModal(projectId) {
     thumb.alt = `${project.title} thumbnail ${index + 1}`;
     thumb.className = 'modal-thumbnail';
     thumb.loading = 'lazy';
-    if (index === 0) {
-      thumb.classList.add('active');
-    }
+    if (index === 0) thumb.classList.add('active');
     thumb.onclick = () => selectThumbnail(thumbSrc, index);
     thumbnailsContainer.appendChild(thumb);
   });
 
-  // --- Details ---
   const detailsContainer = document.getElementById('modal-details');
-  const statusIcon = getStatusIcon(project.status);
-  const statusText = getStatusText(project.status);
+  let featuresHTML = project.features ? `
+    <h4 class="modal-section-title">Key Features</h4>
+    <ul class="modal-features-list">
+      ${project.features.map(feature => `<li><i class="fas fa-check-circle"></i> ${feature}</li>`).join('')}
+    </ul>` : '';
   
-  let featuresHTML = '';
-  if (project.features && project.features.length > 0) {
-    featuresHTML = `
-      <h4 class="modal-section-title">Key Features</h4>
-      <ul class="modal-features-list">
-        ${project.features.map(feature => `<li><i class="fas fa-check-circle"></i> ${feature}</li>`).join('')}
-      </ul>
-    `;
-  }
-  
-  let progressHTML = '';
-  if (project.status === 'ongoing' && project.progress) {
-    progressHTML = `
-      <div class="progress-container">
-        <div class="progress-label">
-          <span>Progress</span>
-          <span>${project.progress}%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: ${project.progress}%"></div>
-        </div>
-        ${project.estimatedCompletion ? `<div class="progress-date">Expected: ${formatDate(project.estimatedCompletion)}</div>` : ''}
-      </div>
-    `;
-  }
+  let progressHTML = (project.status === 'ongoing' && project.progress) ? `
+    <div class="progress-container">
+      <div class="progress-label"><span>Progress</span><span>${project.progress}%</span></div>
+      <div class="progress-bar"><div class="progress-fill" style="width: ${project.progress}%"></div></div>
+      ${project.estimatedCompletion ? `<div class="progress-date">Expected: ${formatDate(project.estimatedCompletion)}</div>` : ''}
+    </div>` : '';
 
   detailsContainer.innerHTML = `
-    <div class="modal-status status-${project.status}">
-      ${statusIcon} ${statusText}
-    </div>
+    <div class="modal-status status-${project.status}">${getStatusIcon(project.status)} ${getStatusText(project.status)}</div>
     <p class="modal-description">${project.description}</p>
-
     <div class="modal-price-tag">
         <span class="price-label">Price</span>
         <span class="price-value">KES ${project.price.toLocaleString()}</span>
     </div>
-
     ${progressHTML}
-
     <h4 class="modal-section-title">Skills & Technologies</h4>
-    <div class="project-tags">
-        ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-    </div>
-
+    <div class="project-tags">${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
     ${featuresHTML}
   `;
   
-  // --- Footer Links ---
   const demoLink = document.getElementById('modal-demo');
   const demoText = document.getElementById('modal-demo-text');
   demoLink.href = project.demo || '#';
   document.getElementById('modal-github').href = project.github || '#';
   
-  // Disable links if not available
   document.getElementById('modal-github').classList.toggle('disabled', !project.github || project.github === '#');
+  const isDemoDisabled = !project.demo || project.demo === '#' || project.status !== 'live';
+  demoLink.classList.toggle('disabled', isDemoDisabled);
+  demoText.textContent = project.status === 'live' ? 'Live Demo' : (project.status === 'ongoing' ? 'Preview (Beta)' : 'Not Available');
 
-  switch (project.status) {
-    case 'live':
-      demoText.textContent = 'Live Demo';
-      demoLink.classList.remove('disabled');
-      break;
-    case 'ongoing':
-      demoText.textContent = 'Preview (Beta)';
-      demoLink.classList.add('disabled');
-      break;
-    default:
-      demoText.textContent = 'Not Available';
-      demoLink.classList.add('disabled');
-      break;
-  }
-
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  openModalById('project-modal');
 }
 
 function selectThumbnail(imageSrc, index) {
   document.getElementById('modal-main-image').src = imageSrc;
-  
-  const thumbnails = document.querySelectorAll('.modal-thumbnail');
-  thumbnails.forEach((thumb, i) => {
+  document.querySelectorAll('.modal-thumbnail').forEach((thumb, i) => {
     thumb.classList.toggle('active', i === index);
   });
 }
 
-function closeModal() {
-  document.getElementById('project-modal').classList.remove('active');
-  document.body.style.overflow = '';
-}
+// =================================================================================
+// FEATURE-SPECIFIC LOGIC
+// =================================================================================
 
-// About Me Modal functionality
-function openAboutModal() {
-  document.getElementById('about-modal').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeAboutModal() {
-  document.getElementById('about-modal').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Contact Modal functionality
-function openContactModal() {
-  document.getElementById('contact-modal').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeContactModal() {
-  document.getElementById('contact-modal').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Download Modal functionality
 let currentProjectIdForDownload = null;
-
-function openDownloadModal(event, projectId) {
-  event.preventDefault();
-  event.stopPropagation();
-
-  currentProjectIdForDownload = projectId;
-
-  const project = projects.find(p => p.id === currentProjectIdForDownload);
-  if (!project || !project.github || project.github === '#') {
-    showNotification('Source code is not available for this project.', 'warning');
-    return;
-  }
-
-  document.getElementById('download-modal').classList.add('active');
-  document.getElementById('secret-key-input').focus();
-}
-
-function closeDownloadModal() {
-  document.getElementById('download-modal').classList.remove('active');
-  document.getElementById('secret-key-input').value = '';
-}
 
 function handleDownload() {
   const secretKey = document.getElementById('secret-key-input').value;
   if (secretKey === 'secret') {
     const project = projects.find(p => p.id === currentProjectIdForDownload);
     if (project && project.github && project.github !== '#') {
-      const githubUrl = project.github;
-      const downloadUrl = `${githubUrl}/archive/refs/heads/main.zip`;
-      window.open(downloadUrl, '_blank');
-      closeDownloadModal();
+      window.open(`${project.github}/archive/refs/heads/main.zip`, '_blank');
+      closeModalById('download-modal');
       showNotification('Download starting...', 'success');
     } else {
-      showNotification('Source code not available for this project.', 'error');
+      showNotification('Source code not available.', 'error');
     }
   } else {
     showNotification('Incorrect secret key.', 'error');
@@ -3142,37 +3011,17 @@ function handleDownload() {
   }
 }
 
-// Shopping cart functionality
 function addToCart(event, projectId) {
   event.stopPropagation();
-  
   const project = projects.find(p => p.id === projectId);
   if (!project) return;
-  
-  const existingItem = cart.find(item => item.id === projectId);
-  
-  if (existingItem) {
+  if (cart.find(item => item.id === projectId)) {
     showNotification('Project already in cart!', 'warning');
     return;
   }
-  
-  cart.push({
-    id: project.id,
-    title: project.title,
-    price: project.price,
-    image: project.image,
-    status: project.status
-  });
-  
+  cart.push({ ...project });
   updateCartUI();
-  
-  const actionText = {
-    live: 'Added to cart!',
-    ongoing: 'Pre-order added!',
-    concept: 'Reservation added!',
-    construction: 'Added to waitlist!'
-  };
-  
+  const actionText = { live: 'Added to cart!', ongoing: 'Pre-order added!', concept: 'Reservation added!', construction: 'Added to waitlist!' };
   showNotification(actionText[project.status] || 'Added to cart!', 'success');
 }
 
@@ -3191,13 +3040,7 @@ function updateCartUI() {
   cartCount.textContent = cart.length;
   
   if (cart.length === 0) {
-    cartItems.innerHTML = `
-      <div class="cart-empty">
-        <i class="fas fa-shopping-cart"></i>
-        <p>Your cart is empty</p>
-        <p>Add some projects to get started!</p>
-      </div>
-    `;
+    cartItems.innerHTML = `<div class="cart-empty"><i class="fas fa-shopping-cart"></i><p>Your cart is empty</p><p>Add some projects to get started!</p></div>`;
     cartFooter.style.display = 'none';
   } else {
     cartItems.innerHTML = cart.map(item => `
@@ -3208,9 +3051,7 @@ function updateCartUI() {
           <div class="cart-item-price">KES ${item.price.toLocaleString()}</div>
           <div style="font-size: 0.8rem; color: var(--text-secondary);">${getStatusText(item.status)}</div>
         </div>
-        <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Remove ${item.title}">
-          <i class="fas fa-trash"></i>
-        </button>
+        <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Remove ${item.title}"><i class="fas fa-trash"></i></button>
       </div>
     `).join('');
     
@@ -3223,12 +3064,7 @@ function updateCartUI() {
 function toggleCart() {
   const cartSidebar = document.getElementById('cart-sidebar');
   cartSidebar.classList.toggle('open');
-  
-  if (cartSidebar.classList.contains('open')) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
+  document.body.style.overflow = cartSidebar.classList.contains('open') ? 'hidden' : '';
 }
 
 function checkout() {
@@ -3471,7 +3307,7 @@ if ('ontouchstart' in window) {
 <!-- Blog Modal -->
 <div id="blogModal" class="modal">
   <div class="modal-content blog-modal-content">
-    <span class="close-button" onclick="closeBlogModal()">&times;</span>
+    <span class="close-button" onclick="closeModalById('blogModal')">&times;</span>
     <h2>Mike Lab Blog & Learning Journal</h2>
     <div class="blog-sections">
       <div class="blog-section">
@@ -3709,7 +3545,7 @@ socket.onerror = (error) => {
 <!-- Code Playground Modal -->
 <div id="codePlaygroundModal" class="modal">
   <div class="modal-content code-playground-modal-content">
-    <span class="close-button" onclick="closeCodePlaygroundModal()">&times;</span>
+    <span class="close-button" onclick="closeModalById('codePlaygroundModal')">&times;</span>
     <h2>Interactive Code Playground</h2>
     <div class="playground-container">
       <div class="editor-section">
@@ -3796,7 +3632,7 @@ document.querySelector("h1").addEventListener("click", () => {
 <!-- Tools I Use Modal -->
 <div id="toolsModal" class="modal">
   <div class="modal-content tools-modal-content">
-    <span class="close-button" onclick="closeToolsModal()">&times;</span>
+    <span class="close-button" onclick="closeModalById('toolsModal')">&times;</span>
     <h2>Tools I Use</h2>
     <div class="tools-section">
       <h3>Development Environment</h3>
@@ -3858,7 +3694,7 @@ document.querySelector("h1").addEventListener("click", () => {
 <!-- Changelog Modal -->
 <div id="changelogModal" class="modal">
   <div class="modal-content changelog-modal-content">
-    <span class="close-button" onclick="closeChangelogModal()">&times;</span>
+    <span class="close-button" onclick="closeModalById('changelogModal')">&times;</span>
     <h2>Changelog & Development Progress</h2>
     <div class="changelog-entry">
       <h3>Version 1.2.0 - August 7, 2025</h3>
@@ -3911,7 +3747,7 @@ document.querySelector("h1").addEventListener("click", () => {
 <!-- Technical Specs Modal -->
 <div id="techSpecsModal" class="modal">
   <div class="modal-content tech-specs-modal-content">
-    <span class="close-button" onclick="closeTechSpecsModal()">&times;</span>
+    <span class="close-button" onclick="closeModalById('techSpecsModal')">&times;</span>
     <h2>Technical Specifications & Browser Compatibility</h2>
     <div class="tech-specs-section">
       <h3>Core Technologies</h3>
@@ -4007,7 +3843,7 @@ document.querySelector("h1").addEventListener("click", () => {
 <!-- Currently Learning Modal -->
 <div id="currentlyLearningModal" class="modal">
   <div class="modal-content currently-learning-modal-content">
-    <span class="close-button" onclick="closeCurrentlyLearningModal()">&times;</span>
+    <span class="close-button" onclick="closeModalById('currentlyLearningModal')">&times;</span>
     <h2>Currently Learning & In Progress</h2>
     <div class="learning-section">
       <h3>Technologies I'm Currently Exploring</h3>
@@ -4061,7 +3897,7 @@ document.querySelector("h1").addEventListener("click", () => {
 <!-- GitHub Integration Modal -->
 <div id="githubModal" class="modal">
   <div class="modal-content github-modal-content">
-    <span class="close-button" onclick="closeGithubModal()">&times;</span>
+    <span class="close-button" onclick="closeModalById('githubModal')">&times;</span>
     <h2>GitHub Activity</h2>
     <div id="github-activity-feed">
       <p>Loading recent GitHub activity...</p>
@@ -4124,7 +3960,7 @@ document.querySelector("h1").addEventListener("click", () => {
 <!-- Comment Section Modal -->
 <div id="commentsModal" class="modal">
   <div class="modal-content comments-modal-content">
-    <span class="close-button" onclick="closeCommentsModal()">&times;</span>
+    <span class="close-button" onclick="closeModalById('commentsModal')">&times;</span>
     <h2>Technical Discussions & Comments</h2>
     <p>This section is under development. Soon, you'll be able to leave comments and engage in technical discussions on various topics and projects.</p>
     <p>In the meantime, feel free to reach out via my <a href="https://github.com/garymike07" target="_blank">GitHub</a> or other contact methods.</p>
