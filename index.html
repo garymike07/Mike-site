@@ -259,7 +259,7 @@ body::before {
   width: 100%;
 }
 
-.nav-item {
+.nav-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -281,9 +281,10 @@ body::before {
   box-shadow: 
     0 4px 16px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  opacity: 0.7;
 }
 
-.nav-item::before {
+.nav-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -296,11 +297,11 @@ body::before {
   border-radius: 48px;
 }
 
-.nav-item:hover::before, .nav-item.active::before {
+.nav-button:hover::before, .nav-button.active::before {
   left: 0;
 }
 
-.nav-item:hover, .nav-item.active {
+.nav-button:hover, .nav-button.active {
   color: var(--bg-primary);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 
@@ -308,6 +309,19 @@ body::before {
     0 8px 24px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   border-color: var(--accent-primary);
+  opacity: 1;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
 }
 
 .hero-content {
@@ -1607,52 +1621,6 @@ body::before {
   }
 }
 
-/* Clock Widget */
-.clock-widget {
-  position: fixed;
-  top: 100px;
-  left: 1rem;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 1rem;
-  z-index: 999;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px var(--shadow-color);
-  min-width: 200px;
-  text-align: center;
-}
-
-.clock-time {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent-primary);
-  margin-bottom: 0.5rem;
-  font-family: 'Courier New', monospace;
-}
-
-.clock-date {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-}
-
-.clock-seconds {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  opacity: 0.7;
-}
-
-@media (max-width: 768px) {
-  .clock-widget {
-    position: relative;
-    top: 0;
-    left: 0;
-    margin: 1rem auto;
-    width: fit-content;
-  }
-}
-
 @media print {
   .header,
   .cart-container {
@@ -1691,6 +1659,17 @@ body::before {
 /* Utility classes */
 .hidden {
   display: none !important;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 .text-center {
     text-align: center;
@@ -1741,6 +1720,48 @@ body::before {
       <img src="myk_logo.webp" alt="Mike Lab Logo"/>
       Mike Lab
     </div>
+    <nav class="hero-nav">
+      <a href="#home" class="nav-button active" data-section="home" role="button" tabindex="0" aria-label="Navigate to Home section">
+        <i class="fas fa-home" aria-hidden="true"></i>
+        <span>Home</span>
+      </a>
+      <a href="#blog" class="nav-button" data-section="blog" role="button" tabindex="0" aria-label="Navigate to Blog section">
+        <i class="fas fa-blog" aria-hidden="true"></i> <span>Blog</span>
+      </a>
+      <a href="#playground" class="nav-button" data-section="playground" role="button" tabindex="0" aria-label="Navigate to Playground section">
+        <i class="fas fa-code" aria-hidden="true"></i> <span>Playground</span>
+      </a>
+      <a href="#projects" class="nav-button" data-section="projects" role="button" tabindex="0" aria-label="Navigate to Projects section">
+        <i class="fas fa-briefcase" aria-hidden="true"></i>
+        <span>Projects</span>
+      </a>
+      <a href="#tools" class="nav-button" data-section="tools" role="button" tabindex="0" aria-label="Navigate to Tools section">
+        <i class="fas fa-tools" aria-hidden="true"></i> <span>Tools</span>
+      </a>
+      <a href="#changelog" class="nav-button" data-section="changelog" role="button" tabindex="0" aria-label="Navigate to Changelog section">
+        <i class="fas fa-history" aria-hidden="true"></i> <span>Changelog</span>
+      </a>
+      <a href="#specs" class="nav-button" data-section="specs" role="button" tabindex="0" aria-label="Navigate to Specs section">
+        <i class="fas fa-file-code" aria-hidden="true"></i> <span>Specs</span>
+      </a>
+      <a href="#learning" class="nav-button" data-section="learning" role="button" tabindex="0" aria-label="Navigate to Learning section">
+        <i class="fas fa-book-open" aria-hidden="true"></i> <span>Learning</span>
+      </a>
+      <a href="#github" class="nav-button" data-section="github" role="button" tabindex="0" aria-label="Navigate to GitHub section">
+        <i class="fab fa-github" aria-hidden="true"></i> <span>GitHub</span>
+      </a>
+      <a href="#discuss" class="nav-button" data-section="discuss" role="button" tabindex="0" aria-label="Navigate to Discuss section">
+        <i class="fas fa-comments" aria-hidden="true"></i> <span>Discuss</span>
+      </a>
+      <a href="#about" class="nav-button" data-section="about" role="button" tabindex="0" aria-label="Navigate to About section">
+        <i class="fas fa-user" aria-hidden="true"></i>
+        <span>About</span>
+      </a>
+      <a href="#contact" class="nav-button" data-section="contact" role="button" tabindex="0" aria-label="Navigate to Contact section">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+        <span>Contact</span>
+      </a>
+    </nav>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
       <i class="fas fa-moon"></i>
     </button>
@@ -1748,59 +1769,8 @@ body::before {
 
   <main id="main">
 
-  <!-- Clock Widget -->
-  <div class="clock-widget" id="clock-widget">
-    <div class="clock-time" id="clock-time">00:00:00</div>
-    <div class="clock-date" id="clock-date">Loading...</div>
-    <div class="clock-seconds" id="clock-seconds">00</div>
-  </div>
-
   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <!-- Mobile-responsive navigation -->
-    <nav class="hero-nav">
-      <a href="#home" class="nav-item active">
-        <i class="fas fa-home"></i>
-        <span>Home</span>
-      </a>
-      <a href="javascript:void(0);" class="nav-item" data-modal-target="blogModal">
-        <i class="fas fa-blog"></i> <span>Blog</span>
-      </a>
-      <a href="javascript:void(0);" class="nav-item" data-modal-target="codePlaygroundModal">
-        <i class="fas fa-code"></i> <span>Playground</span>
-      </a>
-      <a href="#projects" class="nav-item">
-        <i class="fas fa-briefcase"></i>
-        <span>Projects</span>
-      </a>
-      <a href="javascript:void(0);" class="nav-item" data-modal-target="toolsModal">
-        <i class="fas fa-tools"></i> <span>Tools</span>
-      </a>
-      <a href="javascript:void(0);" class="nav-item" data-modal-target="changelogModal">
-        <i class="fas fa-history"></i> <span>Changelog</span>
-      </a>
-      <a href="javascript:void(0);" class="nav-item" data-modal-target="techSpecsModal">
-        <i class="fas fa-file-code"></i> <span>Specs</span>
-      </a>
-      <a href="javascript:void(0);" class="nav-item" data-modal-target="currentlyLearningModal">
-        <i class="fas fa-book-open"></i> <span>Learning</span>
-      </a>
-      <a href="javascript:void(0);" class="nav-item" data-modal-target="githubModal">
-        <i class="fab fa-github"></i> <span>GitHub</span>
-      </a>
-      <a href="javascript:void(0);" class="nav-item" data-modal-target="commentsModal">
-        <i class="fas fa-comments"></i> <span>Discuss</span>
-      </a>
-      <a href="javascript:void(0);" class="nav-item" data-modal-target="about-modal">
-        <i class="fas fa-user"></i>
-        <span>About</span>
-      </a>
-      <a href="javascript:void(0);" class="nav-item" data-modal-target="contact-modal">
-        <i class="fas fa-envelope"></i>
-        <span>Contact</span>
-      </a>
-    </nav>
-
+  <section class="hero content-section active" id="home">
     <!-- Hero Content -->
     <div class="hero-content">
       <h1 class="hero-title">Welcome to Mike Lab</h1>
@@ -1853,7 +1823,7 @@ body::before {
   </section>
 
   <!-- Lab Experiments Section -->
-  <section class="projects-section" id="projects">
+  <section class="projects-section content-section" id="projects">
     <div class="section-header">
       <h2 class="section-title">Lab Experiments</h2>
       <p class="section-subtitle">
@@ -1909,6 +1879,181 @@ body::before {
       <div class="projects-scroll" id="projects-scroll">
         <!-- Project cards will be dynamically inserted here -->
       </div>
+    </div>
+  </section>
+
+  <section id="blog" class="content-section" style="padding: 4rem 1rem;">
+    <div class="section-header">
+        <h2 class="section-title">Blog</h2>
+        <p class="section-subtitle">My thoughts on web development, technology, and more.</p>
+    </div>
+    <div class="blog-posts" style="max-width: 800px; margin: 0 auto; display: grid; gap: 2rem;">
+        <div class="blog-post" style="background: var(--bg-secondary); padding: 2rem; border-radius: 12px;">
+            <h3>The Power of Single-Page Applications</h3>
+            <p class="post-meta" style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Posted on July 20, 2024</p>
+            <p>Single-Page Applications (SPAs) have revolutionized the way we think about web development. In this post, we'll explore the benefits of SPAs and how they can create a more fluid and responsive user experience...</p>
+            <a href="#" style="color: var(--accent-primary); text-decoration: none; font-weight: bold;">Read More &raquo;</a>
+        </div>
+        <div class="blog-post" style="background: var(--bg-secondary); padding: 2rem; border-radius: 12px;">
+            <h3>CSS Glassmorphism: A Deep Dive</h3>
+            <p class="post-meta" style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Posted on July 15, 2024</p>
+            <p>Glassmorphism is a popular design trend that can add a beautiful, futuristic look to your websites. Let's take a look at how to create this effect using only CSS...</p>
+            <a href="#" style="color: var(--accent-primary); text-decoration: none; font-weight: bold;">Read More &raquo;</a>
+        </div>
+    </div>
+  </section>
+  <section id="playground" class="content-section" style="padding: 4rem 1rem;">
+    <div class="section-header">
+        <h2 class="section-title">Playground</h2>
+        <p class="section-subtitle">A place for interactive demos and code snippets.</p>
+    </div>
+    <div class="playground-item" style="max-width: 800px; margin: 0 auto; background: var(--bg-secondary); padding: 2rem; border-radius: 12px;">
+        <h3>Interactive Button</h3>
+        <p>Click the button to see a simple animation.</p>
+        <button class="btn btn-primary" onclick="this.style.transform = 'scale(1.1)'; setTimeout(() => this.style.transform = 'scale(1)', 200);">Click Me</button>
+    </div>
+  </section>
+  <section id="tools" class="content-section" style="padding: 4rem 1rem;">
+    <div class="section-header">
+        <h2 class="section-title">Tools</h2>
+        <p class="section-subtitle">My favorite development tools and resources.</p>
+    </div>
+    <ul style="max-width: 800px; margin: 0 auto; list-style: none; padding: 0;">
+        <li style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+            <strong>Visual Studio Code:</strong> My go-to code editor.
+        </li>
+        <li style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+            <strong>Figma:</strong> For UI/UX design and prototyping.
+        </li>
+        <li style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+            <strong>GitHub:</strong> For version control and collaboration.
+        </li>
+    </ul>
+  </section>
+  <section id="changelog" class="content-section" style="padding: 4rem 1rem;">
+    <div class="section-header">
+        <h2 class="section-title">Changelog</h2>
+        <p class="section-subtitle">Recent updates to this website.</p>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto;">
+        <div style="background: var(--bg-secondary); padding: 2rem; border-radius: 12px; margin-bottom: 1rem;">
+            <h3>Version 2.0 - The Navigation Update</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">August 7, 2025</p>
+            <ul>
+                <li>Implemented hash-based routing for a seamless single-page application experience.</li>
+                <li>Created dedicated content sections for all navigation items.</li>
+                <li>Improved accessibility with ARIA attributes and keyboard navigation.</li>
+            </ul>
+        </div>
+        <div style="background: var(--bg-secondary); padding: 2rem; border-radius: 12px;">
+            <h3>Version 1.0 - Initial Release</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">July 20, 2024</p>
+            <ul>
+                <li>Launched the first version of the Mike Sites portfolio.</li>
+            </ul>
+        </div>
+    </div>
+  </section>
+  <section id="specs" class="content-section" style="padding: 4rem 1rem;">
+    <div class="section-header">
+        <h2 class="section-title">Specifications</h2>
+        <p class="section-subtitle">Technical details about this website.</p>
+    </div>
+    <table style="max-width: 800px; margin: 0 auto; width: 100%; border-collapse: collapse;">
+        <tr style="border-bottom: 1px solid var(--border-color);">
+            <td style="padding: 1rem; font-weight: bold;">Frontend Framework</td>
+            <td style="padding: 1rem;">None (Vanilla JS)</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border-color);">
+            <td style="padding: 1rem; font-weight: bold;">Styling</td>
+            <td style="padding: 1rem;">CSS3 with Glassmorphism</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border-color);">
+            <td style="padding: 1rem; font-weight: bold;">Hosting</td>
+            <td style="padding: 1rem;">GitHub Pages</td>
+        </tr>
+    </table>
+  </section>
+  <section id="learning" class="content-section" style="padding: 4rem 1rem;">
+    <div class="section-header">
+        <h2 class="section-title">Learning</h2>
+        <p class="section-subtitle">What I'm currently learning and exploring.</p>
+    </div>
+    <ul style="max-width: 800px; margin: 0 auto; list-style: none; padding: 0;">
+        <li style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+            <strong>WebAssembly:</strong> Exploring how to run high-performance code in the browser.
+        </li>
+        <li style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+            <strong>AI and Machine Learning:</strong> Integrating AI features into web applications.
+        </li>
+    </ul>
+  </section>
+  <section id="github" class="content-section" style="padding: 4rem 1rem;">
+    <div class="section-header">
+        <h2 class="section-title">GitHub Activity</h2>
+        <p class="section-subtitle">My recent activity on GitHub.</p>
+    </div>
+    <div id="github-activity" style="max-width: 800px; margin: 0 auto;">
+        <p>Loading GitHub activity...</p>
+    </div>
+  </section>
+  <section id="discuss" class="content-section" style="padding: 4rem 1rem;">
+    <div class="section-header">
+        <h2 class="section-title">Discuss</h2>
+        <p class="section-subtitle">Join the conversation.</p>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p>A discussion forum is coming soon. In the meantime, feel free to reach out via the contact page.</p>
+    </div>
+  </section>
+  <section id="about" class="content-section" style="padding: 4rem 1rem;">
+    <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+    </div>
+    <div class="about-modal-content" style="text-align: center;">
+        <img src="myk_logo.webp" alt="Mike - Photo" class="about-modal-image" loading="lazy"/>
+        <h4 class="about-modal-name">Mike</h4>
+        <p class="about-modal-bio" style="max-width: 600px; margin: 1rem auto;">
+        A passionate and results-driven Full-Stack Developer from Nairobi, Kenya. With 3 years of hands-on experience, I turn innovative ideas into robust, user-friendly web applications. My digital workshop, Mike Lab, is where I experiment with cutting-edge tech to solve tomorrow's problems today.
+        </p>
+        <div class="about-modal-footer">
+        <p>Let's connect and build something amazing together!</p>
+        </div>
+    </div>
+  </section>
+  <section id="contact" class="content-section" style="padding: 4rem 1rem;">
+    <div class="section-header">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">
+            Ready to bring your vision to life? Let's discuss your project requirements and create something amazing together.
+        </p>
+    </div>
+    <div class="contact-container" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+        <div class="contact-info" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+            <div class="contact-card">
+                <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>wrootmike@gmail.com</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+                </div>
+                <h3>Phone</h3>
+                <p>0792618156</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Location</h3>
+                <p>Nairobi, Kenya</p>
+            </div>
+        </div>
     </div>
   </section>
 
@@ -2154,9 +2299,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   animateStats();
   loadTheme();
-  updateClock();
-  setInterval(updateClock, 1000);
   initializeEventListeners();
+
+  const hash = window.location.hash.slice(1) || 'home';
+  showSection(hash);
+});
+
+window.addEventListener('hashchange', function() {
+    const hash = window.location.hash.slice(1) || 'home';
+    showSection(hash);
 });
 
 // =================================================================================
@@ -2185,11 +2336,6 @@ function initializeEventListeners() {
   // Filters
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', handleFilter);
-  });
-  
-  // Navigation
-  document.querySelectorAll('.nav-item[href^="#"]').forEach(item => {
-    item.addEventListener('click', handleNavigation);
   });
   
   // Keyboard navigation
@@ -2321,25 +2467,102 @@ function handleFilter(event) {
   renderProjects(projectsToRender);
 }
 
-function handleNavigation(event) {
-  const targetId = event.currentTarget.getAttribute('href');
-  if (!targetId || targetId === '#') {
-    return;
-  }
-  event.preventDefault();
-
-  const targetElement = document.querySelector(targetId);
-  if (targetElement) {
-    targetElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
     });
 
-    document.querySelectorAll('.nav-item').forEach(item => {
-      item.classList.remove('active');
+    // Show target section
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.classList.add('active');
+    }
+
+    // Update active button state
+    document.querySelectorAll('.nav-button').forEach(btn => {
+        btn.classList.remove('active');
     });
-    event.currentTarget.classList.add('active');
-  }
+
+    const activeButton = document.querySelector(`[data-section="${sectionId}"]`);
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+
+    // Update page title
+    updatePageTitle(sectionId);
+    announceSection(sectionId);
+
+    if (sectionId === 'projects') {
+        renderProjects();
+    }
+    if (sectionId === 'github') {
+        fetchGithubActivity();
+    }
+}
+
+function announceSection(sectionName) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = `Navigated to ${sectionName} section`;
+
+    document.body.appendChild(announcement);
+    setTimeout(() => document.body.removeChild(announcement), 1000);
+}
+
+function fetchGithubActivity() {
+    const activityContainer = document.getElementById('github-activity');
+    activityContainer.innerHTML = '<p>Loading GitHub activity...</p>';
+    fetch('https://api.github.com/users/garymike07/events/public')
+        .then(response => response.json())
+        .then(events => {
+            activityContainer.innerHTML = '';
+            const recentEvents = events.slice(0, 5);
+            recentEvents.forEach(event => {
+                const eventElement = document.createElement('div');
+                eventElement.style.background = 'var(--bg-secondary)';
+                eventElement.style.padding = '1rem';
+                eventElement.style.borderRadius = '8px';
+                eventElement.style.marginBottom = '1rem';
+
+                let eventText = '';
+                if (event.type === 'PushEvent') {
+                    eventText = `Pushed to <a href="${event.repo.url.replace('api.','').replace('repos/','')}" target="_blank">${event.repo.name}</a>`;
+                } else if (event.type === 'CreateEvent') {
+                    eventText = `Created repository <a href="${event.repo.url.replace('api.','').replace('repos/','')}" target="_blank">${event.repo.name}</a>`;
+                } else {
+                    eventText = `${event.type} on ${event.repo.name}`;
+                }
+
+                eventElement.innerHTML = `<strong>${event.type.replace('Event','')}</strong>: ${eventText} <br><small>${new Date(event.created_at).toLocaleString()}</small>`;
+                activityContainer.appendChild(eventElement);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching GitHub activity:', error);
+            activityContainer.innerHTML = '<p>Could not load GitHub activity.</p>';
+        });
+}
+
+function updatePageTitle(section) {
+    const titles = {
+        'home': 'Mike Sites - Professional Web Developer',
+        'blog': 'Blog - Mike Sites',
+        'playground': 'Playground - Mike Sites',
+        'projects': 'Projects - Mike Sites',
+        'tools': 'Tools - Mike Sites',
+        'changelog': 'Changelog - Mike Sites',
+        'specs': 'Specifications - Mike Sites',
+        'learning': 'Learning - Mike Sites',
+        'github': 'GitHub - Mike Sites',
+        'discuss': 'Discuss - Mike Sites',
+        'about': 'About - Mike Sites',
+        'contact': 'Contact - Mike Sites'
+    };
+
+    document.title = titles[section] || 'Mike Sites';
 }
 
 function renderProjects(projectsToRender = projects) {
@@ -2808,40 +3031,6 @@ function formatDate(dateString) {
     day: 'numeric'
   });
 }
-
-// Clock widget functionality
-function updateClock() {
-  const now = new Date();
-  
-  // Format time with seconds
-  const timeOptions = {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true
-  };
-  
-  // Format date
-  const dateOptions = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  };
-  
-  const timeString = now.toLocaleTimeString('en-US', timeOptions);
-  const dateString = now.toLocaleDateString('en-US', dateOptions);
-  const seconds = now.getSeconds().toString().padStart(2, '0');
-  
-  document.getElementById('clock-time').textContent = timeString;
-  document.getElementById('clock-date').textContent = dateString;
-  document.getElementById('clock-seconds').textContent = `${seconds}s`;
-}
-
-// Initialize clock
-updateClock();
-setInterval(updateClock, 1000);
-
 
 // Initialize theme on load
 loadTheme();
