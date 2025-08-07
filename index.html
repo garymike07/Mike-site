@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<meta name="description" content="Mike Lab - Where Ideas Meet Innovation. A digital laboratory experimenting with cutting-edge web technologies.">
-<meta name="keywords" content="web developer, web designer, portfolio, JavaScript, React, Node.js, full-stack developer, Kenya, Nairobi, freelance developer, custom systems, digital lab, innovation, experiments">
-<meta name="author" content="Mike Lab">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#00d9ff">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://via.placeholder.com; object-src 'none'; frame-src 'none';"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<!-- Open Graph -->
-<meta property="og:title" content="Mike Lab - Where Ideas Meet Innovation">
-<meta property="og:description" content="A digital laboratory experimenting with cutting-edge web technologies to solve tomorrow's problems today.">
-<meta property="og:image" content="https://garymike07.github.io/Mike-sites/myk_logo.webp">
-<meta property="og:url" content="https://garymike07.github.io/Mike-sites/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Mike Lab">
-<meta property="og:locale" content="en_US">
+    <!-- Primary Meta Tags -->
+    <title>Mike Sites - Professional Web Developer & Designer</title>
+    <meta name="description" content="Mike Sites - Professional Web Developer & Designer in Nairobi, Kenya. Specializing in modern web applications, e-commerce solutions, and custom development."/>
+    <meta name="keywords" content="web developer, web designer, Nairobi, Kenya, modern web applications, e-commerce, custom development"/>
+    <meta name="author" content="Mike Sites"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="theme-color" content="#00d9ff"/>
+    <link rel="canonical" href="https://garymike07.github.io/Mike-site/"/>
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Mike Lab - Where Ideas Meet Innovation">
-<meta name="twitter:description" content="A digital laboratory experimenting with cutting-edge web technologies to solve tomorrow's problems today.">
-<meta name="twitter:image" content="https://garymike07.github.io/Mike-sites/myk_logo.webp">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="icon" type="image/webp" href="myk_logo.webp"/>
 
-<title>Mike Lab – Where Ideas Meet Innovation | Digital Laboratory</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://garymike07.github.io/Mike-site/"/>
+    <meta property="og:title" content="Mike Sites - Professional Web Developer & Designer"/>
+    <meta property="og:description" content="Crafting exceptional digital experiences in Nairobi, Kenya"/>
+    <meta property="og:image" content="https://garymike07.github.io/Mike-sites/myk_logo.webp"/>
+    <meta property="og:site_name" content="Mike Sites"/>
+    <meta property="og:locale" content="en_US"/>
 
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="icon" type="image/webp" href="myk_logo.webp">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:url" content="https://garymike07.github.io/Mike-site/"/>
+    <meta name="twitter:title" content="Mike Sites - Professional Web Developer & Designer"/>
+    <meta name="twitter:description" content="Crafting exceptional digital experiences in Nairobi, Kenya"/>
+    <meta name="twitter:image" content="https://garymike07.github.io/Mike-sites/myk_logo.webp"/>
+
+    <!-- Preload assets -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"/>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
 
 <style>
 html {
@@ -1656,20 +1668,85 @@ body::before {
     page-break-after: always;
   }
 }
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 1rem;
+  z-index: 10001; /* Higher than header */
+  transition: top 0.3s ease;
+  border-radius: 0 0 8px 0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Utility classes */
+.hidden {
+  display: none !important;
+}
+.text-center {
+    text-align: center;
+}
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+/* Modal-specific styles */
+.modal-content--small {
+    max-width: 500px;
+    height: auto;
+}
+.modal-content--large {
+    max-width: 800px;
+    height: auto;
+}
+.modal-body--single-col {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+}
+
+/* Form-specific styles */
+.form-input--spaced {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.btn--full-width {
+    width: 100%;
+}
+
+/* Footer styles */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+}
 </style>
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
   <!-- Header -->
   <header class="header">
     <div class="logo">
-      <img src="myk_logo.webp" alt="Mike Lab Logo">
+      <img src="myk_logo.webp" alt="Mike Lab Logo"/>
       Mike Lab
     </div>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
       <i class="fas fa-moon"></i>
     </button>
   </header>
+
+  <main id="main">
 
   <!-- Clock Widget -->
   <div class="clock-widget" id="clock-widget">
@@ -1795,7 +1872,7 @@ body::before {
             placeholder="Search projects..." 
             id="project-search"
             autocomplete="off"
-          >
+          />
           <button class="search-clear" id="search-clear" aria-label="Clear search">
             <i class="fas fa-times"></i>
           </button>
@@ -1835,6 +1912,13 @@ body::before {
     </div>
   </section>
 
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Mike Sites. All Rights Reserved.</p>
+  </footer>
+
   <!-- Shopping Cart -->
   <div class="cart-container">
     <button class="cart-button" onclick="toggleCart()" aria-label="Shopping cart">
@@ -1858,7 +1942,7 @@ body::before {
         </div>
       </div>
       
-      <div class="cart-footer" id="cart-footer" style="display: none;">
+      <div class="cart-footer hidden" id="cart-footer">
         <div class="cart-total">
           <span>Total: </span>
           <span id="cart-total">KES 0</span>
@@ -1882,7 +1966,7 @@ body::before {
       </div>
       <div class="modal-body">
         <div class="modal-gallery">
-          <img id="modal-main-image" src="" alt="Main project image" class="modal-main-image">
+          <img id="modal-main-image" src="" alt="Main project image" class="modal-main-image"/>
           <div id="modal-thumbnails" class="modal-thumbnails">
             <!-- Thumbnails will be dynamically inserted here -->
           </div>
@@ -1893,11 +1977,11 @@ body::before {
       </div>
       <div class="modal-footer">
         <div class="modal-links">
-          <a href="#" class="modal-link" id="modal-demo" target="_blank" rel="noopener">
+          <a href="#" class="modal-link" id="modal-demo" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-external-link-alt"></i>
             <span id="modal-demo-text">Live Demo</span>
           </a>
-          <a href="#" class="modal-link" id="modal-github" target="_blank" rel="noopener">
+          <a href="#" class="modal-link" id="modal-github" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i>
             View Code
           </a>
@@ -1923,7 +2007,7 @@ body::before {
       </div>
       <div class="modal-body">
         <div class="about-modal-content">
-          <img src="myk_logo.webp" alt="Mike - Photo" class="about-modal-image" loading="lazy">
+          <img src="myk_logo.webp" alt="Mike - Photo" class="about-modal-image" loading="lazy"/>
           <h4 class="about-modal-name">Mike</h4>
           <p class="about-modal-bio">
             A passionate and results-driven Full-Stack Developer from Nairobi, Kenya. With 3 years of hands-on experience, I turn innovative ideas into robust, user-friendly web applications. My digital workshop, Mike Lab, is where I experiment with cutting-edge tech to solve tomorrow's problems today.
@@ -1946,7 +2030,7 @@ body::before {
         </button>
       </div>
       <div class="modal-body">
-        <p class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
+        <p class="section-subtitle text-center mb-2">
           Ready to bring your vision to life? Let's discuss your project requirements and create something amazing together.
         </p>
         <div class="contact-container">
@@ -1982,16 +2066,16 @@ body::before {
 
   <!-- Download Modal -->
   <div class="modal" id="download-modal">
-    <div class="modal-content" style="max-width: 500px; height: auto;">
+    <div class="modal-content modal-content--small">
       <div class="modal-header">
         <h2 class="modal-title">Download Source Code</h2>
         <button class="modal-close" data-modal-close="download-modal" aria-label="Close modal">
           <i class="fas fa-times"></i>
         </button>
       </div>
-      <div class="modal-body" style="grid-template-columns: 1fr; overflow-y: auto;">
+      <div class="modal-body modal-body--single-col">
           <p>Please enter the secret key to download the source code.</p>
-          <input type="password" id="secret-key-input" placeholder="Secret Key" class="search-input" style="margin-top: 1rem; margin-bottom: 1rem;">
+          <input type="password" id="secret-key-input" placeholder="Secret Key" class="search-input form-input--spaced"/>
           <button class="btn btn-primary" onclick="handleDownload()">Submit</button>
       </div>
     </div>
@@ -1999,15 +2083,15 @@ body::before {
 
   <!-- Request Modal -->
   <div class="modal" id="request-modal">
-    <div class="modal-content" style="max-width: 800px; height: auto;">
+    <div class="modal-content modal-content--large">
         <div class="modal-header">
             <h2 class="modal-title">Request a Custom System or App</h2>
         <button class="modal-close" data-modal-close="request-modal" aria-label="Close modal">
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        <div class="modal-body" style="grid-template-columns: 1fr; overflow-y: auto;">
-            <p class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">
+        <div class="modal-body modal-body--single-col">
+            <p class="section-subtitle text-center mb-2">
                 Have a specific idea in mind? Fill out the form below to get a quote.
             </p>
             <form id="request-form" class="request-form">
@@ -2038,7 +2122,7 @@ body::before {
                     <label for="project-budget">Estimated Budget (KES)</label>
                     <input type="number" id="project-budget" name="budget" placeholder="e.g., 50000">
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                <button type="submit" class="btn btn-primary btn--full-width">Submit Request</button>
             </form>
         </div>
     </div>
@@ -2292,7 +2376,7 @@ function renderProjects(projectsToRender = projects) {
     return `
       <div class="project-card fade-in-element" data-category="${project.category}" onclick="openProjectModal(${project.id})">
         <div class="project-image">
-          <img class="project-thumbnail" src="${project.image}" alt="${project.title}" loading="lazy">
+          <img class="project-thumbnail" src="${project.image}" alt="${project.title}" loading="lazy"/>
           <div class="project-status status-${project.status}">
             ${statusIcon} ${statusText}
           </div>
@@ -2525,7 +2609,7 @@ function updateCartUI() {
   
   if (cart.length === 0) {
     cartItems.innerHTML = `<div class="cart-empty"><i class="fas fa-shopping-cart"></i><p>Your cart is empty</p><p>Add some projects to get started!</p></div>`;
-    cartFooter.style.display = 'none';
+    cartFooter.classList.add('hidden');
   } else {
     cartItems.innerHTML = cart.map(item => `
       <div class="cart-item">
@@ -2535,13 +2619,13 @@ function updateCartUI() {
           <div class="cart-item-price">KES ${item.price.toLocaleString()}</div>
           <div style="font-size: 0.8rem; color: var(--text-secondary);">${getStatusText(item.status)}</div>
         </div>
-        <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Remove ${item.title}"><i class="fas fa-trash"></i></button>
+        <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Remove ${item.title} from cart"><i class="fas fa-trash"></i></button>
       </div>
     `).join('');
     
     const total = cart.reduce((sum, item) => sum + item.price, 0);
     cartTotal.textContent = `KES ${total.toLocaleString()}`;
-    cartFooter.style.display = 'block';
+    cartFooter.classList.remove('hidden');
   }
 }
 
@@ -2663,6 +2747,27 @@ function handleKeyboard(e) {
       toggleCart();
     }
   }
+}
+
+function shareProject(platform, element) {
+  const projectUrl = window.location.href;
+  const projectTitle = document.getElementById('modal-title').textContent;
+  let shareUrl;
+
+  switch (platform) {
+    case 'twitter':
+      shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(projectUrl)}&text=${encodeURIComponent(projectTitle)}`;
+      break;
+    case 'linkedin':
+      shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(projectUrl)}&title=${encodeURIComponent(projectTitle)}`;
+      break;
+    case 'facebook':
+      shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(projectUrl)}`;
+      break;
+    default:
+      return;
+  }
+  window.open(shareUrl, '_blank', 'noopener,noreferrer');
 }
 
 function handleRequestSubmission(event) {
