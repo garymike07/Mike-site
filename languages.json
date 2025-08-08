@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Python",
+    "year": 1991,
+    "description": "A high-level, interpreted programming language known for its clear syntax and readability. It is widely used in web development, data science, artificial intelligence, and automation.",
+    "youtube_link": "https://www.youtube.com/watch?v=_uQrJ0TkZlc",
+    "icon": "fab fa-python"
+  },
+  {
+    "id": 2,
+    "name": "JavaScript",
+    "year": 1995,
+    "description": "A versatile, high-level programming language that is one of the core technologies of the World Wide Web. It enables interactive web pages and is an essential part of web applications.",
+    "youtube_link": "https://www.youtube.com/watch?v=PkZNo7MFNFg",
+    "icon": "fab fa-js-square"
+  },
+  {
+    "id": 3,
+    "name": "Rust",
+    "year": 2015,
+    "description": "A multi-paradigm, high-level, general-purpose programming language that emphasizes performance, type safety, and concurrency. It is designed for building reliable and efficient software.",
+    "youtube_link": "https://www.youtube.com/watch?v=zF34dRivLOw",
+    "icon": "fab fa-rust"
+  },
+  {
+    "id": 4,
+    "name": "C++",
+    "year": 1985,
+    "description": "A high-performance programming language used in system software, game development, and other performance-critical applications. It is an extension of the C language and provides object-oriented features.",
+    "youtube_link": "https://www.youtube.com/watch?v=vLnPwxZdW4Y",
+    "icon": "fas fa-plus"
+  },
+  {
+    "id": 5,
+    "name": "Java",
+    "year": 1995,
+    "description": "A class-based, object-oriented programming language designed to have as few implementation dependencies as possible. It is widely used for building enterprise-scale applications.",
+    "youtube_link": "https://www.youtube.com/watch?v=eIrMbAQSU34",
+    "icon": "fab fa-java"
+  },
+  {
+    "id": 6,
+    "name": "C#",
+    "year": 2000,
+    "description": "A general-purpose, multi-paradigm programming language developed by Microsoft. It is widely used for building Windows applications, web applications with ASP.NET, and games with Unity.",
+    "youtube_link": "https://www.youtube.com/watch?v=GhQdlIFylQ8",
+    "icon": "fas fa-plus"
+  },
+  {
+    "id": 7,
+    "name": "Go",
+    "year": 2009,
+    "description": "A statically typed, compiled programming language designed at Google. It is known for its simplicity, efficiency, and strong support for concurrent programming.",
+    "youtube_link": "https://www.youtube.com/watch?v=YS4e4q9oBaU",
+    "icon": "fab fa-golang"
+  },
+  {
+    "id": 8,
+    "name": "TypeScript",
+    "year": 2012,
+    "description": "A strict syntactical superset of JavaScript that adds optional static typing to the language. It is designed for the development of large applications and transcompiles to JavaScript.",
+    "youtube_link": "https://www.youtube.com/watch?v=30LWjhZzg50",
+    "icon": "fas fa-code"
+  }
+]

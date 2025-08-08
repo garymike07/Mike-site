@@ -2620,77 +2620,8 @@ body::before {
       <p class="section-subtitle text-center" style="margin-bottom: 2rem;">
         Start your journey into software development. Here are some popular languages, from newest to oldest.
       </p>
-      <div class="learning-grid">
-        <div class="learning-item">
-          <div class="learning-item-header"><h4>Rust (2015)</h4></div>
-          <p>A modern systems programming language focusing on safety, speed, and concurrency. Loved by developers for its performance and reliability.</p>
-          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
-          <div class="course-outline" style="display: none;">
-            <h5>Beginner</h5><ul><li>Variables, Data Types, Functions</li><li>Ownership, Borrowing, Slices</li><li>Structs and Enums</li></ul>
-            <h5>Intermediate</h5><ul><li>Error Handling</li><li>Generics, Traits, Lifetimes</li><li>Closures and Iterators</li></ul>
-            <h5>Advanced</h5><ul><li>Smart Pointers</li><li>Concurrency</li><li>Unsafe Rust & FFI</li></ul>
-          </div>
-        </div>
-        <div class="learning-item">
-          <div class="learning-item-header"><h4>Swift (2014)</h4></div>
-          <p>Apple's intuitive and powerful language for building apps for iOS, Mac, Apple TV, and Apple Watch.</p>
-          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
-          <div class="course-outline" style="display: none;">
-            <h5>Beginner</h5><ul><li>Basic Syntax, Optionals</li><li>Control Flow, Functions</li><li>Classes, Structs, Enums</li></ul>
-            <h5>Intermediate</h5><ul><li>Protocols and Delegates</li><li>Error Handling, Generics</li><li>Automatic Reference Counting (ARC)</li></ul>
-            <h5>Advanced</h5><ul><li>Concurrency (async/await)</li><li>Property Wrappers</li><li>SwiftUI Deep Dive</li></ul>
-          </div>
-        </div>
-        <div class="learning-item">
-          <div class="learning-item-header"><h4>TypeScript (2012)</h4></div>
-          <p>A superset of JavaScript that adds static types, making large-scale application development easier and more robust.</p>
-          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
-          <div class="course-outline" style="display: none;">
-            <h5>Beginner</h5><ul><li>Basic Types, Interfaces</li><li>Functions, Classes</li><li>Understanding `tsconfig.json`</li></ul>
-            <h5>Intermediate</h5><ul><li>Generics</li><li>Advanced Types (Union, Intersection, Mapped)</li><li>Modules and Namespaces</li></ul>
-            <h5>Advanced</h5><ul><li>Decorators</li><li>Utility Types</li><li>Declaration Merging</li></ul>
-          </div>
-        </div>
-        <div class="learning-item">
-          <div class="learning-item-header"><h4>Go (2009)</h4></div>
-          <p>A statically typed, compiled language designed at Google for building simple, reliable, and efficient software, especially for backend services.</p>
-          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
-          <div class="course-outline" style="display: none;">
-            <h5>Beginner</h5><ul><li>Packages, Variables, Functions</li><li>Flow Control, Structs, Slices, Maps</li><li>Pointers</li></ul>
-            <h5>Intermediate</h5><ul><li>Methods and Interfaces</li><li>Goroutines and Channels</li><li>Error Handling</li></ul>
-            <h5>Advanced</h5><ul><li>Context</li><li>Reflection</li><li>Testing and Benchmarking</li></ul>
-          </div>
-        </div>
-        <div class="learning-item">
-          <div class="learning-item-header"><h4>C# (2000)</h4></div>
-          <p>A versatile, object-oriented language from Microsoft, popular for web development (.NET), game development (Unity), and enterprise applications.</p>
-          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
-          <div class="course-outline" style="display: none;">
-            <h5>Beginner</h5><ul><li>Syntax, Types, Control Flow</li><li>Classes and Objects</li><li>Properties and Indexers</li></ul>
-            <h5>Intermediate</h5><ul><li>Inheritance, Polymorphism, Interfaces</li><li>LINQ</li><li>Delegates, Events, and Lambdas</li></ul>
-            <h5>Advanced</h5><ul><li>Async/Await</li><li>Garbage Collection</li><li>Reflection and Attributes</li></ul>
-          </div>
-        </div>
-        <div class="learning-item">
-          <div class="learning-item-header"><h4>Java (1995)</h4></div>
-          <p>A class-based, object-oriented language designed to have as few implementation dependencies as possible. A staple in enterprise development.</p>
-          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
-          <div class="course-outline" style="display: none;">
-            <h5>Beginner</h5><ul><li>JVM, JDK, JRE</li><li>Data Types, Operators, Control Flow</li><li>Object-Oriented Programming (OOP) Basics</li></ul>
-            <h5>Intermediate</h5><ul><li>Inheritance, Polymorphism, Abstraction</li><li>Java Collections Framework</li><li>Exception Handling</li></ul>
-            <h5>Advanced</h5><ul><li>Concurrency and Multithreading</li><li>Generics and Lambda Expressions</li><li>Java Streams API</li></ul>
-          </div>
-        </div>
-        <div class="learning-item">
-          <div class="learning-item-header"><h4>Python (1991)</h4></div>
-          <p>A high-level, interpreted language known for its readability and extensive libraries, widely used in web development, data science, and AI.</p>
-          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
-          <div class="course-outline" style="display: none;">
-            <h5>Beginner</h5><ul><li>Syntax, Data Types (Lists, Dicts)</li><li>Functions and Control Flow</li><li>Virtual Environments and Pip</li></ul>
-            <h5>Intermediate</h5><ul><li>Object-Oriented Python (Classes)</li><li>Decorators and Generators</li><li>File I/O</li></ul>
-            <h5>Advanced</h5><ul><li>Concurrency (asyncio)</li><li>Metaclasses</li><li>Interacting with C via ctypes</li></ul>
-          </div>
-        </div>
+      <div class="learning-grid" id="learning-grid-container">
+        <!-- Languages will be dynamically inserted here -->
       </div>
     </div>
   </div>
@@ -3222,7 +3153,41 @@ document.addEventListener('DOMContentLoaded', function() {
   updateClock();
   setInterval(updateClock, 1000);
   initializeEventListeners();
+  renderLanguages();
 });
+
+function renderLanguages() {
+  fetch('languages.json')
+    .then(response => response.json())
+    .then(languages => {
+      const container = document.getElementById('learning-grid-container');
+      if (!container) return;
+
+      // Sort languages by year, descending
+      languages.sort((a, b) => b.year - a.year);
+
+      container.innerHTML = languages.map(lang => `
+        <div class="learning-item">
+          <div class="learning-item-header">
+            <i class="${lang.icon || 'fas fa-code'}"></i>
+            <h4>${lang.name} (${lang.year})</h4>
+          </div>
+          <p>${lang.description}</p>
+          <a href="${lang.youtube_link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fab fa-youtube"></i>
+            Watch Tutorial
+          </a>
+        </div>
+      `).join('');
+    })
+    .catch(error => {
+      console.error('Error fetching languages:', error);
+      const container = document.getElementById('learning-grid-container');
+      if (container) {
+        container.innerHTML = '<p style="color: var(--error-color);">Could not load learning resources at this time.</p>';
+      }
+    });
+}
 
 // =================================================================================
 // INITIALIZATION AND EVENT LISTENERS
