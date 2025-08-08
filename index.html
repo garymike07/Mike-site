@@ -1731,6 +1731,106 @@ body::before {
   border-top: 1px solid var(--border-color);
 }
 
+/* Tools Modal Styles */
+#tools-modal-body {
+    background-color: var(--bg-primary);
+    padding: 1.5rem;
+    max-height: calc(90vh - 120px); /* Adjust based on header/footer height */
+    overflow-y: auto;
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.tool-card {
+    background: var(--gradient-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tool-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-primary);
+}
+
+.tool-card .form-group {
+    gap: 0.25rem;
+}
+
+.tool-card textarea.search-input {
+    min-height: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+}
+
+.tool-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tool-actions .btn {
+    flex-grow: 1;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+}
+
+.tool-status {
+    font-size: 0.9rem;
+    font-weight: 500;
+    min-height: 20px;
+    text-align: center;
+}
+.tool-status.success {
+    color: var(--success-color);
+}
+.tool-status.error {
+    color: var(--error-color);
+}
+
+.counter-results {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.75rem;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.color-converter-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.color-preview-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.color-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
 </style>
 </head>
 
@@ -2279,13 +2379,82 @@ body::before {
 
 <!-- Tools Modal -->
 <div class="modal" id="toolsModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Tools</h2>
-      <button class="modal-close" data-modal-close="toolsModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+    <div class="modal-content modal-content--large">
+        <div class="modal-header">
+            <h2 class="modal-title">Developer Toolkit</h2>
+            <button class="modal-close" data-modal-close="toolsModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body modal-body--single-col" id="tools-modal-body">
+            <div class="tool-grid">
+
+                <!-- JSON Formatter -->
+                <div class="tool-card">
+                    <h3><i class="fas fa-code"></i> JSON Formatter & Validator</h3>
+                    <div class="form-group">
+                        <textarea id="json-input" class="search-input" rows="8" placeholder="Paste your JSON here..."></textarea>
+                    </div>
+                    <div class="tool-actions">
+                        <button class="btn btn-secondary" onclick="formatJSON()"><i class="fas fa-align-left"></i> Format</button>
+                        <button class="btn btn-secondary" onclick="minifyJSON()"><i class="fas fa-compress-arrows-alt"></i> Minify</button>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('json-input')"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                    <p id="json-status" class="tool-status"></p>
+                </div>
+
+                <!-- Character/Word Counter -->
+                <div class="tool-card">
+                    <h3><i class="fas fa-calculator"></i> Character & Word Counter</h3>
+                    <div class="form-group">
+                        <textarea id="text-counter-input" class="search-input" rows="6" placeholder="Type or paste text here..."></textarea>
+                    </div>
+                    <div class="counter-results">
+                        <span>Words: <strong id="word-count">0</strong></span>
+                        <span>Characters: <strong id="char-count">0</strong></span>
+                    </div>
+                </div>
+
+                <!-- Base64 Encoder/Decoder -->
+                <div class="tool-card">
+                    <h3><i class="fas fa-exchange-alt"></i> Base64 Encoder/Decoder</h3>
+                    <div class="form-group">
+                        <label for="base64-input">Text</label>
+                        <textarea id="base64-input" class="search-input" rows="3" placeholder="Input for encoding/decoding"></textarea>
+                    </div>
+                    <div class="tool-actions">
+                        <button class="btn btn-secondary" onclick="base64Encode()"><i class="fas fa-arrow-down"></i> Encode</button>
+                        <button class="btn btn-secondary" onclick="base64Decode()"><i class="fas fa-arrow-up"></i> Decode</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="base64-output">Base64</label>
+                        <textarea id="base64-output" class="search-input" rows="3" placeholder="Output"></textarea>
+                    </div>
+                </div>
+
+                <!-- Color Converter -->
+                <div class="tool-card">
+                    <h3><i class="fas fa-palette"></i> Color Converter</h3>
+                    <div class="color-converter-grid">
+                        <div class="form-group">
+                            <label for="color-hex">HEX</label>
+                            <input type="text" id="color-hex" class="search-input" placeholder="#ffffff">
+                        </div>
+                        <div class="form-group">
+                            <label for="color-rgb">RGB</label>
+                            <input type="text" id="color-rgb" class="search-input" placeholder="rgb(255, 255, 255)">
+                        </div>
+                        <div class="form-group">
+                            <label for="color-hsl">HSL</label>
+                            <input type="text" id="color-hsl" class="search-input" placeholder="hsl(0, 0%, 100%)">
+                        </div>
+                    </div>
+                    <div class="color-preview-wrapper">
+                        <div id="color-preview" class="color-preview"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="modal-body"><p>A collection of useful development tools is coming soon. Stay tuned!</p></div>
-  </div>
 </div>
 
 <!-- Changelog Modal -->
@@ -3293,7 +3462,151 @@ if ('ontouchstart' in window) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 
 <script>
-// This space is intentionally left blank after removing playground-specific JS.
+// =================================================================================
+// TOOLKIT LOGIC
+// =================================================================================
+
+function initializeToolkitEventListeners() {
+    // JSON Formatter
+    document.getElementById('json-input')?.addEventListener('input', () => {
+        document.getElementById('json-status').textContent = '';
+    });
+
+    // Character/Word Counter
+    document.getElementById('text-counter-input')?.addEventListener('input', updateCounters);
+
+    // Color Converter
+    document.getElementById('color-hex')?.addEventListener('input', (e) => convertColor(e.target.value, 'hex'));
+    document.getElementById('color-rgb')?.addEventListener('input', (e) => convertColor(e.target.value, 'rgb'));
+    document.getElementById('color-hsl')?.addEventListener('input', (e) => convertColor(e.target.value, 'hsl'));
+}
+
+function formatJSON() {
+    const textarea = document.getElementById('json-input');
+    const status = document.getElementById('json-status');
+    try {
+        const jsonObj = JSON.parse(textarea.value);
+        textarea.value = JSON.stringify(jsonObj, null, 2);
+        status.textContent = 'Valid JSON formatted successfully!';
+        status.className = 'tool-status success';
+    } catch (e) {
+        status.textContent = 'Invalid JSON: ' + e.message;
+        status.className = 'tool-status error';
+    }
+}
+
+function minifyJSON() {
+    const textarea = document.getElementById('json-input');
+    const status = document.getElementById('json-status');
+    try {
+        const jsonObj = JSON.parse(textarea.value);
+        textarea.value = JSON.stringify(jsonObj);
+        status.textContent = 'JSON minified successfully!';
+        status.className = 'tool-status success';
+    } catch (e) {
+        status.textContent = 'Invalid JSON: ' + e.message;
+        status.className = 'tool-status error';
+    }
+}
+
+function copyToClipboard(elementId) {
+    const textarea = document.getElementById(elementId);
+    textarea.select();
+    document.execCommand('copy');
+    showNotification('Copied to clipboard!', 'success');
+}
+
+function updateCounters() {
+    const text = document.getElementById('text-counter-input').value;
+    const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+    const charCount = text.length;
+    document.getElementById('word-count').textContent = wordCount;
+    document.getElementById('char-count').textContent = charCount;
+}
+
+function base64Encode() {
+    const input = document.getElementById('base64-input').value;
+    try {
+        document.getElementById('base64-output').value = btoa(input);
+    } catch (e) {
+        showNotification('Error encoding to Base64.', 'error');
+    }
+}
+
+function base64Decode() {
+    const input = document.getElementById('base64-output').value;
+    try {
+        document.getElementById('base64-input').value = atob(input);
+    } catch (e) {
+        showNotification('Invalid Base64 string.', 'error');
+    }
+}
+
+function convertColor(value, type) {
+    let color;
+    try {
+        if (type === 'hex') {
+            if (!/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(value)) return;
+            color = value;
+        } else if (type === 'rgb') {
+            const match = value.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+            if (!match) return;
+            color = `rgb(${match[1]}, ${match[2]}, ${match[3]})`;
+        } else if (type === 'hsl') {
+            const match = value.match(/hsl\((\d+),\s*(\d+)%,\s*(\d+)%\)/);
+            if (!match) return;
+            color = `hsl(${match[1]}, ${match[2]}%, ${match[3]}%)`;
+        }
+
+        const preview = document.getElementById('color-preview');
+        preview.style.backgroundColor = color;
+
+        // Use a temporary element to get computed color values
+        const tempDiv = document.createElement('div');
+        tempDiv.style.color = color;
+        document.body.appendChild(tempDiv);
+        const computedColor = window.getComputedStyle(tempDiv).color;
+        document.body.removeChild(tempDiv);
+
+        const [r, g, b] = computedColor.match(/\d+/g).map(Number);
+
+        if (type !== 'hex') {
+            document.getElementById('color-hex').value = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+        }
+        if (type !== 'rgb') {
+            document.getElementById('color-rgb').value = `rgb(${r}, ${g}, ${b})`;
+        }
+        if (type !== 'hsl') {
+            const [h, s, l] = rgbToHsl(r, g, b);
+            document.getElementById('color-hsl').value = `hsl(${h}, ${s}%, ${l}%)`;
+        }
+    } catch (e) {
+        // Ignore invalid color inputs for now
+    }
+}
+
+function rgbToHsl(r, g, b) {
+    r /= 255; g /= 255; b /= 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+    if (max === min) {
+        h = s = 0; // achromatic
+    } else {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+    }
+    return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+}
+
+// And call it
+document.addEventListener('DOMContentLoaded', initializeToolkitEventListeners);
+
 </script>
 </body>
 </html>
