@@ -45,6 +45,7 @@
     <!-- CodeMirror CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/material.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css" />
 
 <style>
 html {
@@ -1740,11 +1741,53 @@ body::before {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 0;
+    padding: 1rem;
     overflow: hidden;
 }
 
+.playground-instructions {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+}
+
+.instructions-toggle {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.instructions-toggle .fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.instructions-toggle.open .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.instructions-content {
+    padding: 0 1rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.instructions-content code {
+    background: var(--bg-tertiary);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .playground-container {
+    flex-grow: 1;
+    min-height: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
@@ -1815,6 +1858,42 @@ body::before {
 .CodeMirror {
     height: 100% !important;
 }
+
+.playground-output-container {
+    flex-shrink: 0;
+    height: 200px;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.playground-output-container h4 {
+    padding: 0.5rem 1rem;
+    background: var(--bg-secondary);
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#terminal {
+    flex-grow: 1;
+    padding: 0.5rem;
+    overflow-y: auto;
+}
+
+.playground-preview-container.hidden {
+    display: none;
+}
+
+.playground-container.full-width-editor .playground-editor-container {
+    grid-column: span 2;
+}
+
 
 @media (max-width: 992px) {
     .playground-container {
@@ -2379,31 +2458,51 @@ body::before {
             <button class="modal-close" data-modal-close="codePlaygroundModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body" id="playground-body">
+            <div class="playground-instructions">
+                <h4 class="instructions-toggle">
+                    <i class="fas fa-info-circle"></i> Instructions <i class="fas fa-chevron-down"></i>
+                </h4>
+                <div class="instructions-content" style="display: none;">
+                    <p><strong>HTML/CSS/JS:</strong> Write your code in the respective tabs. Click "Run" to see the output in the preview pane.</p>
+                    <p><strong>React (JSX):</strong> Write your JSX in the React tab. Babel will transpile it. Use <code>ReactDOM.render(&lt;YourComponent /&gt;, document.getElementById('root'));</code>. The preview pane provides a div with <code>id="root"</code>.</p>
+                    <p><strong>Python:</strong> Write your Python code in the Python tab. Click "Run" to execute it using Pyodide. Output from <code>print()</code> will appear in the console below.</p>
+                </div>
+            </div>
             <div class="playground-container">
                 <div class="playground-editor-container">
                     <div class="playground-tabs">
                         <button class="playground-tab active" data-tab="html">HTML</button>
                         <button class="playground-tab" data-tab="css">CSS</button>
                         <button class="playground-tab" data-tab="js">JavaScript</button>
+                        <button class="playground-tab" data-tab="react">React (JSX)</button>
+                        <button class="playground-tab" data-tab="python">Python</button>
                         <button id="run-code-btn" class="btn btn-primary" style="margin-left: auto;"><i class="fas fa-play"></i> Run</button>
                     </div>
                     <div class="playground-editors">
                         <div class="playground-editor active" id="html-editor-container">
-                            <textarea id="html-code"
-                                placeholder="<h1>Hello, World!</h1>"></textarea>
+                            <textarea id="html-code" placeholder="<h1>Hello, World!</h1>"></textarea>
                         </div>
                         <div class="playground-editor" id="css-editor-container">
                             <textarea id="css-code" placeholder="h1 { color: blue; }"></textarea>
                         </div>
                         <div class="playground-editor" id="js-editor-container">
-                            <textarea id="js-code"
-                                placeholder="document.body.style.background = 'lightgray';"></textarea>
+                            <textarea id="js-code" placeholder="console.log('Hello from JS!');"></textarea>
+                        </div>
+                        <div class="playground-editor" id="react-editor-container">
+                            <textarea id="react-code" placeholder="const App = () => &lt;h1&gt;Hello, React!&lt;/h1&gt;;&#10;&#10;ReactDOM.render(&lt;App /&gt;, document.getElementById('root'));"></textarea>
+                        </div>
+                        <div class="playground-editor" id="python-editor-container">
+                            <textarea id="python-code" placeholder="print('Hello from Python!')"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="playground-preview-container">
                     <iframe id="preview-frame" title="Code Preview"></iframe>
                 </div>
+            </div>
+            <div class="playground-output-container">
+                <h4><i class="fas fa-terminal"></i> Console</h4>
+                <div id="terminal"></div>
             </div>
         </div>
     </div>
@@ -3429,6 +3528,12 @@ if ('ontouchstart' in window) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/xml/xml.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/css/css.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+
+<!-- Playground Enhancement Libs -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -3437,36 +3542,45 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
+    // --- Editor and Terminal Initialization ---
     const htmlEditor = CodeMirror.fromTextArea(document.getElementById('html-code'), {
-        mode: 'xml',
-        theme: 'material',
-        lineNumbers: true,
-        lineWrapping: true,
+        mode: 'xml', theme: 'material', lineNumbers: true, lineWrapping: true
     });
-
     const cssEditor = CodeMirror.fromTextArea(document.getElementById('css-code'), {
-        mode: 'css',
-        theme: 'material',
-        lineNumbers: true,
-        lineWrapping: true,
+        mode: 'css', theme: 'material', lineNumbers: true, lineWrapping: true
     });
-
     const jsEditor = CodeMirror.fromTextArea(document.getElementById('js-code'), {
-        mode: 'javascript',
-        theme: 'material',
-        lineNumbers: true,
-        lineWrapping: true,
+        mode: 'javascript', theme: 'material', lineNumbers: true, lineWrapping: true
+    });
+    const reactEditor = CodeMirror.fromTextArea(document.getElementById('react-code'), {
+        mode: { name: "javascript", jsx: true }, theme: 'material', lineNumbers: true, lineWrapping: true
+    });
+    const pythonEditor = CodeMirror.fromTextArea(document.getElementById('python-code'), {
+        mode: 'python', theme: 'material', lineNumbers: true, lineWrapping: true
     });
 
     const editors = {
         html: htmlEditor,
         css: cssEditor,
         js: jsEditor,
+        react: reactEditor,
+        python: pythonEditor,
     };
 
-    // Tab switching logic
+    const term = new Terminal({ convertEol: true, theme: { background: '#000' } });
+    term.open(document.getElementById('terminal'));
+    term.write('Console ready.\n');
+
+    // --- UI Event Listeners ---
     const tabs = document.querySelectorAll('.playground-tab');
     const editorContainers = document.querySelectorAll('.playground-editor');
+    const previewContainer = document.querySelector('.playground-preview-container');
+    const mainContainer = document.querySelector('.playground-container');
+
+    function getActiveTab() {
+        const activeTabEl = document.querySelector('.playground-tab.active');
+        return activeTabEl ? activeTabEl.dataset.tab : 'html';
+    }
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -3476,37 +3590,144 @@ document.addEventListener('DOMContentLoaded', function () {
             tab.classList.add('active');
 
             editorContainers.forEach(container => {
-                if (container.id.includes(tabType)) {
-                    container.classList.add('active');
-                } else {
-                    container.classList.remove('active');
-                }
+                container.classList.toggle('active', container.id.includes(tabType));
             });
-            editors[tabType].refresh();
+
+            if (editors[tabType]) {
+                editors[tabType].refresh();
+            }
+
+            const isHtmlContext = ['html', 'css', 'js', 'react'].includes(tabType);
+            document.querySelector('[data-tab="css"]').style.display = isHtmlContext ? '' : 'none';
+            document.querySelector('[data-tab="js"]').style.display = isHtmlContext ? '' : 'none';
+
+            if (tabType === 'python') {
+                previewContainer.classList.add('hidden');
+                mainContainer.classList.add('full-width-editor');
+            } else {
+                previewContainer.classList.remove('hidden');
+                mainContainer.classList.remove('full-width-editor');
+            }
         });
     });
 
-    // Run code logic
+    const instructionsToggle = document.querySelector('.instructions-toggle');
+    instructionsToggle.addEventListener('click', () => {
+        instructionsToggle.classList.toggle('open');
+        const content = document.querySelector('.instructions-content');
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // --- Code Execution Logic ---
     const runBtn = document.getElementById('run-code-btn');
     const previewFrame = document.getElementById('preview-frame');
+    let pyodide = null;
+    let isPyodideLoading = false;
 
-    runBtn.addEventListener('click', () => {
-        const htmlCode = htmlEditor.getValue();
-        const cssCode = cssEditor.getValue();
-        const jsCode = jsEditor.getValue();
+    async function initializePyodide() {
+        if (pyodide || isPyodideLoading) return;
+        isPyodideLoading = true;
+        term.write('Initializing Python runtime (Pyodide)... may take a moment.\n');
+        try {
+            pyodide = await loadPyodide();
+            term.write('Python runtime ready.\n');
+        } catch (error) {
+            term.write(`\x1b[31mError loading Pyodide: ${error.message}\x1b[0m\n`);
+            console.error("Pyodide loading error:", error);
+        } finally {
+            isPyodideLoading = false;
+        }
+    }
 
-        const srcDoc = `
-            <html>
-                <head>
-                    <style>${cssCode}</style>
-                </head>
-                <body>
-                    ${htmlCode}
-                    <script>${jsCode}<\/script>
-                </body>
-            </html>
-        `;
-        previewFrame.srcdoc = srcDoc;
+    runBtn.addEventListener('click', async () => {
+        const activeTab = getActiveTab();
+        term.clear();
+        term.write(`Running ${activeTab.toUpperCase()} code...\n`);
+
+        try {
+            switch (activeTab) {
+                case 'python':
+                    await initializePyodide();
+                    if (!pyodide) {
+                        term.write(`\x1b[31mPyodide failed to initialize. Cannot run Python code.\x1b[0m\n`);
+                        return;
+                    }
+                    pyodide.setStdout({ batched: (str) => term.write(str + '\n') });
+                    pyodide.setStderr({ batched: (str) => term.write(`\x1b[31m${str}\x1b[0m\n`) });
+                    const pythonCode = pythonEditor.getValue();
+                    await pyodide.runPythonAsync(pythonCode);
+                    break;
+
+                case 'react':
+                case 'html': // Fallthrough for react, since it also uses html/css/js
+                case 'css':
+                case 'js':
+                default:
+                    const jsCodeToRun = activeTab === 'react'
+                        ? Babel.transform(reactEditor.getValue(), { presets: ['react'] }).code
+                        : jsEditor.getValue();
+
+                    const reactScripts = activeTab === 'react' ? `
+                        <script src="https://unpkg.com/react@17/umd/react.development.js"><\/script>
+                        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"><\/script>
+                    ` : '';
+
+                    const srcDoc = `
+                        <html>
+                            <head>
+                                <style>${cssEditor.getValue()}</style>
+                            </head>
+                            <body>
+                                ${htmlEditor.getValue()}
+                                ${activeTab === 'react' ? '<div id="root"></div>' : ''}
+                                ${reactScripts}
+                                <script>
+                                    // Capture console logs, errors, etc.
+                                    const _log = (type, ...args) => window.parent.postMessage({ type, args: args.map(arg => arg instanceof Error ? arg.message : arg) }, '*');
+                                    console.log = _log.bind(null, 'log');
+                                    console.error = _log.bind(null, 'error');
+                                    console.warn = _log.bind(null, 'warn');
+                                    window.addEventListener('error', event => _log('error', event.message));
+
+                                    try {
+                                        ${jsCodeToRun}
+                                        ${activeTab !== 'react' ? jsEditor.getValue() : ''}
+                                    } catch (e) {
+                                        console.error(e);
+                                    }
+                                <\/script>
+                            </body>
+                        </html>`;
+                    previewFrame.srcdoc = srcDoc;
+                    break;
+            }
+            term.write('Execution finished.\n');
+        } catch (e) {
+            term.write(`\x1b[31mError: ${e.message}\x1b[0m\n`);
+            console.error(e);
+        }
+    });
+
+    window.addEventListener('message', (event) => {
+        if (event.source !== previewFrame.contentWindow) return;
+
+        const { type, args } = event.data;
+        const string_args = args.map(arg => {
+            if (typeof arg === 'object' && arg !== null) return JSON.stringify(arg);
+            return String(arg);
+        }).join(' ');
+
+        switch (type) {
+            case 'log':
+                term.write(`> ${string_args}\n`);
+                break;
+            case 'error':
+                term.write(`\x1b[31mError: ${string_args}\x1b[0m\n`);
+                break;
+            case 'warn':
+                term.write(`\x1b[33mWarning: ${string_args}\x1b[0m\n`);
+                break;
+        }
     });
 
     // Refresh editor on modal open
@@ -3515,9 +3736,10 @@ document.addEventListener('DOMContentLoaded', function () {
         mutations.forEach(mutation => {
             if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                 if (playgroundModal.classList.contains('active')) {
-                    htmlEditor.refresh();
-                    cssEditor.refresh();
-                    jsEditor.refresh();
+                    const activeTab = getActiveTab();
+                    if (editors[activeTab]) {
+                        editors[activeTab].refresh();
+                    }
                 }
             }
         });
