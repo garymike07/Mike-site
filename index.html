@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8"/>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://via.placeholder.com; object-src 'none'; frame-src 'none';"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https://via.placeholder.com; object-src 'none'; frame-src 'none';"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Primary Meta Tags -->
@@ -41,6 +41,10 @@
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"/>
     <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/material.min.css"/>
 
 <style>
 html {
@@ -1730,6 +1734,94 @@ body::before {
   color: var(--text-secondary);
   border-top: 1px solid var(--border-color);
 }
+
+/* Playground Styles */
+#playground-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.playground-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    overflow: hidden;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.playground-editor-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.playground-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.playground-tab {
+    padding: 0.5rem 1rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.playground-tab.active {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    border-color: var(--accent-primary);
+}
+
+.playground-editors {
+    flex-grow: 1;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.playground-editor {
+    display: none;
+    height: 100%;
+}
+
+.playground-editor.active {
+    display: block;
+}
+
+.playground-preview-container {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+}
+
+#preview-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.CodeMirror {
+    height: 100% !important;
+}
+
+@media (max-width: 992px) {
+    .playground-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
 </style>
 </head>
 
@@ -2281,13 +2373,40 @@ body::before {
 
 <!-- Code Playground Modal -->
 <div class="modal" id="codePlaygroundModal">
-  <div class="modal-content modal-content--large">
-    <div class="modal-header">
-      <h2 class="modal-title">Code Playground</h2>
-      <button class="modal-close" data-modal-close="codePlaygroundModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+    <div class="modal-content modal-content--large">
+        <div class="modal-header">
+            <h2 class="modal-title">Code Playground</h2>
+            <button class="modal-close" data-modal-close="codePlaygroundModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body" id="playground-body">
+            <div class="playground-container">
+                <div class="playground-editor-container">
+                    <div class="playground-tabs">
+                        <button class="playground-tab active" data-tab="html">HTML</button>
+                        <button class="playground-tab" data-tab="css">CSS</button>
+                        <button class="playground-tab" data-tab="js">JavaScript</button>
+                        <button id="run-code-btn" class="btn btn-primary" style="margin-left: auto;"><i class="fas fa-play"></i> Run</button>
+                    </div>
+                    <div class="playground-editors">
+                        <div class="playground-editor active" id="html-editor-container">
+                            <textarea id="html-code"
+                                placeholder="<h1>Hello, World!</h1>"></textarea>
+                        </div>
+                        <div class="playground-editor" id="css-editor-container">
+                            <textarea id="css-code" placeholder="h1 { color: blue; }"></textarea>
+                        </div>
+                        <div class="playground-editor" id="js-editor-container">
+                            <textarea id="js-code"
+                                placeholder="document.body.style.background = 'lightgray';"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="playground-preview-container">
+                    <iframe id="preview-frame" title="Code Preview"></iframe>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="modal-body"><p>Interactive code playground coming soon. Stay tuned!</p></div>
-  </div>
 </div>
 
 <!-- Tools Modal -->
@@ -3304,6 +3423,109 @@ if ('ontouchstart' in window) {
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+
+<!-- CodeMirror JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/xml/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/css/css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Only initialize playground if the modal is present
+    if (!document.getElementById('codePlaygroundModal')) {
+        return;
+    }
+
+    const htmlEditor = CodeMirror.fromTextArea(document.getElementById('html-code'), {
+        mode: 'xml',
+        theme: 'material',
+        lineNumbers: true,
+        lineWrapping: true,
+    });
+
+    const cssEditor = CodeMirror.fromTextArea(document.getElementById('css-code'), {
+        mode: 'css',
+        theme: 'material',
+        lineNumbers: true,
+        lineWrapping: true,
+    });
+
+    const jsEditor = CodeMirror.fromTextArea(document.getElementById('js-code'), {
+        mode: 'javascript',
+        theme: 'material',
+        lineNumbers: true,
+        lineWrapping: true,
+    });
+
+    const editors = {
+        html: htmlEditor,
+        css: cssEditor,
+        js: jsEditor,
+    };
+
+    // Tab switching logic
+    const tabs = document.querySelectorAll('.playground-tab');
+    const editorContainers = document.querySelectorAll('.playground-editor');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const tabType = tab.dataset.tab;
+
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            editorContainers.forEach(container => {
+                if (container.id.includes(tabType)) {
+                    container.classList.add('active');
+                } else {
+                    container.classList.remove('active');
+                }
+            });
+            editors[tabType].refresh();
+        });
+    });
+
+    // Run code logic
+    const runBtn = document.getElementById('run-code-btn');
+    const previewFrame = document.getElementById('preview-frame');
+
+    runBtn.addEventListener('click', () => {
+        const htmlCode = htmlEditor.getValue();
+        const cssCode = cssEditor.getValue();
+        const jsCode = jsEditor.getValue();
+
+        const srcDoc = `
+            <html>
+                <head>
+                    <style>${cssCode}</style>
+                </head>
+                <body>
+                    ${htmlCode}
+                    <script>${jsCode}<\/script>
+                </body>
+            </html>
+        `;
+        previewFrame.srcdoc = srcDoc;
+    });
+
+    // Refresh editor on modal open
+    const playgroundModal = document.getElementById('codePlaygroundModal');
+    const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                if (playgroundModal.classList.contains('active')) {
+                    htmlEditor.refresh();
+                    cssEditor.refresh();
+                    jsEditor.refresh();
+                }
+            }
+        });
+    });
+
+    observer.observe(playgroundModal, { attributes: true });
+});
+</script>
 </body>
 </html>
 
