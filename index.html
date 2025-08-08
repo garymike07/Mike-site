@@ -1740,7 +1740,8 @@ body::before {
 #playground-body {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
     padding: 1rem;
     overflow: hidden;
 }
@@ -1790,7 +1791,6 @@ body::before {
     min-height: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 100%;
     overflow: hidden;
     gap: 1rem;
     padding: 1rem;
