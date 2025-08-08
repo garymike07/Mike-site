@@ -2172,7 +2172,43 @@ body::before {
       <h2 class="modal-title">Changelog</h2>
       <button class="modal-close" data-modal-close="changelogModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
     </div>
-    <div class="modal-body"><p>Project changelog and updates coming soon. Stay tuned!</p></div>
+    <div class="modal-body">
+        <style>
+            #changelogModal .version { margin-bottom: 1.5rem; }
+            #changelogModal h4 { font-size: 1.2rem; color: var(--accent-primary); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+            #changelogModal ul { list-style: none; padding-left: 1rem; }
+            #changelogModal li { margin-bottom: 0.5rem; position: relative; padding-left: 5px; }
+            #changelogModal li::before { content: '•'; color: var(--accent-primary); position: absolute; left: -1rem; }
+            #changelogModal .tag { font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 10px; margin-right: 0.5rem; color: var(--bg-primary); font-weight: bold; text-transform: uppercase; }
+            #changelogModal .tag-fix { background-color: var(--warning-color); }
+            #changelogModal .tag-feat { background-color: var(--success-color); }
+        </style>
+        <div class="version">
+            <h4>Version 1.2.1 <span style="font-size: 0.9rem; color: var(--text-secondary);">(Current)</span></h4>
+            <ul>
+                <li><span class="tag tag-feat">Feature</span>Implemented content for the 'Technical Specifications' modal.</li>
+            </ul>
+        </div>
+        <div class="version">
+            <h4>Version 1.2.0</h4>
+            <ul>
+                <li><span class="tag tag-feat">Feature</span>Added 8 placeholder modals for previously inactive navigation links to improve UX.</li>
+            </ul>
+        </div>
+        <div class="version">
+            <h4>Version 1.1.0</h4>
+            <ul>
+                <li><span class="tag tag-fix">Fix</span>Resolved critical JavaScript errors that prevented modals from opening.</li>
+                <li><span class="tag tag-fix">Fix</span>Defined several missing helper functions to prevent script crashes.</li>
+            </ul>
+        </div>
+        <div class="version">
+            <h4>Version 1.0.0</h4>
+            <ul>
+                <li>Initial release of the Mike Lab portfolio.</li>
+            </ul>
+        </div>
+    </div>
   </div>
 </div>
 
@@ -2183,7 +2219,36 @@ body::before {
       <h2 class="modal-title">Technical Specifications</h2>
       <button class="modal-close" data-modal-close="techSpecsModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
     </div>
-    <div class="modal-body"><p>Detailed technical specifications for this portfolio are coming soon. Stay tuned!</p></div>
+    <div class="modal-body">
+        <style>
+            #techSpecsModal ul { list-style: none; padding-left: 0; margin-bottom: 1.5rem; }
+            #techSpecsModal li { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; line-height: 1.5; }
+            #techSpecsModal i { color: var(--accent-primary); width: 20px; text-align: center; margin-top: 4px; }
+            #techSpecsModal h4 { margin: 1.5rem 0 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+            #techSpecsModal h4:first-child { margin-top: 0; }
+        </style>
+        <h4>Core Technologies</h4>
+        <ul>
+            <li><i class="fab fa-html5"></i><div><strong>HTML5:</strong> For the core structure and semantic content.</div></li>
+            <li><i class="fab fa-css3-alt"></i><div><strong>CSS3:</strong> For all styling, animations, and responsive design, using modern features like Custom Properties and Flexbox.</div></li>
+            <li><i class="fab fa-js-square"></i><div><strong>Vanilla JavaScript (ES6+):</strong> For all interactivity, including project filtering and dynamic content rendering, with no external frameworks.</div></li>
+        </ul>
+
+        <h4>External Libraries & APIs</h4>
+        <ul>
+            <li><i class="fas fa-font-awesome"></i><div><strong>Font Awesome:</strong> For the rich icon set used throughout the site.</div></li>
+            <li><i class="fas fa-font"></i><div><strong>Google Fonts:</strong> For the 'Poppins' typeface to ensure modern typography.</div></li>
+            <li><i class="fas fa-cogs"></i><div><strong>Fetch API:</strong> Used to dynamically load project data from the <code>projects.json</code> file.</div></li>
+            <li><i class="fas fa-eye"></i><div><strong>Intersection Observer API:</strong> For performant, power-efficient scroll-based animations.</div></li>
+        </ul>
+
+        <h4>Development & Design Principles</h4>
+        <ul>
+            <li><i class="fas fa-file-alt"></i><div><strong>Single-Page Application (SPA):</strong> The entire experience is delivered in a single, fast-loading HTML file.</div></li>
+            <li><i class="fas fa-mobile-alt"></i><div><strong>Responsive Design:</strong> The layout adapts seamlessly to various screen sizes, from mobile to desktop.</div></li>
+            <li><i class="fas fa-universal-access"></i><div><strong>Accessibility:</strong> Includes features like a skip link, ARIA labels, and semantic HTML for better screen reader support.</div></li>
+        </ul>
+    </div>
   </div>
 </div>
 
