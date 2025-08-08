@@ -98,6 +98,19 @@ html {
   --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+[data-theme="synthwave"] {
+  --bg-primary: #0d0221;
+  --bg-secondary: #261447;
+  --bg-tertiary: #3a1f7a;
+  --text-primary: #f0f8ff;
+  --text-secondary: #c9c9ff;
+  --accent-primary: #ff00ff;
+  --accent-secondary: #00ffff;
+  --border-color: rgba(255, 0, 255, 0.3);
+  --shadow-color: rgba(42, 1, 99, 0.5);
+  --gradient-primary: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -3451,7 +3464,11 @@ function renderProjects(projectsToRender = projects) {
       </div>
     ` : '';
     
-    const actionButton = getActionButton(project);
+    const isDemoAvailable = project.demo && project.demo !== '#';
+    const isGithubAvailable = project.github && project.github !== '#';
+
+    const demoButton = `<a href="${project.demo || '#'}" target="_blank" rel="noopener noreferrer" class="add-to-cart ${!isDemoAvailable ? 'disabled' : ''}" onclick="if(!${isDemoAvailable}) event.preventDefault(); event.stopPropagation();"><i class="fas fa-eye"></i> Demo</a>`;
+    const codeButton = `<a href="${project.github || '#'}" target="_blank" rel="noopener noreferrer" class="add-to-cart ${!isGithubAvailable ? 'disabled' : ''}" onclick="if(!${isGithubAvailable}) event.preventDefault(); event.stopPropagation();"><i class="fab fa-github"></i> Code</a>`;
     
     return `
       <div class="project-card fade-in-element" data-category="${project.category}" onclick="openProjectModal(${project.id})">
@@ -3472,11 +3489,8 @@ function renderProjects(projectsToRender = projects) {
           <div class="project-footer">
             <div class="project-price">KES ${project.price.toLocaleString()}</div>
             <div class="project-actions">
-                ${actionButton}
-                <button class="add-to-cart" onclick="openModalById('download-modal', event, ${project.id})" aria-label="Download source for ${project.title}">
-                    <i class="fas fa-code"></i>
-                    Source
-                </button>
+                ${demoButton}
+                ${codeButton}
             </div>
           </div>
         </div>
@@ -3850,24 +3864,37 @@ Best regards`);
 
 // Theme toggle
 function toggleTheme() {
+  const themes = ['dark', 'light', 'synthwave'];
+  const icons = ['fa-moon', 'fa-sun', 'fa-star'];
   const html = document.documentElement;
-  const currentTheme = html.getAttribute('data-theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  const currentTheme = html.getAttribute('data-theme') || 'dark';
+  const currentIndex = themes.indexOf(currentTheme);
+  const nextIndex = (currentIndex + 1) % themes.length;
   
+  const newTheme = themes[nextIndex];
   html.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
   
   const themeIcon = document.querySelector('.theme-toggle i');
-  themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  themeIcon.className = `fas ${icons[nextIndex]}`;
 }
 
 // Load saved theme
 function loadTheme() {
+  const themes = ['dark', 'light', 'synthwave'];
+  const icons = ['fa-moon', 'fa-sun', 'fa-star'];
   const savedTheme = localStorage.getItem('theme') || 'dark';
+
   document.documentElement.setAttribute('data-theme', savedTheme);
   
+  const themeIndex = themes.indexOf(savedTheme);
   const themeIcon = document.querySelector('.theme-toggle i');
-  themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  if (themeIndex !== -1) {
+    themeIcon.className = `fas ${icons[themeIndex]}`;
+  } else {
+    // Fallback to dark theme icon
+    themeIcon.className = 'fas fa-moon';
+  }
 }
 
 // General modal closer
