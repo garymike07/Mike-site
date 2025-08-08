@@ -1108,7 +1108,7 @@ body::before {
   border-radius: 24px;
   width: 90%;
   max-width: 1100px;
-  height: 90vh; /* Use height instead of max-height */
+  max-height: 90vh;
   overflow: hidden;
   position: relative;
   border: 2px solid var(--border-color);
@@ -2145,12 +2145,10 @@ body::before {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
-                height: 100%;
-                overflow: hidden;
-            }
-            .generator-form, .generator-preview-area {
-                overflow-y: auto;
-                padding-right: 1rem;
+                overflow-y: auto; /* Make this container scrollable */
+                padding: 1.5rem; /* Add some padding */
+                flex-grow: 1; /* Allow it to fill available space */
+                min-height: 0; /* Important fix for flexbox scrolling */
             }
             .template-selector {
                 display: grid;
