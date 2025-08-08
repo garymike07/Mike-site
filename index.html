@@ -1747,6 +1747,14 @@ body::before {
     gap: 1.5rem;
 }
 
+.tool-group-title {
+    font-size: 1.2rem;
+    color: var(--accent-secondary);
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
 .tool-card {
     background: var(--gradient-glass);
     border: 1px solid var(--border-color);
@@ -2805,8 +2813,8 @@ body::before {
             <button class="modal-close" data-modal-close="toolsModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
         </div>
         <div class="modal-body modal-body--single-col" id="tools-modal-body">
+            <h3 class="tool-group-title">Text Utilities</h3>
             <div class="tool-grid">
-
                 <!-- JSON Formatter -->
                 <div class="tool-card">
                     <h3><i class="fas fa-code"></i> JSON Formatter & Validator</h3>
@@ -2849,29 +2857,10 @@ body::before {
                         <textarea id="base64-output" class="search-input" rows="3" placeholder="Output"></textarea>
                     </div>
                 </div>
+            </div>
 
-                <!-- Color Converter -->
-                <div class="tool-card">
-                    <h3><i class="fas fa-palette"></i> Color Converter</h3>
-                    <div class="color-converter-grid">
-                        <div class="form-group">
-                            <label for="color-hex">HEX</label>
-                            <input type="text" id="color-hex" class="search-input" placeholder="#ffffff">
-                        </div>
-                        <div class="form-group">
-                            <label for="color-rgb">RGB</label>
-                            <input type="text" id="color-rgb" class="search-input" placeholder="rgb(255, 255, 255)">
-                        </div>
-                        <div class="form-group">
-                            <label for="color-hsl">HSL</label>
-                            <input type="text" id="color-hsl" class="search-input" placeholder="hsl(0, 0%, 100%)">
-                        </div>
-                    </div>
-                    <div class="color-preview-wrapper">
-                        <div id="color-preview" class="color-preview"></div>
-                    </div>
-                </div>
-
+            <h3 class="tool-group-title">Web &amp; AI Tools</h3>
+            <div class="tool-grid">
                 <!-- Web Scraper -->
                 <div class="tool-card">
                     <h3><i class="fas fa-robot"></i> AI Web Scraper</h3>
@@ -2905,7 +2894,31 @@ body::before {
                         <textarea id="transcriber-output" class="search-input" rows="6" placeholder="Transcription will appear here..." readonly></textarea>
                     </div>
                 </div>
+            </div>
 
+            <h3 class="tool-group-title">Design Tools</h3>
+            <div class="tool-grid">
+                <!-- Color Converter -->
+                <div class="tool-card">
+                    <h3><i class="fas fa-palette"></i> Color Converter</h3>
+                    <div class="color-converter-grid">
+                        <div class="form-group">
+                            <label for="color-hex">HEX</label>
+                            <input type="text" id="color-hex" class="search-input" placeholder="#ffffff">
+                        </div>
+                        <div class="form-group">
+                            <label for="color-rgb">RGB</label>
+                            <input type="text" id="color-rgb" class="search-input" placeholder="rgb(255, 255, 255)">
+                        </div>
+                        <div class="form-group">
+                            <label for="color-hsl">HSL</label>
+                            <input type="text" id="color-hsl" class="search-input" placeholder="hsl(0, 0%, 100%)">
+                        </div>
+                    </div>
+                    <div class="color-preview-wrapper">
+                        <div id="color-preview" class="color-preview"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
