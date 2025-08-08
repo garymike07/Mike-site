@@ -2684,6 +2684,23 @@ function loadTheme() {
   themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 }
 
+// General modal closer
+function closeModal() {
+    const activeModal = document.querySelector('.modal.active');
+    if (activeModal) {
+        closeModalById(activeModal.id);
+    }
+}
+
+// Placeholder for unimplemented features
+function runCode() {
+    console.log("Code playground not implemented yet.");
+}
+
+function fetchGithubActivity() {
+    console.log("GitHub activity fetch not implemented yet.");
+}
+
 // Notification system
 function showNotification(message, type = 'info') {
   const notification = document.createElement('div');
@@ -2795,7 +2812,7 @@ function handleRequestSubmission(event) {
     window.location.href = `mailto:wrootmike@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     showNotification('Thank you! Your request has been prepared for sending.', 'success');
-    closeRequestModal();
+    closeModalById('request-modal');
     form.reset();
 }
 
