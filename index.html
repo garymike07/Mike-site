@@ -1831,6 +1831,88 @@ body::before {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* Learning Modal Styles */
+#learning-modal-body {
+    background-color: var(--bg-primary);
+    padding: 1.5rem;
+    max-height: calc(90vh - 120px);
+    overflow-y: auto;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.learning-category-title {
+    font-size: 1.3rem;
+    color: var(--accent-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.learning-item {
+    background: var(--gradient-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.learning-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+.learning-item-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.learning-item-header i {
+    font-size: 1.5rem;
+    color: var(--accent-secondary);
+}
+
+.learning-item-header h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.learning-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.learning-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.learning-progress .progress-bar {
+    flex-grow: 1;
+}
+
+.learning-progress span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
 </style>
 </head>
 
@@ -2546,13 +2628,80 @@ body::before {
 
 <!-- Currently Learning Modal -->
 <div class="modal" id="currentlyLearningModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Currently Learning</h2>
-      <button class="modal-close" data-modal-close="currentlyLearningModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+    <div class="modal-content modal-content--large">
+        <div class="modal-header">
+            <h2 class="modal-title">My Learning Journey</h2>
+            <button class="modal-close" data-modal-close="currentlyLearningModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body modal-body--single-col" id="learning-modal-body">
+            <p class="section-subtitle text-center" style="margin-bottom: 2rem;">
+                I believe in lifelong learning. Here's a look at the technologies and concepts I'm currently focused on.
+            </p>
+            <div class="learning-grid">
+                <!-- Core Focus -->
+                <div class="learning-category">
+                    <h3 class="learning-category-title"><i class="fas fa-bullseye"></i> Core Focus</h3>
+                    <div class="learning-item">
+                        <div class="learning-item-header">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Advanced Backend Engineering</h4>
+                        </div>
+                        <p>Deepening my understanding of microservices architecture, message queues (like RabbitMQ), and advanced database optimization techniques for large-scale applications.</p>
+                        <div class="learning-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%;"></div>
+                            </div>
+                            <span>70% (Applying)</span>
+                        </div>
+                    </div>
+                    <div class="learning-item">
+                        <div class="learning-item-header">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Cloud-Native & DevOps</h4>
+                        </div>
+                        <p>Mastering containerization with Docker, orchestration with Kubernetes, and building robust CI/CD pipelines using GitHub Actions to automate testing and deployment.</p>
+                        <div class="learning-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 55%;"></div>
+                            </div>
+                            <span>55% (Intermediate)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expanding Knowledge -->
+                <div class="learning-category">
+                    <h3 class="learning-category-title"><i class="fas fa-brain"></i> Expanding Knowledge</h3>
+                    <div class="learning-item">
+                        <div class="learning-item-header">
+                            <i class="fas fa-robot"></i>
+                            <h4>Applied Machine Learning</h4>
+                        </div>
+                        <p>Exploring practical applications of machine learning, including natural language processing (NLP) with transformers and deploying models as APIs using Python frameworks.</p>
+                        <div class="learning-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%;"></div>
+                            </div>
+                            <span>40% (Exploring)</span>
+                        </div>
+                    </div>
+                     <div class="learning-item">
+                        <div class="learning-item-header">
+                            <i class="fas fa-cube"></i>
+                            <h4>WebAssembly (WASM)</h4>
+                        </div>
+                        <p>Investigating how to leverage WebAssembly with Rust to bring near-native performance to web applications for computationally intensive tasks.</p>
+                        <div class="learning-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 25%;"></div>
+                            </div>
+                            <span>25% (Foundational)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="modal-body"><p>A list of technologies and concepts I'm currently exploring is coming soon. Stay tuned!</p></div>
-  </div>
 </div>
 
 <!-- GitHub Modal -->
