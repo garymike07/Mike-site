@@ -2280,8 +2280,9 @@ body::before {
 
     <!-- Hero Content -->
     <div class="hero-content">
-      <h1 class="hero-title">Welcome to Mike Lab</h1>
+      <h1 class="hero-title">Welcome to <span id="typing-target">Mike Lab</span></h1>
       <p class="hero-subtitle">
+        <span id="dynamic-greeting" style="display: block; margin-bottom: 0.5rem; color: var(--accent-tertiary);"></span>
         Your one-stop shop for premium web applications, custom-built systems, and powerful developer tools. Browse our collection of ready-to-deploy solutions or hire an expert to bring your unique vision to life. Let's build the technology that drives your business forward.
       </p>
       
@@ -3166,6 +3167,13 @@ document.addEventListener('DOMContentLoaded', function() {
   setInterval(updateClock, 1000);
   initializeEventListeners();
   renderLanguages();
+  setDynamicGreeting();
+
+  const typingTarget = document.getElementById('typing-target');
+  if (typingTarget) {
+      const words = ['Mike Lab', 'Your Vision', 'The Future'];
+      typeAnimation(typingTarget, words);
+  }
 });
 
 function renderLanguages() {
@@ -3556,6 +3564,55 @@ function closeModalById(modalId) {
     if (document.querySelectorAll('.modal.active').length === 0) {
         document.body.style.overflow = '';
     }
+}
+
+// Typing Animation
+function typeAnimation(targetElement, words, typeSpeed = 100, deleteSpeed = 50, delay = 2000) {
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentWord = words[wordIndex];
+        const currentChars = isDeleting ? currentWord.substring(0, charIndex - 1) : currentWord.substring(0, charIndex + 1);
+
+        targetElement.textContent = currentChars;
+        targetElement.style.borderRight = '2px solid var(--accent-primary)';
+
+
+        if (!isDeleting && charIndex < currentWord.length) {
+            charIndex++;
+            setTimeout(type, typeSpeed);
+        } else if (isDeleting && charIndex > 0) {
+            charIndex--;
+            setTimeout(type, deleteSpeed);
+        } else {
+            isDeleting = !isDeleting;
+            if (!isDeleting) {
+                wordIndex = (wordIndex + 1) % words.length;
+            }
+            setTimeout(type, isDeleting ? delay / 2 : delay);
+        }
+    }
+    type();
+}
+
+function setDynamicGreeting() {
+    const greetingElement = document.getElementById('dynamic-greeting');
+    if (!greetingElement) return;
+
+    const hour = new Date().getHours();
+    let greeting;
+
+    if (hour < 12) {
+        greeting = 'Good Morning!';
+    } else if (hour < 18) {
+        greeting = 'Good Afternoon!';
+    } else {
+        greeting = 'Good Evening!';
+    }
+
+    greetingElement.textContent = greeting;
 }
 
 function openProjectModal(projectId) {
