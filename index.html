@@ -1986,7 +1986,42 @@ body::before {
 .repo-changelog {
     font-size: 0.9rem;
     color: var(--text-secondary);
-    font-style: italic;
+    width: 100%; /* Make it full width */
+    margin-top: 1rem;
+    font-style: normal; /* Override italic */
+}
+
+.changelog-content {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.commit-entry {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.commit-entry:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.commit-message {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    white-space: pre-wrap; /* To respect newlines in commit messages */
+}
+
+.commit-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
 }
 
 </style>
@@ -3519,6 +3554,81 @@ function handleRequestSubmission(event) {
     form.reset();
 }
 
+async function fetchAndRenderChangelog(repoId) {
+    const contentDiv = document.getElementById(`changelog-content-${repoId}`);
+    const project = projects.find(p => p.id === repoId);
+
+    if (!project || !project.github || project.github === '#') {
+        contentDiv.innerHTML = '<p>Repository not found.</p>';
+        return;
+    }
+
+    contentDiv.dataset.loaded = 'true';
+    contentDiv.innerHTML = '<p>Loading changelog...</p>';
+
+    try {
+        const url = new URL(project.github);
+        const parts = url.pathname.split('/').filter(p => p);
+        if (parts.length < 2) throw new Error('Invalid GitHub URL');
+        const owner = parts[0];
+        const repoName = parts[1].replace('.git', '');;
+
+        const apiUrl = `https://api.github.com/repos/${owner}/${repoName}/commits?per_page=5`;
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.statusText}`);
+        }
+
+        const commits = await response.json();
+
+        if (commits.length === 0) {
+            contentDiv.innerHTML = '<p>No recent commits found.</p>';
+            return;
+        }
+
+        const changelogHtml = commits.map(commitData => {
+            const message = commitData.commit.message.split('\\n')[0];
+            const author = commitData.commit.author.name;
+            const date = formatDate(commitData.commit.author.date);
+            return `
+                <div class="commit-entry">
+                    <p class="commit-message">${message}</p>
+                    <p class="commit-meta">by <strong>${author}</strong> on ${date}</p>
+                </div>
+            `;
+        }).join('');
+
+        contentDiv.innerHTML = changelogHtml;
+
+    } catch (error) {
+        console.error('Failed to fetch changelog:', error);
+        contentDiv.innerHTML = `<p style="color: var(--error-color);">Failed to load changelog. ${error.message}</p>`;
+    }
+}
+
+function toggleChangelog(event, repoId) {
+    event.stopPropagation(); // Prevent any parent click events
+
+    const contentDiv = document.getElementById(`changelog-content-${repoId}`);
+    if (!contentDiv) return;
+
+    const button = event.currentTarget;
+    const isVisible = contentDiv.style.display === 'block';
+
+    if (isVisible) {
+        contentDiv.style.display = 'none';
+        button.innerHTML = '<i class="fas fa-history"></i> View Changelog';
+    } else {
+        contentDiv.style.display = 'block';
+        button.innerHTML = '<i class="fas fa-history"></i> Hide Changelog';
+        // If content has not been loaded yet, fetch it
+        if (!contentDiv.dataset.loaded) {
+            fetchAndRenderChangelog(repoId);
+        }
+    }
+}
+
 function renderGithubRepositories() {
     const repoListContainer = document.getElementById('github-repo-list');
     if (!repoListContainer) return;
@@ -3550,7 +3660,10 @@ function renderGithubRepositories() {
                     </button>
                 </div>
                 <div class="repo-changelog">
-                    <i class="fas fa-history"></i> Changelog: Coming Soon
+                    <button class="btn btn-secondary" style="width:100%;" onclick="toggleChangelog(event, ${repo.id})">
+                        <i class="fas fa-history"></i> View Changelog
+                    </button>
+                    <div class="changelog-content" id="changelog-content-${repo.id}" style="display: none;"></div>
                 </div>
             </div>
         </div>
