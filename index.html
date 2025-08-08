@@ -1312,6 +1312,7 @@ body::before {
 .modal-links {
   display: flex;
   gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .modal-link {
@@ -1327,7 +1328,6 @@ body::before {
   transition: all 0.3s ease;
   font-size: 0.85rem;
   font-weight: 500;
-  flex: 1;
   min-height: 40px;
 }
 
@@ -2461,6 +2461,18 @@ body::before {
           <a href="#" class="modal-link" id="modal-github" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i>
             View Code
+          </a>
+          <a href="#" class="modal-link" id="modal-download">
+            <i class="fas fa-download"></i>
+            Download Source
+          </a>
+          <a href="#" class="modal-link" id="modal-request-feature">
+            <i class="fas fa-lightbulb"></i>
+            Request Feature
+          </a>
+          <a href="#" class="modal-link" id="modal-report-bug">
+            <i class="fas fa-bug"></i>
+            Report Bug
           </a>
         </div>
          <div class="social-share">
@@ -3634,14 +3646,41 @@ function openProjectModal(projectId) {
   
   // Update Footer Links
   const demoLink = document.getElementById('modal-demo');
-  const demoText = document.getElementById('modal-demo-text');
+  const githubLink = document.getElementById('modal-github');
+  const downloadLink = document.getElementById('modal-download');
+  const requestFeatureLink = document.getElementById('modal-request-feature');
+  const reportBugLink = document.getElementById('modal-report-bug');
+
+  // Demo and GitHub links
   demoLink.href = project.demo || '#';
-  document.getElementById('modal-github').href = project.github || '#';
+  githubLink.href = project.github || '#';
+
+  const isGithubAvailable = project.github && project.github !== '#';
+  githubLink.classList.toggle('disabled', !isGithubAvailable);
   
-  document.getElementById('modal-github').classList.toggle('disabled', !project.github || project.github === '#');
   const isDemoDisabled = !project.demo || project.demo === '#' || project.status !== 'live';
   demoLink.classList.toggle('disabled', isDemoDisabled);
-  demoText.textContent = project.status === 'live' ? 'Live Demo' : (project.status === 'ongoing' ? 'Preview (Beta)' : 'Not Available');
+  document.getElementById('modal-demo-text').textContent = project.status === 'live' ? 'Live Demo' : (project.status === 'ongoing' ? 'Preview (Beta)' : 'Not Available');
+
+  // Download Source button
+  downloadLink.classList.toggle('disabled', !isGithubAvailable);
+  if (isGithubAvailable) {
+    downloadLink.onclick = (event) => openModalById('download-modal', event, project.id);
+  } else {
+    downloadLink.onclick = (event) => event.preventDefault();
+  }
+
+  // Feature Request and Bug Report buttons
+  const isFeedbackAvailable = project.request_feature_email && project.request_feature_email !== '#';
+  if (isFeedbackAvailable) {
+    requestFeatureLink.style.display = 'inline-flex';
+    reportBugLink.style.display = 'inline-flex';
+    requestFeatureLink.href = `mailto:${project.request_feature_email}?subject=Feature%20Request%20for%20${encodeURIComponent(project.title)}`;
+    reportBugLink.href = `mailto:${project.request_feature_email}?subject=Bug%20Report%20for%20${encodeURIComponent(project.title)}`;
+  } else {
+    requestFeatureLink.style.display = 'none';
+    reportBugLink.style.display = 'none';
+  }
 
   openModalById('project-modal');
 }

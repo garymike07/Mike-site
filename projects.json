@@ -24,7 +24,8 @@
       "Responsive design",
       "Modern UI/UX",
       "Blog integration"
-    ]
+    ],
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 2,
@@ -45,7 +46,8 @@
     "date": "2024-03-01",
     "estimatedCompletion": "2024-08-15",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 3,
@@ -66,7 +68,8 @@
     "date": "2024-02-15",
     "estimatedCompletion": "2024-09-01",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 4,
@@ -87,7 +90,8 @@
     "date": "2024-01-10",
     "estimatedCompletion": "2024-10-01",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 5,
@@ -108,7 +112,8 @@
     "date": "2023-12-05",
     "estimatedCompletion": "2024-08-01",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 6,
@@ -129,7 +134,8 @@
     "date": "2023-11-20",
     "estimatedCompletion": "2024-09-15",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 7,
@@ -150,7 +156,8 @@
     "date": "2023-10-15",
     "estimatedCompletion": "2024-08-30",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 8,
@@ -171,7 +178,8 @@
     "date": "2023-09-10",
     "estimatedCompletion": "2024-08-20",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 9,
@@ -192,7 +200,8 @@
     "date": "2023-08-05",
     "estimatedCompletion": "2024-09-10",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 10,
@@ -213,7 +222,8 @@
     "date": "2023-07-30",
     "estimatedCompletion": "2024-10-15",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 11,
@@ -232,7 +242,8 @@
     "status": "concept",
     "date": "2023-06-25",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 12,
@@ -251,7 +262,8 @@
     "status": "concept",
     "date": "2023-05-20",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 13,
@@ -270,7 +282,8 @@
     "status": "concept",
     "date": "2023-04-18",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 14,
@@ -289,7 +302,8 @@
     "status": "concept",
     "date": "2023-03-15",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 15,
@@ -308,7 +322,8 @@
     "status": "concept",
     "date": "2023-02-12",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 16,
@@ -327,7 +342,8 @@
     "status": "concept",
     "date": "2023-01-10",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 17,
@@ -346,7 +362,8 @@
     "status": "concept",
     "date": "2022-12-08",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 18,
@@ -365,7 +382,8 @@
     "status": "concept",
     "date": "2022-11-05",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 19,
@@ -384,7 +402,8 @@
     "status": "concept",
     "date": "2022-10-03",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 20,
@@ -403,7 +422,8 @@
     "status": "concept",
     "date": "2022-09-01",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 21,
@@ -423,7 +443,8 @@
     "date": "2023-08-15",
     "expectedLaunch": "Q2 2025",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 22,
@@ -443,7 +464,8 @@
     "date": "2023-07-12",
     "expectedLaunch": "Q2 2025",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 23,
@@ -463,7 +485,8 @@
     "date": "2023-06-10",
     "expectedLaunch": "Q3 2025",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 24,
@@ -483,7 +506,8 @@
     "date": "2023-05-08",
     "expectedLaunch": "Q2 2025",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 25,
@@ -503,7 +527,8 @@
     "date": "2023-04-05",
     "expectedLaunch": "Q3 2025",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 26,
@@ -523,7 +548,8 @@
     "date": "2023-03-01",
     "expectedLaunch": "Q2 2025",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 27,
@@ -543,7 +569,8 @@
     "date": "2023-02-01",
     "expectedLaunch": "Q3 2025",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 28,
@@ -563,7 +590,8 @@
     "date": "2023-01-30",
     "expectedLaunch": "Q4 2025",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 29,
@@ -583,7 +611,8 @@
     "date": "2022-12-28",
     "expectedLaunch": "Q2 2025",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   },
   {
     "id": 30,
@@ -603,6 +632,7 @@
     "date": "2022-11-25",
     "expectedLaunch": "Q3 2025",
     "demo": "#",
-    "github": "#"
+    "github": "#",
+    "request_feature_email": "wrootmike@gmail.com"
   }
 ]
