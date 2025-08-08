@@ -2209,6 +2209,16 @@ body::before {
              .generator-form .form-group {
                 margin-bottom: 1rem;
             }
+            @media (max-width: 992px) {
+                #blog-generator-body {
+                    grid-template-columns: 1fr;
+                    height: auto;
+                }
+                .generator-form, .generator-preview-area {
+                    overflow-y: visible;
+                    padding-right: 0;
+                }
+            }
         </style>
         <div class="generator-form">
             <h3><i class="fas fa-pencil-alt"></i> Content</h3>
