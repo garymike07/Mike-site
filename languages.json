@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Python",
     "year": 1991,
-    "description": "A high-level, interpreted programming language known for its clear syntax and readability. It is widely used in web development, data science, artificial intelligence, and automation.",
+    "description": "First released in 1991, Python is a high-level, general-purpose language with a design philosophy that emphasizes code readability. It supports multiple programming paradigms, including structured, object-oriented, and functional programming. It is dynamically typed and garbage-collected, making it popular for rapid development. It is widely used in web development (Django, Flask), data science (NumPy, Pandas), machine learning (TensorFlow, PyTorch), and automation.",
     "youtube_link": "https://www.youtube.com/watch?v=_uQrJ0TkZlc",
     "icon": "fab fa-python"
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "name": "JavaScript",
     "year": 1995,
-    "description": "A versatile, high-level programming language that is one of the core technologies of the World Wide Web. It enables interactive web pages and is an essential part of web applications.",
+    "description": "Created in 1995, JavaScript is a core technology of the World Wide Web, alongside HTML and CSS. It is a high-level, often just-in-time compiled language that is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It is essential for front-end web development (React, Angular, Vue.js) and is also popular for back-end development (Node.js).",
     "youtube_link": "https://www.youtube.com/watch?v=PkZNo7MFNFg",
     "icon": "fab fa-js-square"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "name": "Rust",
     "year": 2015,
-    "description": "A multi-paradigm, high-level, general-purpose programming language that emphasizes performance, type safety, and concurrency. It is designed for building reliable and efficient software.",
+    "description": "First released in 2015, Rust is a multi-paradigm, general-purpose programming language that emphasizes performance, type safety, and concurrency. It enforces memory safety without needing a garbage collector by using a borrow checker to validate references. It is used for systems programming, game engines, and performance-critical applications.",
     "youtube_link": "https://www.youtube.com/watch?v=zF34dRivLOw",
     "icon": "fab fa-rust"
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "name": "C++",
     "year": 1985,
-    "description": "A high-performance programming language used in system software, game development, and other performance-critical applications. It is an extension of the C language and provides object-oriented features.",
+    "description": "Created in 1985 as an extension of the C language, C++ is a high-performance, general-purpose language. It supports procedural, object-oriented, and generic programming. It is a compiled language known for its performance and is used in system software, game development (Unreal Engine), and high-frequency trading.",
     "youtube_link": "https://www.youtube.com/watch?v=vLnPwxZdW4Y",
     "icon": "fas fa-plus"
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "name": "Java",
     "year": 1995,
-    "description": "A class-based, object-oriented programming language designed to have as few implementation dependencies as possible. It is widely used for building enterprise-scale applications.",
+    "description": "First released in 1995, Java is a class-based, object-oriented language designed to have as few implementation dependencies as possible ('write once, run anywhere'). It is one of the most popular programming languages for client-server web applications and is widely used in enterprise-scale applications, Android app development, and big data technologies.",
     "youtube_link": "https://www.youtube.com/watch?v=eIrMbAQSU34",
     "icon": "fab fa-java"
   },
@@ -43,7 +43,7 @@
     "id": 6,
     "name": "C#",
     "year": 2000,
-    "description": "A general-purpose, multi-paradigm programming language developed by Microsoft. It is widely used for building Windows applications, web applications with ASP.NET, and games with Unity.",
+    "description": "Developed by Microsoft and released in 2000, C# (C-sharp) is a general-purpose, multi-paradigm programming language. It is object-oriented and component-oriented. It is widely used for building Windows applications, web applications with the .NET framework, and is the primary language for game development in the Unity engine.",
     "youtube_link": "https://www.youtube.com/watch?v=GhQdlIFylQ8",
     "icon": "fas fa-plus"
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "name": "Go",
     "year": 2009,
-    "description": "A statically typed, compiled programming language designed at Google. It is known for its simplicity, efficiency, and strong support for concurrent programming.",
+    "description": "Designed at Google and released in 2009, Go (or Golang) is a statically typed, compiled language known for its simplicity, efficiency, and strong support for concurrent programming. It is often used for cloud and network services, command-line tools, and other performance-critical applications.",
     "youtube_link": "https://www.youtube.com/watch?v=YS4e4q9oBaU",
     "icon": "fab fa-golang"
   },
@@ -59,8 +59,40 @@
     "id": 8,
     "name": "TypeScript",
     "year": 2012,
-    "description": "A strict syntactical superset of JavaScript that adds optional static typing to the language. It is designed for the development of large applications and transcompiles to JavaScript.",
+    "description": "Developed by Microsoft and released in 2012, TypeScript is a strict syntactical superset of JavaScript that adds optional static typing to the language. It is designed for the development of large applications and transpiles to JavaScript. It is widely used with modern front-end frameworks like Angular and React.",
     "youtube_link": "https://www.youtube.com/watch?v=30LWjhZzg50",
     "icon": "fas fa-code"
+  },
+  {
+    "id": 9,
+    "name": "Swift",
+    "year": 2014,
+    "description": "Created by Apple and released in 2014, Swift is a general-purpose, multi-paradigm, compiled programming language. It is designed to be safe, fast, and expressive. It is the primary language for developing applications for iOS, macOS, watchOS, and tvOS.",
+    "youtube_link": "https://www.youtube.com/watch?v=comQ1-x2a1Q",
+    "icon": "fab fa-swift"
+  },
+  {
+    "id": 10,
+    "name": "Kotlin",
+    "year": 2011,
+    "description": "Developed by JetBrains and first appearing in 2011, Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference. It is designed to interoperate fully with Java and is the preferred language for Android app development, as announced by Google.",
+    "youtube_link": "https://www.youtube.com/watch?v=EExSSotojVI",
+    "icon": "fab fa-kickstarter-k"
+  },
+  {
+    "id": 11,
+    "name": "Ruby",
+    "year": 1995,
+    "description": "Developed in the mid-1990s, Ruby is a dynamic, open-source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write. It is most famous for being the language behind the Ruby on Rails web framework.",
+    "youtube_link": "https://www.youtube.com/watch?v=t_ispmWmdjY",
+    "icon": "fas fa-gem"
+  },
+  {
+    "id": 12,
+    "name": "PHP",
+    "year": 1995,
+    "description": "Created in 1994, PHP is a general-purpose scripting language especially suited to web development. It is one of the most popular server-side languages and powers a significant portion of the web, including popular content management systems like WordPress.",
+    "youtube_link": "https://www.youtube.com/watch?v=zZ6vybT1HQs",
+    "icon": "fab fa-php"
   }
 ]
