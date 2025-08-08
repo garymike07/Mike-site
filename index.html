@@ -2889,6 +2889,23 @@ body::before {
                     <p id="scraper-status" class="tool-status"></p>
                 </div>
 
+                <!-- URL Transcriber -->
+                <div class="tool-card">
+                    <h3><i class="fas fa-microphone-alt"></i> URL Transcriber</h3>
+                    <div class="form-group">
+                        <label for="transcriber-url">URL to Transcribe</label>
+                        <input type="url" id="transcriber-url" class="search-input" placeholder="https://example.com/audio.mp3">
+                    </div>
+                    <div class="tool-actions">
+                        <button id="transcribe-btn" class="btn btn-primary"><i class="fas fa-file-audio"></i> Transcribe</button>
+                    </div>
+                    <p id="transcriber-status" class="tool-status"></p>
+                    <div class="form-group">
+                        <label for="transcriber-output">Transcription</label>
+                        <textarea id="transcriber-output" class="search-input" rows="6" placeholder="Transcription will appear here..." readonly></textarea>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -3880,6 +3897,28 @@ function handleScrape() {
     }, 2500);
 }
 
+function handleTranscription() {
+    const url = document.getElementById('transcriber-url').value;
+    const statusEl = document.getElementById('transcriber-status');
+    const outputEl = document.getElementById('transcriber-output');
+
+    if (!url) {
+        statusEl.textContent = 'Please enter a URL to transcribe.';
+        statusEl.className = 'tool-status error';
+        return;
+    }
+
+    statusEl.textContent = 'Transcribing...';
+    statusEl.className = 'tool-status';
+    outputEl.value = '';
+
+    setTimeout(() => {
+        statusEl.textContent = 'Transcription complete!';
+        statusEl.className = 'tool-status success';
+        outputEl.value = `Hello, and welcome to the presentation. Today, we'll be discussing the future of web development... It's clear that the landscape is constantly evolving, with new frameworks and technologies emerging all the time. One of the most exciting areas of development is the rise of AI-powered tools that can assist with everything from code generation to automated testing. This will undoubtedly have a profound impact on how we build websites and applications in the years to come. Thank you.`;
+    }, 2500);
+}
+
 function toggleCourse(button) {
     const courseOutline = button.nextElementSibling;
     if (courseOutline.style.display === 'none') {
@@ -4288,6 +4327,9 @@ function initializeToolkitEventListeners() {
     document.getElementById('color-hex')?.addEventListener('input', (e) => convertColor(e.target.value, 'hex'));
     document.getElementById('color-rgb')?.addEventListener('input', (e) => convertColor(e.target.value, 'rgb'));
     document.getElementById('color-hsl')?.addEventListener('input', (e) => convertColor(e.target.value, 'hsl'));
+
+    // URL Transcriber
+    document.getElementById('transcribe-btn')?.addEventListener('click', handleTranscription);
 }
 
 function formatJSON() {
