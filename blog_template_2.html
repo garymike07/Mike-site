@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__BLOG_TITLE__</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">__BLOG_TITLE__</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+        <div class="main-content">
+            <main>
+                <!-- Posts will be injected here -->
+                <article>
+                    <h2>__POST_TITLE__</h2>
+                    <p class="post-meta">By __AUTHOR_NAME__ on <time datetime="__POST_DATE_ISO__">__POST_DATE_FRIENDLY__</time></p>
+                    <div class="post-content">
+                        __POST_CONTENT__
+                    </div>
+                </article>
+            </main>
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3>About the Author</h3>
+                    <p>__AUTHOR_BIO__</p>
+                </div>
+                <div class="widget">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Marketing</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <footer>
+            <p>&copy; __YEAR__ __BLOG_TITLE__. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-rss"></i></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

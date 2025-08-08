@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__BLOG_TITLE__</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="#">__BLOG_TITLE__</a></h1>
+            <p>A tech blog by __AUTHOR_NAME__</p>
+        </header>
+        <main>
+            <!-- Posts will be injected here -->
+            <article>
+                <h2>__POST_TITLE__</h2>
+                <div class="post-meta">
+                    <span><time datetime="__POST_DATE_ISO__">__POST_DATE_FRIENDLY__</time></span>
+                    <span class="tags">
+                        <a href="#">#tech</a> <a href="#">#programming</a> <a href="#">#webdev</a>
+                    </span>
+                </div>
+                <div class="post-content">
+                    __POST_CONTENT__
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; __YEAR__ __AUTHOR_NAME__. Find me on <a href="#">GitHub</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>
