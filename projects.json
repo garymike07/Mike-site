@@ -163,12 +163,12 @@
     "id": 8,
     "title": "Restaurant Chain Management",
     "description": "Multi-location restaurant management system with inventory, staff scheduling, and customer loyalty programs.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
+      "https://www.restaurant365.com/wp-content/uploads/2025/08/iStock-900812860-1024x683.jpg",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png"
     ],
     "category": "active",
     "tags": ["React", "Express", "PostgreSQL", "POS Integration"],
@@ -185,12 +185,12 @@
     "id": 9,
     "title": "Fitness Tracking Mobile App",
     "description": "Comprehensive fitness application with workout plans, nutrition tracking, and social features for fitness enthusiasts.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
+      "https://uizard.io/static/269cc24ae1ecc74b98f243b86cd1d8b4/a8e47/70c030d5c7cbd260f865f4aa0ab4eedb28603fba-1440x835.png",
+      "https://uizard.io/static/17c83fa1bcc58430449ca7907c838a5f/a8e47/1d26b7434625c2adf712383d97d167c247c2820a-1440x835.png",
+      "https://uizard.io/static/2593cfafef210c44e36d29b4e7babe2b/a8e47/8daff8291ae601bdfb623eea88bd019dee5a8c83-1440x835.png"
     ],
     "category": "active",
     "tags": ["React Native", "Redux", "Health APIs", "Mobile"],
@@ -207,12 +207,12 @@
     "id": 10,
     "title": "Supply Chain Tracker",
     "description": "End-to-end supply chain visibility platform with real-time tracking, analytics, and automated reporting.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://www.aufaitux.com/wp-content/uploads/2025/03/Logistics-dashboard-UIUX-design.jpg",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://uizard.io/static/e27e2428cebb2a9f0bd2fd62806816b9/a8e47/8d37b6cdee42257548e9e8a02cb888beb61dd4a7-1440x835.png",
+      "https://uizard.io/static/33f6b0100c446cf2c622650d9cc0bf41/a8e47/abe0abdb576e6c3d828a85e74e14eb0a377d837a-1440x835.png",
+      "https://uizard.io/static/7937709f938175e087e270394d36c271/a8e47/0103d089baf81cc5998a87eb84924b07024768b0-1440x835.png",
+      "https://uizard.io/static/0b53deb383b184314b3a0845aa78fe2e/a8e47/83d908e8379584e373fe73d18e50db7eae4ea884-1440x835.png"
     ],
     "category": "active",
     "tags": ["Vue.js", "Python", "IoT Integration", "Analytics"],
@@ -229,12 +229,12 @@
     "id": 11,
     "title": "Smart City Infrastructure",
     "description": "IoT-based smart city management platform for traffic optimization, energy management, and citizen services.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e4170e77c34a45fbce5603_39_air_pollution_analysis%20(1)-poster-00001.jpg",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png"
     ],
     "category": "concept",
     "tags": ["IoT", "Machine Learning", "Big Data", "Smart City"],
@@ -249,12 +249,12 @@
     "id": 12,
     "title": "Virtual Reality Training Platform",
     "description": "Immersive VR training solutions for corporate education, safety training, and skill development programs.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_Male-Nursing-Student_Cutout_v2_png8-e1722988809743.png",
+      "https://medvr.education/wp-content/uploads/2022/12/asthma-debriefing-1024x576.jpg",
+      "https://medvr.education/wp-content/uploads/2022/11/debriefing-blog-1024x576.jpg",
+      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png"
     ],
     "category": "concept",
     "tags": ["VR", "Unity", "3D Modeling", "Training"],
@@ -289,12 +289,12 @@
     "id": 14,
     "title": "AI Legal Assistant",
     "description": "Artificial intelligence-powered legal research and document analysis platform for law firms and legal professionals.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://www.clio.com/wp-content/uploads/2021/03/Clio_Manage_Simplified-UI_Document-Management_Document-Template-550x430.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://www.clio.com/wp-content/uploads/2021/03/Clio_Grow_Simplified-UI_Document-Automation-Electronic-Signatures_Documents-and-ESignatures-550x486.png",
+      "https://www.clio.com/wp-content/uploads/2021/11/Clio-Manage_Document-Management_Clio-Desktop-App-and-Clio-Drive-550x393.png",
+      "https://www.clio.com/wp-content/uploads/2021/03/Clio_Manage_Simplified-UI_Integrations-App-Ecosystem-550x541.png",
+      "https://www.clio.com/wp-content/uploads/2021/03/Clio_Manage_Simplified-UI_Document-Management_Document-Template-550x430.png"
     ],
     "category": "concept",
     "tags": ["AI", "NLP", "Legal Tech", "Machine Learning"],
@@ -309,12 +309,12 @@
     "id": 15,
     "title": "Sustainable Energy Monitor",
     "description": "Comprehensive renewable energy monitoring and optimization platform for solar and wind installations.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
+      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
     ],
     "category": "concept",
     "tags": ["Green Tech", "IoT", "Energy", "Sustainability"],
@@ -329,12 +329,12 @@
     "id": 16,
     "title": "Mental Health Support Network",
     "description": "Digital mental health platform connecting users with therapists, support groups, and wellness resources.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
+      "https://uizard.io/static/269cc24ae1ecc74b98f243b86cd1d8b4/a8e47/70c030d5c7cbd260f865f4aa0ab4eedb28603fba-1440x835.png",
+      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png",
+      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_Male-Nursing-Student_Cutout_v2_png8-e1722988809743.png"
     ],
     "category": "concept",
     "tags": ["Healthcare", "Mental Health", "Community", "Wellness"],
@@ -349,12 +349,12 @@
     "id": 17,
     "title": "Autonomous Vehicle Fleet",
     "description": "Fleet management system for autonomous vehicles with route optimization and predictive maintenance.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg"
     ],
     "category": "concept",
     "tags": ["Autonomous", "Fleet Management", "AI", "Transportation"],
@@ -369,12 +369,12 @@
     "id": 18,
     "title": "Agricultural Drone Network",
     "description": "Precision agriculture platform using drone technology for crop monitoring and automated farming operations.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://www.aufaitux.com/wp-content/uploads/2025/03/Logistics-dashboard-UIUX-design.jpg",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://www.aufaitux.com/wp-content/uploads/2025/03/Logistics-dashboard-UIUX-design.jpg",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg"
     ],
     "category": "concept",
     "tags": ["Drones", "Agriculture", "IoT", "Automation"],
@@ -409,12 +409,12 @@
     "id": 20,
     "title": "Quantum Computing Interface",
     "description": "User-friendly interface for quantum computing applications in research and enterprise environments.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
+      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
     ],
     "category": "concept",
     "tags": ["Quantum Computing", "Research", "Interface", "Enterprise"],
@@ -429,12 +429,12 @@
     "id": 21,
     "title": "Social Media Analytics Suite",
     "description": "Comprehensive social media management and analytics platform for brands and marketing agencies.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
+      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
     ],
     "category": "active",
     "tags": ["Social Media", "Analytics", "Marketing", "Dashboard"],
@@ -450,12 +450,12 @@
     "id": 22,
     "title": "Cloud Storage Optimization",
     "description": "Intelligent cloud storage management with automated optimization and cost reduction algorithms.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
+      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
     ],
     "category": "active",
     "tags": ["Cloud", "Storage", "Optimization", "Cost Management"],
@@ -471,12 +471,12 @@
     "id": 23,
     "title": "Gaming Tournament Platform",
     "description": "Esports tournament organization platform with live streaming, bracket management, and prize distribution.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
+      "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
+      "https://uizard.io/static/269cc24ae1ecc74b98f243b86cd1d8b4/a8e47/70c030d5c7cbd260f865f4aa0ab4eedb28603fba-1440x835.png"
     ],
     "category": "active",
     "tags": ["Gaming", "Esports", "Streaming", "Tournament"],
@@ -492,12 +492,12 @@
     "id": 24,
     "title": "Personal Finance AI Advisor",
     "description": "AI-powered personal finance management with investment recommendations and budget optimization.",
-    "image": "generic_dashboard_1.png",
+    "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
+      "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
+      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
     ],
     "category": "active",
     "tags": ["FinTech", "AI", "Personal Finance", "Investment"],
@@ -513,12 +513,12 @@
     "id": 25,
     "title": "Remote Work Collaboration Hub",
     "description": "All-in-one remote work platform with video conferencing, project management, and team collaboration tools.",
-    "image": "https://via.placeholder.com/400x200/7c3aed/ffffff?text=Remote+Hub",
+    "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
+      "https://www.aufaitux.com/wp-content/uploads/2025/03/Logistics-dashboard-UIUX-design.jpg",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png"
     ],
     "category": "active",
     "tags": ["Remote Work", "Collaboration", "Video Conferencing", "Productivity"],
@@ -534,12 +534,12 @@
     "id": 26,
     "title": "Smart Home Automation",
     "description": "Comprehensive smart home control system with AI-powered automation and energy efficiency optimization.",
-    "image": "https://via.placeholder.com/400x200/f97316/ffffff?text=Smart+Home",
+    "image": "https://www.solaredge.com/us/sites/nam/files/styles/tiny_convert/public/images/upload/rich-text-img-Mobile.png?itok=gQSqkhG0",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://www.solaredge.com/us/sites/nam/files/styles/tiny_convert/public/images/upload/rich-text-img-Mobile.png?itok=gQSqkhG0",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png"
     ],
     "category": "active",
     "tags": ["IoT", "Smart Home", "Automation", "Energy"],
@@ -555,12 +555,12 @@
     "id": 27,
     "title": "Digital Art Marketplace",
     "description": "NFT marketplace for digital artists with creator tools, royalty management, and community features.",
-    "image": "https://via.placeholder.com/400x200/ec4899/ffffff?text=Art+Marketplace",
+    "image": "https://uizard.io/static/e27e2428cebb2a9f0bd2fd62806816b9/a8e47/8d37b6cdee42257548e9e8a02cb888beb61dd4a7-1440x835.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://uizard.io/static/e27e2428cebb2a9f0bd2fd62806816b9/a8e47/8d37b6cdee42257548e9e8a02cb888beb61dd4a7-1440x835.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
+      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png"
     ],
     "category": "active",
     "tags": ["NFT", "Digital Art", "Blockchain", "Marketplace"],
@@ -576,12 +576,12 @@
     "id": 28,
     "title": "Weather Prediction AI",
     "description": "Advanced weather forecasting system using machine learning and satellite data for hyper-local predictions.",
-    "image": "https://via.placeholder.com/400x200/0891b2/ffffff?text=Weather+AI",
+    "image": "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e4170e77c34a45fbce5603_39_air_pollution_analysis%20(1)-poster-00001.jpg",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e4170e77c34a45fbce5603_39_air_pollution_analysis%20(1)-poster-00001.jpg",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png"
     ],
     "category": "active",
     "tags": ["AI", "Weather", "Machine Learning", "Prediction"],
@@ -597,12 +597,12 @@
     "id": 29,
     "title": "Elderly Care Monitoring",
     "description": "IoT-based elderly care system with health monitoring, emergency alerts, and family connectivity.",
-    "image": "https://via.placeholder.com/400x200/16a34a/ffffff?text=Elderly+Care",
+    "image": "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png",
+      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_Male-Nursing-Student_Cutout_v2_png8-e1722988809743.png",
+      "https://medvr.education/wp-content/uploads/2022/12/asthma-debriefing-1024x576.jpg",
+      "https://medvr.education/wp-content/uploads/2022/11/debriefing-blog-1024x576.jpg"
     ],
     "category": "active",
     "tags": ["Healthcare", "IoT", "Monitoring", "Elderly Care"],
@@ -618,12 +618,12 @@
     "id": 30,
     "title": "Waste Management Optimizer",
     "description": "Smart waste management system with route optimization, recycling tracking, and environmental impact analysis.",
-    "image": "https://via.placeholder.com/400x200/84cc16/ffffff?text=Waste+Management",
+    "image": "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg",
     "thumbnails": [
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png",
-      "ai_cms_thumb_1.png"
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg",
+      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png"
     ],
     "category": "active",
     "tags": ["Environment", "Optimization", "Smart City", "Sustainability"],
