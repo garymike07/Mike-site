@@ -1,0 +1,120 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+nav a {
+    color: #495057;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+}
+nav a:hover {
+    color: #0056b3;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+article h2 {
+    font-size: 2.2rem;
+    color: #212529;
+    margin-bottom: 0.5rem;
+}
+
+.post-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 1rem;
+}
+
+.post-content {
+    font-size: 1.1rem;
+}
+.post-content p {
+    margin-bottom: 1.2rem;
+}
+
+.sidebar .widget {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li a {
+    color: #495057;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+}
+.sidebar ul li a:hover {
+    color: #0056b3;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+.social-links a {
+    color: #f8f9fa;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    transition: color 0.2s;
+}
+.social-links a:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
