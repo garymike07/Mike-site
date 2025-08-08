@@ -2108,7 +2108,44 @@ body::before {
     display: block;
 }
 
+/* Scraper Results Styles */
+.scraped-item {
+    background: var(--bg-tertiary);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--accent-primary);
+}
+.scraped-item h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-primary);
+}
+.scraped-item p {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-secondary);
+}
+.scraped-item span {
+    font-weight: 600;
+    color: var(--text-primary);
+}
 
+.course-outline {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+}
+
+.course-outline h5 {
+    color: var(--accent-secondary);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.course-outline ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
 </style>
 </head>
 
@@ -2174,6 +2211,10 @@ body::before {
       <a href="javascript:void(0);" class="nav-item" data-modal-target="contact-modal">
         <i class="fas fa-envelope"></i>
         <span>Contact</span>
+      </a>
+      <a href="javascript:void(0);" class="nav-item" data-modal-target="become-a-dev-modal">
+        <i class="fas fa-code-branch"></i>
+        <span>Become a Dev</span>
       </a>
     </nav>
 
@@ -2508,6 +2549,107 @@ body::before {
 <!-- GENERATED PLACEHOLDER MODALS -->
 <!-- ================================================================================= -->
 
+<!-- Become a Dev Modal -->
+<div class="modal" id="become-a-dev-modal">
+  <div class="modal-content modal-content--large">
+    <div class="modal-header">
+      <h2 class="modal-title">Become a Developer</h2>
+      <button class="modal-close" data-modal-close="become-a-dev-modal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body modal-body--single-col" id="become-a-dev-body">
+      <p class="section-subtitle text-center" style="margin-bottom: 2rem;">
+        Start your journey into software development. Here are some popular languages, from newest to oldest.
+      </p>
+      <div class="learning-grid">
+        <div class="learning-item">
+          <div class="learning-item-header"><h4>Rust (2015)</h4></div>
+          <p>A modern systems programming language focusing on safety, speed, and concurrency. Loved by developers for its performance and reliability.</p>
+          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
+          <div class="course-outline" style="display: none;">
+            <h5>Beginner</h5><ul><li>Variables, Data Types, Functions</li><li>Ownership, Borrowing, Slices</li><li>Structs and Enums</li></ul>
+            <h5>Intermediate</h5><ul><li>Error Handling</li><li>Generics, Traits, Lifetimes</li><li>Closures and Iterators</li></ul>
+            <h5>Advanced</h5><ul><li>Smart Pointers</li><li>Concurrency</li><li>Unsafe Rust & FFI</li></ul>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-item-header"><h4>Swift (2014)</h4></div>
+          <p>Apple's intuitive and powerful language for building apps for iOS, Mac, Apple TV, and Apple Watch.</p>
+          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
+          <div class="course-outline" style="display: none;">
+            <h5>Beginner</h5><ul><li>Basic Syntax, Optionals</li><li>Control Flow, Functions</li><li>Classes, Structs, Enums</li></ul>
+            <h5>Intermediate</h5><ul><li>Protocols and Delegates</li><li>Error Handling, Generics</li><li>Automatic Reference Counting (ARC)</li></ul>
+            <h5>Advanced</h5><ul><li>Concurrency (async/await)</li><li>Property Wrappers</li><li>SwiftUI Deep Dive</li></ul>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-item-header"><h4>TypeScript (2012)</h4></div>
+          <p>A superset of JavaScript that adds static types, making large-scale application development easier and more robust.</p>
+          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
+          <div class="course-outline" style="display: none;">
+            <h5>Beginner</h5><ul><li>Basic Types, Interfaces</li><li>Functions, Classes</li><li>Understanding `tsconfig.json`</li></ul>
+            <h5>Intermediate</h5><ul><li>Generics</li><li>Advanced Types (Union, Intersection, Mapped)</li><li>Modules and Namespaces</li></ul>
+            <h5>Advanced</h5><ul><li>Decorators</li><li>Utility Types</li><li>Declaration Merging</li></ul>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-item-header"><h4>Go (2009)</h4></div>
+          <p>A statically typed, compiled language designed at Google for building simple, reliable, and efficient software, especially for backend services.</p>
+          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
+          <div class="course-outline" style="display: none;">
+            <h5>Beginner</h5><ul><li>Packages, Variables, Functions</li><li>Flow Control, Structs, Slices, Maps</li><li>Pointers</li></ul>
+            <h5>Intermediate</h5><ul><li>Methods and Interfaces</li><li>Goroutines and Channels</li><li>Error Handling</li></ul>
+            <h5>Advanced</h5><ul><li>Context</li><li>Reflection</li><li>Testing and Benchmarking</li></ul>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-item-header"><h4>C# (2000)</h4></div>
+          <p>A versatile, object-oriented language from Microsoft, popular for web development (.NET), game development (Unity), and enterprise applications.</p>
+          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
+          <div class="course-outline" style="display: none;">
+            <h5>Beginner</h5><ul><li>Syntax, Types, Control Flow</li><li>Classes and Objects</li><li>Properties and Indexers</li></ul>
+            <h5>Intermediate</h5><ul><li>Inheritance, Polymorphism, Interfaces</li><li>LINQ</li><li>Delegates, Events, and Lambdas</li></ul>
+            <h5>Advanced</h5><ul><li>Async/Await</li><li>Garbage Collection</li><li>Reflection and Attributes</li></ul>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-item-header"><h4>Java (1995)</h4></div>
+          <p>A class-based, object-oriented language designed to have as few implementation dependencies as possible. A staple in enterprise development.</p>
+          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
+          <div class="course-outline" style="display: none;">
+            <h5>Beginner</h5><ul><li>JVM, JDK, JRE</li><li>Data Types, Operators, Control Flow</li><li>Object-Oriented Programming (OOP) Basics</li></ul>
+            <h5>Intermediate</h5><ul><li>Inheritance, Polymorphism, Abstraction</li><li>Java Collections Framework</li><li>Exception Handling</li></ul>
+            <h5>Advanced</h5><ul><li>Concurrency and Multithreading</li><li>Generics and Lambda Expressions</li><li>Java Streams API</li></ul>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="learning-item-header"><h4>Python (1991)</h4></div>
+          <p>A high-level, interpreted language known for its readability and extensive libraries, widely used in web development, data science, and AI.</p>
+          <button class="btn btn-secondary" onclick="toggleCourse(this)">Learn</button>
+          <div class="course-outline" style="display: none;">
+            <h5>Beginner</h5><ul><li>Syntax, Data Types (Lists, Dicts)</li><li>Functions and Control Flow</li><li>Virtual Environments and Pip</li></ul>
+            <h5>Intermediate</h5><ul><li>Object-Oriented Python (Classes)</li><li>Decorators and Generators</li><li>File I/O</li></ul>
+            <h5>Advanced</h5><ul><li>Concurrency (asyncio)</li><li>Metaclasses</li><li>Interacting with C via ctypes</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scraper Results Modal -->
+<div class="modal" id="scraper-results-modal">
+  <div class="modal-content modal-content--large">
+    <div class="modal-header">
+      <h2 class="modal-title">Scraper Results</h2>
+      <button class="modal-close" data-modal-close="scraper-results-modal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body modal-body--single-col" id="scraper-results-body">
+      <p id="scraper-results-status">Loading...</p>
+      <div id="scraper-results-content"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Blog Modal -->
 <div class="modal" id="blogModal">
   <div class="modal-content modal-content--large">
@@ -2728,6 +2870,23 @@ body::before {
                     <div class="color-preview-wrapper">
                         <div id="color-preview" class="color-preview"></div>
                     </div>
+                </div>
+
+                <!-- Web Scraper -->
+                <div class="tool-card">
+                    <h3><i class="fas fa-robot"></i> AI Web Scraper</h3>
+                    <div class="form-group">
+                        <label for="scraper-url">Website URL</label>
+                        <input type="url" id="scraper-url" class="search-input" placeholder="https://example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="scraper-query">What to search for (e.g., "all product titles")</label>
+                        <input type="text" id="scraper-query" class="search-input" placeholder="e.g., all product titles">
+                    </div>
+                    <div class="tool-actions">
+                        <button class="btn btn-primary" onclick="handleScrape()"><i class="fas fa-search-location"></i> Scrape</button>
+                    </div>
+                    <p id="scraper-status" class="tool-status"></p>
                 </div>
 
             </div>
@@ -3654,18 +3813,82 @@ function handleRequestSubmission(event) {
     }
 
     const subject = `Custom Project Request: ${projectType}`;
-    const body = `
-        New project request from: ${name} (${email})
-        Project Type: ${projectType}
-        Description: ${description}
-        Estimated Budget: KES ${budget}
-    `;
+    const body = `--- New Custom Project Request ---
+
+*Requester Details:*
+- Name: ${name}
+- Email: ${email}
+
+*Project Information:*
+- Type: ${projectType}
+- Budget (KES): ${budget}
+
+*Project Description:*
+${description}
+
+------------------------------------
+`;
 
     window.location.href = `mailto:wrootmike@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     showNotification('Thank you! Your request has been prepared for sending.', 'success');
     closeModalById('request-modal');
     form.reset();
+}
+
+function handleScrape() {
+    const url = document.getElementById('scraper-url').value;
+    const query = document.getElementById('scraper-query').value;
+    const statusEl = document.getElementById('scraper-status');
+
+    if (!url || !query) {
+        statusEl.textContent = 'Please fill in both URL and search query.';
+        statusEl.className = 'tool-status error';
+        return;
+    }
+
+    statusEl.textContent = 'Scraping...';
+    statusEl.className = 'tool-status';
+
+    openModalById('scraper-results-modal');
+    const resultsStatus = document.getElementById('scraper-results-status');
+    const resultsContent = document.getElementById('scraper-results-content');
+    resultsStatus.textContent = `Scraping "${url}" for "${query}"...`;
+    resultsContent.innerHTML = '';
+
+    setTimeout(() => {
+        resultsStatus.textContent = `Results for "${query}":`;
+        resultsContent.innerHTML = `
+            <div class="scraped-item">
+                <h4>Product Title 1</h4>
+                <p>This is a description for the first scraped item. It has some details about the product.</p>
+                <span>Price: $19.99</span>
+            </div>
+            <div class="scraped-item">
+                <h4>Product Title 2</h4>
+                <p>This is another description for the second scraped item. It is also very interesting.</p>
+                <span>Price: $29.99</span>
+            </div>
+            <div class="scraped-item">
+                <h4>Product Title 3</h4>
+                <p>The third item is the best of all. You should definitely buy it.</p>
+                <span>Price: $39.99</span>
+            </div>
+        `;
+        statusEl.textContent = 'Scraping complete!';
+        statusEl.className = 'tool-status success';
+    }, 2500);
+}
+
+function toggleCourse(button) {
+    const courseOutline = button.nextElementSibling;
+    if (courseOutline.style.display === 'none') {
+        courseOutline.style.display = 'block';
+        button.textContent = 'Hide Course';
+    } else {
+        courseOutline.style.display = 'none';
+        button.textContent = 'Learn';
+    }
 }
 
 async function fetchAndRenderChangelog(repoId) {
