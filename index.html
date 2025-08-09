@@ -1880,10 +1880,64 @@ body::before {
 
 /* Tools Modal Styles */
 #tools-modal-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     background-color: var(--bg-primary);
+    max-height: calc(90vh - 70px); /* Adjusted height */
+}
+
+.tool-tabs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+.tool-tab-button {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tool-tab-button:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
+}
+
+.tool-tab-button.active {
+    color: var(--accent-primary);
+    border-bottom-color: var(--accent-primary);
+}
+
+.tool-tab-content {
+    display: none;
     padding: 1.5rem;
-    max-height: calc(90vh - 120px); /* Adjust based on header/footer height */
+    animation: fadeIn 0.5s;
     overflow-y: auto;
+    flex-grow: 1;
+}
+
+.tool-tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .tool-grid {
@@ -2971,115 +3025,199 @@ body::before {
             <h2 class="modal-title">Developer Toolkit</h2>
             <button class="modal-close" data-modal-close="toolsModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
         </div>
-        <div class="modal-body modal-body--single-col" id="tools-modal-body">
-            <h3 class="tool-group-title">Text Utilities</h3>
-            <div class="tool-grid">
-                <!-- JSON Formatter -->
-                <div class="tool-card">
-                    <h3><i class="fas fa-code"></i> JSON Formatter & Validator</h3>
-                    <div class="form-group">
-                        <textarea id="json-input" class="search-input" rows="8" placeholder="Paste your JSON here..."></textarea>
-                    </div>
-                    <div class="tool-actions">
-                        <button class="btn btn-secondary" onclick="formatJSON()"><i class="fas fa-align-left"></i> Format</button>
-                        <button class="btn btn-secondary" onclick="minifyJSON()"><i class="fas fa-compress-arrows-alt"></i> Minify</button>
-                        <button class="btn btn-secondary" onclick="copyToClipboard('json-input')"><i class="fas fa-copy"></i> Copy</button>
-                    </div>
-                    <p id="json-status" class="tool-status"></p>
+        <div class="modal-body" id="tools-modal-body">
+                <div class="tool-tabs">
+                    <button class="tool-tab-button active" data-tab="text"><i class="fas fa-font"></i> Text Utilities</button>
+                    <button class="tool-tab-button" data-tab="web"><i class="fas fa-globe"></i> Web &amp; AI</button>
+                    <button class="tool-tab-button" data-tab="converters"><i class="fas fa-sync-alt"></i> Converters</button>
+                    <button class="tool-tab-button" data-tab="generators"><i class="fas fa-cogs"></i> Generators</button>
                 </div>
 
-                <!-- Character/Word Counter -->
-                <div class="tool-card">
-                    <h3><i class="fas fa-calculator"></i> Character & Word Counter</h3>
-                    <div class="form-group">
-                        <textarea id="text-counter-input" class="search-input" rows="6" placeholder="Type or paste text here..."></textarea>
-                    </div>
-                    <div class="counter-results">
-                        <span>Words: <strong id="word-count">0</strong></span>
-                        <span>Characters: <strong id="char-count">0</strong></span>
+                <!-- Text Utilities Tab -->
+                <div class="tool-tab-content active" id="tool-tab-text">
+                    <div class="tool-grid">
+                        <!-- JSON Formatter -->
+                        <div class="tool-card">
+                            <h3><i class="fas fa-code"></i> JSON Formatter & Validator</h3>
+                            <div class="form-group">
+                                <textarea id="json-input" class="search-input" rows="8" placeholder="Paste your JSON here..."></textarea>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="btn btn-secondary" onclick="formatJSON()"><i class="fas fa-align-left"></i> Format</button>
+                                <button class="btn btn-secondary" onclick="minifyJSON()"><i class="fas fa-compress-arrows-alt"></i> Minify</button>
+                                <button class="btn btn-secondary" onclick="copyToClipboard('json-input')"><i class="fas fa-copy"></i> Copy</button>
+                            </div>
+                            <p id="json-status" class="tool-status"></p>
+                        </div>
+                        <!-- Character/Word Counter -->
+                        <div class="tool-card">
+                            <h3><i class="fas fa-calculator"></i> Character & Word Counter</h3>
+                            <div class="form-group">
+                                <textarea id="text-counter-input" class="search-input" rows="6" placeholder="Type or paste text here..."></textarea>
+                            </div>
+                            <div class="counter-results">
+                                <span>Words: <strong id="word-count">0</strong></span>
+                                <span>Characters: <strong id="char-count">0</strong></span>
+                            </div>
+                        </div>
+                        <!-- Base64 Encoder/Decoder -->
+                        <div class="tool-card">
+                             <h3><i class="fas fa-exchange-alt"></i> Base64 Encoder/Decoder</h3>
+                            <div class="form-group">
+                                <label for="base64-input">Text</label>
+                                <textarea id="base64-input" class="search-input" rows="3" placeholder="Input for encoding/decoding"></textarea>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="btn btn-secondary" onclick="base64Encode()"><i class="fas fa-arrow-down"></i> Encode</button>
+                                <button class="btn btn-secondary" onclick="base64Decode()"><i class="fas fa-arrow-up"></i> Decode</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="base64-output">Base64</label>
+                                <textarea id="base64-output" class="search-input" rows="3" placeholder="Output"></textarea>
+                            </div>
+                        </div>
+                        <!-- Case Converter -->
+                        <div class="tool-card">
+                            <h3><i class="fas fa-text-height"></i> Case Converter</h3>
+                            <div class="form-group">
+                                <textarea id="case-converter-input" class="search-input" rows="4" placeholder="Type or paste text..."></textarea>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="btn btn-secondary" onclick="convertCase('upper')">Upper</button>
+                                <button class="btn btn-secondary" onclick="convertCase('lower')">Lower</button>
+                                <button class="btn btn-secondary" onclick="convertCase('title')">Title</button>
+                                <button class="btn btn-secondary" onclick="convertCase('sentence')">Sentence</button>
+                            </div>
+                        </div>
+                        <!-- Slug Generator -->
+                        <div class="tool-card">
+                            <h3><i class="fas fa-link"></i> Slug Generator</h3>
+                            <div class="form-group">
+                                <label for="slug-input">Input</label>
+                                <input type="text" id="slug-input" class="search-input" placeholder="Hello World!">
+                            </div>
+                             <div class="form-group">
+                                <label for="slug-output">Output</label>
+                                <input type="text" id="slug-output" class="search-input" readonly>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Base64 Encoder/Decoder -->
-                <div class="tool-card">
-                    <h3><i class="fas fa-exchange-alt"></i> Base64 Encoder/Decoder</h3>
-                    <div class="form-group">
-                        <label for="base64-input">Text</label>
-                        <textarea id="base64-input" class="search-input" rows="3" placeholder="Input for encoding/decoding"></textarea>
+                <!-- Web & AI Tab -->
+                <div class="tool-tab-content" id="tool-tab-web">
+                    <div class="tool-grid">
+                        <!-- Web Scraper -->
+                        <div class="tool-card">
+                            <h3><i class="fas fa-robot"></i> AI Web Scraper</h3>
+                            <div class="form-group">
+                                <label for="scraper-url">Website URL</label>
+                                <input type="url" id="scraper-url" class="search-input" placeholder="https://example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="scraper-query">What to search for (e.g., "all product titles")</label>
+                                <input type="text" id="scraper-query" class="search-input" placeholder="e.g., all product titles">
+                            </div>
+                            <div class="tool-actions">
+                                <button class="btn btn-primary" onclick="handleScrape()"><i class="fas fa-search-location"></i> Scrape</button>
+                            </div>
+                            <p id="scraper-status" class="tool-status"></p>
+                        </div>
+                        <!-- URL Transcriber -->
+                        <div class="tool-card">
+                            <h3><i class="fas fa-microphone-alt"></i> URL Transcriber</h3>
+                            <div class="form-group">
+                                <label for="transcriber-url">URL to Transcribe</label>
+                                <input type="url" id="transcriber-url" class="search-input" placeholder="https://example.com/audio.mp3">
+                            </div>
+                            <div class="tool-actions">
+                                <button id="transcribe-btn" class="btn btn-primary"><i class="fas fa-file-audio"></i> Transcribe</button>
+                            </div>
+                            <p id="transcriber-status" class="tool-status"></p>
+                            <div class="form-group">
+                                <label for="transcriber-output">Transcription</label>
+                                <textarea id="transcriber-output" class="search-input" rows="6" placeholder="Transcription will appear here..." readonly></textarea>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tool-actions">
-                        <button class="btn btn-secondary" onclick="base64Encode()"><i class="fas fa-arrow-down"></i> Encode</button>
-                        <button class="btn btn-secondary" onclick="base64Decode()"><i class="fas fa-arrow-up"></i> Decode</button>
+                </div>
+
+                <!-- Converters Tab -->
+                <div class="tool-tab-content" id="tool-tab-converters">
+                    <div class="tool-grid">
+                        <!-- Color Converter -->
+                        <div class="tool-card">
+                            <h3><i class="fas fa-palette"></i> Color Converter</h3>
+                            <div class="color-converter-grid">
+                                <div class="form-group">
+                                    <label for="color-hex">HEX</label>
+                                    <input type="text" id="color-hex" class="search-input" placeholder="#ffffff">
+                                </div>
+                                <div class="form-group">
+                                    <label for="color-rgb">RGB</label>
+                                    <input type="text" id="color-rgb" class="search-input" placeholder="rgb(255, 255, 255)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="color-hsl">HSL</label>
+                                    <input type="text" id="color-hsl" class="search-input" placeholder="hsl(0, 0%, 100%)">
+                                </div>
+                            </div>
+                            <div class="color-preview-wrapper">
+                                <div id="color-preview" class="color-preview"></div>
+                            </div>
+                        </div>
+                        <!-- PX to REM Converter -->
+                        <div class="tool-card">
+                            <h3><i class="fas fa-ruler-horizontal"></i> PX to REM Converter</h3>
+                            <div class="form-group">
+                                <label for="px-rem-base">Base Font Size (px)</label>
+                                <input type="number" id="px-rem-base" class="search-input" value="16">
+                            </div>
+                            <div class="form-group">
+                                <label for="px-rem-px">Pixels (px)</label>
+                                <input type="number" id="px-rem-px" class="search-input" placeholder="16">
+                            </div>
+                            <div class="form-group">
+                                <label for="px-rem-rem">REM</label>
+                                <input type="text" id="px-rem-rem" class="search-input" readonly>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="base64-output">Base64</label>
-                        <textarea id="base64-output" class="search-input" rows="3" placeholder="Output"></textarea>
+                </div>
+
+                <!-- Generators Tab -->
+                <div class="tool-tab-content" id="tool-tab-generators">
+                    <div class="tool-grid">
+                        <!-- Lorem Ipsum Generator -->
+                        <div class="tool-card">
+                            <h3><i class="fas fa-paragraph"></i> Lorem Ipsum Generator</h3>
+                            <div class="form-group">
+                                <label for="lorem-paragraphs">Number of Paragraphs</label>
+                                <input type="number" id="lorem-paragraphs" class="search-input" value="1" min="1" max="20">
+                            </div>
+                            <div class="tool-actions">
+                                <button class="btn btn-primary" onclick="generateLoremIpsum()"><i class="fas fa-play"></i> Generate</button>
+                                <button class="btn btn-secondary" onclick="copyToClipboard('lorem-output')"><i class="fas fa-copy"></i> Copy</button>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="lorem-output" class="search-input" rows="6" readonly></textarea>
+                            </div>
+                        </div>
+                        <!-- UUID Generator -->
+                        <div class="tool-card">
+                            <h3><i class="fas fa-fingerprint"></i> UUID/GUID Generator</h3>
+                            <div class="form-group">
+                                <label for="uuid-output">Generated UUID</label>
+                                <input type="text" id="uuid-output" class="search-input" readonly>
+                            </div>
+                            <div class="tool-actions">
+                                <button class="btn btn-primary" onclick="generateUuid()"><i class="fas fa-sync"></i> Generate</button>
+                                <button class="btn btn-secondary" onclick="copyToClipboard('uuid-output')"><i class="fas fa-copy"></i> Copy</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <h3 class="tool-group-title">Web &amp; AI Tools</h3>
-            <div class="tool-grid">
-                <!-- Web Scraper -->
-                <div class="tool-card">
-                    <h3><i class="fas fa-robot"></i> AI Web Scraper</h3>
-                    <div class="form-group">
-                        <label for="scraper-url">Website URL</label>
-                        <input type="url" id="scraper-url" class="search-input" placeholder="https://example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="scraper-query">What to search for (e.g., "all product titles")</label>
-                        <input type="text" id="scraper-query" class="search-input" placeholder="e.g., all product titles">
-                    </div>
-                    <div class="tool-actions">
-                        <button class="btn btn-primary" onclick="handleScrape()"><i class="fas fa-search-location"></i> Scrape</button>
-                    </div>
-                    <p id="scraper-status" class="tool-status"></p>
-                </div>
-
-                <!-- URL Transcriber -->
-                <div class="tool-card">
-                    <h3><i class="fas fa-microphone-alt"></i> URL Transcriber</h3>
-                    <div class="form-group">
-                        <label for="transcriber-url">URL to Transcribe</label>
-                        <input type="url" id="transcriber-url" class="search-input" placeholder="https://example.com/audio.mp3">
-                    </div>
-                    <div class="tool-actions">
-                        <button id="transcribe-btn" class="btn btn-primary"><i class="fas fa-file-audio"></i> Transcribe</button>
-                    </div>
-                    <p id="transcriber-status" class="tool-status"></p>
-                    <div class="form-group">
-                        <label for="transcriber-output">Transcription</label>
-                        <textarea id="transcriber-output" class="search-input" rows="6" placeholder="Transcription will appear here..." readonly></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="tool-group-title">Design Tools</h3>
-            <div class="tool-grid">
-                <!-- Color Converter -->
-                <div class="tool-card">
-                    <h3><i class="fas fa-palette"></i> Color Converter</h3>
-                    <div class="color-converter-grid">
-                        <div class="form-group">
-                            <label for="color-hex">HEX</label>
-                            <input type="text" id="color-hex" class="search-input" placeholder="#ffffff">
-                        </div>
-                        <div class="form-group">
-                            <label for="color-rgb">RGB</label>
-                            <input type="text" id="color-rgb" class="search-input" placeholder="rgb(255, 255, 255)">
-                        </div>
-                        <div class="form-group">
-                            <label for="color-hsl">HSL</label>
-                            <input type="text" id="color-hsl" class="search-input" placeholder="hsl(0, 0%, 100%)">
-                        </div>
-                    </div>
-                    <div class="color-preview-wrapper">
-                        <div id="color-preview" class="color-preview"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -4832,8 +4970,117 @@ function rgbToHsl(r, g, b) {
     return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
 }
 
+// =================================================================================
+// TOOLKIT TAB LOGIC
+// =================================================================================
+
+function initializeToolkitTabs() {
+    const toolTabsContainer = document.querySelector('#toolsModal .tool-tabs');
+    if (!toolTabsContainer) return;
+
+    toolTabsContainer.addEventListener('click', (event) => {
+        const button = event.target.closest('.tool-tab-button');
+        if (!button) return;
+
+        const tabId = button.dataset.tab;
+
+        // Update buttons
+        document.querySelectorAll('#toolsModal .tool-tab-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        button.classList.add('active');
+
+        // Update content
+        document.querySelectorAll('#toolsModal .tool-tab-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        document.getElementById(`tool-tab-${tabId}`).classList.add('active');
+    });
+}
+
+
+// =================================================================================
+// NEW TOOLKIT FUNCTIONS
+// =================================================================================
+
+function convertCase(type) {
+    const textarea = document.getElementById('case-converter-input');
+    let text = textarea.value;
+    switch (type) {
+        case 'upper':
+            text = text.toUpperCase();
+            break;
+        case 'lower':
+            text = text.toLowerCase();
+            break;
+        case 'title':
+            text = text.toLowerCase().replace(/(^|\s)\S/g, L => L.toUpperCase());
+            break;
+        case 'sentence':
+            text = text.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase());
+            break;
+    }
+    textarea.value = text;
+}
+
+function generateSlug() {
+    const input = document.getElementById('slug-input').value;
+    const output = document.getElementById('slug-output');
+    const slug = input
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/[\s_-]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    output.value = slug;
+}
+
+function convertPxToRem() {
+    const base = parseFloat(document.getElementById('px-rem-base').value) || 16;
+    const px = parseFloat(document.getElementById('px-rem-px').value);
+    const remOutput = document.getElementById('px-rem-rem');
+
+    if (isNaN(px)) {
+        remOutput.value = '';
+        return;
+    }
+    remOutput.value = (px / base) + 'rem';
+}
+
+function generateLoremIpsum() {
+    const paragraphs = parseInt(document.getElementById('lorem-paragraphs').value) || 1;
+    const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam. Proin magna.';
+    let output = [];
+    for (let i = 0; i < paragraphs; i++) {
+        output.push(lorem);
+    }
+    document.getElementById('lorem-output').value = output.join('\n\n');
+}
+
+function generateUuid() {
+    document.getElementById('uuid-output').value = self.crypto.randomUUID();
+}
+
+
+// Add event listeners for new tools
+function initializeNewToolkitEventListeners() {
+    document.getElementById('slug-input')?.addEventListener('input', generateSlug);
+    document.getElementById('px-rem-base')?.addEventListener('input', convertPxToRem);
+    document.getElementById('px-rem-px')?.addEventListener('input', convertPxToRem);
+    document.getElementById('uuid-output')?.addEventListener('click', generateUuid); // Also generate on click
+
+    const uuidOutput = document.getElementById('uuid-output');
+    if (uuidOutput) {
+        generateUuid(); // Generate one on load
+    }
+}
+
 // And call it
-document.addEventListener('DOMContentLoaded', initializeToolkitEventListeners);
+document.addEventListener('DOMContentLoaded', () => {
+    initializeToolkitEventListeners();
+    initializeToolkitTabs();
+    initializeNewToolkitEventListeners();
+});
 
 </script>
 
