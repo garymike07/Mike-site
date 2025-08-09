@@ -2280,7 +2280,7 @@ body::before {
         <i class="fas fa-code-branch"></i>
         <span>Become a Dev</span>
       </a>
-      <a href="#" id="devUltraBtn" class="nav-item">
+      <a href="javascript:void(0);" data-modal-target="devUltraModal" class="nav-item">
         <i class="fas fa-star"></i>
         <span>Dev Ultra</span>
       </a>
@@ -4641,12 +4641,27 @@ document.addEventListener('DOMContentLoaded', initializeToolkitEventListeners);
 </script>
 
 <!-- Dev Ultra Modal -->
-<div id="devUltraModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-[3000]">
-  <div class="bg-gray-900 border border-gray-700 text-white w-full max-w-5xl p-6 rounded-lg shadow-lg overflow-y-auto max-h-[90vh] relative" style="--tw-bg-opacity: 0.95; backdrop-filter: blur(8px);">
-    <div class="flex justify-between items-center border-b border-gray-600 pb-3 mb-4 sticky top-0 bg-gray-900/80 z-10 -mx-6 px-6 pt-2">
-      <h2 class="text-2xl font-bold text-yellow-400">Dev Ultra Learning Hub</h2>
-      <button id="closeDevUltra" class="text-gray-400 hover:text-red-500 text-4xl leading-none">&times;</button>
+<div class="modal" id="devUltraModal">
+    <div class="modal-content" style="max-width: 900px;">
+        <div class="modal-header">
+            <h2 class="modal-title">Dev Ultra Learning Hub</h2>
+            <button class="modal-close" data-modal-close="devUltraModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body modal-body--single-col" style="background-color: var(--bg-primary);">
+            <!-- Tabs -->
+            <div class="flex gap-2 sm:gap-4 mb-4 -mx-6 px-6">
+              <button class="dev-tab px-3 py-2 text-sm sm:text-base sm:px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200" data-track="backend">Backend</button>
+              <button class="dev-tab px-3 py-2 text-sm sm:text-base sm:px-4 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-200" data-track="pentester">Pentester</button>
+              <button class="dev-tab px-3 py-2 text-sm sm:text-base sm:px-4 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-all duration-200" data-track="blockchain">Blockchain</button>
+            </div>
+
+            <!-- Content Area -->
+            <div id="devContent" class="space-y-6">
+              <p class="text-gray-300 text-center text-lg">Select a track to start your journey from Beginner to Advanced!</p>
+            </div>
+        </div>
     </div>
+</div>
 
     <!-- Tabs -->
     <div class="flex gap-2 sm:gap-4 mb-4 sticky top-[60px] bg-gray-900/80 z-10 py-2 -mx-6 px-6">
@@ -4666,30 +4681,15 @@ document.addEventListener('DOMContentLoaded', initializeToolkitEventListeners);
 // =================================================================================
 // DEV ULTRA MODAL LOGIC
 // =================================================================================
-const devUltraBtn = document.getElementById("devUltraBtn");
-const devUltraModal = document.getElementById("devUltraModal");
-const closeDevUltra = document.getElementById("closeDevUltra");
 const devContent = document.getElementById("devContent");
 const devTabs = document.querySelectorAll(".dev-tab");
 
-if (devUltraBtn) {
-    devUltraBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        devUltraModal.classList.remove("hidden");
-        devUltraModal.classList.add("flex");
-        // Load the first track by default if no track is active
-        if (!document.querySelector('.dev-tab.active')) {
-            devTabs[0].click();
-        }
-    });
-}
-
-if (closeDevUltra) {
-    closeDevUltra.addEventListener("click", () => {
-        devUltraModal.classList.add("hidden");
-        devUltraModal.classList.remove("flex");
-    });
-}
+// Load the first track by default when the modal is opened for the first time
+document.querySelector('[data-modal-target="devUltraModal"]').addEventListener('click', () => {
+    if (!document.querySelector('.dev-tab.active')) {
+        devTabs[0].click();
+    }
+});
 
 // Learning data
 const tracks = {
