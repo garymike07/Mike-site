@@ -4697,7 +4697,48 @@ const tracks = {
     title: "Backend Engineer",
     levels: {
       Beginner: {
-        skills: ["HTML/CSS", "JavaScript Basics", "Git", "HTTP/APIs", "SQL Basics"],
+        skills: [
+            {
+                name: "HTML/CSS",
+                description: "The fundamental building blocks of the web. While you'll focus on the server-side, understanding how data is displayed is crucial. HTML structures the content and CSS makes it look good.",
+                resources: [
+                    { name: "MDN: HTML Introduction", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+                    { name: "MDN: CSS First Steps", link: "https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps" }
+                ]
+            },
+            {
+                name: "JavaScript Basics",
+                description: "The programming language of the web. As a backend developer using Node.js, JavaScript is your primary tool. Master variables, data types, loops, functions, and objects.",
+                resources: [
+                    { name: "MDN: JavaScript Basics", link: "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics" },
+                    { name: "freeCodeCamp: JS Algorithms and Data Structures", link: "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" }
+                ]
+            },
+            {
+                name: "Git",
+                description: "The most popular version control system. Git allows you to track changes in your code, collaborate with others, and revert to previous versions if something goes wrong. It's an essential tool for any developer.",
+                resources: [
+                    { name: "Official Git Documentation", link: "https://git-scm.com/doc" },
+                    { name: "Atlassian Git Tutorial", link: "https://www.atlassian.com/git/tutorials/what-is-version-control" }
+                ]
+            },
+            {
+                name: "HTTP/APIs",
+                description: "Understand the protocol that powers the web. Learn how clients (like browsers) and servers communicate. An API (Application Programming Interface) is how different software components talk to each other.",
+                resources: [
+                    { name: "MDN: An overview of HTTP", link: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" },
+                    { name: "REST API Handbook", link: "https://www.freecodecamp.org/news/rest-api-handbook/" }
+                ]
+            },
+            {
+                name: "SQL Basics",
+                description: "Structured Query Language is used to manage and query data in relational databases. Learn how to create tables, and perform basic CRUD (Create, Read, Update, Delete) operations.",
+                resources: [
+                    { name: "SQLBolt - Interactive Tutorial", link: "https://sqlbolt.com/" },
+                    { name: "W3Schools: SQL Tutorial", link: "https://www.w3schools.com/sql/" }
+                ]
+            }
+        ],
         project: "Build a basic portfolio site with a contact form that stores data.",
         quiz: [
           { q: "What does HTTP stand for?", options: ["HyperText Transfer Protocol", "Hyperlink Transfer Package"], a: 0 },
@@ -4818,12 +4859,36 @@ function loadTrack(trackKey) {
     const projectButtonText = projectCompleted ? '✓ Completed' : 'Mark as Complete';
     const projectButtonClass = projectCompleted ? 'bg-green-700 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700';
 
+    // Check if skills is the old format (array of strings) or new format (array of objects)
+    const isNewFormat = data.skills.length > 0 && typeof data.skills[0] === 'object';
+    const skillsHtml = isNewFormat
+      ? data.skills.map(skill => `
+          <div class="skill-item mb-2">
+            <button class="skill-header w-full flex justify-between items-center p-3 bg-gray-700 hover:bg-gray-600 rounded-lg text-left transition-colors" onclick="toggleSkill(this)">
+              <span class="font-semibold text-white">${skill.name}</span>
+              <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+            </button>
+            <div class="skill-details overflow-hidden max-h-0 transition-all duration-500 ease-in-out bg-gray-800/80 rounded-b-lg">
+              <div class="p-4 border-t border-gray-600">
+                <p class="text-gray-300 mb-3 text-sm">${skill.description}</p>
+                <h6 class="font-semibold text-yellow-400 mb-2 text-sm">Recommended Resources:</h6>
+                <ul class="list-disc pl-5 space-y-1 text-sm">
+                  ${skill.resources.map(r => `<li><a href="${r.link}" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">${r.name}</a></li>`).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+        `).join('')
+      : `<ul class="list-none p-0 mb-4 flex flex-wrap gap-2">
+          ${data.skills.map(s => `<li class="bg-gray-700 px-3 py-1 rounded-full text-sm font-medium">${s}</li>`).join('')}
+        </ul>`;
+
     html += `<div class="border border-gray-700 p-4 rounded-lg mb-4 bg-gray-800/50">
       <h4 class="font-bold text-lg text-yellow-400">${level}</h4>
       <p class="text-gray-400 mt-2 mb-3"><strong>Skills to master:</strong></p>
-      <ul class="list-none p-0 mb-4 flex flex-wrap gap-2">
-        ${data.skills.map(s => `<li class="bg-gray-700 px-3 py-1 rounded-full text-sm font-medium">${s}</li>`).join('')}
-      </ul>
+      <div class="skills-container">
+        ${skillsHtml}
+      </div>
       <div class="border-t border-gray-700 pt-4 mt-4">
         <p class="mb-2 font-semibold">Mini Project: <span class="font-normal">${data.project}</span></p>
         <button onclick="toggleProjectComplete(event, '${trackKey}', '${level}')"
@@ -4908,6 +4973,23 @@ function toggleProjectComplete(event, trackKey, level) {
     projectButton.disabled = true;
     projectButton.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
     projectButton.classList.add('bg-green-700', 'cursor-not-allowed');
+}
+
+function toggleSkill(button) {
+    const details = button.nextElementSibling;
+    const icon = button.querySelector('i');
+
+    // Using Tailwind classes for rotation
+    const isExpanded = icon.classList.contains('rotate-180');
+
+    if (isExpanded) {
+        details.style.maxHeight = '0px';
+        icon.classList.remove('rotate-180');
+    } else {
+        // Temporarily set to auto to get the full height
+        details.style.maxHeight = details.scrollHeight + "px";
+        icon.classList.add('rotate-180');
+    }
 }
 
 function checkAnswer(button, trackKey, level, qIndex, choice) {
