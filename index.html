@@ -276,51 +276,46 @@ body::before {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1.5rem;
   background: var(--gradient-glass);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  border: 2px solid var(--border-color);
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
   border-radius: 50px;
   color: var(--text-secondary);
   text-decoration: none;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
   min-height: 44px;
   white-space: nowrap;
   position: relative;
   overflow: hidden;
-  box-shadow: 
-    0 4px 16px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.nav-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--gradient-primary);
-  transition: left 0.5s ease;
-  z-index: -1;
-  border-radius: 48px;
-}
-
-.nav-item:hover::before, .nav-item.active::before {
-  left: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .nav-item:hover, .nav-item.active {
-  color: var(--bg-primary);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 
-    var(--shadow-glow),
-    0 8px 24px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.8), 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-image-source: linear-gradient(to right, var(--accent-secondary), var(--accent-primary));
+}
+
+.nav-item.active {
+  animation: breathe 2s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.8), 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.12);
+    box-shadow: 0 0 30px rgba(108, 99, 255, 1), 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
 }
 
 .hero-content {
@@ -2256,6 +2251,7 @@ body::before {
   <!-- Hero Section -->
   <section class="hero" id="home">
     <!-- Mobile-responsive navigation -->
+    <h4 class="hero-nav-explanation" style="text-align: center; margin-bottom: 1rem; color: var(--text-secondary);">Explore my work and get in touch using the quick navigation buttons below.</h4>
     <nav class="hero-nav">
       <a href="#home" class="nav-item active">
         <i class="fas fa-home"></i>
