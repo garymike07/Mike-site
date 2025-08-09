@@ -280,13 +280,11 @@ body::before {
   background: var(--gradient-glass);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  border: 2px solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  border: 2px solid var(--border-color);
   border-radius: 50px;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   font-size: 0.9rem;
   font-weight: 600;
   min-height: 44px;
@@ -297,25 +295,11 @@ body::before {
 }
 
 .nav-item:hover, .nav-item.active {
-  color: var(--text-primary);
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 0 20px rgba(108, 99, 255, 0.8), 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  border-image-source: linear-gradient(to right, var(--accent-secondary), var(--accent-primary));
-}
-
-.nav-item.active {
-  animation: breathe 2s ease-in-out infinite;
-}
-
-@keyframes breathe {
-  0%, 100% {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 0 20px rgba(108, 99, 255, 0.8), 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  }
-  50% {
-    transform: translateY(-5px) scale(1.12);
-    box-shadow: 0 0 30px rgba(108, 99, 255, 1), 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  }
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
@@ -2251,7 +2235,6 @@ body::before {
   <!-- Hero Section -->
   <section class="hero" id="home">
     <!-- Mobile-responsive navigation -->
-    <h4 class="hero-nav-explanation" style="text-align: center; margin-bottom: 1rem; color: var(--text-secondary);">Explore my work and get in touch using the quick navigation buttons below.</h4>
     <nav class="hero-nav">
       <a href="#home" class="nav-item active">
         <i class="fas fa-home"></i>
