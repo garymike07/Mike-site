@@ -1396,51 +1396,140 @@ body::before {
 
 /* About Me Modal Styles */
 #about-modal .modal-content {
-  max-width: 500px;
-  max-height: 90vh;
+    max-width: 800px;
 }
 
-.about-modal-content {
-  text-align: center;
+#about-modal-body {
+    padding: 0;
+    overflow: hidden; /* Let the child elements handle scrolling */
 }
 
-.about-modal-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 1.5rem;
-  border: 4px solid var(--accent-primary);
-  box-shadow: 0 0 20px var(--shadow-color);
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    height: 100%;
+    max-height: calc(95vh - 70px); /* Set max-height on the grid */
 }
 
-.about-modal-text {
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.6;
+@media (min-width: 768px) {
+    .about-grid {
+        grid-template-columns: 300px 1fr;
+    }
 }
 
-.about-modal-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
+.about-left {
+    background: rgba(0,0,0,0.2);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto; /* Allow left side to scroll if needed */
 }
 
-.about-modal-bio {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 400px;
-  margin: 0 auto 1.5rem;
+.about-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-primary);
+    box-shadow: 0 0 30px var(--shadow-glow);
+    margin-bottom: 1.5rem;
+    object-fit: cover;
 }
 
-.about-modal-footer {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-color);
-  font-weight: 500;
-  color: var(--text-primary);
+.about-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.about-location {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.about-socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent-primary);
+    transform: scale(1.2) rotate(10deg);
+}
+
+.about-right {
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.about-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent-secondary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.about-bio {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.skill-bar-container {
+    width: 100%;
+    height: 10px;
+    background: var(--bg-tertiary);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-bar {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 5px;
+    width: 0; /* Initial width for animation */
+    transition: width 1s ease-in-out;
+}
+
+.about-footer {
+    text-align: center;
+    margin-top: 2rem;
 }
 
 /* Contact Modal Styles */
@@ -2499,15 +2588,65 @@ body::before {
           <i class="fas fa-times"></i>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="about-modal-content">
-          <img src="myk_logo.webp" alt="Mike - Photo" class="about-modal-image" loading="lazy"/>
-          <h4 class="about-modal-name">Mike</h4>
-          <p class="about-modal-bio">
-            A passionate and results-driven Full-Stack Developer from Nairobi, Kenya. With 3 years of hands-on experience, I turn innovative ideas into robust, user-friendly web applications. My digital workshop, Mike Lab, is where I experiment with cutting-edge tech to solve tomorrow's problems today.
-          </p>
-          <div class="about-modal-footer">
-            <p>Let's connect and build something amazing together!</p>
+      <div class="modal-body" id="about-modal-body">
+        <div class="about-grid">
+          <div class="about-left">
+            <img src="myk_logo.webp" alt="Mike - Photo" class="about-image" loading="lazy"/>
+            <h3 class="about-name">Mike</h3>
+            <p class="about-location"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+            <div class="about-socials">
+              <a href="https://github.com/garymike07" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="about-right">
+            <h4 class="about-section-title">Hello! I'm Mike.</h4>
+            <p class="about-bio">
+              A passionate and results-driven Full-Stack Developer. With 3 years of hands-on experience, I turn innovative ideas into robust, user-friendly web applications. My digital workshop, Mike Lab, is where I experiment with cutting-edge tech to solve tomorrow's problems today.
+            </p>
+            <h4 class="about-section-title">My Skills</h4>
+            <div class="skills-container">
+              <div class="skill">
+                <div class="skill-info">
+                  <span>HTML, CSS, JavaScript</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar" data-width="95%"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <div class="skill-info">
+                  <span>React & Vue</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar" data-width="85%"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <div class="skill-info">
+                  <span>Node.js & Python</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar" data-width="90%"></div>
+                </div>
+              </div>
+              <div class="skill">
+                <div class="skill-info">
+                  <span>Databases (SQL & NoSQL)</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-bar-container">
+                  <div class="skill-bar" data-width="80%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="about-footer">
+              <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
+            </div>
           </div>
         </div>
       </div>
@@ -3561,6 +3700,13 @@ function openModalById(modalId, event, downloadProjectId = null) {
         renderGithubRepositories();
     } else if (modalId === 'commentsModal') {
         renderComments();
+    } else if (modalId === 'about-modal') {
+        const skillBars = modal.querySelectorAll('.skill-bar');
+        skillBars.forEach(bar => {
+            setTimeout(() => {
+                bar.style.width = bar.dataset.width;
+            }, 100);
+        });
     }
 }
 
@@ -3568,6 +3714,12 @@ function closeModalById(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
         modal.classList.remove('active');
+        if (modalId === 'about-modal') {
+            const skillBars = modal.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                bar.style.width = '0%';
+            });
+        }
     }
     // Only restore scroll if no other modals are active
     if (document.querySelectorAll('.modal.active').length === 0) {
