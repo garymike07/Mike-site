@@ -42,6 +42,9 @@
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com"/>
     <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
 
+    <!-- TailwindCSS for Dev Ultra Modal -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
 <style>
 html {
   font-size: 18px; /* Base font size */
@@ -2276,6 +2279,10 @@ body::before {
       <a href="javascript:void(0);" class="nav-item" data-modal-target="become-a-dev-modal">
         <i class="fas fa-code-branch"></i>
         <span>Become a Dev</span>
+      </a>
+      <a href="#" id="devUltraBtn" class="nav-item">
+        <i class="fas fa-star"></i>
+        <span>Dev Ultra</span>
       </a>
     </nav>
 
@@ -4630,6 +4637,320 @@ function rgbToHsl(r, g, b) {
 
 // And call it
 document.addEventListener('DOMContentLoaded', initializeToolkitEventListeners);
+
+</script>
+
+<!-- Dev Ultra Modal -->
+<div id="devUltraModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-[3000]">
+  <div class="bg-gray-900 border border-gray-700 text-white w-full max-w-5xl p-6 rounded-lg shadow-lg overflow-y-auto max-h-[90vh] relative" style="--tw-bg-opacity: 0.95; backdrop-filter: blur(8px);">
+    <div class="flex justify-between items-center border-b border-gray-600 pb-3 mb-4 sticky top-0 bg-gray-900/80 z-10 -mx-6 px-6 pt-2">
+      <h2 class="text-2xl font-bold text-yellow-400">Dev Ultra Learning Hub</h2>
+      <button id="closeDevUltra" class="text-gray-400 hover:text-red-500 text-4xl leading-none">&times;</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex gap-2 sm:gap-4 mb-4 sticky top-[60px] bg-gray-900/80 z-10 py-2 -mx-6 px-6">
+      <button class="dev-tab px-3 py-2 text-sm sm:text-base sm:px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200" data-track="backend">Backend</button>
+      <button class="dev-tab px-3 py-2 text-sm sm:text-base sm:px-4 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all duration-200" data-track="pentester">Pentester</button>
+      <button class="dev-tab px-3 py-2 text-sm sm:text-base sm:px-4 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-all duration-200" data-track="blockchain">Blockchain</button>
+    </div>
+
+    <!-- Content Area -->
+    <div id="devContent" class="space-y-6">
+      <p class="text-gray-300 text-center text-lg">Select a track to start your journey from Beginner to Advanced!</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// =================================================================================
+// DEV ULTRA MODAL LOGIC
+// =================================================================================
+const devUltraBtn = document.getElementById("devUltraBtn");
+const devUltraModal = document.getElementById("devUltraModal");
+const closeDevUltra = document.getElementById("closeDevUltra");
+const devContent = document.getElementById("devContent");
+const devTabs = document.querySelectorAll(".dev-tab");
+
+if (devUltraBtn) {
+    devUltraBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        devUltraModal.classList.remove("hidden");
+        devUltraModal.classList.add("flex");
+        // Load the first track by default if no track is active
+        if (!document.querySelector('.dev-tab.active')) {
+            devTabs[0].click();
+        }
+    });
+}
+
+if (closeDevUltra) {
+    closeDevUltra.addEventListener("click", () => {
+        devUltraModal.classList.add("hidden");
+        devUltraModal.classList.remove("flex");
+    });
+}
+
+// Learning data
+const tracks = {
+  backend: {
+    title: "Backend Engineer",
+    levels: {
+      Beginner: {
+        skills: ["HTML/CSS", "JavaScript Basics", "Git", "HTTP/APIs", "SQL Basics"],
+        project: "Build a basic portfolio site with a contact form that stores data.",
+        quiz: [
+          { q: "What does HTTP stand for?", options: ["HyperText Transfer Protocol", "Hyperlink Transfer Package"], a: 0 },
+          { q: "Which language is essential for server-side logic?", options: ["CSS", "Node.js (JavaScript)"], a: 1 }
+        ]
+      },
+      Intermediate: {
+        skills: ["Node.js & Express", "REST APIs", "Authentication", "Databases (PostgreSQL)", "Docker Basics"],
+        project: "Create a REST API with user login and protected routes.",
+        quiz: [
+          { q: "Which framework is commonly used with Node.js for APIs?", options: ["React", "Express"], a: 1 },
+          { q: "What does JWT stand for?", options: ["JSON Web Token", "JavaScript Web Task"], a: 0 }
+        ]
+      },
+      Advanced: {
+        skills: ["Microservices", "GraphQL", "Caching (Redis)", "CI/CD", "Web Sockets"],
+        project: "Build a microservices-based chat application.",
+        quiz: [
+          { q: "GraphQL is often seen as an alternative to what?", options: ["REST", "SOAP"], a: 0 },
+          { q: "Which tool is used for container orchestration?", options: ["Docker", "Kubernetes"], a: 1 }
+        ]
+      }
+    }
+  },
+  pentester: {
+    title: "Pentester (Ethical Hacker)",
+    levels: {
+      Beginner: {
+        skills: ["Networking (TCP/IP)", "Linux", "Python Scripting", "OWASP Top 10", "Virtualization"],
+        project: "Use Nmap to scan a target network and identify open ports and services.",
+        quiz: [
+          { q: "What does OWASP primarily focus on?", options: ["Web Application Security", "Database Design"], a: 0 },
+          { q: "Which Linux distribution is popular for pentesting?", options: ["Ubuntu", "Kali Linux"], a: 1 }
+        ]
+      },
+      Intermediate: {
+        skills: ["Burp Suite", "Metasploit", "Vulnerability Scanning", "Active Directory", "Privilege Escalation"],
+        project: "Use Metasploit to exploit a known vulnerability on a test machine.",
+        quiz: [
+          { q: "Burp Suite is primarily used for what?", options: ["Web Application Testing", "3D Modeling"], a: 0 },
+          { q: "What is the goal of privilege escalation?", options: ["Gain higher access levels", "Crash the system"], a: 0 }
+        ]
+      },
+      Advanced: {
+        skills: ["Reverse Engineering", "Exploit Development", "Red Teaming", "Binary Analysis", "Cryptography"],
+        project: "Develop a simple buffer overflow exploit for a vulnerable application.",
+        quiz: [
+          { q: "What is a 'zero-day' vulnerability?", options: ["A bug found on the first day", "A vulnerability unknown to the vendor"], a: 1 },
+          { q: "Red Teaming simulates an attack from whose perspective?", options: ["An external adversary", "An internal employee"], a: 0 }
+        ]
+      }
+    }
+  },
+  blockchain: {
+    title: "Blockchain Engineer",
+    levels: {
+      Beginner: {
+        skills: ["Blockchain Concepts", "Ethereum & EVM", "Solidity", "Smart Contracts", "Wallets (MetaMask)"],
+        project: "Write and deploy a simple 'Hello World' smart contract on a testnet.",
+        quiz: [
+          { q: "What is the primary language for writing Ethereum smart contracts?", options: ["JavaScript", "Solidity"], a: 1 }
+        ]
+      },
+      Intermediate: {
+        skills: ["Web3.js / Ethers.js", "ERC-20/721 Tokens", "Truffle / Hardhat", "IPFS", "Oracles (Chainlink)"],
+        project: "Create and deploy a custom ERC-20 token with a simple ICO.",
+        quiz: [
+          { q: "Which library helps JavaScript frontends interact with Ethereum?", options: ["Web3.js", "jQuery"], a: 0 },
+          { q: "What is an ERC-721 token commonly known as?", options: ["Fungible Token", "NFT"], a: 1 }
+        ]
+      },
+      Advanced: {
+        skills: ["Layer 2 Scaling", "DeFi Protocols", "Smart Contract Security", "Gas Optimization", "Cross-Chain Bridges"],
+        project: "Design and implement a basic DeFi lending protocol.",
+        quiz: [
+          { q: "What problem do Layer 2 solutions like Optimism aim to solve?", options: ["Scalability", "Decentralization"], a: 0 }
+        ]
+      }
+    }
+  }
+};
+
+let devUltraProgress = {};
+
+function loadProgress() {
+    const savedProgress = localStorage.getItem('devUltraProgress');
+    if (savedProgress) {
+        devUltraProgress = JSON.parse(savedProgress);
+    } else {
+        for (const trackKey in tracks) {
+            devUltraProgress[trackKey] = {};
+            for (const levelKey in tracks[trackKey].levels) {
+                devUltraProgress[trackKey][levelKey] = {
+                    projectCompleted: false,
+                    quiz: {}
+                };
+                 tracks[trackKey].levels[levelKey].quiz.forEach((_, i) => {
+                    devUltraProgress[trackKey][levelKey].quiz[i] = null;
+                });
+            }
+        }
+    }
+}
+
+function saveProgress() {
+    localStorage.setItem('devUltraProgress', JSON.stringify(devUltraProgress));
+}
+
+function loadTrack(trackKey) {
+  const track = tracks[trackKey];
+  const progress = devUltraProgress[trackKey] || {};
+  let html = `<h3 class="text-2xl font-bold mb-4 text-center">${track.title} Roadmap</h3>`;
+
+  for (let level in track.levels) {
+    const data = track.levels[level];
+    const levelProgress = progress[level] || { projectCompleted: false, quiz: {} };
+    const projectCompleted = levelProgress.projectCompleted;
+    const projectButtonText = projectCompleted ? '✓ Completed' : 'Mark as Complete';
+    const projectButtonClass = projectCompleted ? 'bg-green-700 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700';
+
+    html += `<div class="border border-gray-700 p-4 rounded-lg mb-4 bg-gray-800/50">
+      <h4 class="font-bold text-lg text-yellow-400">${level}</h4>
+      <p class="text-gray-400 mt-2 mb-3"><strong>Skills to master:</strong></p>
+      <ul class="list-none p-0 mb-4 flex flex-wrap gap-2">
+        ${data.skills.map(s => `<li class="bg-gray-700 px-3 py-1 rounded-full text-sm font-medium">${s}</li>`).join('')}
+      </ul>
+      <div class="border-t border-gray-700 pt-4 mt-4">
+        <p class="mb-2 font-semibold">Mini Project: <span class="font-normal">${data.project}</span></p>
+        <button onclick="toggleProjectComplete(event, '${trackKey}', '${level}')"
+                class="project-complete-btn px-4 py-2 text-white rounded text-sm transition-colors ${projectButtonClass}"
+                ${projectCompleted ? 'disabled' : ''}>
+          ${projectButtonText}
+        </button>
+      </div>
+      <div class="border-t border-gray-700 pt-4 mt-4">
+        <h5 class="font-bold mb-2">Knowledge Check</h5>
+        ${data.quiz.map((q, i) => `
+          <div class="quiz-question mb-4" id="quiz-${trackKey}-${level}-${i}">
+            <p class="mb-2">${i + 1}. ${q.q}</p>
+            <div class="flex gap-2 flex-wrap">
+              ${q.options.map((opt, idx) => `
+                <button onclick="checkAnswer(this, '${trackKey}', '${level}', ${i}, ${idx})"
+                        class="quiz-option px-3 py-1 border border-gray-600 rounded bg-gray-700 hover:bg-gray-600 transition-colors">
+                  ${opt}
+                </button>
+              `).join('')}
+            </div>
+            <p class="quiz-feedback mt-2 text-sm h-5">&nbsp;</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+  }
+  devContent.innerHTML = html;
+  updateTrackUI(trackKey);
+}
+
+function updateTrackUI(trackKey) {
+    const progress = devUltraProgress[trackKey];
+    if (!progress) return;
+
+    for (const level in progress) {
+        if (!progress.hasOwnProperty(level) || !tracks[trackKey].levels[level]) continue;
+
+        const levelProgress = progress[level];
+        for (const qIndexStr in levelProgress.quiz) {
+            const qIndex = parseInt(qIndexStr, 10);
+            const answerStatus = levelProgress.quiz[qIndex];
+
+            if (answerStatus !== null) {
+                const questionDiv = document.getElementById(`quiz-${trackKey}-${level}-${qIndex}`);
+                if (questionDiv) {
+                    const buttons = questionDiv.querySelectorAll('.quiz-option');
+                    const feedbackEl = questionDiv.querySelector('.quiz-feedback');
+                    const correctIndex = tracks[trackKey].levels[level].quiz[qIndex].a;
+
+                    const answeredIndex = levelProgress.quiz_answers ? levelProgress.quiz_answers[qIndex] : -1;
+
+                    buttons.forEach((btn, idx) => {
+                        btn.disabled = true;
+                        btn.classList.remove('hover:bg-gray-600');
+                        if (idx === correctIndex) {
+                            btn.classList.add('!bg-green-600', '!border-green-500', 'text-white');
+                        } else if (idx === answeredIndex) {
+                            btn.classList.add('!bg-red-600', '!border-red-500', 'text-white');
+                        }
+                    });
+
+                    if (answerStatus === 0) {
+                        feedbackEl.textContent = 'Incorrect. The correct answer is highlighted.';
+                        feedbackEl.classList.add('text-red-400');
+                    } else {
+                        feedbackEl.textContent = 'Correct!';
+                        feedbackEl.classList.add('text-green-400');
+                    }
+                }
+            }
+        }
+    }
+}
+
+function toggleProjectComplete(event, trackKey, level) {
+    const projectButton = event.target;
+    devUltraProgress[trackKey][level].projectCompleted = true;
+    saveProgress();
+
+    projectButton.textContent = '✓ Completed';
+    projectButton.disabled = true;
+    projectButton.classList.remove('bg-indigo-600', 'hover:bg-indigo-700');
+    projectButton.classList.add('bg-green-700', 'cursor-not-allowed');
+}
+
+function checkAnswer(button, trackKey, level, qIndex, choice) {
+  const questionDiv = button.closest('.quiz-question');
+  const buttons = questionDiv.querySelectorAll('.quiz-option');
+  const feedbackEl = questionDiv.querySelector('.quiz-feedback');
+  const correctIndex = tracks[trackKey].levels[level].quiz[qIndex].a;
+
+  const isCorrect = choice === correctIndex;
+
+  devUltraProgress[trackKey][level].quiz[qIndex] = isCorrect ? 1 : 0;
+  if (!devUltraProgress[trackKey][level].quiz_answers) {
+      devUltraProgress[trackKey][level].quiz_answers = {};
+  }
+  devUltraProgress[trackKey][level].quiz_answers[qIndex] = choice;
+  saveProgress();
+
+  buttons.forEach(btn => {
+      btn.disabled = true;
+      btn.classList.remove('hover:bg-gray-600');
+  });
+
+  if (isCorrect) {
+    button.classList.add('!bg-green-600', '!border-green-500', 'text-white');
+    feedbackEl.textContent = 'Correct!';
+    feedbackEl.classList.add('text-green-400');
+  } else {
+    button.classList.add('!bg-red-600', '!border-red-500', 'text-white');
+    buttons[correctIndex].classList.add('!bg-green-600', '!border-green-500', 'text-white');
+    feedbackEl.textContent = 'Incorrect. The correct answer is highlighted.';
+    feedbackEl.classList.add('text-red-400');
+  }
+}
+
+if (devTabs) {
+    devTabs.forEach(tab => tab.addEventListener("click", () => {
+        loadTrack(tab.dataset.track)
+        devTabs.forEach(t => t.classList.remove('active', 'bg-yellow-500', 'scale-110'));
+        tab.classList.add('active', 'bg-yellow-500', 'scale-110');
+    }));
+}
+
+loadProgress();
 
 </script>
 </body>
