@@ -2882,18 +2882,38 @@ body::before {
         <style>
             #blog-generator-body {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-                overflow-y: auto; /* Make this container scrollable */
-                padding: 1.5rem; /* Add some padding */
-                flex-grow: 1; /* Allow it to fill available space */
-                min-height: 0; /* Important fix for flexbox scrolling */
+                grid-template-columns: 400px 1fr; /* Fixed width for form, flexible for preview */
+                gap: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+            }
+            .blog-form-container {
+                padding: 1.5rem;
+                overflow-y: auto;
+                background-color: var(--bg-secondary);
+                border-right: 1px solid var(--border-color);
+            }
+            .blog-preview-container {
+                padding: 1.5rem;
+                overflow-y: auto;
+                display: flex;
+                flex-direction: column;
+            }
+            .blog-form-section {
+                margin-bottom: 2rem;
+            }
+            .blog-form-section h3 {
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                color: var(--accent-secondary);
             }
             .template-selector {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
                 gap: 1rem;
-                margin-bottom: 1.5rem;
+                margin-top: 1rem;
             }
             .template-card {
                 border: 2px solid var(--border-color);
@@ -2914,7 +2934,7 @@ body::before {
                 width: 100%;
                 height: auto;
                 border-radius: 4px;
-                aspect-ratio: 16/9;
+                aspect-ratio: 16 / 9;
                 object-fit: cover;
             }
             .template-card p {
@@ -2923,95 +2943,165 @@ body::before {
                 margin: 0.5rem 0 0;
                 font-size: 0.9rem;
             }
-            .generator-actions {
-                display: flex;
-                gap: 1rem;
-            }
-            #preview-area {
-                margin-top: 1.5rem;
-                border: 1px solid var(--border-color);
-                border-radius: 8px;
-                height: 200px; /* Or some other appropriate height */
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: var(--bg-primary);
-            }
             #preview-iframe {
                 width: 100%;
                 height: 100%;
-                border: none;
+                border: 1px solid var(--border-color);
                 border-radius: 8px;
+                flex-grow: 1; /* Make iframe fill available space */
+                background: white; /* Default background for preview */
             }
-             .generator-form .form-group {
-                margin-bottom: 1rem;
+            .generator-actions {
+                margin-top: auto; /* Push actions to the bottom */
+                padding-top: 1.5rem;
+                display: flex;
+                gap: 1rem;
+            }
+            @media (max-width: 1200px) {
+                #blog-generator-body {
+                    grid-template-columns: 350px 1fr;
+                }
             }
             @media (max-width: 992px) {
                 #blog-generator-body {
                     grid-template-columns: 1fr;
-                    height: auto;
                 }
-                .generator-form, .generator-preview-area {
-                    overflow-y: visible;
-                    padding-right: 0;
+                .blog-preview-container {
+                    min-height: 400px; /* Ensure preview is usable on mobile */
                 }
             }
+            .post-list-item {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0.75rem;
+                border: 1px solid var(--border-color);
+                border-radius: 8px;
+                margin-bottom: 0.5rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .post-list-item:hover {
+                background-color: var(--bg-tertiary);
+            }
+            .post-list-item.active {
+                background-color: var(--accent-primary);
+                color: var(--bg-primary);
+                border-color: var(--accent-primary);
+            }
+            .post-list-item-title {
+                font-weight: 500;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                flex-grow: 1;
+            }
+            .post-list-actions button {
+                background: none;
+                border: none;
+                color: var(--text-secondary);
+                cursor: pointer;
+                padding: 0.25rem;
+                font-size: 0.9rem;
+                line-height: 1;
+            }
+            .post-list-item.active .post-list-actions button {
+                color: var(--bg-primary);
+            }
         </style>
-        <div class="generator-form">
-            <h3><i class="fas fa-pencil-alt"></i> Content</h3>
-            <div class="form-group">
-                <label for="blog-title">Blog Title</label>
-                <input type="text" id="blog-title" class="search-input" placeholder="My Awesome Blog">
+        <div class="blog-form-container">
+            <!-- General Settings -->
+            <div class="blog-form-section">
+                <h3><i class="fas fa-cog"></i> General Settings</h3>
+                <div class="form-group">
+                    <label for="blog-title">Blog Title</label>
+                    <input type="text" id="blog-title" class="search-input" placeholder="My Awesome Blog">
+                </div>
+                <div class="form-group">
+                    <label for="author-name">Author Name</label>
+                    <input type="text" id="author-name" class="search-input" placeholder="John Doe">
+                </div>
+                 <div class="form-group">
+                    <label for="author-bio">Author Bio</label>
+                    <textarea id="author-bio" class="search-input" rows="2" placeholder="A short bio about the author."></textarea>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="author-name">Author Name</label>
-                <input type="text" id="author-name" class="search-input" placeholder="John Doe">
+
+            <!-- Social Links -->
+            <div class="blog-form-section">
+                <h3><i class="fas fa-share-alt"></i> Social Links</h3>
+                <div class="form-group">
+                    <label for="author-twitter">Twitter URL</label>
+                    <input type="url" id="author-twitter" class="search-input" placeholder="https://twitter.com/johndoe">
+                </div>
+                <div class="form-group">
+                    <label for="author-linkedin">LinkedIn URL</label>
+                    <input type="url" id="author-linkedin" class="search-input" placeholder="https://linkedin.com/in/johndoe">
+                </div>
+                <div class="form-group">
+                    <label for="author-github">GitHub URL</label>
+                    <input type="url" id="author-github" class="search-input" placeholder="https://github.com/johndoe">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="author-bio">Author Bio (for supported templates)</label>
-                <textarea id="author-bio" class="search-input" rows="2" placeholder="A short bio about the author."></textarea>
+
+            <!-- Posts -->
+            <div class="blog-form-section">
+                <h3><i class="fas fa-file-alt"></i> Posts</h3>
+                <div id="post-list-container">
+                    <!-- Post list will be rendered here by JS -->
+                </div>
+                <button id="add-post-btn" class="btn btn-secondary" style="width: 100%; margin-top: 1rem;"><i class="fas fa-plus"></i> Add New Post</button>
             </div>
-            <hr style="margin: 2rem 0; border-color: var(--border-color);">
-            <h3><i class="fas fa-file-alt"></i> First Post</h3>
-            <div class="form-group">
-                <label for="post-title">Post Title</label>
-                <input type="text" id="post-title" class="search-input" placeholder="My First Post">
-            </div>
-            <div class="form-group">
-                <label for="post-image-url">Header Image URL (for creative template)</label>
-                <input type="text" id="post-image-url" class="search-input" placeholder="https://via.placeholder.com/800x400">
-            </div>
-            <div class="form-group">
-                <label for="post-content">Post Content (Markdown supported)</label>
-                <textarea id="post-content" class="search-input" rows="6" placeholder="Write your blog post here..."></textarea>
+
+            <!-- Post Editor -->
+            <div class="blog-form-section" id="post-editor">
+                <h4 id="post-editor-title" style="font-size: 1rem; color: var(--text-primary); margin-bottom: 1rem;">Edit Post</h4>
+                <div class="form-group">
+                    <label for="post-title">Post Title</label>
+                    <input type="text" id="post-title" class="search-input" placeholder="My First Post">
+                </div>
+                <div class="form-group">
+                    <label for="post-image-url">Header Image URL</label>
+                    <input type="text" id="post-image-url" class="search-input" placeholder="https://via.placeholder.com/800x400">
+                </div>
+                <div class="form-group">
+                    <label for="post-content">Content (Markdown supported)</label>
+                    <textarea id="post-content" class="search-input" rows="8" placeholder="Write your blog post here..."></textarea>
+                </div>
             </div>
         </div>
-        <div class="generator-preview-area">
-            <h3><i class="fas fa-th-large"></i> Template</h3>
-            <div class="template-selector">
-                <div class="template-card selected" data-template="1" title="Minimalist">
-                    <img src="myk_thumb_1.png" alt="Minimalist Template">
-                    <p>Minimalist</p>
-                </div>
-                <div class="template-card" data-template="2" title="Professional">
-                    <img src="myk_thumb_2.png" alt="Professional Template">
-                    <p>Professional</p>
-                </div>
-                <div class="template-card" data-template="3" title="Creative">
-                    <img src="myk_thumb_3.png" alt="Creative Template">
-                    <p>Creative</p>
-                </div>
-                <div class="template-card" data-template="4" title="Tech/Dark">
-                    <img src="myk_thumb_4.png" alt="Tech/Dark Template">
-                    <p>Tech/Dark</p>
+        <div class="blog-preview-container">
+            <!-- Template Selector -->
+            <div class="blog-form-section">
+                <h3><i class="fas fa-th-large"></i> Template</h3>
+                <div class="template-selector">
+                    <div class="template-card selected" data-template="1" title="Minimalist">
+                        <img src="myk_thumb_1.png" alt="Minimalist Template">
+                        <p>Minimalist</p>
+                    </div>
+                    <div class="template-card" data-template="2" title="Professional">
+                        <img src="myk_thumb_2.png" alt="Professional Template">
+                        <p>Professional</p>
+                    </div>
+                    <div class="template-card" data-template="3" title="Creative">
+                        <img src="myk_thumb_3.png" alt="Creative Template">
+                        <p>Creative</p>
+                    </div>
+                    <div class="template-card" data-template="4" title="Tech/Dark">
+                        <img src="myk_thumb_4.png" alt="Tech/Dark Template">
+                        <p>Tech/Dark</p>
+                    </div>
+                    <div class="template-card" data-template="5" title="Modern">
+                        <img src="myk_thumb_1.png" alt="Modern Template">
+                        <p>Modern</p>
+                    </div>
                 </div>
             </div>
+
+            <iframe id="preview-iframe" title="Blog Preview"></iframe>
+
             <div class="generator-actions">
-                <button id="preview-blog-btn" class="btn btn-secondary" style="width: 100%;"><i class="fas fa-eye"></i> Preview</button>
-                <button id="download-blog-btn" class="btn btn-primary" style="width: 100%;"><i class="fas fa-download"></i> Download</button>
-            </div>
-            <div id="preview-area">
-                <iframe id="preview-iframe" title="Blog Preview"></iframe>
+                <button id="download-blog-btn" class="btn btn-primary" style="width: 100%;"><i class="fas fa-download"></i> Download Blog</button>
             </div>
         </div>
     </div>
@@ -3467,6 +3557,7 @@ document.addEventListener('DOMContentLoaded', function() {
   updateClock();
   setInterval(updateClock, 1000);
   initializeEventListeners();
+  initializeLivePreview();
   renderLanguages();
   setDynamicGreeting();
 
@@ -3539,12 +3630,6 @@ function initializeEventListeners() {
         document.querySelectorAll('.template-card').forEach(c => c.classList.remove('selected'));
         card.classList.add('selected');
     });
-  }
-
-  // Blog Generator Preview Button
-  const previewBtn = document.getElementById('preview-blog-btn');
-  if (previewBtn) {
-      previewBtn.addEventListener('click', generateBlogPreview);
   }
 
   // Blog Generator Download Button
@@ -4563,104 +4648,240 @@ function renderGithubRepositories() {
     repoListContainer.innerHTML = repoListHTML;
 }
 
-async function generateBlogPreview() {
-    const previewArea = document.getElementById('preview-area');
-    previewArea.innerHTML = '<p style="color: var(--text-secondary);">Generating preview...</p>';
+let blogData = {};
+
+function resetBlogData() {
+    blogData = {
+        title: 'My Awesome Blog',
+        author: {
+            name: 'John Doe',
+            bio: 'A passionate writer and tech enthusiast.',
+            twitter: 'https://twitter.com/johndoe',
+            linkedin: 'https://linkedin.com/in/johndoe',
+            github: 'https://github.com/johndoe',
+        },
+        posts: [{
+            id: Date.now(),
+            title: 'My First Post',
+            imageUrl: `https://via.placeholder.com/800x400/8a2be2/ffffff?text=Welcome!`,
+            content: 'This is my very first post. I am excited to share my thoughts with the world. I will be writing about technology, design, and everything in between. Stay tuned for more content!'
+        }],
+        selectedPostId: null
+    };
+    blogData.selectedPostId = blogData.posts[0].id;
+}
+
+
+function renderPostList() {
+    const container = document.getElementById('post-list-container');
+    container.innerHTML = blogData.posts.map(post => `
+        <div class="post-list-item ${post.id === blogData.selectedPostId ? 'active' : ''}" onclick="selectPost(${post.id})">
+            <span class="post-list-item-title">${post.title || 'Untitled Post'}</span>
+            <div class="post-list-actions">
+                <button onclick="deletePost(event, ${post.id})"><i class="fas fa-trash"></i></button>
+            </div>
+        </div>
+    `).join('');
+}
+
+function updatePostEditor() {
+    const editor = document.getElementById('post-editor');
+    const selectedPost = blogData.posts.find(p => p.id === blogData.selectedPostId);
+
+    if (selectedPost) {
+        editor.style.display = 'block';
+        document.getElementById('post-editor-title').textContent = `Editing: ${selectedPost.title || 'Untitled Post'}`;
+        document.getElementById('post-title').value = selectedPost.title;
+        document.getElementById('post-image-url').value = selectedPost.imageUrl;
+        document.getElementById('post-content').value = selectedPost.content;
+    } else {
+        editor.style.display = 'none';
+    }
+}
+
+function selectPost(postId) {
+    blogData.selectedPostId = postId;
+    renderPostList();
+    updatePostEditor();
+}
+
+function addPost() {
+    const newPost = {
+        id: Date.now(),
+        title: 'New Post',
+        imageUrl: `https://via.placeholder.com/800x400/cccccc/ffffff?text=New+Post`,
+        content: ''
+    };
+    blogData.posts.push(newPost);
+    selectPost(newPost.id);
+    generateBlogPreview(false);
+}
+
+function deletePost(event, postId) {
+    event.stopPropagation();
+    if (blogData.posts.length <= 1) {
+        showNotification('You must have at least one post.', 'warning');
+        return;
+    }
+    blogData.posts = blogData.posts.filter(p => p.id !== postId);
+    if (blogData.selectedPostId === postId) {
+        selectPost(blogData.posts[0]?.id || null);
+    }
+    renderPostList();
+    generateBlogPreview(false);
+}
+
+function updateBlogDataFromUI() {
+    blogData.title = document.getElementById('blog-title').value;
+    blogData.author.name = document.getElementById('author-name').value;
+    blogData.author.bio = document.getElementById('author-bio').value;
+    blogData.author.twitter = document.getElementById('author-twitter').value;
+    blogData.author.linkedin = document.getElementById('author-linkedin').value;
+    blogData.author.github = document.getElementById('author-github').value;
+
+    const selectedPost = blogData.posts.find(p => p.id === blogData.selectedPostId);
+    if (selectedPost) {
+        selectedPost.title = document.getElementById('post-title').value;
+        selectedPost.imageUrl = document.getElementById('post-image-url').value;
+        selectedPost.content = document.getElementById('post-content').value;
+    }
+}
+
+
+async function generateBlogPreview(isInitial = false) {
+    const iframe = document.getElementById('preview-iframe');
+    if (isInitial) {
+        iframe.srcdoc = '<p style="color: var(--text-secondary); text-align: center; padding: 2rem;">Loading Preview...</p>';
+    }
 
     try {
-        // 1. Get user input
-        const blogTitle = document.getElementById('blog-title').value || 'My Blog';
-        const authorName = document.getElementById('author-name').value || 'Anonymous';
-        const authorBio = document.getElementById('author-bio').value || 'This is a short bio about the author.';
-        const postTitle = document.getElementById('post-title').value || 'My First Post';
-        const postImageUrl = document.getElementById('post-image-url').value || `https://via.placeholder.com/800x400/8a2be2/ffffff?text=Awesome+Image`;
-        const postContentMd = document.getElementById('post-content').value || 'This is the default post content. You can use **Markdown**!';
-        const postContentHtml = marked.parse(postContentMd);
+        const postContentHtml = blogData.posts.map(post => {
+            const content = marked.parse(post.content);
+            return `<article><h2>${post.title}</h2><img src="${post.imageUrl}" alt="${post.title}" class="post-image"><div class="post-content">${content}</div></article>`;
+        }).join('');
 
-        // 2. Get selected template
         const selectedTemplate = document.querySelector('.template-card.selected').dataset.template;
-
-        // 3. Fetch template files
         const [htmlTemplate, cssTemplate] = await Promise.all([
             fetch(`blog_template_${selectedTemplate}.html`).then(res => res.text()),
             fetch(`blog_template_${selectedTemplate}.css`).then(res => res.text())
         ]);
 
-        // 4. Replace placeholders
         let finalHtml = htmlTemplate
-            .replace(/__BLOG_TITLE__/g, blogTitle)
-            .replace(/__AUTHOR_NAME__/g, authorName)
-            .replace(/__AUTHOR_BIO__/g, authorBio)
-            .replace(/__POST_TITLE__/g, postTitle)
-            .replace(/__POST_IMAGE_URL__/g, postImageUrl)
-            .replace(/__POST_CONTENT__/g, postContentHtml)
+            .replace(/__BLOG_TITLE__/g, blogData.title)
+            .replace(/__AUTHOR_NAME__/g, blogData.author.name)
+            .replace(/__AUTHOR_BIO__/g, blogData.author.bio)
             .replace(/__YEAR__/g, new Date().getFullYear())
-            .replace(/__POST_DATE_FRIENDLY__/g, new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
-            .replace(/__POST_DATE_ISO__/g, new Date().toISOString());
+            .replace(/__AUTHOR_TWITTER__/g, blogData.author.twitter)
+            .replace(/__AUTHOR_LINKEDIN__/g, blogData.author.linkedin)
+            .replace(/__AUTHOR_GITHUB__/g, blogData.author.github)
+            // A bit of a hack to inject multiple posts. Assumes a single post element can be repeated.
+            .replace(/<article>[\s\S]*?<\/article>/, postContentHtml);
 
-        // 5. Inject CSS
-        finalHtml = finalHtml.replace(
-            '<link rel="stylesheet" href="style.css">',
-            `<style>${cssTemplate}</style>`
-        );
 
-        // 6. Display in iframe
-        previewArea.innerHTML = '<iframe id="preview-iframe" title="Blog Preview"></iframe>';
-        const iframe = document.getElementById('preview-iframe');
+        finalHtml = finalHtml.replace('<link rel="stylesheet" href="style.css">', `<style>${cssTemplate}</style>`);
         iframe.srcdoc = finalHtml;
-
-        showNotification('Preview generated successfully!', 'success');
-
     } catch (error) {
         console.error('Error generating blog preview:', error);
-        previewArea.innerHTML = `<p style="color: var(--error-color);">Error generating preview. See console for details.</p>`;
-        showNotification('Error generating preview.', 'error');
+        iframe.srcdoc = `<p style="color: var(--error-color);">Error generating preview. See console for details.</p>`;
     }
+}
+
+
+function initializeLivePreview() {
+    const inputs = [
+        'blog-title', 'author-name', 'author-bio',
+        'author-twitter', 'author-linkedin', 'author-github',
+        'post-title', 'post-image-url', 'post-content'
+    ];
+
+    inputs.forEach(id => {
+        const el = document.getElementById(id);
+        el?.addEventListener('input', () => {
+            updateBlogDataFromUI();
+            if (id.startsWith('post-')) {
+                renderPostList();
+                updatePostEditor();
+            }
+            generateBlogPreview(false);
+        });
+    });
+
+    document.querySelector('.template-selector')?.addEventListener('click', (e) => {
+        if (e.target.closest('.template-card')) {
+            setTimeout(() => generateBlogPreview(false), 50);
+        }
+    });
+
+    document.getElementById('add-post-btn')?.addEventListener('click', addPost);
+
+    const blogModal = document.getElementById('blogModal');
+    const observer = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+            if (mutation.attributeName === 'class' && blogModal.classList.contains('active')) {
+                resetBlogData();
+                renderPostList();
+                updatePostEditor();
+                generateBlogPreview(true);
+            }
+        }
+    });
+    observer.observe(blogModal, { attributes: true });
 }
 
 async function downloadBlogAsZip() {
     try {
         showNotification('Preparing your download...', 'info');
+        updateBlogDataFromUI(); // Ensure data is latest
 
-        // This logic is very similar to the preview function.
-        // In a real-world app, this would be refactored to be more DRY.
-        const blogTitle = document.getElementById('blog-title').value || 'My Blog';
-        const authorName = document.getElementById('author-name').value || 'Anonymous';
-        const authorBio = document.getElementById('author-bio').value || 'This is a short bio about the author.';
-        const postTitle = document.getElementById('post-title').value || 'My First Post';
-        const postImageUrl = document.getElementById('post-image-url').value || `https://via.placeholder.com/800x400/8a2be2/ffffff?text=Awesome+Image`;
-        const postContentMd = document.getElementById('post-content').value || 'This is the default post content. You can use **Markdown**!';
-        const postContentHtml = marked.parse(postContentMd);
+        const postContentHtml = blogData.posts.map(post => {
+            const content = marked.parse(post.content);
+            // This structure should match what the templates expect for a single post.
+            // This is a simplification; a real implementation might need more robust templating.
+            return `<article>
+                        <header>
+                            <h2>${post.title}</h2>
+                            <p>Published on <time datetime="${new Date().toISOString()}">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time></p>
+                        </header>
+                        <img src="${post.imageUrl}" alt="${post.title}" class="post-image">
+                        <div class="post-content">
+                            ${content}
+                        </div>
+                    </article>`;
+        }).join('\n');
 
         const selectedTemplate = document.querySelector('.template-card.selected').dataset.template;
-
         const [htmlTemplate, cssTemplate] = await Promise.all([
             fetch(`blog_template_${selectedTemplate}.html`).then(res => res.text()),
             fetch(`blog_template_${selectedTemplate}.css`).then(res => res.text())
         ]);
 
         let finalHtml = htmlTemplate
-            .replace(/__BLOG_TITLE__/g, blogTitle)
-            .replace(/__AUTHOR_NAME__/g, authorName)
-            .replace(/__AUTHOR_BIO__/g, authorBio)
-            .replace(/__POST_TITLE__/g, postTitle)
-            .replace(/__POST_IMAGE_URL__/g, postImageUrl)
-            .replace(/__POST_CONTENT__/g, postContentHtml)
+            .replace(/__BLOG_TITLE__/g, blogData.title)
+            .replace(/__AUTHOR_NAME__/g, blogData.author.name)
+            .replace(/__AUTHOR_BIO__/g, blogData.author.bio)
             .replace(/__YEAR__/g, new Date().getFullYear())
-            .replace(/__POST_DATE_FRIENDLY__/g, new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
-            .replace(/__POST_DATE_ISO__/g, new Date().toISOString());
+            .replace(/__AUTHOR_TWITTER__/g, blogData.author.twitter)
+            .replace(/__AUTHOR_LINKEDIN__/g, blogData.author.linkedin)
+            .replace(/__AUTHOR_GITHUB__/g, blogData.author.github);
 
-        // Create a new zip file
+        // This is a key change: replacing the single post placeholder with all posts.
+        // It relies on the template having a clear marker. A more robust solution
+        // might use a placeholder like <!-- POSTS_HERE -->
+        const postRegex = /<article>[\s\S]*?<\/article>/;
+        if (postRegex.test(finalHtml)) {
+             finalHtml = finalHtml.replace(postRegex, postContentHtml);
+        } else {
+            // Fallback for templates without a clear article structure
+            finalHtml = finalHtml.replace(/__POST_CONTENT__/g, postContentHtml.replace(/<article>/g, '<div>').replace(/<\/article>/g, '</div>'));
+        }
+
         const zip = new JSZip();
         zip.file("index.html", finalHtml);
         zip.file("style.css", cssTemplate);
 
-        // Generate the zip file and trigger download
         const content = await zip.generateAsync({ type: "blob" });
-        saveAs(content, `${blogTitle.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-')}.zip`);
-
+        saveAs(content, `${blogData.title.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-')}.zip`);
         showNotification('Download started!', 'success');
-
     } catch (error) {
         console.error('Error generating blog for download:', error);
         showNotification('Error preparing download. See console for details.', 'error');

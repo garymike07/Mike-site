@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+:root {
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+    --heading-color: #1a1a1a;
+    --accent-color: #007bff;
+    --border-color: #dee2e6;
+    --card-background: #ffffff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.main-header {
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.main-header h1 {
+    font-family: 'Lora', serif;
+    font-size: 3rem;
+    color: var(--heading-color);
+    margin: 0;
+}
+
+.main-header p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 3rem;
+}
+
+.posts-column article {
+    margin-bottom: 3rem;
+}
+
+.posts-column h2 {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.post-content {
+    font-size: 1rem;
+}
+
+.post-content p {
+    margin-bottom: 1rem;
+}
+
+.sidebar {
+    position: sticky;
+    top: 2rem;
+}
+
+.author-card {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.author-card h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.social-link {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.social-link:hover {
+    background-color: #e9ecef;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: #6c757d;
+}
+
+@media (max-width: 992px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2.5rem;
+    }
+    .posts-column h2 {
+        font-size: 1.75rem;
+    }
+}
