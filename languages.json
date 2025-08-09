@@ -94,5 +94,29 @@
     "description": "Created in 1994, PHP is a general-purpose scripting language especially suited to web development. It is one of the most popular server-side languages and powers a significant portion of the web, including popular content management systems like WordPress.",
     "youtube_link": "https://www.youtube.com/watch?v=zZ6vybT1HQs",
     "icon": "fab fa-php"
+  },
+  {
+    "id": 13,
+    "name": "C",
+    "year": 1972,
+    "description": "Developed in the early 1970s, C is one of the oldest and most influential programming languages. It's a procedural language that provides low-level access to memory. It formed the basis for many other languages, including C++, C#, and Java. It is still widely used in systems programming, embedded systems, and performance-critical applications.",
+    "youtube_link": "https://www.youtube.com/watch?v=U3aXWizDbQ4",
+    "icon": "fas fa-code"
+  },
+  {
+    "id": 14,
+    "name": "R",
+    "year": 1993,
+    "description": "R is a programming language and free software environment for statistical computing and graphics. It is widely used among statisticians and data miners for developing statistical software and data analysis. It has a rich ecosystem of packages for a wide range of statistical and graphical techniques.",
+    "youtube_link": "https://www.youtube.com/watch?v=XUu2Nl4Y4U8",
+    "icon": "fab fa-r-project"
+  },
+  {
+    "id": 15,
+    "name": "Dart",
+    "year": 2011,
+    "description": "Developed by Google, Dart is a client-optimized language for building fast apps on any platform. It's the language behind the Flutter framework for building beautiful, natively compiled, multi-platform applications from a single codebase. It features a flexible type system and excellent performance.",
+    "youtube_link": "https://www.youtube.com/watch?v=Ej_Pcr4uC2Q",
+    "icon": "fas fa-feather-alt"
   }
 ]
