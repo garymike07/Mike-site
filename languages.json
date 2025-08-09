@@ -118,5 +118,61 @@
     "description": "Developed by Google, Dart is a client-optimized language for building fast apps on any platform. It's the language behind the Flutter framework for building beautiful, natively compiled, multi-platform applications from a single codebase. It features a flexible type system and excellent performance.",
     "youtube_link": "https://www.youtube.com/watch?v=Ej_Pcr4uC2Q",
     "icon": "fas fa-feather-alt"
+  },
+  {
+    "id": 16,
+    "name": "Scala",
+    "year": 2004,
+    "description": "Scala is a high-level language that combines object-oriented and functional programming in one concise, high-level language. Scala's static types help avoid bugs in complex applications, and its JVM and JavaScript runtimes let you build high-performance systems with easy access to huge ecosystems of libraries.",
+    "youtube_link": "https://www.youtube.com/watch?v=DzFt0YkZo8M",
+    "icon": "fas fa-code"
+  },
+  {
+    "id": 17,
+    "name": "Lua",
+    "year": 1993,
+    "description": "Lua is a lightweight, high-level, multi-paradigm programming language designed primarily for embedded use in applications. It is cross-platform and has a relatively simple C API. It is famous for its use in game engines like Roblox and World of Warcraft.",
+    "youtube_link": "https://www.youtube.com/watch?v=iM3gY_8t13o",
+    "icon": "fas fa-gamepad"
+  },
+  {
+    "id": 18,
+    "name": "Haskell",
+    "year": 1990,
+    "description": "Haskell is a purely functional programming language known for its strong static typing, type inference, and lazy evaluation. It is named after the logician Haskell Curry and is suitable for writing robust and maintainable code, particularly for tasks involving complex data transformations and concurrency.",
+    "youtube_link": "https://www.youtube.com/watch?v=h_e11kIm29A",
+    "icon": "fas fa-brain"
+  },
+  {
+    "id": 19,
+    "name": "SQL",
+    "year": 1974,
+    "description": "SQL (Structured Query Language) is a domain-specific language for managing data in relational databases. It is a fundamental skill for any developer working with databases, used for tasks like data insertion, querying, updating, and schema management.",
+    "youtube_link": "https://www.youtube.com/watch?v=HXV3zeQKqGY",
+    "icon": "fas fa-database"
+  },
+  {
+    "id": 20,
+    "name": "Perl",
+    "year": 1987,
+    "description": "Perl is a high-level, general-purpose, interpreted, dynamic programming language. It was originally developed by Larry Wall in 1987 as a general-purpose Unix scripting language to make report processing easier. It gained widespread popularity in the mid-1990s as a CGI scripting language, in part due to its powerful regular expression and string parsing abilities.",
+    "youtube_link": "https://www.youtube.com/watch?v=WEghIXs8F6c",
+    "icon": "fas fa-code"
+  },
+  {
+    "id": 21,
+    "name": "Assembly",
+    "year": 1947,
+    "description": "Assembly language is a low-level programming language with a very strong correspondence between the instructions in the language and the architecture's machine code instructions. It is specific to a particular computer architecture.",
+    "youtube_link": "https://www.youtube.com/watch?v=ViNnfoE56V8",
+    "icon": "fas fa-microchip"
+  },
+  {
+    "id": 22,
+    "name": "Elixir",
+    "year": 2012,
+    "description": "Elixir is a functional, concurrent, general-purpose programming language that runs on the BEAM virtual machine, which is also used to implement the Erlang programming language. Elixir builds on top of Erlang and shares the same abstractions for building distributed, fault-tolerant applications.",
+    "youtube_link": "https://www.youtube.com/watch?v=-lgtb-YSUWE",
+    "icon": "fas fa-code"
   }
 ]
