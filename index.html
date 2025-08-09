@@ -3090,42 +3090,8 @@ body::before {
       <h2 class="modal-title">Changelog</h2>
       <button class="modal-close" data-modal-close="changelogModal" aria-label="Close modal"><i class="fas fa-times"></i></button>
     </div>
-    <div class="modal-body">
-        <style>
-            #changelogModal .version { margin-bottom: 1.5rem; }
-            #changelogModal h4 { font-size: 1.2rem; color: var(--accent-primary); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
-            #changelogModal ul { list-style: none; padding-left: 1rem; }
-            #changelogModal li { margin-bottom: 0.5rem; position: relative; padding-left: 5px; }
-            #changelogModal li::before { content: '•'; color: var(--accent-primary); position: absolute; left: -1rem; }
-            #changelogModal .tag { font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 10px; margin-right: 0.5rem; color: var(--bg-primary); font-weight: bold; text-transform: uppercase; }
-            #changelogModal .tag-fix { background-color: var(--warning-color); }
-            #changelogModal .tag-feat { background-color: var(--success-color); }
-        </style>
-        <div class="version">
-            <h4>Version 1.2.1 <span style="font-size: 0.9rem; color: var(--text-secondary);">(Current)</span></h4>
-            <ul>
-                <li><span class="tag tag-feat">Feature</span>Implemented content for the 'Technical Specifications' modal.</li>
-            </ul>
-        </div>
-        <div class="version">
-            <h4>Version 1.2.0</h4>
-            <ul>
-                <li><span class="tag tag-feat">Feature</span>Added 8 placeholder modals for previously inactive navigation links to improve UX.</li>
-            </ul>
-        </div>
-        <div class="version">
-            <h4>Version 1.1.0</h4>
-            <ul>
-                <li><span class="tag tag-fix">Fix</span>Resolved critical JavaScript errors that prevented modals from opening.</li>
-                <li><span class="tag tag-fix">Fix</span>Defined several missing helper functions to prevent script crashes.</li>
-            </ul>
-        </div>
-        <div class="version">
-            <h4>Version 1.0.0</h4>
-            <ul>
-                <li>Initial release of the Mike Lab portfolio.</li>
-            </ul>
-        </div>
+    <div class="modal-body" id="changelog-body">
+      <!-- Changelog content will be dynamically inserted here -->
     </div>
   </div>
 </div>
@@ -3337,7 +3303,53 @@ document.addEventListener('DOMContentLoaded', function() {
       const words = ['Mike Lab', 'Your Vision', 'The Future'];
       typeAnimation(typingTarget, words);
   }
+  renderChangelog();
 });
+
+function renderChangelog() {
+    fetch('changelog.json')
+        .then(response => response.json())
+        .then(changelogData => {
+            const changelogBody = document.getElementById('changelog-body');
+            if (!changelogBody) return;
+
+            const styles = `
+                <style>
+                    #changelog-body .version { margin-bottom: 1.5rem; }
+                    #changelog-body h4 { font-size: 1.2rem; color: var(--accent-primary); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+                    #changelog-body ul { list-style: none; padding-left: 1rem; }
+                    #changelog-body li { margin-bottom: 0.5rem; position: relative; padding-left: 5px; }
+                    #changelog-body li::before { content: '•'; color: var(--accent-primary); position: absolute; left: -1rem; }
+                    #changelog-body .tag { font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 10px; margin-right: 0.5rem; color: var(--bg-primary); font-weight: bold; text-transform: uppercase; }
+                    #changelog-body .tag-Feature { background-color: var(--success-color); }
+                    #changelog-body .tag-Fix { background-color: var(--warning-color); }
+                </style>
+            `;
+
+            const changelogHTML = changelogData.map((version, index) => {
+                const isCurrent = index === 0 ? '<span style="font-size: 0.9rem; color: var(--text-secondary);">(Current)</span>' : '';
+                const changesHTML = version.changes.map(change => `
+                    <li><span class="tag tag-${change.type}">${change.type}</span>${change.description}</li>
+                `).join('');
+
+                return `
+                    <div class="version">
+                        <h4>Version ${version.version} ${isCurrent} - <span style="font-size: 0.9rem; color: var(--text-secondary);">${formatDate(version.date)}</span></h4>
+                        <ul>${changesHTML}</ul>
+                    </div>
+                `;
+            }).join('');
+
+            changelogBody.innerHTML = styles + changelogHTML;
+        })
+        .catch(error => {
+            console.error('Error fetching changelog:', error);
+            const changelogBody = document.getElementById('changelog-body');
+            if (changelogBody) {
+                changelogBody.innerHTML = '<p style="color: var(--error-color);">Could not load changelog at this time.</p>';
+            }
+        });
+}
 
 function renderLanguages() {
   fetch('languages.json')
