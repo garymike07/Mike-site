@@ -2645,12 +2645,32 @@ body::before {
               </div>
             </div>
             <div class="about-footer">
-              <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
+              <a href="javascript:void(0);" data-modal-target="cv-password-modal" class="btn btn-primary"><i class="fas fa-download"></i> Download CV</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- CV Password Modal -->
+  <div class="modal" id="cv-password-modal">
+      <div class="modal-content modal-content--small">
+          <div class="modal-header">
+              <h2 class="modal-title">Enter Password to Download CV</h2>
+              <button class="modal-close" data-modal-close="cv-password-modal" aria-label="Close modal">
+                  <i class="fas fa-times"></i>
+              </button>
+          </div>
+          <div class="modal-body modal-body--single-col">
+              <p>This download is password protected. Please enter the password to proceed.</p>
+              <div class="form-group">
+                  <input type="password" id="cv-password-input" class="search-input form-input--spaced" placeholder="Password">
+                  <p id="cv-password-error" class="tool-status error" style="display: none;"></p>
+              </div>
+              <button class="btn btn-primary btn--full-width" onclick="handleCvDownload()">Submit</button>
+          </div>
+      </div>
   </div>
 
   <!-- Contact Modal -->
@@ -3906,6 +3926,35 @@ function openProjectModal(projectId) {
 // =================================================================================
 // FEATURE-SPECIFIC LOGIC
 // =================================================================================
+
+function handleCvDownload() {
+    const passwordInput = document.getElementById('cv-password-input');
+    const errorElement = document.getElementById('cv-password-error');
+    const correctPassword = 'secretcv'; // In a real app, this should not be hardcoded
+
+    if (passwordInput.value === correctPassword) {
+        // Correct password
+        errorElement.style.display = 'none';
+        showNotification('Password correct! Starting download...', 'success');
+
+        // Create a temporary link to trigger the download
+        const link = document.createElement('a');
+        link.href = 'cv.pdf'; // Replace with the actual path to the CV
+        link.download = 'Mike-CV.pdf'; // The filename for the user
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        closeModalById('cv-password-modal');
+        passwordInput.value = ''; // Clear the input
+    } else {
+        // Incorrect password
+        errorElement.textContent = 'Incorrect password. Please try again.';
+        errorElement.style.display = 'block';
+        passwordInput.value = ''; // Clear the input
+        passwordInput.focus();
+    }
+}
 
 let currentProjectIdForDownload = null;
 
