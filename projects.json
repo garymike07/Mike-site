@@ -27,7 +27,7 @@
     "title": "Kenya Realty",
     "description": "A comprehensive e-commerce platform to find dream homes in Kenya. Discover luxury properties across Nairobi, Mombasa, and beyond.",
     "image": "real_estate_main.png",
-    "thumbnails": ["real_estate_main.png"],
+    "thumbnails": ["real_estate_main.png", "real_estate_analytics.png", "real_estate_mobile.png", "real_estate_tenant.png"],
     "category": "completed",
     "tags": ["Real Estate", "E-commerce", "Kenya", "Property"],
     "price": 120000,
@@ -48,7 +48,7 @@
     "title": "Bill Generator",
     "description": "An online tool to generate invoices. Users can add items, upload a logo, and generate a PDF of the invoice.",
     "image": "generic_dashboard_1.png",
-    "thumbnails": ["generic_dashboard_1.png"],
+    "thumbnails": ["generic_dashboard_1.png", "generic_ecommerce_1.png", "generic_mobile_1.png"],
     "category": "completed",
     "tags": ["Invoice Generator", "Billing", "PDF", "Tool"],
     "price": 50000,
@@ -66,24 +66,23 @@
   },
   {
     "id": 33,
-    "title": "Kenya Safari Adventures",
-    "description": "Luxury eco-friendly lodges with stunning views of Mount Kenya and wildlife. Experience breathtaking views and witness the world\'s greatest wildlife spectacle.",
-    "image": "https://unforgettabletravel.com/wp-content/uploads/2021/07/Angama-Mara-3.jpg",
-    "thumbnails": ["https://unforgettabletravel.com/wp-content/uploads/2021/07/Angama-Mara-3.jpg"],
+    "title": "Space Tourism",
+    "description": "Embark on an unforgettable journey to the stars. Explore breathtaking destinations, from the lunar surface to Martian colonies, all from the comfort of our luxurious spacecraft.",
+    "image": "space_tourism_thumb_1.png",
+    "thumbnails": ["space_tourism_thumb_1.png", "vr_training_main.png", "smart_city_main.png"],
     "category": "completed",
-    "tags": ["Tourism", "Safari", "Kenya", "Travel", "Wildlife"],
-    "price": 150000,
+    "tags": ["Tourism", "Space", "Travel", "Exploration", "Sci-Fi"],
+    "price": 250000,
     "status": "completed-tourism",
     "date": "2024-08-08",
     "demo": "https://garymike07.github.io/tourism/",
     "github": "https://github.com/garymike07/tourism",
     "features": [
-      "Browse safari packages",
-      "View accommodation details",
-      "Book adventures and activities",
-      "Photo gallery of destinations"
+      "Browse interstellar destinations",
+      "View spacecraft amenities",
+      "Book your space voyage",
+      "Virtual reality pre-flight experience"
     ],
     "request_feature_email": "wrootmike@gmail.com"
   }
 ]
-
