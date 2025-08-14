@@ -4,20 +4,9 @@
     "title": "MYK Portfolio Platform",
     "description": "A comprehensive portfolio platform showcasing full-stack development expertise with modern design, interactive features, and professional presentation. Features real-time clock, project showcases, and responsive design.",
     "image": "myk_thumb_1.png",
-    "thumbnails": [
-      "myk_thumb_1.png",
-      "myk_screenshot_1.webp",
-      "myk_screenshot_2.webp",
-      "myk_screenshot_3.webp"
-    ],
+    "thumbnails": ["myk_thumb_1.png", "myk_screenshot_1.webp", "myk_screenshot_2.webp", "myk_screenshot_3.webp"],
     "category": "completed",
-    "tags": [
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "Responsive Design",
-      "Portfolio"
-    ],
+    "tags": ["JavaScript", "HTML5", "CSS3", "Responsive Design", "Portfolio"],
     "price": 75000,
     "status": "live",
     "date": "2025-07-20",
@@ -38,16 +27,9 @@
     "title": "Kenya Realty",
     "description": "A comprehensive e-commerce platform to find dream homes in Kenya. Discover luxury properties across Nairobi, Mombasa, and beyond.",
     "image": "real_estate_main.png",
-    "thumbnails": [
-      "real_estate_main.png"
-    ],
+    "thumbnails": ["real_estate_main.png"],
     "category": "completed",
-    "tags": [
-      "Real Estate",
-      "E-commerce",
-      "Kenya",
-      "Property"
-    ],
+    "tags": ["Real Estate", "E-commerce", "Kenya", "Property"],
     "price": 120000,
     "status": "completed-real-estate",
     "date": "2024-08-12",
@@ -66,16 +48,9 @@
     "title": "Bill Generator",
     "description": "An online tool to generate invoices. Users can add items, upload a logo, and generate a PDF of the invoice.",
     "image": "generic_dashboard_1.png",
-    "thumbnails": [
-      "generic_dashboard_1.png"
-    ],
+    "thumbnails": ["generic_dashboard_1.png"],
     "category": "completed",
-    "tags": [
-      "Invoice Generator",
-      "Billing",
-      "PDF",
-      "Tool"
-    ],
+    "tags": ["Invoice Generator", "Billing", "PDF", "Tool"],
     "price": 50000,
     "status": "completed-billgen",
     "date": "2024-08-10",
@@ -93,18 +68,10 @@
     "id": 33,
     "title": "Kenya Safari Adventures",
     "description": "Luxury eco-friendly lodges with stunning views of Mount Kenya and wildlife. Experience breathtaking views and witness the world's greatest wildlife spectacle.",
-    "image": "https://images.unsplash.com/photo-1708501805644-6e995f43f161?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2VueWElMjBzYWZhcml8ZW58MHx8MHx8fDA%3D",
-    "thumbnails": [
-      "https://images.unsplash.com/photo-1708501805644-6e995f43f161?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2VueWElMjBzYWZhcml8ZW58MHx8MHx8fDA%3D"
-    ],
+    "image": "https://unforgettabletravel.com/wp-content/uploads/2021/07/Angama-Mara-3.jpg",
+    "thumbnails": ["https://unforgettabletravel.com/wp-content/uploads/2021/07/Angama-Mara-3.jpg"],
     "category": "completed",
-    "tags": [
-      "Tourism",
-      "Safari",
-      "Kenya",
-      "Travel",
-      "Wildlife"
-    ],
+    "tags": ["Tourism", "Safari", "Kenya", "Travel", "Wildlife"],
     "price": 150000,
     "status": "completed-tourism",
     "date": "2024-08-08",
@@ -123,20 +90,9 @@
     "title": "E-commerce Analytics Dashboard",
     "description": "Advanced analytics platform for e-commerce businesses with real-time sales tracking, customer insights, and inventory management.",
     "image": "ecommerce_analytics_main.png",
-    "thumbnails": [
-      "ecommerce_analytics_main.png",
-      "ecommerce_analytics_mobile.png",
-      "ecommerce_analytics_reports.png",
-      "ecommerce_analytics_settings.png"
-    ],
+    "thumbnails": ["ecommerce_analytics_main.png", "ecommerce_analytics_mobile.png", "ecommerce_analytics_reports.png", "ecommerce_analytics_settings.png"],
     "category": "active",
-    "tags": [
-      "React",
-      "Node.js",
-      "MongoDB",
-      "Chart.js",
-      "Analytics"
-    ],
+    "tags": ["React", "Node.js", "MongoDB", "Chart.js", "Analytics"],
     "price": 180000,
     "status": "ongoing",
     "progress": 75,
@@ -151,20 +107,9 @@
     "title": "AI-Powered Content Management",
     "description": "Next-generation CMS with AI content generation, automated SEO optimization, and intelligent content recommendations.",
     "image": "ai_cms_main.png",
-    "thumbnails": [
-      "ai_cms_main.png",
-      "ai_cms_mobile.png",
-      "ai_cms_editor.png",
-      "ai_cms_analytics.png"
-    ],
+    "thumbnails": ["ai_cms_main.png", "ai_cms_mobile.png", "ai_cms_editor.png", "ai_cms_analytics.png"],
     "category": "active",
-    "tags": [
-      "Next.js",
-      "OpenAI",
-      "PostgreSQL",
-      "TypeScript",
-      "AI"
-    ],
+    "tags": ["Next.js", "OpenAI", "PostgreSQL", "TypeScript", "AI"],
     "price": 250000,
     "status": "ongoing",
     "progress": 60,
@@ -179,20 +124,9 @@
     "title": "Blockchain Voting System",
     "description": "Secure, transparent voting platform using blockchain technology for elections and organizational decision-making.",
     "image": "blockchain_voting_main.png",
-    "thumbnails": [
-      "blockchain_voting_main.png",
-      "blockchain_voting_mobile.png",
-      "blockchain_voting_results.png",
-      "blockchain_voting_admin.png"
-    ],
+    "thumbnails": ["blockchain_voting_main.png", "blockchain_voting_mobile.png", "blockchain_voting_results.png", "blockchain_voting_admin.png"],
     "category": "open-source",
-    "tags": [
-      "Solidity",
-      "Web3.js",
-      "React",
-      "Ethereum",
-      "Blockchain"
-    ],
+    "tags": ["Solidity", "Web3.js", "React", "Ethereum", "Blockchain"],
     "price": 320000,
     "status": "ongoing",
     "progress": 45,
@@ -207,19 +141,9 @@
     "title": "Real Estate Management Platform",
     "description": "Comprehensive property management system with tenant portals, maintenance tracking, and financial reporting.",
     "image": "real_estate_main.png",
-    "thumbnails": [
-      "real_estate_main.png",
-      "real_estate_mobile.png",
-      "real_estate_tenant.png",
-      "real_estate_analytics.png"
-    ],
+    "thumbnails": ["real_estate_main.png", "real_estate_mobile.png", "real_estate_tenant.png", "real_estate_analytics.png"],
     "category": "active",
-    "tags": [
-      "Vue.js",
-      "Laravel",
-      "MySQL",
-      "Payment Integration"
-    ],
+    "tags": ["Vue.js", "Laravel", "MySQL", "Payment Integration"],
     "price": 200000,
     "status": "ongoing",
     "progress": 80,
@@ -234,19 +158,9 @@
     "title": "Healthcare Appointment System",
     "description": "Digital health platform connecting patients with healthcare providers, featuring appointment scheduling and telemedicine.",
     "image": "healthcare_main.png",
-    "thumbnails": [
-      "healthcare_main.png",
-      "healthcare_mobile.png",
-      "healthcare_thumb_1.png",
-      "generic_dashboard_1.png"
-    ],
+    "thumbnails": ["healthcare_main.png", "healthcare_mobile.png", "healthcare_thumb_1.png", "generic_dashboard_1.png"],
     "category": "active",
-    "tags": [
-      "React Native",
-      "Node.js",
-      "Socket.io",
-      "Healthcare"
-    ],
+    "tags": ["React Native", "Node.js", "Socket.io", "Healthcare"],
     "price": 280000,
     "status": "ongoing",
     "progress": 55,
@@ -261,19 +175,9 @@
     "title": "Educational Learning Platform",
     "description": "Interactive online learning platform with video courses, quizzes, progress tracking, and certification system.",
     "image": "education_main.png",
-    "thumbnails": [
-      "education_main.png",
-      "education_mobile.png",
-      "education_thumb_1.png",
-      "generic_dashboard_1.png"
-    ],
+    "thumbnails": ["education_main.png", "education_mobile.png", "education_thumb_1.png", "generic_dashboard_1.png"],
     "category": "active",
-    "tags": [
-      "Angular",
-      "Firebase",
-      "Video Streaming",
-      "Education"
-    ],
+    "tags": ["Angular", "Firebase", "Video Streaming", "Education"],
     "price": 220000,
     "status": "ongoing",
     "progress": 70,
@@ -288,19 +192,9 @@
     "title": "Restaurant Chain Management",
     "description": "Multi-location restaurant management system with inventory, staff scheduling, and customer loyalty programs.",
     "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-    "thumbnails": [
-      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-      "https://www.restaurant365.com/wp-content/uploads/2025/08/iStock-900812860-1024x683.jpg",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png"
-    ],
+    "thumbnails": ["https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png", "https://www.restaurant365.com/wp-content/uploads/2025/08/iStock-900812860-1024x683.jpg", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png"],
     "category": "active",
-    "tags": [
-      "React",
-      "Express",
-      "PostgreSQL",
-      "POS Integration"
-    ],
+    "tags": ["React", "Express", "PostgreSQL", "POS Integration"],
     "price": 190000,
     "status": "ongoing",
     "progress": 65,
@@ -315,19 +209,9 @@
     "title": "Fitness Tracking Mobile App",
     "description": "Comprehensive fitness application with workout plans, nutrition tracking, and social features for fitness enthusiasts.",
     "image": "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
-    "thumbnails": [
-      "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
-      "https://uizard.io/static/269cc24ae1ecc74b98f243b86cd1d8b4/a8e47/70c030d5c7cbd260f865f4aa0ab4eedb28603fba-1440x835.png",
-      "https://uizard.io/static/17c83fa1bcc58430449ca7907c838a5f/a8e47/1d26b7434625c2adf712383d97d167c247c2820a-1440x835.png",
-      "https://uizard.io/static/2593cfafef210c44e36d29b4e7babe2b/a8e47/8daff8291ae601bdfb623eea88bd019dee5a8c83-1440x835.png"
-    ],
+    "thumbnails": ["https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png", "https://uizard.io/static/269cc24ae1ecc74b98f243b86cd1d8b4/a8e47/70c030d5c7cbd260f865f4aa0ab4eedb28603fba-1440x835.png", "https://uizard.io/static/17c83fa1bcc58430449ca7907c838a5f/a8e47/1d26b7434625c2adf712383d97d167c247c2820a-1440x835.png", "https://uizard.io/static/2593cfafef210c44e36d29b4e7babe2b/a8e47/8daff8291ae601bdfb623eea88bd019dee5a8c83-1440x835.png"],
     "category": "active",
-    "tags": [
-      "React Native",
-      "Redux",
-      "Health APIs",
-      "Mobile"
-    ],
+    "tags": ["React Native", "Redux", "Health APIs", "Mobile"],
     "price": 160000,
     "status": "ongoing",
     "progress": 50,
@@ -342,19 +226,9 @@
     "title": "Supply Chain Tracker",
     "description": "End-to-end supply chain visibility platform with real-time tracking, analytics, and automated reporting.",
     "image": "https://www.aufaitux.com/wp-content/uploads/2025/03/Logistics-dashboard-UIUX-design.jpg",
-    "thumbnails": [
-      "https://uizard.io/static/e27e2428cebb2a9f0bd2fd62806816b9/a8e47/8d37b6cdee42257548e9e8a02cb888beb61dd4a7-1440x835.png",
-      "https://uizard.io/static/33f6b0100c446cf2c622650d9cc0bf41/a8e47/abe0abdb576e6c3d828a85e74e14eb0a377d837a-1440x835.png",
-      "https://uizard.io/static/7937709f938175e087e270394d36c271/a8e47/0103d089baf81cc5998a87eb84924b07024768b0-1440x835.png",
-      "https://uizard.io/static/0b53deb383b184314b3a0845aa78fe2e/a8e47/83d908e8379584e373fe73d18e50db7eae4ea884-1440x835.png"
-    ],
+    "thumbnails": ["https://uizard.io/static/e27e2428cebb2a9f0bd2fd62806816b9/a8e47/8d37b6cdee42257548e9e8a02cb888beb61dd4a7-1440x835.png", "https://uizard.io/static/33f6b0100c446cf2c622650d9cc0bf41/a8e47/abe0abdb576e6c3d828a85e74e14eb0a377d837a-1440x835.png", "https://uizard.io/static/7937709f938175e087e270394d36c271/a8e47/0103d089baf81cc5998a87eb84924b07024768b0-1440x835.png", "https://uizard.io/static/0b53deb383b184314b3a0845aa78fe2e/a8e47/83d908e8379584e373fe73d18e50db7eae4ea884-1440x835.png"],
     "category": "active",
-    "tags": [
-      "Vue.js",
-      "Python",
-      "IoT Integration",
-      "Analytics"
-    ],
+    "tags": ["Vue.js", "Python", "IoT Integration", "Analytics"],
     "price": 300000,
     "status": "ongoing",
     "progress": 40,
@@ -369,19 +243,9 @@
     "title": "Smart City Infrastructure",
     "description": "IoT-based smart city management platform for traffic optimization, energy management, and citizen services.",
     "image": "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e4170e77c34a45fbce5603_39_air_pollution_analysis%20(1)-poster-00001.jpg",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e4170e77c34a45fbce5603_39_air_pollution_analysis%20(1)-poster-00001.jpg", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png"],
     "category": "concept",
-    "tags": [
-      "IoT",
-      "Machine Learning",
-      "Big Data",
-      "Smart City"
-    ],
+    "tags": ["IoT", "Machine Learning", "Big Data", "Smart City"],
     "price": 500000,
     "status": "concept",
     "date": "2023-06-25",
@@ -394,19 +258,9 @@
     "title": "Virtual Reality Training Platform",
     "description": "Immersive VR training solutions for corporate education, safety training, and skill development programs.",
     "image": "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png",
-    "thumbnails": [
-      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_Male-Nursing-Student_Cutout_v2_png8-e1722988809743.png",
-      "https://medvr.education/wp-content/uploads/2022/12/asthma-debriefing-1024x576.jpg",
-      "https://medvr.education/wp-content/uploads/2022/11/debriefing-blog-1024x576.jpg",
-      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png"
-    ],
+    "thumbnails": ["https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_Male-Nursing-Student_Cutout_v2_png8-e1722988809743.png", "https://medvr.education/wp-content/uploads/2022/12/asthma-debriefing-1024x576.jpg", "https://medvr.education/wp-content/uploads/2022/11/debriefing-blog-1024x576.jpg", "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png"],
     "category": "concept",
-    "tags": [
-      "VR",
-      "Unity",
-      "3D Modeling",
-      "Training"
-    ],
+    "tags": ["VR", "Unity", "3D Modeling", "Training"],
     "price": 450000,
     "status": "concept",
     "date": "2023-05-20",
@@ -419,19 +273,9 @@
     "title": "Cryptocurrency Exchange",
     "description": "Secure, high-performance cryptocurrency trading platform with advanced charting and portfolio management.",
     "image": "crypto_exchange_thumb_1.png",
-    "thumbnails": [
-      "crypto_exchange_thumb_1.png",
-      "generic_dashboard_1.png",
-      "blockchain_voting_thumb_1.png",
-      "generic_mobile_1.png"
-    ],
+    "thumbnails": ["crypto_exchange_thumb_1.png", "generic_dashboard_1.png", "blockchain_voting_thumb_1.png", "generic_mobile_1.png"],
     "category": "concept",
-    "tags": [
-      "Blockchain",
-      "Trading",
-      "Security",
-      "Cryptocurrency"
-    ],
+    "tags": ["Blockchain", "Trading", "Security", "Cryptocurrency"],
     "price": 600000,
     "status": "concept",
     "date": "2023-04-18",
@@ -444,19 +288,9 @@
     "title": "AI Legal Assistant",
     "description": "Artificial intelligence-powered legal research and document analysis platform for law firms and legal professionals.",
     "image": "https://www.clio.com/wp-content/uploads/2021/03/Clio_Manage_Simplified-UI_Document-Management_Document-Template-550x430.png",
-    "thumbnails": [
-      "https://www.clio.com/wp-content/uploads/2021/03/Clio_Grow_Simplified-UI_Document-Automation-Electronic-Signatures_Documents-and-ESignatures-550x486.png",
-      "https://www.clio.com/wp-content/uploads/2021/11/Clio-Manage_Document-Management_Clio-Desktop-App-and-Clio-Drive-550x393.png",
-      "https://www.clio.com/wp-content/uploads/2021/03/Clio_Manage_Simplified-UI_Integrations-App-Ecosystem-550x541.png",
-      "https://www.clio.com/wp-content/uploads/2021/03/Clio_Manage_Simplified-UI_Document-Management_Document-Template-550x430.png"
-    ],
+    "thumbnails": ["https://www.clio.com/wp-content/uploads/2021/03/Clio_Grow_Simplified-UI_Document-Automation-Electronic-Signatures_Documents-and-ESignatures-550x486.png", "https://www.clio.com/wp-content/uploads/2021/11/Clio-Manage_Document-Management_Clio-Desktop-App-and-Clio-Drive-550x393.png", "https://www.clio.com/wp-content/uploads/2021/03/Clio_Manage_Simplified-UI_Integrations-App-Ecosystem-550x541.png", "https://www.clio.com/wp-content/uploads/2021/03/Clio_Manage_Simplified-UI_Document-Management_Document-Template-550x430.png"],
     "category": "concept",
-    "tags": [
-      "AI",
-      "NLP",
-      "Legal Tech",
-      "Machine Learning"
-    ],
+    "tags": ["AI", "NLP", "Legal Tech", "Machine Learning"],
     "price": 400000,
     "status": "concept",
     "date": "2023-03-15",
@@ -469,19 +303,9 @@
     "title": "Sustainable Energy Monitor",
     "description": "Comprehensive renewable energy monitoring and optimization platform for solar and wind installations.",
     "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
-      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png", "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"],
     "category": "concept",
-    "tags": [
-      "Green Tech",
-      "IoT",
-      "Energy",
-      "Sustainability"
-    ],
+    "tags": ["Green Tech", "IoT", "Energy", "Sustainability"],
     "price": 350000,
     "status": "concept",
     "date": "2023-02-12",
@@ -494,19 +318,9 @@
     "title": "Mental Health Support Network",
     "description": "Digital mental health platform connecting users with therapists, support groups, and wellness resources.",
     "image": "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
-    "thumbnails": [
-      "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
-      "https://uizard.io/static/269cc24ae1ecc74b98f243b86cd1d8b4/a8e47/70c030d5c7cbd260f865f4aa0ab4eedb28603fba-1440x835.png",
-      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png",
-      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_Male-Nursing-Student_Cutout_v2_png8-e1722988809743.png"
-    ],
+    "thumbnails": ["https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png", "https://uizard.io/static/269cc24ae1ecc74b98f243b86cd1d8b4/a8e47/70c030d5c7cbd260f865f4aa0ab4eedb28603fba-1440x835.png", "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png", "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_Male-Nursing-Student_Cutout_v2_png8-e1722988809743.png"],
     "category": "concept",
-    "tags": [
-      "Healthcare",
-      "Mental Health",
-      "Community",
-      "Wellness"
-    ],
+    "tags": ["Healthcare", "Mental Health", "Community", "Wellness"],
     "price": 280000,
     "status": "concept",
     "date": "2023-01-10",
@@ -519,19 +333,9 @@
     "title": "Autonomous Vehicle Fleet",
     "description": "Fleet management system for autonomous vehicles with route optimization and predictive maintenance.",
     "image": "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg"],
     "category": "concept",
-    "tags": [
-      "Autonomous",
-      "Fleet Management",
-      "AI",
-      "Transportation"
-    ],
+    "tags": ["Autonomous", "Fleet Management", "AI", "Transportation"],
     "price": 750000,
     "status": "concept",
     "date": "2022-12-08",
@@ -544,19 +348,9 @@
     "title": "Agricultural Drone Network",
     "description": "Precision agriculture platform using drone technology for crop monitoring and automated farming operations.",
     "image": "https://www.aufaitux.com/wp-content/uploads/2025/03/Logistics-dashboard-UIUX-design.jpg",
-    "thumbnails": [
-      "https://www.aufaitux.com/wp-content/uploads/2025/03/Logistics-dashboard-UIUX-design.jpg",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg"
-    ],
+    "thumbnails": ["https://www.aufaitux.com/wp-content/uploads/2025/03/Logistics-dashboard-UIUX-design.jpg", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg"],
     "category": "concept",
-    "tags": [
-      "Drones",
-      "Agriculture",
-      "IoT",
-      "Automation"
-    ],
+    "tags": ["Drones", "Agriculture", "IoT", "Automation"],
     "price": 420000,
     "status": "concept",
     "date": "2022-11-05",
@@ -569,19 +363,9 @@
     "title": "Space Tourism Booking",
     "description": "Futuristic space tourism booking platform with virtual space tours and astronaut training programs.",
     "image": "space_tourism_thumb_1.png",
-    "thumbnails": [
-      "space_tourism_thumb_1.png",
-      "generic_dashboard_1.png",
-      "generic_mobile_1.png",
-      "generic_ecommerce_1.png"
-    ],
+    "thumbnails": ["space_tourism_thumb_1.png", "generic_dashboard_1.png", "generic_mobile_1.png", "generic_ecommerce_1.png"],
     "category": "concept",
-    "tags": [
-      "Space Tech",
-      "Tourism",
-      "VR",
-      "Booking"
-    ],
+    "tags": ["Space Tech", "Tourism", "VR", "Booking"],
     "price": 800000,
     "status": "concept",
     "date": "2022-10-03",
@@ -594,19 +378,9 @@
     "title": "Quantum Computing Interface",
     "description": "User-friendly interface for quantum computing applications in research and enterprise environments.",
     "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png", "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"],
     "category": "concept",
-    "tags": [
-      "Quantum Computing",
-      "Research",
-      "Interface",
-      "Enterprise"
-    ],
+    "tags": ["Quantum Computing", "Research", "Interface", "Enterprise"],
     "price": 900000,
     "status": "concept",
     "date": "2022-09-01",
@@ -619,19 +393,9 @@
     "title": "Social Media Analytics Suite",
     "description": "Comprehensive social media management and analytics platform for brands and marketing agencies.",
     "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
-      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png", "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"],
     "category": "active",
-    "tags": [
-      "Social Media",
-      "Analytics",
-      "Marketing",
-      "Dashboard"
-    ],
+    "tags": ["Social Media", "Analytics", "Marketing", "Dashboard"],
     "price": 220000,
     "status": "construction",
     "date": "2023-08-15",
@@ -645,19 +409,9 @@
     "title": "Cloud Storage Optimization",
     "description": "Intelligent cloud storage management with automated optimization and cost reduction algorithms.",
     "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png", "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"],
     "category": "active",
-    "tags": [
-      "Cloud",
-      "Storage",
-      "Optimization",
-      "Cost Management"
-    ],
+    "tags": ["Cloud", "Storage", "Optimization", "Cost Management"],
     "price": 180000,
     "status": "construction",
     "date": "2023-07-12",
@@ -671,19 +425,9 @@
     "title": "Gaming Tournament Platform",
     "description": "Esports tournament organization platform with live streaming, bracket management, and prize distribution.",
     "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-      "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
-      "https://uizard.io/static/269cc24ae1ecc74b98f243b86cd1d8b4/a8e47/70c030d5c7cbd260f865f4aa0ab4eedb28603fba-1440x835.png"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png", "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png", "https://uizard.io/static/269cc24ae1ecc74b98f243b86cd1d8b4/a8e47/70c030d5c7cbd260f865f4aa0ab4eedb28603fba-1440x835.png"],
     "category": "active",
-    "tags": [
-      "Gaming",
-      "Esports",
-      "Streaming",
-      "Tournament"
-    ],
+    "tags": ["Gaming", "Esports", "Streaming", "Tournament"],
     "price": 300000,
     "status": "construction",
     "date": "2023-06-10",
@@ -697,19 +441,9 @@
     "title": "Personal Finance AI Advisor",
     "description": "AI-powered personal finance management with investment recommendations and budget optimization.",
     "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-      "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-      "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png", "https://uizard.io/static/b4f2301b3328039bb6ae856fbfa989eb/a8e47/6a067abec8df4a10d6b586e209e5628f845e3605-1440x835.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png", "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"],
     "category": "active",
-    "tags": [
-      "FinTech",
-      "AI",
-      "Personal Finance",
-      "Investment"
-    ],
+    "tags": ["FinTech", "AI", "Personal Finance", "Investment"],
     "price": 250000,
     "status": "construction",
     "date": "2023-05-08",
@@ -723,19 +457,9 @@
     "title": "Remote Work Collaboration Hub",
     "description": "All-in-one remote work platform with video conferencing, project management, and team collaboration tools.",
     "image": "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
-      "https://www.aufaitux.com/wp-content/uploads/2025/03/Logistics-dashboard-UIUX-design.jpg",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png", "https://www.aufaitux.com/wp-content/uploads/2025/03/Logistics-dashboard-UIUX-design.jpg", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png"],
     "category": "active",
-    "tags": [
-      "Remote Work",
-      "Collaboration",
-      "Video Conferencing",
-      "Productivity"
-    ],
+    "tags": ["Remote Work", "Collaboration", "Video Conferencing", "Productivity"],
     "price": 280000,
     "status": "construction",
     "date": "2023-04-05",
@@ -749,19 +473,9 @@
     "title": "Smart Home Automation",
     "description": "Comprehensive smart home control system with AI-powered automation and energy efficiency optimization.",
     "image": "https://www.solaredge.com/us/sites/nam/files/styles/tiny_convert/public/images/upload/rich-text-img-Mobile.png?itok=gQSqkhG0",
-    "thumbnails": [
-      "https://www.solaredge.com/us/sites/nam/files/styles/tiny_convert/public/images/upload/rich-text-img-Mobile.png?itok=gQSqkhG0",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png"
-    ],
+    "thumbnails": ["https://www.solaredge.com/us/sites/nam/files/styles/tiny_convert/public/images/upload/rich-text-img-Mobile.png?itok=gQSqkhG0", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png"],
     "category": "active",
-    "tags": [
-      "IoT",
-      "Smart Home",
-      "Automation",
-      "Energy"
-    ],
+    "tags": ["IoT", "Smart Home", "Automation", "Energy"],
     "price": 200000,
     "status": "construction",
     "date": "2023-03-01",
@@ -775,19 +489,9 @@
     "title": "Digital Art Marketplace",
     "description": "NFT marketplace for digital artists with creator tools, royalty management, and community features.",
     "image": "https://uizard.io/static/e27e2428cebb2a9f0bd2fd62806816b9/a8e47/8d37b6cdee42257548e9e8a02cb888beb61dd4a7-1440x835.png",
-    "thumbnails": [
-      "https://uizard.io/static/e27e2428cebb2a9f0bd2fd62806816b9/a8e47/8d37b6cdee42257548e9e8a02cb888beb61dd4a7-1440x835.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png",
-      "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png"
-    ],
+    "thumbnails": ["https://uizard.io/static/e27e2428cebb2a9f0bd2fd62806816b9/a8e47/8d37b6cdee42257548e9e8a02cb888beb61dd4a7-1440x835.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png", "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png"],
     "category": "active",
-    "tags": [
-      "NFT",
-      "Digital Art",
-      "Blockchain",
-      "Marketplace"
-    ],
+    "tags": ["NFT", "Digital Art", "Blockchain", "Marketplace"],
     "price": 350000,
     "status": "construction",
     "date": "2023-02-01",
@@ -801,19 +505,9 @@
     "title": "Weather Prediction AI",
     "description": "Advanced weather forecasting system using machine learning and satellite data for hyper-local predictions.",
     "image": "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e4170e77c34a45fbce5603_39_air_pollution_analysis%20(1)-poster-00001.jpg",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e4170e77c34a45fbce5603_39_air_pollution_analysis%20(1)-poster-00001.jpg",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e4170e77c34a45fbce5603_39_air_pollution_analysis%20(1)-poster-00001.jpg", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png"],
     "category": "active",
-    "tags": [
-      "AI",
-      "Weather",
-      "Machine Learning",
-      "Prediction"
-    ],
+    "tags": ["AI", "Weather", "Machine Learning", "Prediction"],
     "price": 400000,
     "status": "construction",
     "date": "2023-01-30",
@@ -827,19 +521,9 @@
     "title": "Elderly Care Monitoring",
     "description": "IoT-based elderly care system with health monitoring, emergency alerts, and family connectivity.",
     "image": "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png",
-    "thumbnails": [
-      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png",
-      "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_Male-Nursing-Student_Cutout_v2_png8-e1722988809743.png",
-      "https://medvr.education/wp-content/uploads/2022/12/asthma-debriefing-1024x576.jpg",
-      "https://medvr.education/wp-content/uploads/2022/11/debriefing-blog-1024x576.jpg"
-    ],
+    "thumbnails": ["https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png", "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_Male-Nursing-Student_Cutout_v2_png8-e1722988809743.png", "https://medvr.education/wp-content/uploads/2022/12/asthma-debriefing-1024x576.jpg", "https://medvr.education/wp-content/uploads/2022/11/debriefing-blog-1024x576.jpg"],
     "category": "active",
-    "tags": [
-      "Healthcare",
-      "IoT",
-      "Monitoring",
-      "Elderly Care"
-    ],
+    "tags": ["Healthcare", "IoT", "Monitoring", "Elderly Care"],
     "price": 180000,
     "status": "construction",
     "date": "2022-12-28",
@@ -853,19 +537,9 @@
     "title": "Waste Management Optimizer",
     "description": "Smart waste management system with route optimization, recycling tracking, and environmental impact analysis.",
     "image": "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg",
-    "thumbnails": [
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg",
-      "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png"
-    ],
+    "thumbnails": ["https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e416d91b58a520a9225ef1_33_traffic__1_-poster-00001.jpg", "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png"],
     "category": "active",
-    "tags": [
-      "Environment",
-      "Optimization",
-      "Smart City",
-      "Sustainability"
-    ],
+    "tags": ["Environment", "Optimization", "Smart City", "Sustainability"],
     "price": 320000,
     "status": "construction",
     "date": "2022-11-25",
