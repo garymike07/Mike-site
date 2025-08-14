@@ -886,6 +886,18 @@ body::before {
   cursor: not-allowed;
 }
 
+.view-website-btn {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    padding: 0.8rem 1.2rem; /* Larger padding */
+    font-size: 0.8rem; /* Larger font size */
+    border: 1px solid var(--accent-primary);
+}
+
+.view-website-btn:hover {
+    filter: brightness(1.2);
+}
+
 /* Progress Bar for Ongoing Projects */
 .progress-container {
   margin: 1rem 0;
@@ -2622,7 +2634,7 @@ body::before {
         <div class="modal-links">
           <a href="#" class="modal-link" id="modal-demo" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-external-link-alt"></i>
-            <span id="modal-demo-text">Live Demo</span>
+            <span id="modal-demo-text">View website</span>
           </a>
           <a href="#" class="modal-link" id="modal-github" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-github"></i>
@@ -3889,7 +3901,7 @@ function renderProjects(projectsToRender = projects) {
     const isGithubAvailable = project.github && project.github !== '#';
 
     const infoButton = `<button class="add-to-cart" onclick="openProjectModal(${project.id})"><i class="fas fa-info-circle"></i> Info</button>`;
-    const demoButton = `<a href="${project.demo || '#'}" target="_blank" rel="noopener noreferrer" class="add-to-cart ${!isDemoAvailable ? 'disabled' : ''}" onclick="if(!${isDemoAvailable}) event.preventDefault(); event.stopPropagation();"><i class="fas fa-eye"></i> Demo</a>`;
+    const demoButton = `<a href="${project.demo || '#'}" target="_blank" rel="noopener noreferrer" class="add-to-cart view-website-btn ${!isDemoAvailable ? 'disabled' : ''}" onclick="if(!${isDemoAvailable}) event.preventDefault(); event.stopPropagation();"><i class="fas fa-eye"></i> View website</a>`;
     const codeButton = `<a href="${project.github || '#'}" target="_blank" rel="noopener noreferrer" class="add-to-cart ${!isGithubAvailable ? 'disabled' : ''}" onclick="if(!${isGithubAvailable}) event.preventDefault(); event.stopPropagation();"><i class="fab fa-github"></i> Code</a>`;
     const actionButton = getActionButton(project);
 
@@ -3912,8 +3924,8 @@ function renderProjects(projectsToRender = projects) {
           <div class="project-footer">
             <div class="project-price">KES ${project.price.toLocaleString()}</div>
             <div class="project-actions">
-                ${infoButton}
                 ${demoButton}
+                ${infoButton}
                 ${codeButton}
                 ${actionButton}
             </div>
@@ -4169,7 +4181,7 @@ function openProjectModal(projectId) {
   
   const isDemoDisabled = !project.demo || project.demo === '#' || project.status !== 'live';
   demoLink.classList.toggle('disabled', isDemoDisabled);
-  document.getElementById('modal-demo-text').textContent = project.status === 'live' ? 'Live Demo' : (project.status === 'ongoing' ? 'Preview (Beta)' : 'Not Available');
+  document.getElementById('modal-demo-text').textContent = project.status === 'live' ? 'View website' : (project.status === 'ongoing' ? 'Preview (Beta)' : 'Not Available');
 
   // Download Source button
   downloadLink.classList.toggle('disabled', !isGithubAvailable);
