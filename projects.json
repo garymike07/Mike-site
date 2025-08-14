@@ -634,5 +634,83 @@
     "demo": "#",
     "github": "#",
     "request_feature_email": "wrootmike@gmail.com"
+  },
+  {
+    "id": 31,
+    "title": "Kenya Realty",
+    "description": "A comprehensive e-commerce platform to find dream homes in Kenya. Discover luxury properties across Nairobi, Mombasa, and beyond.",
+    "image": "https://via.placeholder.com/800x600.png?text=Kenya+Realty",
+    "thumbnails": [
+      "https://via.placeholder.com/800x600.png?text=Kenya+Realty+Screenshot+1",
+      "https://via.placeholder.com/800x600.png?text=Kenya+Realty+Screenshot+2",
+      "https://via.placeholder.com/800x600.png?text=Kenya+Realty+Screenshot+3",
+      "https://via.placeholder.com/800x600.png?text=Kenya+Realty+Screenshot+4"
+    ],
+    "category": "completed",
+    "tags": ["Real Estate", "E-commerce", "Kenya", "Property"],
+    "price": 120000,
+    "status": "completed-real-estate",
+    "date": "2024-08-12",
+    "demo": "https://garymike07.github.io/real-estate-/",
+    "github": "https://github.com/garymike07/real-estate-",
+    "features": [
+      "Property listings with search and filter",
+      "E-commerce functionality for property purchase",
+      "User accounts and saved properties",
+      "Contact forms for agents"
+    ],
+    "request_feature_email": "wrootmike@gmail.com"
+  },
+  {
+    "id": 32,
+    "title": "Bill Generator",
+    "description": "An online tool to generate invoices. Users can add items, upload a logo, and generate a PDF of the invoice.",
+    "image": "https://via.placeholder.com/800x600.png?text=Bill+Generator",
+    "thumbnails": [
+      "https://via.placeholder.com/800x600.png?text=Bill+Generator+Screenshot+1",
+      "https://via.placeholder.com/800x600.png?text=Bill+Generator+Screenshot+2",
+      "https://via.placeholder.com/800x600.png?text=Bill+Generator+Screenshot+3",
+      "https://via.placeholder.com/800x600.png?text=Bill+Generator+Screenshot+4"
+    ],
+    "category": "completed",
+    "tags": ["Invoice Generator", "Billing", "PDF", "Tool"],
+    "price": 50000,
+    "status": "completed-billgen",
+    "date": "2024-08-10",
+    "demo": "https://garymike07.github.io/billgen/",
+    "github": "https://github.com/garymike07/billgen",
+    "features": [
+      "Create and manage invoices",
+      "Add multiple line items",
+      "Upload company logo",
+      "Generate and download PDF invoices"
+    ],
+    "request_feature_email": "wrootmike@gmail.com"
+  },
+  {
+    "id": 33,
+    "title": "Kenya Safari Adventures",
+    "description": "Luxury eco-friendly lodges with stunning views of Mount Kenya and wildlife. Experience breathtaking views and witness the world's greatest wildlife spectacle.",
+    "image": "https://via.placeholder.com/800x600.png?text=Kenya+Safari",
+    "thumbnails": [
+      "https://via.placeholder.com/800x600.png?text=Safari+Screenshot+1",
+      "https://via.placeholder.com/800x600.png?text=Safari+Screenshot+2",
+      "https://via.placeholder.com/800x600.png?text=Safari+Screenshot+3",
+      "https://via.placeholder.com/800x600.png?text=Safari+Screenshot+4"
+    ],
+    "category": "completed",
+    "tags": ["Tourism", "Safari", "Kenya", "Travel", "Wildlife"],
+    "price": 150000,
+    "status": "completed-tourism",
+    "date": "2024-08-08",
+    "demo": "https://garymike07.github.io/tourism/",
+    "github": "https://github.com/garymike07/tourism",
+    "features": [
+      "Browse safari packages",
+      "View accommodation details",
+      "Book adventures and activities",
+      "Photo gallery of destinations"
+    ],
+    "request_feature_email": "wrootmike@gmail.com"
   }
 ]
