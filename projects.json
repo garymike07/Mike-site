@@ -11,7 +11,13 @@
       "myk_screenshot_3.webp"
     ],
     "category": "completed",
-    "tags": ["JavaScript", "HTML5", "CSS3", "Responsive Design", "Portfolio"],
+    "tags": [
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Responsive Design",
+      "Portfolio"
+    ],
     "price": 75000,
     "status": "live",
     "date": "2025-07-20",
@@ -28,6 +34,91 @@
     "request_feature_email": "wrootmike@gmail.com"
   },
   {
+    "id": 31,
+    "title": "Kenya Realty",
+    "description": "A comprehensive e-commerce platform to find dream homes in Kenya. Discover luxury properties across Nairobi, Mombasa, and beyond.",
+    "image": "real_estate_main.png",
+    "thumbnails": [
+      "real_estate_main.png"
+    ],
+    "category": "completed",
+    "tags": [
+      "Real Estate",
+      "E-commerce",
+      "Kenya",
+      "Property"
+    ],
+    "price": 120000,
+    "status": "completed-real-estate",
+    "date": "2024-08-12",
+    "demo": "https://garymike07.github.io/real-estate-/",
+    "github": "https://github.com/garymike07/real-estate-",
+    "features": [
+      "Property listings with search and filter",
+      "E-commerce functionality for property purchase",
+      "User accounts and saved properties",
+      "Contact forms for agents"
+    ],
+    "request_feature_email": "wrootmike@gmail.com"
+  },
+  {
+    "id": 32,
+    "title": "Bill Generator",
+    "description": "An online tool to generate invoices. Users can add items, upload a logo, and generate a PDF of the invoice.",
+    "image": "generic_dashboard_1.png",
+    "thumbnails": [
+      "generic_dashboard_1.png"
+    ],
+    "category": "completed",
+    "tags": [
+      "Invoice Generator",
+      "Billing",
+      "PDF",
+      "Tool"
+    ],
+    "price": 50000,
+    "status": "completed-billgen",
+    "date": "2024-08-10",
+    "demo": "https://garymike07.github.io/billgen/",
+    "github": "https://github.com/garymike07/billgen",
+    "features": [
+      "Create and manage invoices",
+      "Add multiple line items",
+      "Upload company logo",
+      "Generate and download PDF invoices"
+    ],
+    "request_feature_email": "wrootmike@gmail.com"
+  },
+  {
+    "id": 33,
+    "title": "Kenya Safari Adventures",
+    "description": "Luxury eco-friendly lodges with stunning views of Mount Kenya and wildlife. Experience breathtaking views and witness the world's greatest wildlife spectacle.",
+    "image": "https://images.unsplash.com/photo-1708501805644-6e995f43f161?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2VueWElMjBzYWZhcml8ZW58MHx8MHx8fDA%3D",
+    "thumbnails": [
+      "https://images.unsplash.com/photo-1708501805644-6e995f43f161?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2VueWElMjBzYWZhcml8ZW58MHx8MHx8fDA%3D"
+    ],
+    "category": "completed",
+    "tags": [
+      "Tourism",
+      "Safari",
+      "Kenya",
+      "Travel",
+      "Wildlife"
+    ],
+    "price": 150000,
+    "status": "completed-tourism",
+    "date": "2024-08-08",
+    "demo": "https://garymike07.github.io/tourism/",
+    "github": "https://github.com/garymike07/tourism",
+    "features": [
+      "Browse safari packages",
+      "View accommodation details",
+      "Book adventures and activities",
+      "Photo gallery of destinations"
+    ],
+    "request_feature_email": "wrootmike@gmail.com"
+  },
+  {
     "id": 2,
     "title": "E-commerce Analytics Dashboard",
     "description": "Advanced analytics platform for e-commerce businesses with real-time sales tracking, customer insights, and inventory management.",
@@ -39,7 +130,13 @@
       "ecommerce_analytics_settings.png"
     ],
     "category": "active",
-    "tags": ["React", "Node.js", "MongoDB", "Chart.js", "Analytics"],
+    "tags": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Chart.js",
+      "Analytics"
+    ],
     "price": 180000,
     "status": "ongoing",
     "progress": 75,
@@ -61,7 +158,13 @@
       "ai_cms_analytics.png"
     ],
     "category": "active",
-    "tags": ["Next.js", "OpenAI", "PostgreSQL", "TypeScript", "AI"],
+    "tags": [
+      "Next.js",
+      "OpenAI",
+      "PostgreSQL",
+      "TypeScript",
+      "AI"
+    ],
     "price": 250000,
     "status": "ongoing",
     "progress": 60,
@@ -83,7 +186,13 @@
       "blockchain_voting_admin.png"
     ],
     "category": "open-source",
-    "tags": ["Solidity", "Web3.js", "React", "Ethereum", "Blockchain"],
+    "tags": [
+      "Solidity",
+      "Web3.js",
+      "React",
+      "Ethereum",
+      "Blockchain"
+    ],
     "price": 320000,
     "status": "ongoing",
     "progress": 45,
@@ -105,7 +214,12 @@
       "real_estate_analytics.png"
     ],
     "category": "active",
-    "tags": ["Vue.js", "Laravel", "MySQL", "Payment Integration"],
+    "tags": [
+      "Vue.js",
+      "Laravel",
+      "MySQL",
+      "Payment Integration"
+    ],
     "price": 200000,
     "status": "ongoing",
     "progress": 80,
@@ -127,7 +241,12 @@
       "generic_dashboard_1.png"
     ],
     "category": "active",
-    "tags": ["React Native", "Node.js", "Socket.io", "Healthcare"],
+    "tags": [
+      "React Native",
+      "Node.js",
+      "Socket.io",
+      "Healthcare"
+    ],
     "price": 280000,
     "status": "ongoing",
     "progress": 55,
@@ -149,7 +268,12 @@
       "generic_dashboard_1.png"
     ],
     "category": "active",
-    "tags": ["Angular", "Firebase", "Video Streaming", "Education"],
+    "tags": [
+      "Angular",
+      "Firebase",
+      "Video Streaming",
+      "Education"
+    ],
     "price": 220000,
     "status": "ongoing",
     "progress": 70,
@@ -171,7 +295,12 @@
       "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png"
     ],
     "category": "active",
-    "tags": ["React", "Express", "PostgreSQL", "POS Integration"],
+    "tags": [
+      "React",
+      "Express",
+      "PostgreSQL",
+      "POS Integration"
+    ],
     "price": 190000,
     "status": "ongoing",
     "progress": 65,
@@ -193,7 +322,12 @@
       "https://uizard.io/static/2593cfafef210c44e36d29b4e7babe2b/a8e47/8daff8291ae601bdfb623eea88bd019dee5a8c83-1440x835.png"
     ],
     "category": "active",
-    "tags": ["React Native", "Redux", "Health APIs", "Mobile"],
+    "tags": [
+      "React Native",
+      "Redux",
+      "Health APIs",
+      "Mobile"
+    ],
     "price": 160000,
     "status": "ongoing",
     "progress": 50,
@@ -215,7 +349,12 @@
       "https://uizard.io/static/0b53deb383b184314b3a0845aa78fe2e/a8e47/83d908e8379584e373fe73d18e50db7eae4ea884-1440x835.png"
     ],
     "category": "active",
-    "tags": ["Vue.js", "Python", "IoT Integration", "Analytics"],
+    "tags": [
+      "Vue.js",
+      "Python",
+      "IoT Integration",
+      "Analytics"
+    ],
     "price": 300000,
     "status": "ongoing",
     "progress": 40,
@@ -237,7 +376,12 @@
       "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/6761471b96d24125c34e6819_iot%20detection.png"
     ],
     "category": "concept",
-    "tags": ["IoT", "Machine Learning", "Big Data", "Smart City"],
+    "tags": [
+      "IoT",
+      "Machine Learning",
+      "Big Data",
+      "Smart City"
+    ],
     "price": 500000,
     "status": "concept",
     "date": "2023-06-25",
@@ -257,7 +401,12 @@
       "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_v3_In-Game_Nursing_Purple-Gradient_png8.png"
     ],
     "category": "concept",
-    "tags": ["VR", "Unity", "3D Modeling", "Training"],
+    "tags": [
+      "VR",
+      "Unity",
+      "3D Modeling",
+      "Training"
+    ],
     "price": 450000,
     "status": "concept",
     "date": "2023-05-20",
@@ -277,7 +426,12 @@
       "generic_mobile_1.png"
     ],
     "category": "concept",
-    "tags": ["Blockchain", "Trading", "Security", "Cryptocurrency"],
+    "tags": [
+      "Blockchain",
+      "Trading",
+      "Security",
+      "Cryptocurrency"
+    ],
     "price": 600000,
     "status": "concept",
     "date": "2023-04-18",
@@ -297,7 +451,12 @@
       "https://www.clio.com/wp-content/uploads/2021/03/Clio_Manage_Simplified-UI_Document-Management_Document-Template-550x430.png"
     ],
     "category": "concept",
-    "tags": ["AI", "NLP", "Legal Tech", "Machine Learning"],
+    "tags": [
+      "AI",
+      "NLP",
+      "Legal Tech",
+      "Machine Learning"
+    ],
     "price": 400000,
     "status": "concept",
     "date": "2023-03-15",
@@ -317,7 +476,12 @@
       "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
     ],
     "category": "concept",
-    "tags": ["Green Tech", "IoT", "Energy", "Sustainability"],
+    "tags": [
+      "Green Tech",
+      "IoT",
+      "Energy",
+      "Sustainability"
+    ],
     "price": 350000,
     "status": "concept",
     "date": "2023-02-12",
@@ -337,7 +501,12 @@
       "https://www.simxvr.com/wp-content/uploads/2024/08/Home-Page_Male-Nursing-Student_Cutout_v2_png8-e1722988809743.png"
     ],
     "category": "concept",
-    "tags": ["Healthcare", "Mental Health", "Community", "Wellness"],
+    "tags": [
+      "Healthcare",
+      "Mental Health",
+      "Community",
+      "Wellness"
+    ],
     "price": 280000,
     "status": "concept",
     "date": "2023-01-10",
@@ -357,7 +526,12 @@
       "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg"
     ],
     "category": "concept",
-    "tags": ["Autonomous", "Fleet Management", "AI", "Transportation"],
+    "tags": [
+      "Autonomous",
+      "Fleet Management",
+      "AI",
+      "Transportation"
+    ],
     "price": 750000,
     "status": "concept",
     "date": "2022-12-08",
@@ -377,7 +551,12 @@
       "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41491841aadc349e8fe07_23_Pickup_dropoff__3_-poster-00001.jpg"
     ],
     "category": "concept",
-    "tags": ["Drones", "Agriculture", "IoT", "Automation"],
+    "tags": [
+      "Drones",
+      "Agriculture",
+      "IoT",
+      "Automation"
+    ],
     "price": 420000,
     "status": "concept",
     "date": "2022-11-05",
@@ -397,7 +576,12 @@
       "generic_ecommerce_1.png"
     ],
     "category": "concept",
-    "tags": ["Space Tech", "Tourism", "VR", "Booking"],
+    "tags": [
+      "Space Tech",
+      "Tourism",
+      "VR",
+      "Booking"
+    ],
     "price": 800000,
     "status": "concept",
     "date": "2022-10-03",
@@ -417,7 +601,12 @@
       "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
     ],
     "category": "concept",
-    "tags": ["Quantum Computing", "Research", "Interface", "Enterprise"],
+    "tags": [
+      "Quantum Computing",
+      "Research",
+      "Interface",
+      "Enterprise"
+    ],
     "price": 900000,
     "status": "concept",
     "date": "2022-09-01",
@@ -437,7 +626,12 @@
       "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
     ],
     "category": "active",
-    "tags": ["Social Media", "Analytics", "Marketing", "Dashboard"],
+    "tags": [
+      "Social Media",
+      "Analytics",
+      "Marketing",
+      "Dashboard"
+    ],
     "price": 220000,
     "status": "construction",
     "date": "2023-08-15",
@@ -458,7 +652,12 @@
       "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
     ],
     "category": "active",
-    "tags": ["Cloud", "Storage", "Optimization", "Cost Management"],
+    "tags": [
+      "Cloud",
+      "Storage",
+      "Optimization",
+      "Cost Management"
+    ],
     "price": 180000,
     "status": "construction",
     "date": "2023-07-12",
@@ -479,7 +678,12 @@
       "https://uizard.io/static/269cc24ae1ecc74b98f243b86cd1d8b4/a8e47/70c030d5c7cbd260f865f4aa0ab4eedb28603fba-1440x835.png"
     ],
     "category": "active",
-    "tags": ["Gaming", "Esports", "Streaming", "Tournament"],
+    "tags": [
+      "Gaming",
+      "Esports",
+      "Streaming",
+      "Tournament"
+    ],
     "price": 300000,
     "status": "construction",
     "date": "2023-06-10",
@@ -500,7 +704,12 @@
       "https://www.restaurant365.com/wp-content/uploads/2022/05/iStock-1192104540-1024x683.jpg"
     ],
     "category": "active",
-    "tags": ["FinTech", "AI", "Personal Finance", "Investment"],
+    "tags": [
+      "FinTech",
+      "AI",
+      "Personal Finance",
+      "Investment"
+    ],
     "price": 250000,
     "status": "construction",
     "date": "2023-05-08",
@@ -521,7 +730,12 @@
       "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/6675734bd04d961867ee822e_scrnli_21_06_2024_14-33-53-min.png"
     ],
     "category": "active",
-    "tags": ["Remote Work", "Collaboration", "Video Conferencing", "Productivity"],
+    "tags": [
+      "Remote Work",
+      "Collaboration",
+      "Video Conferencing",
+      "Productivity"
+    ],
     "price": 280000,
     "status": "construction",
     "date": "2023-04-05",
@@ -542,7 +756,12 @@
       "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67dc06b18e5c64558643d9fc_random-min.png"
     ],
     "category": "active",
-    "tags": ["IoT", "Smart Home", "Automation", "Energy"],
+    "tags": [
+      "IoT",
+      "Smart Home",
+      "Automation",
+      "Energy"
+    ],
     "price": 200000,
     "status": "construction",
     "date": "2023-03-01",
@@ -563,7 +782,12 @@
       "https://cdn.prod.website-files.com/6542d8f9e468531067fe9978/67509749a9f01f9f7666f471_Screenshot%202024-12-04%20at%2018.52.10.png"
     ],
     "category": "active",
-    "tags": ["NFT", "Digital Art", "Blockchain", "Marketplace"],
+    "tags": [
+      "NFT",
+      "Digital Art",
+      "Blockchain",
+      "Marketplace"
+    ],
     "price": 350000,
     "status": "construction",
     "date": "2023-02-01",
@@ -584,7 +808,12 @@
       "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png"
     ],
     "category": "active",
-    "tags": ["AI", "Weather", "Machine Learning", "Prediction"],
+    "tags": [
+      "AI",
+      "Weather",
+      "Machine Learning",
+      "Prediction"
+    ],
     "price": 400000,
     "status": "construction",
     "date": "2023-01-30",
@@ -605,7 +834,12 @@
       "https://medvr.education/wp-content/uploads/2022/11/debriefing-blog-1024x576.jpg"
     ],
     "category": "active",
-    "tags": ["Healthcare", "IoT", "Monitoring", "Elderly Care"],
+    "tags": [
+      "Healthcare",
+      "IoT",
+      "Monitoring",
+      "Elderly Care"
+    ],
     "price": 180000,
     "status": "construction",
     "date": "2022-12-28",
@@ -626,91 +860,18 @@
       "https://cdn.prod.website-files.com/6345207a1b18e581fcf67604/63e41290c59922dcad71afc9_iot-insights.png"
     ],
     "category": "active",
-    "tags": ["Environment", "Optimization", "Smart City", "Sustainability"],
+    "tags": [
+      "Environment",
+      "Optimization",
+      "Smart City",
+      "Sustainability"
+    ],
     "price": 320000,
     "status": "construction",
     "date": "2022-11-25",
     "expectedLaunch": "Q3 2025",
     "demo": "#",
     "github": "#",
-    "request_feature_email": "wrootmike@gmail.com"
-  },
-  {
-    "id": 31,
-    "title": "Kenya Realty",
-    "description": "A comprehensive e-commerce platform to find dream homes in Kenya. Discover luxury properties across Nairobi, Mombasa, and beyond.",
-    "image": "https://via.placeholder.com/800x600.png?text=Kenya+Realty",
-    "thumbnails": [
-      "https://via.placeholder.com/800x600.png?text=Kenya+Realty+Screenshot+1",
-      "https://via.placeholder.com/800x600.png?text=Kenya+Realty+Screenshot+2",
-      "https://via.placeholder.com/800x600.png?text=Kenya+Realty+Screenshot+3",
-      "https://via.placeholder.com/800x600.png?text=Kenya+Realty+Screenshot+4"
-    ],
-    "category": "completed",
-    "tags": ["Real Estate", "E-commerce", "Kenya", "Property"],
-    "price": 120000,
-    "status": "completed-real-estate",
-    "date": "2024-08-12",
-    "demo": "https://garymike07.github.io/real-estate-/",
-    "github": "https://github.com/garymike07/real-estate-",
-    "features": [
-      "Property listings with search and filter",
-      "E-commerce functionality for property purchase",
-      "User accounts and saved properties",
-      "Contact forms for agents"
-    ],
-    "request_feature_email": "wrootmike@gmail.com"
-  },
-  {
-    "id": 32,
-    "title": "Bill Generator",
-    "description": "An online tool to generate invoices. Users can add items, upload a logo, and generate a PDF of the invoice.",
-    "image": "https://via.placeholder.com/800x600.png?text=Bill+Generator",
-    "thumbnails": [
-      "https://via.placeholder.com/800x600.png?text=Bill+Generator+Screenshot+1",
-      "https://via.placeholder.com/800x600.png?text=Bill+Generator+Screenshot+2",
-      "https://via.placeholder.com/800x600.png?text=Bill+Generator+Screenshot+3",
-      "https://via.placeholder.com/800x600.png?text=Bill+Generator+Screenshot+4"
-    ],
-    "category": "completed",
-    "tags": ["Invoice Generator", "Billing", "PDF", "Tool"],
-    "price": 50000,
-    "status": "completed-billgen",
-    "date": "2024-08-10",
-    "demo": "https://garymike07.github.io/billgen/",
-    "github": "https://github.com/garymike07/billgen",
-    "features": [
-      "Create and manage invoices",
-      "Add multiple line items",
-      "Upload company logo",
-      "Generate and download PDF invoices"
-    ],
-    "request_feature_email": "wrootmike@gmail.com"
-  },
-  {
-    "id": 33,
-    "title": "Kenya Safari Adventures",
-    "description": "Luxury eco-friendly lodges with stunning views of Mount Kenya and wildlife. Experience breathtaking views and witness the world's greatest wildlife spectacle.",
-    "image": "https://via.placeholder.com/800x600.png?text=Kenya+Safari",
-    "thumbnails": [
-      "https://via.placeholder.com/800x600.png?text=Safari+Screenshot+1",
-      "https://via.placeholder.com/800x600.png?text=Safari+Screenshot+2",
-      "https://via.placeholder.com/800x600.png?text=Safari+Screenshot+3",
-      "https://via.placeholder.com/800x600.png?text=Safari+Screenshot+4"
-    ],
-    "category": "completed",
-    "tags": ["Tourism", "Safari", "Kenya", "Travel", "Wildlife"],
-    "price": 150000,
-    "status": "completed-tourism",
-    "date": "2024-08-08",
-    "demo": "https://garymike07.github.io/tourism/",
-    "github": "https://github.com/garymike07/tourism",
-    "features": [
-      "Browse safari packages",
-      "View accommodation details",
-      "Book adventures and activities",
-      "Photo gallery of destinations"
-    ],
     "request_feature_email": "wrootmike@gmail.com"
   }
 ]
