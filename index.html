@@ -3527,6 +3527,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(data => {
       projects = data;
+      updateFilterCounts();
       renderProjects();
       const githubButton = document.getElementById('github-nav-button');
       if (githubButton) {
@@ -3629,6 +3630,23 @@ function renderLanguages() {
         container.innerHTML = '<p style="color: var(--error-color);">Could not load learning resources at this time.</p>';
       }
     });
+}
+
+// =================================================================================
+// UI AND ANIMATION
+// =================================================================================
+function updateFilterCounts() {
+    const allCount = projects.length;
+    const activeCount = projects.filter(p => p.status === 'ongoing' || p.status === 'construction').length;
+    const completedCount = projects.filter(p => p.category === 'completed').length;
+    const conceptCount = projects.filter(p => p.category === 'concept').length;
+    const openSourceCount = projects.filter(p => p.category === 'open-source').length;
+
+    document.querySelector('.filter-btn[data-filter="all"] .filter-count').textContent = allCount;
+    document.querySelector('.filter-btn[data-filter="active"] .filter-count').textContent = activeCount;
+    document.querySelector('.filter-btn[data-filter="completed"] .filter-count').textContent = completedCount;
+    document.querySelector('.filter-btn[data-filter="concept"] .filter-count').textContent = conceptCount;
+    document.querySelector('.filter-btn[data-filter="open-source"] .filter-count').textContent = openSourceCount;
 }
 
 // =================================================================================
@@ -3809,7 +3827,7 @@ function handleFilter(event) {
   } else if (filter === 'active') {
     projectsToRender = projects.filter(p => p.status === 'ongoing' || p.status === 'construction');
   } else if (filter === 'completed') {
-    projectsToRender = projects.filter(p => p.status === 'live');
+    projectsToRender = projects.filter(p => p.category === 'completed');
   } else {
     projectsToRender = projects.filter(p => p.category === filter);
   }
